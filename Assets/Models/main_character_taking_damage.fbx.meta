@@ -1,0 +1,916 @@
+fileFormatVersion: 2
+guid: 7c4d2e261f73b4930be86803eb255cc1
+ModelImporter:
+  serializedVersion: 20300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Godlike_Burger_cook_animation_001_Combine_08_body
+    second: {fileID: 2100000, guid: 8da6435bffa5d44859f3c13361716348, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'RightFoot' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: main_character_taking_damage(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:geo
+      parentName: main_character_taking_damage(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Cheff
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:body1
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Cheff
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Group
+      parentName: main_character_taking_damage(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Geometry
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Group
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Main
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Group
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:DeformationSystem
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Main
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Root_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:DeformationSystem
+      position: {x: -3.6096752e-17, y: 0.6318168, z: -0.027325826}
+      rotation: {x: 0.4871497, y: -0.51252824, z: -0.4871497, w: 0.51252824}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Hip_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Root_M
+      position: {x: 0.040381964, y: 0.049822114, z: 0.19019647}
+      rotation: {x: 0.99863094, y: -0.049888723, z: 0.015053347, w: -0.004554907}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Knee_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Hip_L
+      position: {x: 0.28749108, y: 3.719247e-17, z: -7.4606985e-16}
+      rotation: {x: 0, y: 0, z: 0.0000038482667, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Ankle_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Knee_L
+      position: {x: 0.14075059, y: 8.953948e-16, z: 4.6185276e-16}
+      rotation: {x: -0.0137274815, y: -0.0132727735, z: 0.011170916, w: 0.99975526}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Toes_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Ankle_L
+      position: {x: 0.11764286, y: -0.123411916, z: 1.4210854e-16}
+      rotation: {x: 0.0041027865, y: 0.005889896, z: -0.58046335, w: 0.81425476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ToesEnd_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Toes_L
+      position: {x: 0.11481321, y: 2.380318e-15, z: -4.2632563e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Hip_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Root_M
+      position: {x: 0.040381964, y: 0.049822114, z: -0.19019647}
+      rotation: {x: 0.04988878, y: 0.99863094, z: -0.0045549036, w: -0.015053391}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Knee_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Hip_R
+      position: {x: -0.28749108, y: -1.8207657e-16, z: 6.750156e-16}
+      rotation: {x: 0, y: 0, z: 0.0000038482667, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Ankle_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Knee_R
+      position: {x: -0.14075059, y: 3.3417713e-16, z: 0}
+      rotation: {x: -0.0137274815, y: -0.0132727735, z: 0.011170916, w: 0.99975526}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Toes_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Ankle_R
+      position: {x: -0.11764286, y: 0.123411916, z: 0}
+      rotation: {x: 0.0041027865, y: 0.005889896, z: -0.58046335, w: 0.81425476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ToesEnd_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Toes_R
+      position: {x: -0.11481321, y: -2.8510528e-15, z: 3.907985e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Spine1_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Root_M
+      position: {x: -0.19680876, y: -4.6629366e-17, z: -1.05863455e-16}
+      rotation: {x: 0, y: -0, z: -0.04432061, w: 0.99901736}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Chest_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Spine1_M
+      position: {x: -0.26114625, y: 1.1546319e-16, z: 1.7172295e-16}
+      rotation: {x: 0, y: 0, z: 0.061758403, w: 0.99809116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Neck_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Chest_M
+      position: {x: -0.27001196, y: -6.661338e-16, z: 6.6283473e-16}
+      rotation: {x: 0, y: -0, z: -0.17791973, w: 0.984045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Neck_M
+      position: {x: -0.34573916, y: 1.4210854e-16, z: -5.701132e-16}
+      rotation: {x: 0, y: 0, z: 0.17484123, w: 0.98459667}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Eye_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      position: {x: -0.07245808, y: 0.10966721, z: 0.10356107}
+      rotation: {x: 0.0411095, y: 0.024691198, z: -0.5806171, w: 0.8127633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:EyeEnd_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Eye_L
+      position: {x: -0.054552503, y: 2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: -0.1386862, y: -0.0022722937, z: -0.00015833312, w: 0.9903338}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Eye_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      position: {x: -0.07245808, y: 0.10966721, z: -0.10356107}
+      rotation: {x: -0.0411095, y: -0.024691198, z: -0.5806171, w: 0.8127633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:EyeEnd_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Eye_R
+      position: {x: -0.054552503, y: 1.4210854e-15, z: 1.7763568e-17}
+      rotation: {x: 0.1386862, y: 0.0022722937, z: -0.00015833312, w: 0.9903338}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:HeadEnd_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      position: {x: -0.30585986, y: 4.973799e-16, z: -2.423977e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Jaw_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Head_M
+      position: {x: 0.10473644, y: 0.07288771, z: -1.5417766e-16}
+      rotation: {x: 0, y: 0, z: -0.78717965, w: 0.6167238}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:JawEnd_M
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Jaw_M
+      position: {x: -0.13567302, y: 2.5579537e-15, z: -2.0434621e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Scapula_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Chest_M
+      position: {x: -0.14841174, y: -0.041182164, z: 0.23055875}
+      rotation: {x: 0.7899902, y: -0.017791646, z: 0.5922155, w: 0.15773334}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Scapula_L
+      position: {x: 0.15555878, y: 0.0049058944, z: -0.048286248}
+      rotation: {x: -0.0071837907, y: -0.49856195, z: -0.043120287, w: 0.86575115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_L
+      position: {x: 0.08684204, y: -4.7919e-13, z: -1.4381385e-13}
+      rotation: {x: 0.0026870735, y: -0, z: -0, w: 0.9999964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_L
+      position: {x: 0.08684204, y: -4.799361e-13, z: -1.4097168e-13}
+      rotation: {x: 0.0026870735, y: -0, z: -0, w: 0.9999964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Elbow_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart2_L
+      position: {x: 0.08684204, y: -4.8068217e-13, z: -1.3862689e-13}
+      rotation: {x: 0.0026862693, y: 0.00006569927, z: -0.024450036, w: 0.99969745}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Elbow_L
+      position: {x: 0.17528333, y: 7.105427e-17, z: -1.13544726e-13}
+      rotation: {x: 0.000067215675, y: 0.012601871, z: -0.011807098, w: 0.9998509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      position: {x: 0.22774018, y: -0.08455945, z: -0.0024388118}
+      rotation: {x: -0.116934255, y: -0.48912534, z: -0.31993505, w: 0.8029473}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_L
+      position: {x: 0.1025541, y: -1.4210854e-15, z: -5.506706e-16}
+      rotation: {x: 0.009702809, y: -0.47797856, z: 0.030472782, w: 0.87778914}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_L
+      position: {x: 0.051217627, y: 4.6185276e-16, z: 1.9895197e-15}
+      rotation: {x: -0.01283059, y: -0.39964446, z: 0.006183355, w: 0.9165596}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger4_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_L
+      position: {x: 0.0678736, y: 2.9842794e-15, z: 1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      position: {x: 0.2631277, y: 3.5527136e-17, z: -7.105427e-16}
+      rotation: {x: 0.004555914, y: -0.5737948, z: -0.04682443, w: 0.81764686}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_L
+      position: {x: 0.105068, y: 0, z: -7.105427e-16}
+      rotation: {x: 0.0002866757, y: -0.4464618, z: -0.00012982966, w: 0.89480263}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_L
+      position: {x: 0.078700595, y: 2.1316282e-16, z: 2.0605739e-15}
+      rotation: {x: 0.00043003, y: -0.37086216, z: -0.00017929617, w: 0.9286878}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger4_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_L
+      position: {x: 0.07607319, y: 1.2789769e-15, z: -1.847411e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      position: {x: 0.21893333, y: 0.17735225, z: 0.068557404}
+      rotation: {x: 0.31847262, y: -0.5247209, z: -0.054931525, w: 0.7875441}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_L
+      position: {x: 0.07005723, y: 3.5527136e-17, z: -8.348877e-16}
+      rotation: {x: 0.002461332, y: -0.43881747, z: -0.0000038793373, w: 0.89857286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_L
+      position: {x: 0.045139488, y: -7.105427e-16, z: -7.105427e-16}
+      rotation: {x: 0.017549334, y: -0.35568544, z: -0.0065023517, w: 0.9344183}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger4_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_L
+      position: {x: 0.057550687, y: 9.237055e-16, z: -1.1368683e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      position: {x: 0.24500778, y: 0.092555426, z: 0.029701957}
+      rotation: {x: 0.21808915, y: -0.5599241, z: -0.06306733, w: 0.7968341}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_L
+      position: {x: 0.12504414, y: -4.2632563e-16, z: -1.2967404e-15}
+      rotation: {x: -0.0022667304, y: -0.37444937, z: 0.0009822504, w: 0.92724407}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_L
+      position: {x: 0.05803647, y: -4.4408918e-17, z: 0}
+      rotation: {x: 0.0043658447, y: -0.45785844, z: -0.0023167185, w: 0.8890114}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger4_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_L
+      position: {x: 0.06454996, y: 1.3855583e-15, z: 1.7053025e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_L
+      position: {x: 0.13900408, y: -0.13530758, z: 0.036508195}
+      rotation: {x: -0.45499086, y: -0.011994909, z: -0.36261448, w: 0.8132344}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_L
+      position: {x: 0.07919331, y: -2.82384e-10, z: -3.7006323e-10}
+      rotation: {x: 0.00091231195, y: -0.41613623, z: 0.07184578, w: 0.90645903}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_L
+      position: {x: 0.07168251, y: 0, z: -3.5527135e-16}
+      rotation: {x: -0.0061712046, y: -0.45665714, z: -0.019195253, w: 0.88941425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger4_L
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_L
+      position: {x: 0.07961172, y: -9.947598e-16, z: 2.1316282e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Scapula_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Chest_M
+      position: {x: -0.14841174, y: -0.041182164, z: -0.23055875}
+      rotation: {x: -0.017791618, y: -0.7899902, z: -0.15773332, w: 0.5922155}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Scapula_R
+      position: {x: -0.2000924, y: 2.0676793e-14, z: 2.728484e-14}
+      rotation: {x: -0.006293006, y: -0.45562914, z: -0.04316395, w: 0.8891003}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Shoulder_R
+      position: {x: -0.08684204, y: 4.7887025e-13, z: 1.4466649e-13}
+      rotation: {x: 0.0029988142, y: -0, z: -0, w: 0.9999955}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart1_R
+      position: {x: -0.08684204, y: 4.7965185e-13, z: 1.41398e-13}
+      rotation: {x: 0.0029988142, y: -0, z: -0, w: 0.9999955}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Elbow_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ShoulderPart2_R
+      position: {x: -0.08684204, y: 4.806111e-13, z: 1.3898216e-13}
+      rotation: {x: 0.0029979171, y: 0.00007332137, z: -0.024450015, w: 0.99969655}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Elbow_R
+      position: {x: -0.17528333, y: -5.684342e-16, z: 1.1382895e-13}
+      rotation: {x: 0.000067215675, y: 0.012601871, z: -0.011807098, w: 0.9998509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      position: {x: -0.22774018, y: 0.08455945, z: 0.0024388118}
+      rotation: {x: -0.15126704, y: -0.44073454, z: -0.20675202, w: 0.86030513}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger1_R
+      position: {x: -0.1025541, y: -2.7755576e-16, z: -6.750156e-16}
+      rotation: {x: 0.052638732, y: -0.45583865, z: -0.055339683, w: 0.8867795}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger2_R
+      position: {x: -0.051217627, y: -3.1974422e-16, z: 6.3948843e-16}
+      rotation: {x: 0.023087244, y: -0.37915465, z: -0.0835172, w: 0.9212674}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger4_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:IndexFinger3_R
+      position: {x: -0.0678736, y: -2.096101e-15, z: -1.9895197e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      position: {x: -0.2631277, y: 2.1316282e-16, z: 1.7053025e-15}
+      rotation: {x: 0.05858128, y: -0.5527688, z: -0.12683877, w: 0.8215393}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger1_R
+      position: {x: -0.105068, y: -7.238654e-16, z: 1.025846e-15}
+      rotation: {x: 0.040846523, y: -0.42493185, z: -0.08754862, w: 0.9000554}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger2_R
+      position: {x: -0.078700595, y: -1.7763568e-17, z: -3.0553336e-15}
+      rotation: {x: 0.03361438, y: -0.34895635, z: -0.09065197, w: 0.9321383}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger4_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:MiddleFinger3_R
+      position: {x: -0.07607319, y: -2.842171e-16, z: 1.9042544e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      position: {x: -0.21893333, y: -0.17735225, z: -0.068557404}
+      rotation: {x: 0.13810554, y: -0.7658104, z: 0.15834273, w: 0.6077737}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger1_R
+      position: {x: -0.07005723, y: -4.973799e-16, z: 1.7763567e-16}
+      rotation: {x: 0.042261064, y: -0.4170344, z: -0.087718606, w: 0.90366024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger2_R
+      position: {x: -0.045139488, y: 1.4210854e-16, z: 1.4210854e-15}
+      rotation: {x: 0.049308736, y: -0.33206356, z: -0.09708496, w: 0.9369509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger4_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:PinkyFinger3_R
+      position: {x: -0.057550687, y: -3.5527135e-16, z: 9.947598e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      position: {x: -0.24500778, y: -0.092555426, z: -0.029701957}
+      rotation: {x: 0.11756586, y: -0.7523004, z: 0.03156001, w: 0.64747703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger1_R
+      position: {x: -0.12504414, y: 1.0658141e-16, z: 1.4210854e-16}
+      rotation: {x: 0.031255264, y: -0.35282013, z: -0.08942506, w: 0.9308836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger2_R
+      position: {x: -0.05803647, y: -5.684342e-16, z: 0}
+      rotation: {x: 0.04606675, y: -0.4359989, z: -0.08911008, w: 0.894339}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:RingFinger4_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:RingFinger3_R
+      position: {x: -0.06454996, y: -5.32907e-16, z: 7.105427e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:Wrist_R
+      position: {x: -0.050833505, y: 0.030646157, z: -0.03759704}
+      rotation: {x: -0.5362673, y: -0.23788404, z: -0.22940128, w: 0.7766619}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger1_R
+      position: {x: -0.07919331, y: 2.8238328e-10, z: 3.7006256e-10}
+      rotation: {x: 0.039148778, y: 0.2931369, z: 0.010994877, w: 0.9552054}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger2_R
+      position: {x: -0.07168251, y: 8.5265126e-16, z: -3.5527135e-16}
+      rotation: {x: 0.07656689, y: -0.026954222, z: -0.08181133, w: 0.9933368}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger4_R
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:ThumbFinger3_R
+      position: {x: -0.07961172, y: 1.4210854e-16, z: 1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:locator_peaked_cap
+      parentName: main_character_taking_damage(Clone)
+      position: {x: 8.953934e-17, y: 1.9982296, z: 0.019526863}
+      rotation: {x: 2.7755576e-17, y: -5.551115e-17, z: -2.498002e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Godlike_Burger_cook_animation_001:Combine_08:peaked_cap
+      parentName: Godlike_Burger_cook_animation_001:Combine_08:locator_peaked_cap
+      position: {x: 0, y: -0.11571896, z: 0.05413738}
+      rotation: {x: -2.7755576e-17, y: 5.551115e-17, z: 2.498002e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
