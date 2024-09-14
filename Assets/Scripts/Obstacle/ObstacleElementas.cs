@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleElementas : MonoBehaviour
 {
     private float _force = 20;
-
     private Rigidbody _rb;
-
     private int _ignorePlayerObstacleLayer;
 
     private void Awake()

@@ -9,6 +9,7 @@ public class TriggerObstacle : MonoBehaviour
         if (player != null && player.IsDaed == false)
         {
             player.Die();
+            GameManager.Instance.PlayerDied();
         }
     }
 }

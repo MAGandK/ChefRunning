@@ -7,7 +7,7 @@ public class TriggerFinish : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerController playerController))
         {
-            playerController.SetFinished();
+            GameManager.Instance.FinishGame();
             Debug.Log("Finish");
             OnFinished();
         }

@@ -6,11 +6,9 @@ public class CreateRoad : MonoBehaviour
 {
     [Min(1)]
     public int RoadPartCount;
-
     public float _offset;
-
     public GameObject RoadPrefab;
-
+    
     private void Update()
     {
         if (RoadPrefab == null)
@@ -36,9 +34,9 @@ public class CreateRoad : MonoBehaviour
 
         for (int i = 0; i < RoadPartCount; i++)
         {
-            transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * _offset));
+            transformPosition = new Vector3(transformPosition.x, transformPosition.y, +( i * _offset));
 
-            var instatiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
+            var instantiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
         }
     }
 
@@ -61,4 +59,3 @@ public class CreateRoad : MonoBehaviour
         }
     }
 }
-

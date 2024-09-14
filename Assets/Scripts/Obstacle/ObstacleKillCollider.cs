@@ -20,6 +20,7 @@ public class ObstacleKillCollider : MonoBehaviour
             {
                 Time.timeScale = 1;
                 playerController.Die();
+                GameManager.Instance.PlayerDied();
             }
             else
             {
