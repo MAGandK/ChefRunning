@@ -1,7 +1,15 @@
 using UnityEngine;
+using Zenject;
 
 public class TriggerObstacle : MonoBehaviour
 {
+    private GameManager _gameManager;
+    
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void OnTriggerEnter(Collider other)
     {
         PlayerController player = other.GetComponent<PlayerController>();
@@ -9,7 +17,7 @@ public class TriggerObstacle : MonoBehaviour
         if (player != null && player.IsDaed == false)
         {
             player.Die();
-            GameManager.Instance.PlayerDied();
+            _gameManager.PlayerDied();
         }
     }
 }

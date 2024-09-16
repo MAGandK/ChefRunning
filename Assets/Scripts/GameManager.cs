@@ -1,14 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using Zenject;
+
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-    
-    [SerializeField]
     private UIController _uIController;
-    [SerializeField]
     private AnimatorController _animatorController;
-    [SerializeField]
     private PlayerController _playerController;
     [SerializeField]
     private Transform _targetTransform;
@@ -18,17 +15,13 @@ public class GameManager : MonoBehaviour
     
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
-    private void Awake()
+
+    [Inject]
+    private void Construct(UIController uIController, AnimatorController animator, PlayerController playerController)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); 
-        }
-        else
-        {
-            Destroy(gameObject); 
-        }
+        _uIController = uIController;
+        _animatorController = animator;
+        _playerController = playerController;
     }
 
     private void Update()

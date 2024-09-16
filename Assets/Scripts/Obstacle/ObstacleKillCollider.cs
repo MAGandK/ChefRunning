@@ -1,4 +1,6 @@
 using UnityEngine;
+using Zenject;
+
 public class ObstacleKillCollider : MonoBehaviour
 {
     [SerializeField]
@@ -6,6 +8,13 @@ public class ObstacleKillCollider : MonoBehaviour
     private Collider _collider;
     private bool _isKilleble;
 
+    private GameManager _gameManager;
+
+    [Inject]
+    private void Constract(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void Awake()
     {
         _isKilleble = true;
@@ -20,7 +29,7 @@ public class ObstacleKillCollider : MonoBehaviour
             {
                 Time.timeScale = 1;
                 playerController.Die();
-                GameManager.Instance.PlayerDied();
+                _gameManager.PlayerDied();
             }
             else
             {

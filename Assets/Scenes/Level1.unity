@@ -7527,9 +7527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201f40cacc44d4391996a87ebdbcbe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uIController: {fileID: 1204841692}
-  _animatorController: {fileID: 1890790833}
-  _playerController: {fileID: 1890790832}
   _targetTransform: {fileID: 1797369644}
 --- !u!4 &359414134
 Transform:
@@ -32770,6 +32767,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757000478}
   m_Mesh: {fileID: -3255417463002180566, guid: 12d2d6684b29c5542b3d8bbdcb123361, type: 3}
+--- !u!1 &1757837146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757837149}
+  - component: {fileID: 1757837148}
+  - component: {fileID: 1757837147}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1757837147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757837146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27894fce2c5c840e3a3b49645a53fdc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1757837148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757837146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 1757837147}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &1757837149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757837146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763533934
 GameObject:
   m_ObjectHideFlags: 0
@@ -35512,7 +35586,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 1890790830}
   _joystick: {fileID: 1139248710}
   _swipeSensivity: 0.338
-  _animatorController: {fileID: 1890790833}
 --- !u!114 &1890790833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42966,3 +43039,4 @@ SceneRoots:
   - {fileID: 601923553}
   - {fileID: 359414134}
   - {fileID: 1272973728}
+  - {fileID: 1757837149}

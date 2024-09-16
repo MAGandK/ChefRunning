@@ -1,4 +1,6 @@
 using UnityEngine;
+using Zenject;
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -11,13 +13,22 @@ public class PlayerController : MonoBehaviour
     private Joystick _joystick;
     [SerializeField, Range(0f,1f)]
     private float _swipeSensivity;
-    [SerializeField] 
-    private AnimatorController _animatorController; 
+ 
+    private AnimatorController _animatorController;
+    private GameManager _gameManager;
     
     private float _moveX; 
     private float _moveZ;
 
     private bool _isDied = false;
+
+    [Inject]
+    private void Constract(AnimatorController animatorController, GameManager gameManager)
+    {
+        _animatorController = animatorController;
+        _gameManager = gameManager;
+
+    }
 
     public bool IsDaed
     {
@@ -26,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {    
-        if (!GameManager.Instance.IsGameStarted || _isDied || GameManager.Instance.IsGameFinished)
+        if (!_gameManager.IsGameStarted || _isDied || _gameManager.IsGameFinished)
         {
             return;
         }
