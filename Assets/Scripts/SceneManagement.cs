@@ -4,7 +4,6 @@ using Zenject;
 
 public class SceneManagement : MonoBehaviour
 {
-    
     private GameManager _gameManager;
 
     [Inject]

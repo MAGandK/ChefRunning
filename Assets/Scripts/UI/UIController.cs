@@ -1,8 +1,16 @@
 using UnityEngine;
+using Zenject;
+
 public class UIController : MonoBehaviour
 {
     private WindowBace[] _windows;
-    private WindowType Type;
+    private GameManager _gameManager;
+
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void Awake()
     {
         _windows = GetComponentsInChildren<WindowBace>(true);
