@@ -1,11 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class FinishWindow : WindowBace
 {
-    [SerializeField]
-    private Button _nextLevelButton;
     [SerializeField]
     private SceneManagement _sceneManagement;
     private int levelIndex;
@@ -18,12 +15,7 @@ public class FinishWindow : WindowBace
         }
     }
 
-    private void Start()
-    {
-        _nextLevelButton.onClick.AddListener(OnNextButtonClick);
-    }
-
-    private void OnNextButtonClick()
+    public void OnNextButtonClick()
     {
        _sceneManagement.LoadNextLevel();
         var sceneName = SettingManager.Instance.LevelSettings.GetSceneName(levelIndex);
