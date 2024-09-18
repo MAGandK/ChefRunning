@@ -32,7 +32,7 @@ public class MainWindow : WindowBace
 
     private void OnEnable()
     {
-        ObstacleQTEHandler.ObstacleQTEs += ShowText;
+        ObstacleInteraction.Interaction += ShowText;
         Joystick.Click += JoystickClick;
     }
 
@@ -72,7 +72,7 @@ public class MainWindow : WindowBace
     }
     private void OnDisable()
     {
-        ObstacleQTEHandler.ObstacleQTEs -= ShowText;
+        ObstacleInteraction.Interaction -= ShowText;
         Joystick.Click -= JoystickClick;
     }
 }
