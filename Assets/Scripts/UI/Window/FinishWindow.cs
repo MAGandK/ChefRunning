@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishWindow : WindowBace
+public class FinishWindow : WindowBase
 {
-    [SerializeField]
-    private SceneManagement _sceneManagement;
-    private int levelIndex;
+    // [SerializeField]
+    // private SceneManagement _sceneManagement;
+    // private int levelIndex;
 
     public override WindowType Type
     {
@@ -15,10 +15,10 @@ public class FinishWindow : WindowBace
         }
     }
 
-    public void OnNextButtonClick()
-    {
-       _sceneManagement.LoadNextLevel();
-        var sceneName = SettingManager.Instance.LevelSettings.GetSceneName(levelIndex);
-        SceneManager.LoadScene(sceneName);
-    }
+    // public void OnNextButtonClick()
+    // {
+    //    _sceneManagement.LoadNextLevel();
+    //     var sceneName = SettingManager.Instance.LevelSettings.GetSceneName(levelIndex);
+    //     SceneManager.LoadScene(sceneName);
+    // }
 }

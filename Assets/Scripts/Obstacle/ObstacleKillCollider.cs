@@ -9,7 +9,7 @@ public class ObstacleKillCollider : MonoBehaviour
     private bool _isKilleble;
 
     private GameManager _gameManager;
-
+    
     [Inject]
     private void Constract(GameManager gameManager)
     {
@@ -23,18 +23,18 @@ public class ObstacleKillCollider : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerController playerController))
+        if (other.TryGetComponent(out Player player))
         {
             if (_isKilleble)
             {
                 Time.timeScale = 1;
-                playerController.Die();
+                player.Die();
                 _gameManager.PlayerDied();
             }
             else
             {
                 _obstacle.Push();
-                playerController.Hit();
+                player.Hit();
             }
         }
     }

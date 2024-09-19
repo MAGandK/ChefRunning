@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainWindow : WindowBace
+public class MainWindow : WindowBase
 {
     [SerializeField]
     private Slider progressBar;

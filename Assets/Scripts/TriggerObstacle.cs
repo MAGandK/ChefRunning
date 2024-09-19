@@ -12,12 +12,12 @@ public class TriggerObstacle : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
+        Player player = other.GetComponent<Player>();
 
-        if (player != null && player.IsDaed == false)
+        if (player != null && player.IsDead == false)
         {
             player.Die();
-            _gameManager.PlayerDied();
+           _gameManager.PlayerDied();
         }
     }
 }

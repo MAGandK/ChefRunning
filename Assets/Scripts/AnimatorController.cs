@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class AnimatorController : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +12,13 @@ public class AnimatorController : MonoBehaviour
     private string DancedAnimationKey = "Danced";
     private string HitAnimationKey = "IsHit";
     private string HitAnimationKeys = "IsHits";
+
+    private void OnEnable()
+    {
+        GameManager.IsPlayerDie += Died;
+        GameManager.IsFinishGame += Danced;
+        GameManager.IsStartGame += Run;
+    }
     
     public void Run()
     {
@@ -28,11 +38,19 @@ public class AnimatorController : MonoBehaviour
     public void Danced()
     {
         _animator.SetTrigger(DancedAnimationKey);
+        StopRun();
     }
 
     public void Hit()
     {
         _animator.SetTrigger(HitAnimationKey);
         _animator.SetInteger(HitAnimationKeys, Random.Range(0, 2));
+    }
+    
+    private void OnDisable()
+    {
+        GameManager.IsPlayerDie -= Died;
+        GameManager.IsFinishGame -= Danced;
+        GameManager.IsStartGame -= Run;
     }
 }

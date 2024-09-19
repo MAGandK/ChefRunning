@@ -1,23 +1,18 @@
 using UnityEngine;
-using Zenject;
-
 public class UIController : MonoBehaviour
 {
-    private WindowBace[] _windows;
-    private GameManager _gameManager;
-
-    [Inject]
-    private void Construct(GameManager gameManager)
+    private WindowBase[] _windows;
+    
+    private void OnEnable()
     {
-        _gameManager = gameManager;
+        GameManager.IsPlayerDie += OnPlayerDie;
+        GameManager.IsFinishGame += OnPlayerFinished;
+        GameManager.IsStartGame += StartGame;
     }
+
     private void Awake()
     {
-        _windows = GetComponentsInChildren<WindowBace>(true);
-    }
-    private void Start()
-    {
-        ShowWindow(WindowType.MainWindow);
+        _windows = GetComponentsInChildren<WindowBase>(true);
     }
     public void ShowWindow(WindowType type)
     {
@@ -34,7 +29,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public WindowBace GetWindow(WindowType type)
+    public WindowBase GetWindow(WindowType type)
     {
         for (int i = 0; i < _windows.Length; i++)
         {
@@ -45,5 +40,26 @@ public class UIController : MonoBehaviour
         }
 
         return null;
+    }
+    
+    private void StartGame()
+    {
+        ShowWindow(WindowType.MainWindow);
+    }
+    private void OnPlayerDie()
+    {
+        ShowWindow(WindowType.FailWindow);
+    }
+    
+    private void OnPlayerFinished()
+    {
+       ShowWindow(WindowType.FinishWindow);
+    }
+
+    private void OnDisable()
+    {
+        GameManager.IsPlayerDie -= OnPlayerDie;
+        GameManager.IsFinishGame -= OnPlayerFinished;
+        GameManager.IsStartGame -= StartGame;
     }
 }

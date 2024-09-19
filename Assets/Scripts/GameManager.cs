@@ -1,14 +1,15 @@
-using System.Collections;
+using System;
 using UnityEngine;
 using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    private UIController _uIController;
-    private AnimatorController _animatorController;
-    private PlayerController _playerController;
-    [SerializeField]
-    private Transform _targetTransform;
+    public static event Action IsPlayerDie;
+    public static event Action IsRestartGame;
+    public static event Action IsFinishGame;
+    public static event Action IsStartGame;
+
+    private Player _player;
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
@@ -17,11 +18,9 @@ public class GameManager : MonoBehaviour
     public bool IsGameFinished => _isGameFinished;
 
     [Inject]
-    private void Construct(UIController uIController, AnimatorController animator, PlayerController playerController)
+    private void Construct( Player player)
     {
-        _uIController = uIController;
-        _animatorController = animator;
-        _playerController = playerController;
+        _player = player;
     }
 
     private void Update()
@@ -32,28 +31,23 @@ public class GameManager : MonoBehaviour
         }
     }
     
-
     public void StartGame()
     {
         _isGameStarted = true;
-        _uIController.ShowWindow(WindowType.MainWindow);
-        _animatorController.Run(); 
+        IsStartGame?.Invoke();
     }
 
     public void FinishGame()
     {
         _isGameFinished = true;
-        _uIController.ShowWindow(WindowType.FinishWindow);
-        _animatorController.StopRun();
-        _animatorController.Danced();
-        RotatePlayerToTarget();
+        _player.RotatePlayerToTarget();
+        IsFinishGame?.Invoke();
     }
 
     public void PlayerDied()
     {
-        _playerController.Die();
-        _animatorController.Died();
-        _uIController.ShowWindow(WindowType.FailWindow);
+       _player.Die();
+       IsPlayerDie?.Invoke();
     }
 
     public void RestartGame()
@@ -61,13 +55,7 @@ public class GameManager : MonoBehaviour
         _isGameStarted = false;
         _isGameFinished = false;
 
-        _playerController.ResetPlayerState(); 
-    }
- 
-    private void RotatePlayerToTarget()
-    {
-        Vector3 direction = _targetTransform.position - _playerController.transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        _playerController.transform.rotation = targetRotation;
+       _player.ResetPlayerState();
+       IsRestartGame?.Invoke();
     }
 }

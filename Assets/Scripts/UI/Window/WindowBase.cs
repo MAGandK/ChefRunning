@@ -1,5 +1,6 @@
 using UnityEngine;
-public abstract class WindowBace : MonoBehaviour
+
+public abstract class WindowBase : MonoBehaviour
 {
     public bool IsActive
     {

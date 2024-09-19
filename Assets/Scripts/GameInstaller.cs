@@ -8,9 +8,6 @@ public class GameInstaller : MonoInstaller
         Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlayerController>().FromComponentInHierarchy().AsSingle();
-        
-        Container.Bind<MainWindow>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<FailWindow>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<FinishWindow>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
     }
 }

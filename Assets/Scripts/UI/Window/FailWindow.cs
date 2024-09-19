@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class FailWindow : WindowBace
+public class FailWindow : WindowBase
 {
     [SerializeField]
     private SceneManagement _sceneManagement;
