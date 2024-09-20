@@ -7,50 +7,52 @@ public class AnimatorController : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     
-    private string RunAnimationKey = "IsRun";
-    private string DiedAnimationKey = "Died";
-    private string DancedAnimationKey = "Danced";
-    private string HitAnimationKey = "IsHit";
-    private string HitAnimationKeys = "IsHits";
+    public int Run = Animator.StringToHash("IsRun");
+
+    public int Died = Animator.StringToHash("Died");
+    public int Dance = Animator.StringToHash("Danced");
+    public int Hit = Animator.StringToHash("IsHit");
+    public int Hits = Animator.StringToHash("IsHits");
 
     private void OnEnable()
     {
-        GameManager.IsPlayerDie += Died;
+        GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
-        GameManager.IsStartGame += Run;
+        GameManager.IsStartGame += Running;
     }
     
-    public void Run()
+    public void Running()
     {
-        _animator.SetBool(RunAnimationKey, true);
+        _animator.SetBool(Run, true);
+        
     }
     
     public void StopRun()
     {
-        _animator.SetBool(RunAnimationKey, false);
+        _animator.SetBool(Run, false);
     }
 
-    public void Died()
+    public void Dying()
     {
-        _animator.SetTrigger(DiedAnimationKey);
+        _animator.SetTrigger(Died);
     }
 
     public void Danced()
     {
-        _animator.SetTrigger(DancedAnimationKey);
+        _animator.SetTrigger(Dance);
         StopRun();
     }
 
-    public void Hit()
+    public void Hitting()
     {
-        _animator.SetTrigger(HitAnimationKey);
-        _animator.SetInteger(HitAnimationKeys, Random.Range(0, 2));
+        _animator.SetTrigger(Hit);
+        _animator.SetInteger(Hits, Random.Range(0, 2));
     }
     
     private void OnDisable()
     {
-        GameManager.IsPlayerDie -= Died;
+        GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
-        GameManager.IsStartGame -= Run;
+        GameManager.IsStartGame -= Running;
     }
 }

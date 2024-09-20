@@ -23,14 +23,14 @@ public class Player : MonoBehaviour
     public void Die()
     {
         _isDied = true;
-        _animatorController.Died();
+        _animatorController.Dying();
         Debug.Log("Die");
     }
 
     public void Hit()
     {
         _isDied = false;
-        _animatorController.Hit();
+        _animatorController.Hitting();
         Debug.Log("Hit");
     }
     

@@ -42,14 +42,14 @@ public class PlayerController : MonoBehaviour
 
     public void MovePlayer()
     {
-        var position = transform.position;
-        var expectedMoveX = position.x + (_joystick.EventDataDelta.x * _swipeSensivity) * (_speed * Time.deltaTime);
-        
-        _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
-        _moveZ = position.z + _forwardSpeed * Time.deltaTime;
+            var position = transform.position;
+            var expectedMoveX = position.x + (_joystick.EventDataDelta.x * _swipeSensivity) * (_speed * Time.deltaTime);
 
-        Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
+            _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
+            _moveZ = position.z + _forwardSpeed * Time.deltaTime;
 
-        _rigidbody.MovePosition(newPosition);
+            Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
+
+            _rigidbody.MovePosition(newPosition);
     }
 }
