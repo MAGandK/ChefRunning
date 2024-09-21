@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
-    
+
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
 
@@ -22,10 +22,11 @@ public class GameManager : MonoBehaviour
     {
         _player = player;
     }
+    
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !_isGameStarted)
+        if (Input.GetMouseButtonDown(0) && !_isGameStarted && !_isGameFinished)
         {
             StartGame();
         }
@@ -33,12 +34,14 @@ public class GameManager : MonoBehaviour
     
     public void StartGame()
     {
+        if (_isGameStarted) return;
         _isGameStarted = true;
         IsStartGame?.Invoke();
     }
 
     public void FinishGame()
     {
+        if (_isGameFinished) return;
         _isGameFinished = true;
         _player.RotatePlayerToTarget();
         IsFinishGame?.Invoke();
@@ -46,7 +49,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-       _player.Die();
+        if (_isGameFinished) return;
+        _player.Die();
        IsPlayerDie?.Invoke();
     }
 
