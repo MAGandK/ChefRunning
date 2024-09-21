@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameObject[] scenePrefabs;
     private DiContainer _container;
+    private List<GameObject> _loadedScenes = new List<GameObject>();
 
     [Inject]
     public void Construct(DiContainer container)
@@ -27,8 +28,14 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(int sceneIndex)
     {
+        foreach (var scene in _loadedScenes)
+        {
+            Destroy(scene);
+        }
+        _loadedScenes.Clear();
+        
         yield return new WaitForSeconds(0.5f);
         GameObject newScene = _container.InstantiatePrefab(scenePrefabs[sceneIndex]);
-        yield return null;
+        _loadedScenes.Add(newScene);
     }
 }
