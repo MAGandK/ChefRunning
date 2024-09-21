@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static event Action IsStartGame;
 
     private Player _player;
+    private SceneLoader _sceneLoader;
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
@@ -18,9 +19,10 @@ public class GameManager : MonoBehaviour
     public bool IsGameFinished => _isGameFinished;
 
     [Inject]
-    private void Construct( Player player)
+    private void Construct( Player player, SceneLoader sceneLoader)
     {
         _player = player;
+        _sceneLoader = sceneLoader;
     }
     
 
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     
     public void StartGame()
     {
+        _sceneLoader.LoadScene(0);
         if (_isGameStarted) return;
         _isGameStarted = true;
         IsStartGame?.Invoke();
@@ -61,5 +64,6 @@ public class GameManager : MonoBehaviour
 
        _player.ResetPlayerState();
        IsRestartGame?.Invoke();
+       _sceneLoader.LoadScene(1);
     }
 }
