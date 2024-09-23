@@ -27,11 +27,11 @@ public class TriggerFinish : MonoBehaviour
     }
     private void OnFinished()
     {
-        var levelIndex = PlayerPrefs.GetInt(StartUp.LevelKey);
-
-        levelIndex++;
-
-        PlayerPrefs.SetInt(StartUp.LevelKey, levelIndex);
+        // var levelIndex = PlayerPrefs.GetInt(StartUp.LevelKey);
+        //
+        // levelIndex++;
+        //
+        // PlayerPrefs.SetInt(StartUp.LevelKey, levelIndex);
 
         // var sceneName = SettingManager.Instance.LevelSettings.GetSceneName(levelIndex);
         //

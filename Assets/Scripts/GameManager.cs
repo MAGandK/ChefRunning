@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         if (_isGameStarted) return;
+    
         _isGameStarted = true;
+        Debug.Log("Игра начата"); 
         IsStartGame?.Invoke();
+        Debug.Log("Событие IsStartGame вызвано"); 
     }
 
     public void FinishGame()
