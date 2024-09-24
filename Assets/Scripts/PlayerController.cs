@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     private float _forwardSpeed = 0f; 
     [SerializeField]
     private Rigidbody _rigidbody;
-    [SerializeField]
-    private Joystick _joystick;
+    
     [SerializeField, Range(0f,1f)]
     private float _swipeSensivity;
  
     private Player _player;
     private GameManager _gameManager;
+    private Joystick _joystick;
     
     private float _moveX; 
     private float _moveZ;
@@ -24,10 +24,12 @@ public class PlayerController : MonoBehaviour
 
 
     [Inject]
-    private void Construct(Player player, GameManager gameManager)
+    private void Construct(Player player, GameManager gameManager, Joystick joystick)
     {
         _player = player;
         _gameManager = gameManager;
+        _joystick = joystick;
+
     }
 
     private void Update()

@@ -3,7 +3,7 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
+
     private Transform _targetTransform;
     
     private AnimatorController _animatorController;
