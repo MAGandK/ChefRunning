@@ -1,9 +1,14 @@
-using UnityEngine;
-using UnityEngine.UI;
+using Zenject;
+
 public class FailWindow : WindowBase
 {
-    [SerializeField]
-    private SceneManagement _sceneManagement;
+    private GameManager _gameManager;
+
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     public override WindowType Type
     {
         get
@@ -13,6 +18,6 @@ public class FailWindow : WindowBase
     }
     public void OnRestartButtonClick()
     {
-        _sceneManagement.ReastartLevel();
+        _gameManager.RestartGame();
     }
 }

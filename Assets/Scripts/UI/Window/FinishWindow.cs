@@ -1,11 +1,14 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+using Zenject;
 
 public class FinishWindow : WindowBase
 {
-    [SerializeField]
-    private SceneManagement _sceneManagement;
-    private int levelIndex;
+    private GameManager _gameManager;
+
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
 
     public override WindowType Type
     {
@@ -17,8 +20,6 @@ public class FinishWindow : WindowBase
 
     public void OnNextButtonClick()
     {
-       _sceneManagement.LoadNextLevel();
-        var sceneName = SettingManager.Instance.LevelSettings.GetSceneName(levelIndex);
-        SceneManager.LoadScene(sceneName);
+       _gameManager.StartGame();
     }
 }
