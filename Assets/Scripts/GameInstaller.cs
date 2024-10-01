@@ -12,6 +12,7 @@ public class GameInstaller : MonoInstaller
         Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
         Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
         
         Container.Bind<Player>().FromComponentInNewPrefab(playerPrefab).AsSingle().NonLazy();
     }

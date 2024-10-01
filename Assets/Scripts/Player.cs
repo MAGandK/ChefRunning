@@ -3,11 +3,7 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-
-    private Transform _targetTransform;
-    
     private AnimatorController _animatorController;
-    
     private bool _isDied = false;
 
     [Inject]
@@ -37,12 +33,16 @@ public class Player : MonoBehaviour
     public void ResetPlayerState()
     {
         _isDied = false;
+        _animatorController.ResetAnimation();
     } 
     
     public void RotatePlayerToTarget()
     { 
-        Vector3 direction = _targetTransform.position - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = targetRotation;
+        transform.Rotate(0, 180, 0);
+    }
+
+    public void Dansing()
+    {
+        _animatorController.Danced();
     }
 }

@@ -6,8 +6,9 @@ public class UIController : MonoBehaviour
     private void OnEnable()
     {
         GameManager.IsPlayerDie += OnPlayerDie;
-        GameManager.IsFinishGame += OnPlayerFinished;
-        GameManager.IsStartGame += StartGame;
+        GameManager.IsFinishGame += OnFinishGame;
+        GameManager.IsStartGame += OnStartGame;
+        GameManager.IsRestartGame += OnRestartGame;
     }
 
     private void Awake()
@@ -42,7 +43,7 @@ public class UIController : MonoBehaviour
         return null;
     }
     
-    private void StartGame()
+    private void OnStartGame()
     {
         ShowWindow(WindowType.MainWindow);
     }
@@ -51,15 +52,22 @@ public class UIController : MonoBehaviour
         ShowWindow(WindowType.FailWindow);
     }
     
-    private void OnPlayerFinished()
+    private void OnFinishGame()
     {
        ShowWindow(WindowType.FinishWindow);
+    }
+    
+    private void OnRestartGame()
+    {
+        ShowWindow(WindowType.MainWindow);
     }
 
     private void OnDisable()
     {
         GameManager.IsPlayerDie -= OnPlayerDie;
-        GameManager.IsFinishGame -= OnPlayerFinished;
-        GameManager.IsStartGame -= StartGame;
+        GameManager.IsFinishGame -= OnFinishGame;
+        GameManager.IsStartGame -= OnStartGame;
+        GameManager.IsRestartGame -= OnRestartGame;
     }
+    
 }

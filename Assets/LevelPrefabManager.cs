@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SceneLevel : MonoBehaviour
+public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
     private GameObject _currentScene; 
@@ -28,28 +28,33 @@ public class SceneLevel : MonoBehaviour
         }
     }
 
-    private void LoadScene()
+    public void LoadScene()
     {
-        if (_listScene.Count > 0)
+        if (_currentScene != null)
         {
-            _listScene[0].SetActive(false);
+            _currentScene.SetActive(false);
         }
+        
         int randomIndex = Random.Range(1, _listScene.Count);
         _currentScene = _listScene[randomIndex];
-
         _currentScene.SetActive(true);
-
         _currentScene.transform.position = new Vector3(100.7371f, -279.3909f, 585.5648f);
         Debug.Log("Загружен уровень: " + _currentScene.name);
+       
     }
     
     public void RestartScene() 
     {
         if (_currentScene != null)
         {
-            _currentScene.SetActive(false);
-            _currentScene.SetActive(true); 
-            Debug.Log("Перезагружена сцена: " + _currentScene.name);
+            _currentScene.SetActive(false); 
+            Debug.Log("Деактивирован уровень: " + _currentScene.name);
+        }
+
+        if (_currentScene != null)
+        {
+            _currentScene.SetActive(true);
+            Debug.Log("Перезагружен уровень: " + _currentScene.name);
         }
     }
 

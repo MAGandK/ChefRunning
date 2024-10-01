@@ -1,3 +1,4 @@
+using UnityEngine;
 using Zenject;
 
 public class FailWindow : WindowBase
@@ -7,7 +8,7 @@ public class FailWindow : WindowBase
     [Inject]
     private void Construct(GameManager gameManager)
     {
-        _gameManager = gameManager;
+       _gameManager = gameManager;
     }
     public override WindowType Type
     {
@@ -19,5 +20,6 @@ public class FailWindow : WindowBase
     public void OnRestartButtonClick()
     {
         _gameManager.RestartGame();
+        Debug.Log("Перезапуск сцены после провала");
     }
 }

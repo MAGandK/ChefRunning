@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
+    
+    private Vector3 _initialPlayerPosition;
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
@@ -24,7 +26,14 @@ public class GameManager : MonoBehaviour
         _player = player;
         _cameraController = cameraController;
     }
-    
+
+    private void Start()
+    {
+        if (_player != null)
+        {
+            _initialPlayerPosition = _player.transform.position;
+        }
+    }
 
     private void Update()
     {
@@ -49,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         if (_isGameFinished) return;
         _isGameFinished = true;
+        _player.Dansing();
         _player.RotatePlayerToTarget();
         IsFinishGame?.Invoke();
     }
@@ -66,6 +76,8 @@ public class GameManager : MonoBehaviour
         _isGameFinished = false;
 
        _player.ResetPlayerState();
+       _player.transform.position = _initialPlayerPosition;
+ 
        IsRestartGame?.Invoke();
     }
 }

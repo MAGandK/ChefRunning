@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
+
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCamera;

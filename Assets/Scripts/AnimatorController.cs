@@ -19,6 +19,7 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
+        GameManager.IsRestartGame += ResetAnimation;
     }
     
     public void Running()
@@ -49,10 +50,25 @@ public class AnimatorController : MonoBehaviour
         _animator.SetInteger(Hits, Random.Range(0, 2));
     }
     
+    public void ResetAnimation()
+    {
+        StopRun();  
+
+        _animator.SetBool(Died, false);  
+        _animator.ResetTrigger(Died);
+        _animator.ResetTrigger(Dance);
+        _animator.ResetTrigger(Hit);
+
+        Running();
+
+    }
+
+
     private void OnDisable()
     {
         GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
+        GameManager.IsRestartGame -= ResetAnimation;
     }
 }
