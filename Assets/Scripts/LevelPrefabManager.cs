@@ -11,20 +11,22 @@ public class LevelPrefabManager : MonoBehaviour
     {
         GameManager.IsStartGame += StartGame;
         GameManager.IsRestartGame += RestartScene;
+        GameManager.IsFinishGame += LoadScene;
     }
 
     private void StartGame()
     {
         StartScene(); 
-        LoadScene();  
+        LoadScene();
+
     }
     private void StartScene()
     {
         if (_listScene.Count > 0)
         {
-            _listScene[0].SetActive(true); 
-            _currentScene = _listScene[0]; 
-            Debug.Log("Стартовая сцена активна: " + _listScene[0].name);
+            _currentScene = _listScene[0];
+            _currentScene.SetActive(true); 
+            Debug.Log("Стартовая сцена активна: " + _currentScene.name);
         }
     }
 
@@ -32,7 +34,8 @@ public class LevelPrefabManager : MonoBehaviour
     {
         if (_currentScene != null)
         {
-            _currentScene.SetActive(false);
+            _currentScene.SetActive(false); 
+            Debug.Log("Деактивирован уровень: " + _currentScene.name);
         }
         
         int randomIndex = Random.Range(1, _listScene.Count);
@@ -40,7 +43,6 @@ public class LevelPrefabManager : MonoBehaviour
         _currentScene.SetActive(true);
         _currentScene.transform.position = new Vector3(100.7371f, -279.3909f, 585.5648f);
         Debug.Log("Загружен уровень: " + _currentScene.name);
-       
     }
     
     public void RestartScene() 
@@ -62,5 +64,6 @@ public class LevelPrefabManager : MonoBehaviour
     {
         GameManager.IsStartGame -= StartGame;
         GameManager.IsRestartGame -= RestartScene;
+        GameManager.IsFinishGame -= LoadScene;
     }
 }

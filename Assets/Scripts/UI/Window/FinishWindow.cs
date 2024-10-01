@@ -1,15 +1,16 @@
-using UnityEngine;
 using Zenject;
 
 public class FinishWindow : WindowBase
 {
-    private LevelPrefabManager _sceneLevel;
+    private LevelPrefabManager _levelPrefab;
 
     [Inject]
-    private void Construct(LevelPrefabManager sceneLevel)
+    private void Construct(LevelPrefabManager levelPrefabManager)
     {
-        _sceneLevel = sceneLevel;
+        _levelPrefab = levelPrefabManager;
+
     }
+
     public override WindowType Type
     {
         get
@@ -17,10 +18,10 @@ public class FinishWindow : WindowBase
             return WindowType.FinishWindow;
         }
     }
+
     public void OnNextButtonClick()
     {
-        this.gameObject.SetActive(false);
-        _sceneLevel.LoadScene();
-        Debug.Log("Нажата кнопка Next, загружается случайный уровень");
+        gameObject.SetActive(false);
+        _levelPrefab.LoadScene();
     }
 }

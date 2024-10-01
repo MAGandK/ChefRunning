@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private Player _player;
     private CameraController _cameraController;
     
+    
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
     
@@ -72,12 +73,15 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        _isGameStarted = false;
+        _isGameStarted = true;
         _isGameFinished = false;
 
        _player.ResetPlayerState();
        _player.transform.position = _initialPlayerPosition;
  
        IsRestartGame?.Invoke();
+       
+       StartGame();
+       Debug.Log("Продолжаем играть после рестарта"); 
     }
 }
