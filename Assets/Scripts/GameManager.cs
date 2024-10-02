@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
     
-    private Vector3 _initialPlayerPosition;
+    private Vector3 _playerPosition;
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
@@ -27,14 +27,7 @@ public class GameManager : MonoBehaviour
         _player = player;
         _cameraController = cameraController;
     }
-
-    private void Start()
-    {
-        if (_player != null)
-        {
-            _initialPlayerPosition = _player.transform.position;
-        }
-    }
+    
 
     private void Update()
     {
@@ -51,8 +44,8 @@ public class GameManager : MonoBehaviour
         _isGameStarted = true;
         Debug.Log("Игра начата"); 
         IsStartGame?.Invoke();
-        Debug.Log("Событие IsStartGame вызвано"); 
         _cameraController.SetPlayer(_player.transform);
+        _playerPosition = _player.transform.position;
     }
 
     public void FinishGame()
@@ -61,7 +54,9 @@ public class GameManager : MonoBehaviour
         _isGameFinished = true;
         _player.Dansing();
         _player.RotatePlayerToTarget();
+        _cameraController.SetPlayer(_player.transform);
         IsFinishGame?.Invoke();
+        
     }
 
     public void PlayerDied()
@@ -77,11 +72,20 @@ public class GameManager : MonoBehaviour
         _isGameFinished = false;
 
        _player.ResetPlayerState();
-       _player.transform.position = _initialPlayerPosition;
+       ResetPlayerPosition();
  
        IsRestartGame?.Invoke();
        
        StartGame();
        Debug.Log("Продолжаем играть после рестарта"); 
+    }
+    
+    private void ResetPlayerPosition()
+    {
+        if (_player != null)
+        {
+            _player.transform.position = _playerPosition; 
+            Debug.Log("Позиция игрока сброшена на стартовую: " + _playerPosition);
+        }
     }
 }

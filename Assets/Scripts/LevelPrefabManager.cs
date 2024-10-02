@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,10 +17,10 @@ public class LevelPrefabManager : MonoBehaviour
 
     private void StartGame()
     {
-        StartScene(); 
+        StartScene();
         LoadScene();
-
     }
+    
     private void StartScene()
     {
         if (_listScene.Count > 0)

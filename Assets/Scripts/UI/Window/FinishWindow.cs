@@ -2,13 +2,12 @@ using Zenject;
 
 public class FinishWindow : WindowBase
 {
-    private LevelPrefabManager _levelPrefab;
+    private GameManager _gameManager;
 
     [Inject]
-    private void Construct(LevelPrefabManager levelPrefabManager)
+    private void Construct(GameManager gameManager)
     {
-        _levelPrefab = levelPrefabManager;
-
+        _gameManager = gameManager;
     }
 
     public override WindowType Type
@@ -22,6 +21,6 @@ public class FinishWindow : WindowBase
     public void OnNextButtonClick()
     {
         gameObject.SetActive(false);
-        _levelPrefab.LoadScene();
+       _gameManager.FinishGame();
     }
 }

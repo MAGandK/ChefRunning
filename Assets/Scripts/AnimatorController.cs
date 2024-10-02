@@ -8,7 +8,6 @@ public class AnimatorController : MonoBehaviour
     private Animator _animator;
     
     public int Run = Animator.StringToHash("IsRun");
-
     public int Died = Animator.StringToHash("Died");
     public int Dance = Animator.StringToHash("Danced");
     public int Hit = Animator.StringToHash("IsHit");
@@ -25,7 +24,6 @@ public class AnimatorController : MonoBehaviour
     public void Running()
     {
         _animator.SetBool(Run, true);
-        
     }
     
     public void StopRun()
