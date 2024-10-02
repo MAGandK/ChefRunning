@@ -19,6 +19,7 @@ public class FailWindow : WindowBase
     }
     public void OnRestartButtonClick()
     {
+        base.Hide();
         _gameManager.RestartGame();
         Debug.Log("Перезапуск сцены после провала");
     }

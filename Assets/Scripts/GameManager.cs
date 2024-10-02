@@ -66,24 +66,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        _isGameStarted = true;
-        _isGameFinished = false;
-
-       _player.ResetPlayerState();
+       //IsRestartGame?.Invoke();
        ResetPlayerPosition();
- 
-       IsRestartGame?.Invoke();
-       
        StartGame();
-       Debug.Log("Продолжаем играть после рестарта"); 
     }
     
     private void ResetPlayerPosition()
     {
-        if (_player != null)
-        {
             _player.transform.position = _playerPosition; 
-            Debug.Log("Позиция игрока сброшена на стартовую: " + _playerPosition);
-        }
     }
 }

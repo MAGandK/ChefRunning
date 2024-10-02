@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     {
         _isDied = false;
         _animatorController.ResetAnimation();
+        Debug.Log("Reset player");
     } 
     
     public void RotatePlayerToTarget()
