@@ -13,7 +13,10 @@ public class TriggerFinish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _gameManager.FinishGame();
-        Debug.Log("Finish");
+        if (!_gameManager.IsGameFinished)
+        {
+            _gameManager.FinishGame();
+            Debug.Log("Игра завершена через триггер");
+        }
     }
 }

@@ -69,5 +69,4 @@ public class UIController : MonoBehaviour
         GameManager.IsStartGame -= OnStartGame;
         GameManager.IsRestartGame -= OnRestartGame;
     }
-    
 }

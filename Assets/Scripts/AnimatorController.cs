@@ -24,6 +24,7 @@ public class AnimatorController : MonoBehaviour
     public void Running()
     {
         _animator.SetBool(Run, true);
+        
     }
     
     public void StopRun()
@@ -38,8 +39,8 @@ public class AnimatorController : MonoBehaviour
 
     public void Danced()
     {
-        _animator.SetTrigger(Dance);
         StopRun();
+        _animator.SetTrigger(Dance);
     }
 
     public void Hitting()
@@ -50,15 +51,15 @@ public class AnimatorController : MonoBehaviour
     
     public void ResetAnimation()
     {
-        StopRun();  
-
+        _animator.SetBool(Run, false);
         _animator.SetBool(Died, false);  
+        
         _animator.ResetTrigger(Died);
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);
-
+        
+        Debug.Log("Анимации сброшены");
         Running();
-
     }
 
 

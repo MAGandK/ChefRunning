@@ -54,9 +54,7 @@ public class GameManager : MonoBehaviour
         _isGameFinished = true;
         _player.Dansing();
         _player.RotatePlayerToTarget();
-        _cameraController.SetPlayer(_player.transform);
         IsFinishGame?.Invoke();
-        
     }
 
     public void PlayerDied()
