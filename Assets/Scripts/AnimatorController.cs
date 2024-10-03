@@ -34,12 +34,14 @@ public class AnimatorController : MonoBehaviour
 
     public void Dying()
     {
+        _animator.SetTrigger(Died);
         _animator.SetBool(Died, true);
     }
 
     public void Danced()
     {
         StopRun();
+        _animator.SetTrigger(Dance);
         _animator.SetBool(Dance,true);
     }
 
