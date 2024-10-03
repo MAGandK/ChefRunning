@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
     
     public void StartGame()
     {
-        if (_isGameStarted) return;
-    
         _isGameStarted = true;
         Debug.Log("Игра начата"); 
         IsStartGame?.Invoke();
@@ -50,29 +48,27 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        if (_isGameFinished) return;
         _isGameFinished = true;
-        _player.Dansing();
+        _player.Dance();
         _player.RotatePlayerToTarget();
         IsFinishGame?.Invoke();
     }
 
     public void PlayerDied()
     {
-        if (_isGameFinished) return;
         _player.Die();
        IsPlayerDie?.Invoke();
     }
 
     public void RestartGame()
     {
-       //IsRestartGame?.Invoke();
        ResetPlayerPosition();
+       IsRestartGame?.Invoke();
        StartGame();
     }
     
     private void ResetPlayerPosition()
     {
-            _player.transform.position = _playerPosition; 
+        _player.transform.position = _playerPosition; 
     }
 }

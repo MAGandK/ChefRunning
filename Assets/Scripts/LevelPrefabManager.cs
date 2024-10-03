@@ -52,7 +52,7 @@ public class LevelPrefabManager : MonoBehaviour
             _currentScene.SetActive(false); 
             Debug.Log("Деактивирован уровень: " + _currentScene.name);
         }
-
+        
         if (_currentScene != null)
         {
             _currentScene.SetActive(true);

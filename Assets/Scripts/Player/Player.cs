@@ -23,26 +23,18 @@ public class Player : MonoBehaviour
         Debug.Log("Die");
     }
 
-    public void Hit()
+    public void TakeHit()
     {
-        _isDied = false;
         _animatorController.Hitting();
         Debug.Log("Hit");
     }
-    
-    public void ResetPlayerState()
-    {
-        _isDied = false;
-        _animatorController.ResetAnimation();
-        Debug.Log("Reset player");
-    } 
     
     public void RotatePlayerToTarget()
     { 
         transform.Rotate(0, 180, 0);
     }
 
-    public void Dansing()
+    public void Dance()
     {
         _animatorController.Danced();
     }

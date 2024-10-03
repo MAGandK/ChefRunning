@@ -18,7 +18,7 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
-        GameManager.IsRestartGame += ResetAnimation;
+       // GameManager.IsRestartGame += ResetAnimation;
     }
     
     public void Running()
@@ -61,8 +61,6 @@ public class AnimatorController : MonoBehaviour
         _animator.ResetTrigger(Died);
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);
-        
-        Running();
     }
 
 
@@ -71,6 +69,6 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
-        GameManager.IsRestartGame -= ResetAnimation;
+        //GameManager.IsRestartGame -= ResetAnimation;
     }
 }
