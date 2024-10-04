@@ -4,7 +4,7 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     private AnimatorController _animatorController;
-    private bool _isDied = false;
+    private bool _isDead = false;
 
     [Inject]
     private void Construct(AnimatorController animatorController)
@@ -13,29 +13,33 @@ public class Player : MonoBehaviour
     }
     public bool IsDead
     {
-        get => _isDied;
+        get => _isDead;
     }
     
     public void Die()
     {
-        _isDied = true;
+        _isDead = true;
         _animatorController.Dying();
-        Debug.Log("Die");
     }
 
     public void TakeHit()
     {
         _animatorController.Hitting();
-        Debug.Log("Hit");
     }
     
-    public void RotatePlayerToTarget()
-    { 
-        transform.Rotate(0, 180, 0);
-    }
+    // public void RotatePlayerToTarget()
+    // { 
+    //     transform.Rotate(0, 180, 0);
+    // }
 
     public void Dance()
     {
         _animatorController.Danced();
+    }
+    
+    public void ResetState()
+    {
+        _isDead = false;
+        _animatorController.ResetAnimation();
     }
 }

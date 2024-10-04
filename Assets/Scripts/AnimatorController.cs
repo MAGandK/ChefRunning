@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,13 +17,12 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
-       // GameManager.IsRestartGame += ResetAnimation;
+       GameManager.IsRestartGame += ResetAnimation;
     }
     
     public void Running()
     {
         _animator.SetBool(Run, true);
-        Debug.Log("Running 1234");
     }
     
     public void StopRun()
@@ -53,22 +51,19 @@ public class AnimatorController : MonoBehaviour
     
     public void ResetAnimation()
     {
-        Debug.Log("Анимации обновились");
-        
         _animator.SetBool(Run, false);
         _animator.SetBool(Died, false);  
-        
+        _animator.SetBool(Dance, false);  
         _animator.ResetTrigger(Died);
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);
     }
-
-
+    
     private void OnDisable()
     {
         GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
-        //GameManager.IsRestartGame -= ResetAnimation;
+        GameManager.IsRestartGame -= ResetAnimation;
     }
 }

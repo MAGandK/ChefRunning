@@ -22,9 +22,8 @@ public class FinishWindow : WindowBase
 
     public void OnNextButtonClick()
     {
-        gameObject.SetActive(false);
-
-        _gameManager.RestartGame(); 
-        _levelPrefabManager.LoadScene(); 
+       base.Hide();
+       _gameManager.RestartGame(); 
+       _levelPrefabManager.LoadScene(); 
     }
 }

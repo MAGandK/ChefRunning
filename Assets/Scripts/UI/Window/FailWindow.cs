@@ -21,6 +21,6 @@ public class FailWindow : WindowBase
     {
         base.Hide();
         _gameManager.RestartGame();
-        Debug.Log("Перезапуск сцены после провала");
+        Debug.Log("Рестарт по кнопке");
     }
 }
