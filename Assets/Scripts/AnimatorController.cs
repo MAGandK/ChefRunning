@@ -23,12 +23,9 @@ public class AnimatorController : MonoBehaviour
     public void Running()
     {
         _animator.SetBool(Run, true);
-<<<<<<< HEAD
-        Debug.Log("Running 123456");
-=======
         _animator.SetBool(Died, false);
         _animator.SetBool(Dance, false);
->>>>>>> a007a6a7b99ced0a1bc18f618ec67d65d2fc1cc1
+
     }
     
     public void StopRun()
