@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
     {
         _isGameFinished = true;
         _player.Dance();
-        _player.RotatePlayerToTarget();
         IsFinishGame?.Invoke();
     }
 
@@ -62,12 +61,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-       ResetPlayerPosition();
-       IsRestartGame?.Invoke();
-       StartGame();
+        _isGameFinished = false;
+        ResetPlayerPosition();
+        _player.ResetState();  
+        IsRestartGame?.Invoke();  
+        StartGame();
     }
     
-    private void ResetPlayerPosition()
+    public void ResetPlayerPosition()
     {
         _player.transform.position = _playerPosition; 
     }

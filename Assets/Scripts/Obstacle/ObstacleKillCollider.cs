@@ -11,7 +11,7 @@ public class ObstacleKillCollider : MonoBehaviour
     private GameManager _gameManager;
     
     [Inject]
-    private void Constract(GameManager gameManager)
+    private void Construct(GameManager gameManager)
     {
         _gameManager = gameManager;
     }

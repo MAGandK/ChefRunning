@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,8 +13,9 @@ public class LevelPrefabManager : MonoBehaviour
         GameManager.IsStartGame += StartGame;
         GameManager.IsRestartGame += RestartScene;
         GameManager.IsFinishGame += LoadScene;
+        GameManager.IsPlayerDie += RestartScene;
     }
-
+    
     private void StartGame()
     {
         StartScene();
@@ -26,7 +28,6 @@ public class LevelPrefabManager : MonoBehaviour
         {
             _currentScene = _listScene[0];
             _currentScene.SetActive(true); 
-            Debug.Log("Стартовая сцена активна: " + _currentScene.name);
         }
     }
 
@@ -35,7 +36,7 @@ public class LevelPrefabManager : MonoBehaviour
         if (_currentScene != null)
         {
             _currentScene.SetActive(false); 
-            Debug.Log("Деактивирован уровень: " + _currentScene.name);
+           Debug.Log("Деактивирован уровень: " + _currentScene.name);
         }
         
         int randomIndex = Random.Range(1, _listScene.Count);
@@ -50,7 +51,7 @@ public class LevelPrefabManager : MonoBehaviour
         if (_currentScene != null)
         {
             _currentScene.SetActive(false); 
-            Debug.Log("Деактивирован уровень: " + _currentScene.name);
+            Debug.Log("деактивация при рестарте уровень: " + _currentScene.name);
         }
         
         if (_currentScene != null)
