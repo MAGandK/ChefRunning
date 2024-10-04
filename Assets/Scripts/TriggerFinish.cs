@@ -16,7 +16,6 @@ public class TriggerFinish : MonoBehaviour
         if (!_gameManager.IsGameFinished)
         {
             _gameManager.FinishGame();
-            Debug.Log("Игра завершена через триггер");
         }
     }
 }

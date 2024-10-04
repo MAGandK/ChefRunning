@@ -23,6 +23,8 @@ public class AnimatorController : MonoBehaviour
     public void Running()
     {
         _animator.SetBool(Run, true);
+        _animator.SetBool(Died, false);
+        _animator.SetBool(Dance, false);
     }
     
     public void StopRun()

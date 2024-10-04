@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class TriggerObstacle : MonoBehaviour
+public class TriggerPlayerDied : MonoBehaviour
 {
     private GameManager _gameManager;
 

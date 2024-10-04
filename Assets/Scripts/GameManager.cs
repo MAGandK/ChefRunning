@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        _isGameFinished = false;
         ResetPlayerPosition();
         _player.ResetState();  
         IsRestartGame?.Invoke();  
