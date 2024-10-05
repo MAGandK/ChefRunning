@@ -6,7 +6,9 @@ using Random = UnityEngine.Random;
 public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
-    private GameObject _currentScene; 
+    internal List<GameObject> _coins = new List<GameObject>();
+    private GameObject _currentScene;
+    private Vector3 _startPosition = new Vector3(100.7371f, -279.3909f, 585.5648f);
     
     private void OnEnable()
     {
@@ -40,9 +42,10 @@ public class LevelPrefabManager : MonoBehaviour
         }
         
         int randomIndex = Random.Range(1, _listScene.Count);
+       
         _currentScene = _listScene[randomIndex];
         _currentScene.SetActive(true);
-        _currentScene.transform.position = new Vector3(100.7371f, -279.3909f, 585.5648f);
+        _currentScene.transform.position = _startPosition;
         Debug.Log("Загружен уровень: " + _currentScene.name);
     }
     
@@ -58,6 +61,11 @@ public class LevelPrefabManager : MonoBehaviour
         {
             _currentScene.SetActive(true);
             Debug.Log("Перезагружен уровень: " + _currentScene.name);
+        }
+
+        foreach (var coins in _coins)
+        {
+            coins.SetActive(true);
         }
     }
 

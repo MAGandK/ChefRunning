@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static event Action IsStartGame;
 
     private Player _player;
-    private CameraController _cameraController;
+    //private CameraController _cameraController;
     
     
     private bool _isGameStarted = false;
@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
     public bool IsGameFinished => _isGameFinished;
 
     [Inject]
-    private void Construct( Player player, CameraController cameraController)
+    private void Construct( Player player)
     {
         _player = player;
-        _cameraController = cameraController;
+       // _cameraController = cameraController;
     }
     
 
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         _isGameStarted = true;
         Debug.Log("Игра начата"); 
         IsStartGame?.Invoke();
-        _cameraController.SetPlayer(_player.transform);
+//        _cameraController.SetPlayer(_player.transform);
         _playerPosition = _player.transform.position;
     }
 

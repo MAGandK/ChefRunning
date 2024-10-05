@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9103540126287475676}
   - component: {fileID: 5330465453039828089}
   - component: {fileID: 7934613977621776563}
-  - component: {fileID: 8781171542917403659}
   - component: {fileID: 8781171542917403700}
   - component: {fileID: 4009502431040486770}
   m_Layer: 8
@@ -86,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8781171542917403659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8439065309000853862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9a8ba7f2b0044eea06b6d2f4f3ef8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainWindow: {fileID: 0}
 --- !u!65 &8781171542917403700
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,5 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c581b6fbf9aa498d9dbcdef54cf9aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 200
-  maxRotationSpeed: 300
+  rotationDelay: 2

@@ -20,7 +20,6 @@ public class MainWindow : WindowBase
     private float startDistance;
     private float endDistance;
     private Vector3 _endPositionOffset;
-    
     private Player _player;
 
     [Inject]
@@ -70,7 +69,6 @@ public class MainWindow : WindowBase
     public void OnCoinCollected()
     {
         _coinCount++;
-
         _scoreText.text = _coinCount.ToString();
     } 
     
