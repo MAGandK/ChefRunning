@@ -35,8 +35,27 @@ public class GameManager : MonoBehaviour
         {
             StartGame();
         }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            TestDied();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TestFinishGame();
+        }
     }
     
+    public void TestDied()
+    {
+        PlayerDied();
+        Debug.Log("Тест: Игрок умер");
+    }
+    
+    public void TestFinishGame()
+    {
+        FinishGame();
+        Debug.Log("Тест: Игра завершена");
+    }
     public void StartGame()
     {
         _isGameStarted = true;

@@ -22,9 +22,12 @@ public class AnimatorController : MonoBehaviour
     
     public void Running()
     {
-        _animator.SetBool(Run, true);
-        _animator.SetBool(Died, false);
-        _animator.SetBool(Dance, false);
+        if (!_animator.GetBool(Died)) 
+        {
+            _animator.SetBool(Run, true);
+            _animator.SetBool(Died, false);
+            _animator.SetBool(Dance, false);
+        }
 
     }
     
@@ -35,6 +38,7 @@ public class AnimatorController : MonoBehaviour
 
     public void Dying()
     {
+        StopRun();
         _animator.SetTrigger(Died);
         _animator.SetBool(Died, true);
     }
