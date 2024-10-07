@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,73 +5,74 @@ using Random = UnityEngine.Random;
 public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
-    internal List<GameObject> _coins = new List<GameObject>();
+    internal List<GameObject> _coin = new List<GameObject>();
+    internal List<GameObject> _obstacle = new List<GameObject>();
     private GameObject _currentScene;
+    private GameObject _firstLoadedScene;
     private Vector3 _startPosition = new Vector3(100.7371f, -279.3909f, 585.5648f);
     
     private void OnEnable()
     {
-        GameManager.IsStartGame += StartGame;
-        GameManager.IsRestartGame += RestartScene;
-        GameManager.IsFinishGame += LoadScene;
-        GameManager.IsPlayerDie += RestartScene;
+        GameManager.IsStartGame += StartFirstScene;
+        GameManager.IsRestartGame +=ReloadScene;
+        GameManager.IsFinishGame += NewScene;
+        GameManager.IsPlayerDie += ReloadScene;
     }
-    
-    private void StartGame()
+
+    private void Start()
     {
-        StartScene();
-        LoadScene();
+       StartScene();
     }
-    
-    private void StartScene()
+    public void StartScene()
     {
         if (_listScene.Count > 0)
         {
             _currentScene = _listScene[0];
-            _currentScene.SetActive(true); 
+            _currentScene.SetActive(true);
         }
     }
 
-    public void LoadScene()
+    public void StartFirstScene()
     {
-        if (_currentScene != null)
+        _currentScene.SetActive(false);
+        _currentScene = _listScene[1];
+        _currentScene.SetActive(true);
+    }
+    
+    public void NewScene()
+    {
+        foreach (var scenes in _listScene)
         {
-            _currentScene.SetActive(false); 
-           Debug.Log("Деактивирован уровень: " + _currentScene.name);
+            scenes.SetActive(false); 
         }
-        
+
         int randomIndex = Random.Range(1, _listScene.Count);
-       
         _currentScene = _listScene[randomIndex];
         _currentScene.SetActive(true);
         _currentScene.transform.position = _startPosition;
-        Debug.Log("Загружен уровень: " + _currentScene.name);
     }
-    
-    public void RestartScene() 
-    {
-        if (_currentScene != null)
-        {
-            _currentScene.SetActive(false); 
-            Debug.Log("деактивация при рестарте уровень: " + _currentScene.name);
-        }
-        
-        if (_currentScene != null)
-        {
-            _currentScene.SetActive(true);
-            Debug.Log("Перезагружен уровень: " + _currentScene.name);
-        }
 
-        foreach (var coins in _coins)
+    public void ReloadScene()
+    {
+        _currentScene.SetActive(false);
+        _currentScene.SetActive(true);
+        
+        foreach (var coins in _coin)
         {
             coins.SetActive(true);
+        }
+        
+        foreach (var obstacles in _obstacle)
+        {
+            obstacles.SetActive(true);
         }
     }
 
     private void OnDisable()
     {
-        GameManager.IsStartGame -= StartGame;
-        GameManager.IsRestartGame -= RestartScene;
-        GameManager.IsFinishGame -= LoadScene;
+        GameManager.IsStartGame -= StartFirstScene;
+        GameManager.IsRestartGame -= ReloadScene;
+        GameManager.IsFinishGame -= NewScene;
+        GameManager.IsPlayerDie -= ReloadScene;
     }
 }

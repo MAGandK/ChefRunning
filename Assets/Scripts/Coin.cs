@@ -40,7 +40,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CollectCoin();
-        _levelPrefabManager._coins.Add(gameObject);
+        _levelPrefabManager._coin.Add(gameObject);
         gameObject.SetActive(false);
     }
     private void CollectCoin()

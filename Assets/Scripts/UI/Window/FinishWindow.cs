@@ -24,6 +24,6 @@ public class FinishWindow : WindowBase
     {
        base.Hide();
        _gameManager.RestartGame();
-       _levelPrefabManager.LoadScene(); 
+       _levelPrefabManager.NewScene(); 
     }
 }
