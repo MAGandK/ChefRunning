@@ -6,7 +6,7 @@ public class ObstacleInteraction : MonoBehaviour
     public static event Action Interaction = delegate { };
 
     [SerializeField]
-    private ObstacleKillCollider _killPlayerCollider;
+    private Obstacle _killPlayerCollider;
 
     private bool _isInteracted;
 

@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
-    internal List<GameObject> _coin = new List<GameObject>();
+    internal List<GameObject> _coins = new List<GameObject>();
     internal List<GameObject> _obstacle = new List<GameObject>();
     private GameObject _currentScene;
     private GameObject _firstLoadedScene;
@@ -16,7 +16,7 @@ public class LevelPrefabManager : MonoBehaviour
         GameManager.IsStartGame += StartFirstScene;
         GameManager.IsRestartGame +=ReloadScene;
         GameManager.IsFinishGame += NewScene;
-        GameManager.IsPlayerDie += ReloadScene;
+        //GameManager.IsPlayerDie += ReloadScene;
     }
 
     private void Start()
@@ -56,15 +56,22 @@ public class LevelPrefabManager : MonoBehaviour
     {
         _currentScene.SetActive(false);
         _currentScene.SetActive(true);
-        
-        foreach (var coins in _coin)
+
+        if (_coins.Count > 0)
         {
-            coins.SetActive(true);
+            foreach (var coin in _coins)
+            {
+                coin.SetActive(true);
+            }
         }
-        
-        foreach (var obstacles in _obstacle)
+
+        if (_obstacle.Count > 0)
         {
-            obstacles.SetActive(true);
+            foreach (var obstacles in _obstacle)
+            {
+                obstacles.SetActive(true);
+                obstacles.GetComponent<Obstacle>().ResetObstacle();
+            }
         }
     }
 
@@ -73,6 +80,6 @@ public class LevelPrefabManager : MonoBehaviour
         GameManager.IsStartGame -= StartFirstScene;
         GameManager.IsRestartGame -= ReloadScene;
         GameManager.IsFinishGame -= NewScene;
-        GameManager.IsPlayerDie -= ReloadScene;
+        //GameManager.IsPlayerDie -= ReloadScene;
     }
 }

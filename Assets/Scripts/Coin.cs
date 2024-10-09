@@ -20,6 +20,11 @@ public class Coin : MonoBehaviour
     {
         _transform = transform;
     }
+    
+    private void OnEnable()
+    {
+        StartCoroutine(StartRotationWithDelay());
+    }
 
     private void Start()
     {
@@ -40,7 +45,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CollectCoin();
-        _levelPrefabManager._coin.Add(gameObject);
+        _levelPrefabManager._coins.Add(gameObject);
         gameObject.SetActive(false);
     }
     private void CollectCoin()

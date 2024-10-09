@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     public static event Action IsStartGame;
 
     private Player _player;
-    //private CameraController _cameraController;
-    
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
@@ -25,7 +23,6 @@ public class GameManager : MonoBehaviour
     private void Construct( Player player)
     {
         _player = player;
-       // _cameraController = cameraController;
     }
     
 
