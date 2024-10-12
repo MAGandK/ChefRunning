@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         _isGameStarted = true;
-        Debug.Log("Игра начата"); 
         IsStartGame?.Invoke();
         _playerPosition = _player.transform.position;
     }

@@ -52,6 +52,7 @@ MonoBehaviour:
   _time: 1
   _targetPosition: {fileID: 1758739601625346673}
   _rotationSpeed: 1.5
+  _explosionEffect: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!65 &8626065101178044617
 BoxCollider:
   m_ObjectHideFlags: 0

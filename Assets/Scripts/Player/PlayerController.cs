@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
  
     private Player _player;
     private GameManager _gameManager;
-    private Joystick _joystick;
+    private JoystickMy _joystick;
     
     private float _moveX; 
     private float _moveZ;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
 
     [Inject]
-    private void Construct(Player player, GameManager gameManager, Joystick joystick)
+    private void Construct(Player player, GameManager gameManager, JoystickMy joystick)
     {
         _player = player;
         _gameManager = gameManager;

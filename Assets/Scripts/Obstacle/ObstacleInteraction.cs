@@ -12,7 +12,7 @@ public class ObstacleInteraction : MonoBehaviour
 
     private void OnEnable()
     {
-        Joystick.Click += JoystickClick;
+        JoystickMy.Click += JoystickClick;
     }
     
     private void OnTriggerEnter(Collider other)
@@ -21,7 +21,7 @@ public class ObstacleInteraction : MonoBehaviour
         {
             Time.timeScale = 0.7f;
             _isInteracted = true;
-            Interaction();
+            Interaction?.Invoke();
         }
     }
     private void JoystickClick()
@@ -30,11 +30,12 @@ public class ObstacleInteraction : MonoBehaviour
         {
             Time.timeScale = 1;
             _killPlayerCollider.DisableKillAbility();
+            _isInteracted = false; 
         }
     }
     
     private void OnDisable()
     {
-        Joystick.Click -= JoystickClick;
+        JoystickMy.Click -= JoystickClick;
     }
 }

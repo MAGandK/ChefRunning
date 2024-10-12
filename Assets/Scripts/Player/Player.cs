@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public void TakeHit()
     {
         _animatorController.Hitting();
+        Debug.Log("Удар игроком");
     }
     
     // public void RotatePlayerToTarget()

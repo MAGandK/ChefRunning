@@ -14,7 +14,8 @@ public class Obstacle : MonoBehaviour
     [SerializeField]
     private float _rotationSpeed;
 
-    private ObstacleElementas[] _elements;
+    [SerializeField]
+    private GameObject _explosionEffect; 
     
     private Vector3 _startMovementPosition; 
     private Quaternion _startMovementRotation;
@@ -58,22 +59,13 @@ public class Obstacle : MonoBehaviour
             {
                 Push();
                 player.TakeHit();
+                Debug.Log("HIT");
             }
         }
     }
     internal void DisableKillAbility()
     {
         _isKilleble = false;
-    }
-    private void Start()
-    {
-        _elements = GetComponentsInChildren<ObstacleElementas>();
-
-        for (int i = 0; i < _elements.Length; i++)
-        {
-            _elements[i].Setup(LayerMask.NameToLayer("Player"));
-            _elements[i].Disable();
-        }
     }
     
     private void StartMovement()
@@ -120,10 +112,12 @@ public class Obstacle : MonoBehaviour
 
     public void Push()
     {
-        for (int i = 0; i < _elements.Length; i++)
+        if (_explosionEffect != null)
         {
-            _elements[i].Enable();
+            Instantiate(_explosionEffect, _object.position, Quaternion.identity);
         }
+        
+        _object.gameObject.SetActive(false);
 
         ObstacleCrushs();
     }
@@ -132,12 +126,8 @@ public class Obstacle : MonoBehaviour
     {
         _object.position = _startMovementPosition; 
         _object.rotation = _startMovementRotation; 
+        _object.gameObject.SetActive(true);
 
-        for (int i = 0; i < _elements.Length; i++)
-        {
-            _elements[i].Disable();
-        }
-        
         StartMovement();
     }
 

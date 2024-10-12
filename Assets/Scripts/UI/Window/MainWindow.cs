@@ -39,7 +39,7 @@ public class MainWindow : WindowBase
     private void OnEnable()
     {
         ObstacleInteraction.Interaction += ShowText;
-        Joystick.Click += JoystickClick;
+        JoystickMy.Click += JoystickClick;
     }
 
     private void Update()
@@ -87,6 +87,6 @@ public class MainWindow : WindowBase
     private void OnDisable()
     {
         ObstacleInteraction.Interaction -= ShowText;
-        Joystick.Click -= JoystickClick;
+        JoystickMy.Click -= JoystickClick;
     }
 }
