@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -21,7 +20,6 @@ public class Obstacle : MonoBehaviour
     private Quaternion _startMovementRotation;
     
     private bool _isKilleble;
-    public event Action ObstacleCrushs = delegate { };
     
     private GameManager _gameManager;
     
@@ -37,8 +35,6 @@ public class Obstacle : MonoBehaviour
     }
     private void OnEnable()
     {
-        ObstacleCrushs += ObstacleCrush_Push;
-
         _startMovementPosition = _object.transform.position;
         _startMovementRotation = _object.transform.rotation;
 
@@ -51,17 +47,15 @@ public class Obstacle : MonoBehaviour
         {
             if (_isKilleble)
             {
-                Time.timeScale = 1;
-                player.Die();
                 _gameManager.PlayerDied();
             }
             else
             {
                 Push();
-                player.TakeHit();
-                Debug.Log("HIT");
+                _gameManager.PlayerHit();
             }
         }
+        DisableKillAbility();
     }
     internal void DisableKillAbility()
     {
@@ -104,22 +98,13 @@ public class Obstacle : MonoBehaviour
             }
         }
     }
-
-    private void ObstacleCrush_Push()
-    {
-        StopAllCoroutines();
-    }
-
     public void Push()
     {
         if (_explosionEffect != null)
         {
             Instantiate(_explosionEffect, _object.position, Quaternion.identity);
         }
-        
         _object.gameObject.SetActive(false);
-
-        ObstacleCrushs();
     }
 
     public void ResetObstacle()
@@ -134,10 +119,5 @@ public class Obstacle : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(_targetPosition.position, radius: 1);
-    }
-    
-    private void OnDisable()
-    {
-        ObstacleCrushs -= ObstacleCrush_Push;
     }
 }

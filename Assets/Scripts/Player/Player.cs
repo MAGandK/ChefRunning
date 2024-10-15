@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private AnimatorController _animatorController;
     private bool _isDead = false;
 
+    
     [Inject]
     private void Construct(AnimatorController animatorController)
     {
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
     public void TakeHit()
     {
         _animatorController.Hitting();
-        Debug.Log("Удар игроком");
     }
     
     // public void RotatePlayerToTarget()

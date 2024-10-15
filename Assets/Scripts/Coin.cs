@@ -9,12 +9,14 @@ public class Coin : MonoBehaviour
     public float rotationDelay = 0f;
     private UIController _uiController;
     private LevelPrefabManager _levelPrefabManager;
+    private AudioManager _audioManager;
     
     [Inject]
-    public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager)
+    public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager, AudioManager audioManager)
     {
         _uiController = uiController;
         _levelPrefabManager = levelPrefabManager;
+        _audioManager = audioManager;
     }
     private void Awake()
     {
@@ -55,5 +57,7 @@ public class Coin : MonoBehaviour
         {
             mainWindow.OnCoinCollected();
         }
+        
+        _audioManager.PlaySound(SoundType.Coin); 
     }
 }

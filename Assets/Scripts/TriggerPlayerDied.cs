@@ -16,7 +16,6 @@ public class TriggerPlayerDied : MonoBehaviour
         Player player = other.GetComponent<Player>();
         if (player != null && !player.IsDead)
         {
-            player.Die();
             _gameManager.PlayerDied(); 
         }
     }

@@ -1,11 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class JoystickMy : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public static event Action Click = delegate { };
-    
     [SerializeField] private RectTransform _image; 
     
     [SerializeField] private RectTransform _imageHandle; 
@@ -27,15 +24,12 @@ public class JoystickMy : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 
         _imageHandle.anchoredPosition = offset; 
         EventDataDelta = offset;
-        
-        Click();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         EventDataDelta = Vector2.zero;
         _imageHandle.anchoredPosition = Vector2.zero; 
-        Click();
     }
 
     public void OnPointerUp(PointerEventData eventData)

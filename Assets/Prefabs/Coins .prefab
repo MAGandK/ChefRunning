@@ -43,6 +43,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691826041516908846}
     m_Modifications:
+    - target: {fileID: 1433254933323681673, guid: 5c0da27c5c7fb42eb9c94d163a67883c, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433254933323681673, guid: 5c0da27c5c7fb42eb9c94d163a67883c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ae404c0bff494c4dbed6f6c3fb6a1d6, type: 3}
     - target: {fileID: 4009502431040486770, guid: 5c0da27c5c7fb42eb9c94d163a67883c, type: 3}
       propertyPath: rotationDelay
       value: 0.2
@@ -95,7 +103,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1433254933323681673, guid: 5c0da27c5c7fb42eb9c94d163a67883c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

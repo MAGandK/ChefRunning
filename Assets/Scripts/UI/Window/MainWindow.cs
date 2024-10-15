@@ -21,11 +21,13 @@ public class MainWindow : WindowBase
     private float endDistance;
     private Vector3 _endPositionOffset;
     private Player _player;
+    private GameManager _gameManager;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(Player player, GameManager gameManager)
     {
         _player = player;
+        _gameManager = gameManager;
 
     }
     public override WindowType Type
@@ -39,7 +41,7 @@ public class MainWindow : WindowBase
     private void OnEnable()
     {
         ObstacleInteraction.Interaction += ShowText;
-        JoystickMy.Click += JoystickClick;
+        GameManager.IsPlayerHit += HideText;
     }
 
     private void Update()
@@ -77,7 +79,7 @@ public class MainWindow : WindowBase
         _tabText.SetActive(true);
     }
 
-    private void JoystickClick()
+    private void HideText()
     {
         if (_tabText.activeSelf)
         {
@@ -87,6 +89,6 @@ public class MainWindow : WindowBase
     private void OnDisable()
     {
         ObstacleInteraction.Interaction -= ShowText;
-        JoystickMy.Click -= JoystickClick;
+        GameManager.IsPlayerHit -= HideText;
     }
 }

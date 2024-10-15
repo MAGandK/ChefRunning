@@ -3,17 +3,12 @@ using UnityEngine;
 
 public class ObstacleInteraction : MonoBehaviour
 {
-    public static event Action Interaction = delegate { };
-
+    public static event Action Interaction;
+    
     [SerializeField]
     private Obstacle _killPlayerCollider;
 
     private bool _isInteracted;
-
-    private void OnEnable()
-    {
-        JoystickMy.Click += JoystickClick;
-    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -21,21 +16,16 @@ public class ObstacleInteraction : MonoBehaviour
         {
             Time.timeScale = 0.7f;
             _isInteracted = true;
-            Interaction?.Invoke();
+            Interaction?.Invoke(); 
         }
     }
-    private void JoystickClick()
+
+    private void OnTriggerExit(Collider other)
     {
-        if (_isInteracted)
+        if (other.TryGetComponent(out PlayerController player))
         {
             Time.timeScale = 1;
-            _killPlayerCollider.DisableKillAbility();
             _isInteracted = false; 
         }
-    }
-    
-    private void OnDisable()
-    {
-        JoystickMy.Click -= JoystickClick;
-    }
+    }  
 }

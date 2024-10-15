@@ -5,11 +5,14 @@ using Zenject;
 public class GameManager : MonoBehaviour
 {
     public static event Action IsPlayerDie;
+    public static event Action IsPlayerHit;
     public static event Action IsRestartGame;
     public static event Action IsFinishGame;
     public static event Action IsStartGame;
 
     private Player _player;
+    private AudioManager _audioManager;
+    
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
@@ -20,9 +23,10 @@ public class GameManager : MonoBehaviour
     public bool IsGameFinished => _isGameFinished;
 
     [Inject]
-    private void Construct( Player player)
+    private void Construct( Player player, AudioManager audioManager)
     {
         _player = player;
+        _audioManager = audioManager;
     }
     
 
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         _isGameStarted = true;
         IsStartGame?.Invoke();
         _playerPosition = _player.transform.position;
+        _audioManager.PlaySound(SoundType.Game);
     }
 
     public void FinishGame()
@@ -65,12 +70,21 @@ public class GameManager : MonoBehaviour
         _isGameFinished = true;
         _player.Dance();
         IsFinishGame?.Invoke();
+        _audioManager.PlaySound(SoundType.Finish);
     }
 
     public void PlayerDied()
     {
         _player.Die();
        IsPlayerDie?.Invoke();
+       _audioManager.PlaySound(SoundType.Fail);
+    }
+
+    public void PlayerHit()
+    {
+        _player.TakeHit();
+        IsPlayerHit?.Invoke();
+        _audioManager.PlaySound(SoundType.Push);
     }
 
     public void RestartGame()
