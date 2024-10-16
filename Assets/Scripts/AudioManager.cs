@@ -30,7 +30,10 @@ public class AudioManager : MonoBehaviour
     }
     
     [SerializeField]
-    private AudioSource _audioSourceStart;
+    private AudioSource _audioSourceMusic;
+    
+    [SerializeField]
+    private AudioSource _audioSourceEffect;
     
     [SerializeField]
     private SoundPreset[] _soundPresets; 
@@ -40,9 +43,9 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         _audioSources = new List<AudioSource>();
-        if (_audioSourceStart != null)
+        if (_audioSourceEffect != null)
         {
-            _audioSources.Add(_audioSourceStart);
+            _audioSources.Add(_audioSourceEffect);
         }
     }
 
@@ -55,12 +58,15 @@ public class AudioManager : MonoBehaviour
             AudioSource audioSource = GetAvailableAudioSource();
             audioSource.PlayOneShot(preset.AudioClip);
         }
-        else
+    }
+    
+    public void StopMusic()
+    {
+        if (_audioSourceMusic != null && _audioSourceMusic.isPlaying)
         {
-            Debug.LogWarning($"Sound of type {soundType} not found or AudioClip is missing.");
+            _audioSourceMusic.Stop();
         }
     }
-
     private AudioSource GetAvailableAudioSource()
     {
 

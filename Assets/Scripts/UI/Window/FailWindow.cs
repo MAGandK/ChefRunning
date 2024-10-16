@@ -21,6 +21,5 @@ public class FailWindow : WindowBase
     {
         base.Hide();
         _gameManager.RestartGame();
-        Debug.Log("Рестарт по кнопке");
     }
 }

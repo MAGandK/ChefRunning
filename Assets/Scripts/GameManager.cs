@@ -1,9 +1,14 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 using Zenject;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera _mainCamera;
+    [SerializeField] private CinemachineVirtualCamera _failCamera;
+    [SerializeField] private CinemachineVirtualCamera _finishCamera;
+    [SerializeField] private GameObject _uiFinish;
     public static event Action IsPlayerDie;
     public static event Action IsPlayerHit;
     public static event Action IsRestartGame;
@@ -12,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     private Player _player;
     private AudioManager _audioManager;
-    
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
@@ -63,6 +67,9 @@ public class GameManager : MonoBehaviour
         IsStartGame?.Invoke();
         _playerPosition = _player.transform.position;
         _audioManager.PlaySound(SoundType.Game);
+        _mainCamera.Priority = 10;  
+        _failCamera.Priority = 0;
+        _finishCamera.Priority = 0;
     }
 
     public void FinishGame()
@@ -70,14 +77,22 @@ public class GameManager : MonoBehaviour
         _isGameFinished = true;
         _player.Dance();
         IsFinishGame?.Invoke();
+        _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Finish);
+        _mainCamera.Priority = 0;  
+        _failCamera.Priority = 0;
+        _finishCamera.Priority = 10;
+        _uiFinish.layer = LayerMask.NameToLayer("UIBack");
     }
 
     public void PlayerDied()
     {
         _player.Die();
        IsPlayerDie?.Invoke();
+       _audioManager.StopMusic(); 
        _audioManager.PlaySound(SoundType.Fail);
+       _mainCamera.Priority = 0;  
+       _failCamera.Priority = 10;
     }
 
     public void PlayerHit()
