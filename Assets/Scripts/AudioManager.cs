@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+
 public enum SoundType 
 {
     Coin,
-    Game,
     Fail,
     Push,
     Finish
@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
     }
     
     [SerializeField]
-    private AudioSource _audioSourceMusic;
+    private AudioSource _audioGameMusic;
     
     [SerializeField]
     private AudioSource _audioSourceEffect;
@@ -47,8 +47,29 @@ public class AudioManager : MonoBehaviour
         {
             _audioSources.Add(_audioSourceEffect);
         }
+        
+        if (_audioGameMusic != null)
+        {
+            _audioGameMusic.loop = true;
+            PlayBackgroundMusic();  
+        }
     }
-
+    
+    public void PlayBackgroundMusic()
+    {
+        if (_audioGameMusic != null && !_audioGameMusic.isPlaying)
+        {
+            _audioGameMusic.Play(); 
+        }
+    }
+    
+    public void StopMusic()
+    {
+        if (_audioGameMusic != null && _audioGameMusic.isPlaying)
+        {
+            _audioGameMusic.Stop();
+        }
+    }
     public void PlaySound(SoundType soundType)
     {
         SoundPreset preset = Array.Find(_soundPresets, p => p.SoundType == soundType);
@@ -60,13 +81,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    public void StopMusic()
-    {
-        if (_audioSourceMusic != null && _audioSourceMusic.isPlaying)
-        {
-            _audioSourceMusic.Stop();
-        }
-    }
+    
     private AudioSource GetAvailableAudioSource()
     {
 

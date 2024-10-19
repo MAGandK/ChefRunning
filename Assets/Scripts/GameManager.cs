@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         _isGameStarted = true;
         IsStartGame?.Invoke();
         _playerPosition = _player.transform.position;
-        _audioManager.PlaySound(SoundType.Game);
+        _audioManager.PlayBackgroundMusic();
         _mainCamera.Priority = 10;  
         _failCamera.Priority = 0;
         _finishCamera.Priority = 0;
@@ -74,23 +74,24 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
+        Debug.Log("FinishGame вызван");
         _isGameFinished = true;
         _player.Dance();
-        IsFinishGame?.Invoke();
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Finish);
+        IsFinishGame?.Invoke();
         _mainCamera.Priority = 0;  
         _failCamera.Priority = 0;
         _finishCamera.Priority = 10;
-        _uiFinish.layer = LayerMask.NameToLayer("UIBack");
+        ChangeLayer();
     }
 
     public void PlayerDied()
     {
         _player.Die();
+        _audioManager.StopMusic(); 
+        _audioManager.PlaySound(SoundType.Fail);
        IsPlayerDie?.Invoke();
-       _audioManager.StopMusic(); 
-       _audioManager.PlaySound(SoundType.Fail);
        _mainCamera.Priority = 0;  
        _failCamera.Priority = 10;
     }
@@ -98,8 +99,8 @@ public class GameManager : MonoBehaviour
     public void PlayerHit()
     {
         _player.TakeHit();
-        IsPlayerHit?.Invoke();
         _audioManager.PlaySound(SoundType.Push);
+        IsPlayerHit?.Invoke();
     }
 
     public void RestartGame()
@@ -114,5 +115,15 @@ public class GameManager : MonoBehaviour
     public void ResetPlayerPosition()
     {
         _player.transform.position = _playerPosition; 
+    }
+
+    private void ChangeLayer()
+    {
+        _uiFinish.layer = LayerMask.NameToLayer("UIBack");
+        
+        foreach (var child in _uiFinish.GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = LayerMask.NameToLayer("UIBack");
+        }
     }
 }
