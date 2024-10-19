@@ -10,8 +10,7 @@ public class ButtonHit : MonoBehaviour
     {
         _gameManager = gameManager;
     }
-
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -22,6 +21,6 @@ public class ButtonHit : MonoBehaviour
 
     public void OnHitButtonPressed()
     {
-        _gameManager.PlayerHit();  
+        _gameManager.PlayerHit(); 
     }
 }

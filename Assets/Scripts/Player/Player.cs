@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     private AnimatorController _animatorController;
     private bool _isDead = false;
-
+    private bool _isHitting = false;
     
     [Inject]
     private void Construct(AnimatorController animatorController)
@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
         get => _isDead;
     }
     
+    public bool IsHitting
+    {
+        get => _isHitting;
+    }
+    
     public void Die()
     {
         _isDead = true;
@@ -25,13 +30,9 @@ public class Player : MonoBehaviour
 
     public void TakeHit()
     {
+        _isHitting = true;
         _animatorController.Hitting();
     }
-    
-    // public void RotatePlayerToTarget()
-    // { 
-    //     transform.Rotate(0, 180, 0);
-    // }
 
     public void Dance()
     {

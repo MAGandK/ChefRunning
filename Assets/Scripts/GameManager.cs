@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             TestFinishGame();
         }
     }
-    
+ 
     public void TestDied()
     {
         PlayerDied();

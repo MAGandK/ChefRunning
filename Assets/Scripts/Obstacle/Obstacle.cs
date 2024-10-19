@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -21,12 +22,14 @@ public class Obstacle : MonoBehaviour
     
     private GameManager _gameManager;
     private LevelPrefabManager _levelPrefabManager;
+    private Player _player;
     
     [Inject]
-    private void Construct(GameManager gameManager, LevelPrefabManager levelPrefabManager)
+    private void Construct(GameManager gameManager, LevelPrefabManager levelPrefabManager, Player player)
     {
         _gameManager = gameManager;
         _levelPrefabManager = levelPrefabManager;
+        _player = player;
     }
     
     private void Awake()
@@ -39,21 +42,24 @@ public class Obstacle : MonoBehaviour
         StartMovement();
     }
     
+
     private void OnTriggerEnter(Collider other)
     {
-            if (_isKilleble)
-            {
-                _gameManager.PlayerDied();
-            }
-            else 
-            {
-                _gameManager.PlayerHit();
-                Push();
-                _levelPrefabManager._obstacle.Add(gameObject);
-                gameObject.SetActive(false);
-            }
-            StopAllCoroutines();
-            DisableKillAbility();
+        if (_player.IsHitting && !_isKilleble)
+        {
+            Debug.Log(" hit ");
+            _gameManager.PlayerHit(); 
+            Push(); 
+            _levelPrefabManager._obstacle.Add(gameObject);
+            gameObject.SetActive(false);
+        }
+        else if (!_player.IsDead && _isKilleble) 
+        {
+            _gameManager.PlayerDied(); 
+        }
+            
+        StopAllCoroutines();
+        DisableKillAbility();
     }
     internal void DisableKillAbility()
     {
@@ -109,7 +115,7 @@ public class Obstacle : MonoBehaviour
         _object.position = _startPosition.position; 
         _object.rotation = _startPosition.rotation;  
         _object.gameObject.SetActive(true);
- 
+        _isKilleble = true;
         StartMovement();
     }
     

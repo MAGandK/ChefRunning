@@ -26,6 +26,7 @@ public class TriggerHammer : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("collision");
         if (_isKilleble)
         {
             _gameManager.PlayerDied();
