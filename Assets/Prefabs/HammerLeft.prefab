@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3403733392522140492}
   - component: {fileID: 4557610363195724571}
-  - component: {fileID: 6903380057159303262}
+  - component: {fileID: 371472546820193226}
   m_Layer: 9
   m_Name: ObstacleCrashTriger
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 21.832283, y: 3.964332, z: 5.5230713}
   m_Center: {x: -3.4651566, y: 1.482166, z: -3.793129}
---- !u!114 &6903380057159303262
+--- !u!114 &371472546820193226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235115795177524285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ff94e648b9c4f9a885c957b0a63e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: c7b166322be844f55accbf3b67db9810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killPlayerCollider: {fileID: 3812163813226407941}
+  _colliderType: 1
 --- !u!1 &3537712416116470277
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,10 +178,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77644ac5ed01f45188e38b4549b89dde, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3812163813226407941}
+      addedObject: {fileID: 7457942359572263440}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 77644ac5ed01f45188e38b4549b89dde, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7457942359572263440}
+      addedObject: {fileID: 3812163813226407941}
     - targetCorrespondingSourceObject: {fileID: -7539680413617234126, guid: 77644ac5ed01f45188e38b4549b89dde, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5700322978925455827}
@@ -217,21 +217,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 77644ac5ed01f45188e38b4549b89dde, type: 3}
   m_PrefabInstance: {fileID: 6519427879684247727}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3812163813226407941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6248956468055682558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aefb447073c074bc78f4bf84370300b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectHammer: {fileID: 6769772669469914948}
-  _explosionEffects:
-  - {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!65 &7457942359572263440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -253,6 +238,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3417904, y: 2.1707501, z: 5.7606106}
   m_Center: {x: 0.00000095367426, y: 1.0853746, z: 2.0075634}
+--- !u!114 &3812163813226407941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248956468055682558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefb447073c074bc78f4bf84370300b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionEffects:
+  - {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  _objectHammer: {fileID: 6769772669469914948}
 --- !u!4 &6769772669469914948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77644ac5ed01f45188e38b4549b89dde, type: 3}

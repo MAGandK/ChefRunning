@@ -1,12 +1,16 @@
 using System;
 using UnityEngine;
-
+public enum ColliderType
+{
+    ObstacleBarrel,
+    ObstacleHammer
+}
 public class ObstacleInteraction : MonoBehaviour
 {
     public static event Action Interaction;
     
     [SerializeField]
-    private Obstacle _killPlayerCollider;
+    private ColliderType _colliderType;
 
     private bool _isInteracted;
     

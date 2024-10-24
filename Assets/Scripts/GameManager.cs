@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        Debug.Log("FinishGame вызван");
         _isGameFinished = true;
         _player.Dance();
         _audioManager.StopMusic();

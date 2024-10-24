@@ -3000,7 +3000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3017896537735564865, guid: d3631fdf314764c1a9ae16855ef6f605, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776945601786836055, guid: d3631fdf314764c1a9ae16855ef6f605, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3979,10 +3979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b542942977d47f98c50a3595c06098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
-  _forwardSpeed: 15
+  _speed: 8
+  _forwardSpeed: 20
   _rigidbody: {fileID: 3385144457129714170}
-  _swipeSensivity: 0.338
+  _swipeSensivity: 0.504
 --- !u!1 &2943141322391594398
 GameObject:
   m_ObjectHideFlags: 0
@@ -16482,7 +16482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402217457101774314, guid: 98fca8bdf76e942a4a2b01ebb92826d7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5434456839527170499, guid: 98fca8bdf76e942a4a2b01ebb92826d7, type: 3}
       propertyPath: m_Layer

@@ -1,37 +1,32 @@
 using UnityEngine;
 using Zenject;
-
-public class TriggerHammer : MonoBehaviour
+public abstract class ObstacleBase : MonoBehaviour
 {
     [SerializeField]
-    private Transform _objectHammer;
-    private bool _isKilleble;
-    
-    [SerializeField]
     private GameObject[] _explosionEffects;
-    
     private GameManager _gameManager;
     private LevelPrefabManager _levelPrefabManager;
-    
+    private bool _isKilleble;
+
     [Inject]
     private void Construct(GameManager gameManager, LevelPrefabManager levelPrefabManager)
     {
         _gameManager = gameManager;
         _levelPrefabManager = levelPrefabManager;
     }
-    private void Awake()
+
+    public void Awake()
     {
         _isKilleble = true;
     }
     
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collision");
         if (_isKilleble)
         {
             _gameManager.PlayerDied();
         }
-        else 
+        else
         {
             _gameManager.PlayerHit();
             Push();
@@ -41,21 +36,22 @@ public class TriggerHammer : MonoBehaviour
         StopAllCoroutines();
         DisableKillAbility();
     }
-    internal void DisableKillAbility()
+    
+    public virtual void DisableKillAbility()
     {
         _isKilleble = false;
     }
     
-    public void Push()
+    public  virtual void Push()
     {
         foreach (var effect in _explosionEffects)
         {
-            Instantiate(effect, _objectHammer.position, Quaternion.identity);
+            Instantiate(effect, transform.position, Quaternion.identity);
         }
     }
 
-    public void ResetHammer()
+    public virtual void ResetObstacle()
     {
-        _objectHammer.gameObject.SetActive(true);
+        _isKilleble = true;
     }
 }

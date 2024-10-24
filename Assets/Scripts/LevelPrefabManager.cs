@@ -12,10 +12,10 @@ public class LevelPrefabManager : MonoBehaviour
     private Vector3 _startPosition = new Vector3(100.7371f, -279.3909f, 585.5648f);
     
     private void OnEnable()
-    {
+    { 
         GameManager.IsStartGame += StartFirstScene;
         GameManager.IsRestartGame +=ReloadScene;
-       GameManager.IsFinishGame += NewScene;
+        GameManager.IsFinishGame += NewScene;
     }
 
     private void Start()
@@ -61,28 +61,37 @@ public class LevelPrefabManager : MonoBehaviour
         _currentScene.SetActive(false);
         _currentScene.SetActive(true);
 
-        if (_coins.Count > 0)
+        if (_coins != null && _coins.Count > 0)
         {
             foreach (var coin in _coins)
             {
-                coin.SetActive(true);
+                if (coin != null)
+                {
+                    coin.SetActive(true);
+                }
             }
         }
 
-        if (_obstacle.Count > 0)
+        if (_obstacle != null && _obstacle.Count > 0)
         {
             foreach (var obstacles in _obstacle)
             {
-                obstacles.SetActive(true);
-                obstacles.GetComponent<Obstacle>().ResetObstacle();
+                if (obstacles != null || _currentScene == _currentScene)
+                {
+                    obstacles.SetActive(true);
+                    obstacles.GetComponent<ObstacleBarrel>().ResetObstacle();
+                }
             }
         }
-        if (_hammer.Count > 0)
+        if (_hammer != null &&_hammer.Count > 0)
         {
             foreach (var hammer in _hammer)
-            { 
-                hammer.SetActive(true);
-                hammer.GetComponent<TriggerHammer>().ResetHammer();
+            {
+                if (hammer != null)
+                {
+                    hammer.SetActive(true);
+                    hammer.GetComponent<ObstacleHammer>().ResetObstacle();       
+                }
             }
         }
     }
