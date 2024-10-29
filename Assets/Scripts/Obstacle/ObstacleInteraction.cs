@@ -1,24 +1,25 @@
 using System;
 using UnityEngine;
-public enum ColliderType
-{
-    ObstacleBarrel,
-    ObstacleHammer
-}
+using Zenject;
 public class ObstacleInteraction : MonoBehaviour
 {
     public static event Action Interaction;
-    
-    [SerializeField]
-    private ColliderType _colliderType;
 
     private bool _isInteracted;
+
+    private Player _player;
+
+   [Inject]
+    private void Construct(Player player)
+    {
+        _player = player;
+    }
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerController player))
+        if (other.gameObject == _player.gameObject && !_isInteracted)
         {
-            Time.timeScale = 0.7f;
+            //Time.timeScale = 0.7f;
             _isInteracted = true;
             Interaction?.Invoke(); 
         }
@@ -26,9 +27,9 @@ public class ObstacleInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out PlayerController player))
+        if (other.gameObject == _player.gameObject)
         {
-            Time.timeScale = 1;
+           // Time.timeScale = 1;
             _isInteracted = false; 
         }
     }  

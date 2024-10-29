@@ -132,7 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b166322be844f55accbf3b67db9810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killPlayerCollider: {fileID: 2823939039581330849}
 --- !u!1 &6569470111588211564
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,15 +173,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,4 +288,4 @@ MonoBehaviour:
   _time: 1
   _targetPosition: {fileID: 2989462069245416498}
   _startPosition: {fileID: 193202714900192202}
-  _rotationSpeed: 0.5
+  _rotationSpeed: 4

@@ -9,27 +9,22 @@ public class PlayerController : MonoBehaviour
     private float _forwardSpeed = 0f; 
     [SerializeField]
     private Rigidbody _rigidbody;
-    
     [SerializeField, Range(0f,1f)]
-    private float _swipeSensivity;
- 
+    private float _swipeSensitivity;
     private Player _player;
     private GameManager _gameManager;
-    private JoystickMy _joystick;
-    
+    private DynamicJoystick _dynamicJoystick;
     private float _moveX; 
     private float _moveZ;
     private float _xMaxClamp = 5f;
     private float _xMinClamp = -11f;
-
-
+    
     [Inject]
-    private void Construct(Player player, GameManager gameManager, JoystickMy joystick)
+    private void Construct(Player player, GameManager gameManager,DynamicJoystick dynamicJoystick)
     {
         _player = player;
         _gameManager = gameManager;
-        _joystick = joystick;
-
+        _dynamicJoystick = dynamicJoystick;
     }
 
     private void Update()
@@ -45,15 +40,13 @@ public class PlayerController : MonoBehaviour
 
     public void MovePlayer()
     {
-            var position = transform.position;
-            var expectedMoveX = position.x + (_joystick.EventDataDelta.x * _swipeSensivity) * (_speed * Time.deltaTime);
-
-            _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
-            _moveZ = position.z + _forwardSpeed * Time.deltaTime;
-
-            Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
-
-            _rigidbody.MovePosition(newPosition);
+        var position = transform.position;
+        Vector2 joystickInput = _dynamicJoystick.Direction;
+        var expectedMoveX = position.x + (joystickInput.x * _swipeSensitivity) * (_speed * Time.deltaTime);
+        _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
+        _moveZ = position.z + (+_forwardSpeed * Time.deltaTime);
+        Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
+        _rigidbody.MovePosition(newPosition);
     }
     private void StopPlayerMovement()
     {

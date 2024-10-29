@@ -16,14 +16,15 @@ public class JoystickMy : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     {
         Vector2 localPointerPosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(_image, eventData.position, eventData.pressEventCamera, out localPointerPosition);
-        
-        Vector2 offset = localPointerPosition - _image.anchoredPosition;
-        
-        float handleRadius = _image.rect.width / 2; 
-        offset = Vector2.ClampMagnitude(offset, handleRadius); 
 
-        _imageHandle.anchoredPosition = offset; 
-        EventDataDelta = offset;
+        Vector2 offset = localPointerPosition - _image.anchoredPosition;
+        float handleRadius = _image.rect.width / 2;
+
+        offset = Vector2.ClampMagnitude(offset, handleRadius);
+        _imageHandle.anchoredPosition = offset;
+
+        // Вычисление нормализованного ввода
+        EventDataDelta = offset / handleRadius; 
     }
 
     public void OnPointerDown(PointerEventData eventData)

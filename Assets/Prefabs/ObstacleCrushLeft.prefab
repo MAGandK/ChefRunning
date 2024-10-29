@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b166322be844f55accbf3b67db9810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killPlayerCollider: {fileID: 0}
 --- !u!1 &2616327906410120224
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,11 +173,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4157d22226c574a5ca4d901c37e4ce69, type: 3}
       propertyPath: m_LocalScale.z
@@ -282,11 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586f3bdbe4daf4848becf8c7b9e222b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionEffects:
+  - {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
+  - {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
   _object: {fileID: 8313477719283614871}
   _time: 1
   _targetPosition: {fileID: 3043575864019219985}
   _startPosition: {fileID: 6680574550906527555}
-  _rotationSpeed: 0.5
-  _explosionEffects:
-  - {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
-  - {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  _rotationSpeed: 3

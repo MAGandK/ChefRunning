@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         FinishGame();
         Debug.Log("Тест: Игра завершена");
     }
+    
     public void StartGame()
     {
         _isGameStarted = true;
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour
     {
         _player.transform.position = _playerPosition; 
     }
-
+    
     private void ChangeLayer()
     {
         _uiFinish.layer = LayerMask.NameToLayer("UIBack");

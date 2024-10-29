@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Zenject;
 public abstract class ObstacleBase : MonoBehaviour
@@ -6,8 +7,8 @@ public abstract class ObstacleBase : MonoBehaviour
     private GameObject[] _explosionEffects;
     private GameManager _gameManager;
     private LevelPrefabManager _levelPrefabManager;
-    private bool _isKilleble;
-
+    private bool _isKillable;
+    
     [Inject]
     private void Construct(GameManager gameManager, LevelPrefabManager levelPrefabManager)
     {
@@ -17,17 +18,20 @@ public abstract class ObstacleBase : MonoBehaviour
 
     public void Awake()
     {
-        _isKilleble = true;
+        _isKillable = true;
+
     }
     
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (_isKilleble)
+        if (_isKillable)
         {
+            Debug.Log("Player died.");
             _gameManager.PlayerDied();
         }
         else
         {
+            Debug.Log("Player hit, but not dead.");
             _gameManager.PlayerHit();
             Push();
             _levelPrefabManager._obstacle.Add(gameObject);
@@ -39,10 +43,10 @@ public abstract class ObstacleBase : MonoBehaviour
     
     public virtual void DisableKillAbility()
     {
-        _isKilleble = false;
+        _isKillable = false;
     }
     
-    public  virtual void Push()
+    public virtual void Push()
     {
         foreach (var effect in _explosionEffects)
         {
@@ -52,6 +56,6 @@ public abstract class ObstacleBase : MonoBehaviour
 
     public virtual void ResetObstacle()
     {
-        _isKilleble = true;
+        _isKillable = true;
     }
 }

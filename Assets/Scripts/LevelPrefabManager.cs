@@ -58,8 +58,11 @@ public class LevelPrefabManager : MonoBehaviour
 
     public void ReloadScene()
     {
-        _currentScene.SetActive(false);
-        _currentScene.SetActive(true);
+        if (_currentScene != null)
+        {
+            _currentScene.SetActive(false);
+            _currentScene.SetActive(true);
+        }
 
         if (_coins != null && _coins.Count > 0)
         {
@@ -76,7 +79,7 @@ public class LevelPrefabManager : MonoBehaviour
         {
             foreach (var obstacles in _obstacle)
             {
-                if (obstacles != null || _currentScene == _currentScene)
+                if (obstacles != null)
                 {
                     obstacles.SetActive(true);
                     obstacles.GetComponent<ObstacleBarrel>().ResetObstacle();

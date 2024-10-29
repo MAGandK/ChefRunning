@@ -18,7 +18,9 @@ public class DynamicJoystick : Joystick
 
     public override void OnPointerDown(PointerEventData eventData)
     {
-        background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
+        Vector2 newPosition = ScreenPointToAnchoredPosition(eventData.position);
+        newPosition = ClampToScreenBounds(newPosition);
+        background.anchoredPosition = newPosition;
         background.gameObject.SetActive(true);
         base.OnPointerDown(eventData);
     }
@@ -34,8 +36,28 @@ public class DynamicJoystick : Joystick
         if (magnitude > moveThreshold)
         {
             Vector2 difference = normalised * (magnitude - moveThreshold) * radius;
-            background.anchoredPosition += difference;
+            Vector2 newPosition = background.anchoredPosition + difference;
+            background.anchoredPosition = ClampToScreenBounds(newPosition);
         }
         base.HandleInput(magnitude, normalised, radius, cam);
+    }
+    
+    private Vector2 ClampToScreenBounds(Vector2 position)
+    {
+        Vector2 minPosition = Vector2.zero;
+        Vector2 maxPosition = new Vector2(Screen.width, Screen.height);
+
+        float joystickWidth = background.sizeDelta.x / 2;
+        float joystickHeight = background.sizeDelta.y / 2;
+
+        minPosition.x += joystickWidth;
+        minPosition.y += joystickHeight;
+        maxPosition.x -= joystickWidth;
+        maxPosition.y -= joystickHeight;
+        
+        position.x = Mathf.Clamp(position.x, minPosition.x, maxPosition.x);
+        position.y = Mathf.Clamp(position.y, minPosition.y, maxPosition.y);
+
+        return position;
     }
 }
