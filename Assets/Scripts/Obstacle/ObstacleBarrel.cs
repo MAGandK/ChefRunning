@@ -66,10 +66,11 @@ public class ObstacleBarrel : ObstacleBase
  
         StartMovement();
     }
-    
+#if UNITY_EDITOR 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(_targetPosition.position, radius: 1);
         Gizmos.DrawWireSphere(_startPosition.position, radius: 2);
     }
+#endif
 }

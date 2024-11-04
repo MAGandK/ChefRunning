@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     [SerializeField] private CinemachineVirtualCamera _failCamera;
     [SerializeField] private CinemachineVirtualCamera _finishCamera;
-    [SerializeField] private GameObject _uiFinish;
     public static event Action IsPlayerDie;
     public static event Action IsPlayerHit;
     public static event Action IsRestartGame;
@@ -32,7 +31,6 @@ public class GameManager : MonoBehaviour
         _player = player;
         _audioManager = audioManager;
     }
-    
 
     private void Update()
     {
@@ -83,7 +81,7 @@ public class GameManager : MonoBehaviour
         _mainCamera.Priority = 0;  
         _failCamera.Priority = 0;
         _finishCamera.Priority = 10;
-        ChangeLayer();
+        _player.RotatePlayer(_finishCamera.transform);
     }
 
     public void PlayerDied()
@@ -98,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerHit()
     {
-        _player.TakeHit();
+        _player.Hit();
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
@@ -111,19 +109,8 @@ public class GameManager : MonoBehaviour
         IsRestartGame?.Invoke();  
         StartGame();
     }
-    
     public void ResetPlayerPosition()
     {
         _player.transform.position = _playerPosition; 
-    }
-    
-    private void ChangeLayer()
-    {
-        _uiFinish.layer = LayerMask.NameToLayer("UIBack");
-        
-        foreach (var child in _uiFinish.GetComponentsInChildren<Transform>())
-        {
-            child.gameObject.layer = LayerMask.NameToLayer("UIBack");
-        }
     }
 }

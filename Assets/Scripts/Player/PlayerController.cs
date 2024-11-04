@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
         _rigidbody.MovePosition(newPosition);
     }
+    
     private void StopPlayerMovement()
     {
         _rigidbody.velocity = Vector3.zero;

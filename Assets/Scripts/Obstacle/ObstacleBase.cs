@@ -1,14 +1,13 @@
-using System.Collections;
+using System;
 using UnityEngine;
 using Zenject;
 public abstract class ObstacleBase : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] _explosionEffects;
+    [SerializeField] private GameObject[] _explosionEffects;
     private GameManager _gameManager;
     private LevelPrefabManager _levelPrefabManager;
     private bool _isKillable;
-    
+
     [Inject]
     private void Construct(GameManager gameManager, LevelPrefabManager levelPrefabManager)
     {
@@ -26,17 +25,19 @@ public abstract class ObstacleBase : MonoBehaviour
     {
         if (_isKillable)
         {
-            Debug.Log("Player died.");
             _gameManager.PlayerDied();
+            //Debug.Log("Player killed by obstacle.");
         }
-        else
+        else if (ButtonHit.IsHitPressed)
         {
-            Debug.Log("Player hit, but not dead.");
+            _isKillable = false;
             _gameManager.PlayerHit();
             Push();
             _levelPrefabManager._obstacle.Add(gameObject);
             gameObject.SetActive(false);
+           // Debug.Log("Player hit the obstacle.");
         }
+        
         StopAllCoroutines();
         DisableKillAbility();
     }
@@ -53,7 +54,6 @@ public abstract class ObstacleBase : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
         }
     }
-
     public virtual void ResetObstacle()
     {
         _isKillable = true;

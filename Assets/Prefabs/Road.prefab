@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 892708392159347992}
   - component: {fileID: 2539501860920487544}
   - component: {fileID: 5054229310680167646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: curb1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3209895706045508880}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 2058993382480208984}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.29, y: 0, z: 224.9}
+  m_LocalPosition: {x: -23.9, y: 0, z: -183.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 664341563185219459}
   - component: {fileID: 1064018814149753105}
   - component: {fileID: 1401688727609410378}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: curb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,8 @@ GameObject:
   - component: {fileID: 6409628624392321317}
   - component: {fileID: 326726866852717372}
   - component: {fileID: 8212594793683189048}
-  m_Layer: 0
+  - component: {fileID: 3711724595041397776}
+  m_Layer: 11
   m_Name: road2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,3 +284,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3711724595041397776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5255692577494236140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.384128, y: 0.03612706, z: 22.20833}
+  m_Center: {x: 0, y: 9.313226e-10, z: 0}
