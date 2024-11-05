@@ -18,7 +18,6 @@ public abstract class ObstacleBase : MonoBehaviour
     public void Awake()
     {
         _isKillable = true;
-
     }
     
     public virtual void OnTriggerEnter(Collider other)
@@ -26,7 +25,7 @@ public abstract class ObstacleBase : MonoBehaviour
         if (_isKillable)
         {
             _gameManager.PlayerDied();
-            //Debug.Log("Player killed by obstacle.");
+            //Debug.Log("умер игрок");
         }
         else if (ButtonHit.IsHitPressed)
         {
@@ -35,7 +34,7 @@ public abstract class ObstacleBase : MonoBehaviour
             Push();
             _levelPrefabManager._obstacle.Add(gameObject);
             gameObject.SetActive(false);
-           // Debug.Log("Player hit the obstacle.");
+           // Debug.Log("унижтожено препятствие");
         }
         
         StopAllCoroutines();

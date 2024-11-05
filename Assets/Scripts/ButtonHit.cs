@@ -14,18 +14,18 @@ public class ButtonHit : MonoBehaviour
         _gameManager = gameManager;
     }
     
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         IsHitPressed = true; 
-    //         OnHitButtonPressed();
-    //     }
-    //     if (Input.GetKeyUp(KeyCode.Space))
-    //     {
-    //         IsHitPressed = false; 
-    //     }
-    // }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            IsHitPressed = true; 
+            OnHitButtonPressed();
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            IsHitPressed = false; 
+        }
+    }
     
     private void OnHitButtonPressed()
     {
