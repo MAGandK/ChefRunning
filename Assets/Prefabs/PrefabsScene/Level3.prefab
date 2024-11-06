@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6076703248080636553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2579868763938348940}
   - component: {fileID: 8356511413739476573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 7425240091388026117}
   - component: {fileID: 9149724306510484880}
   - component: {fileID: 3739786180632351995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 5146997787005974885}
   - component: {fileID: 142952601326522983}
   - component: {fileID: 321009697913620516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 6077399907275595423}
   - component: {fileID: 8350866374794349920}
   - component: {fileID: 8250069553953921530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 7735608585490338761}
   - component: {fileID: 4640304950733004964}
   - component: {fileID: 6140473684258658940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 1671721903833307823}
   - component: {fileID: 4427558957188972771}
   - component: {fileID: 6905582182917622559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: newspapers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 3552311061560109252}
   - component: {fileID: 4715480407535858551}
   - component: {fileID: 4549297557790914606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 8661768365296586937}
   - component: {fileID: 1802881194415091591}
   - component: {fileID: 3746491255114127084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 8381593683713673339}
   - component: {fileID: 4891166080916910419}
   - component: {fileID: 2984626065310362193}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2119,7 +2119,7 @@ GameObject:
   - component: {fileID: 2522196916464409554}
   - component: {fileID: 7522698568008134024}
   - component: {fileID: 4392600637891725190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2283,7 +2283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5060897490139729618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 4778269592475679182}
   - component: {fileID: 6255583240129794411}
   - component: {fileID: 483815918714870610}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: curb1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2507,7 +2507,7 @@ GameObject:
   - component: {fileID: 8284087644887201987}
   - component: {fileID: 341156396977950401}
   - component: {fileID: 4315702616073314614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2858072201807744581}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2629,7 +2629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7492492056947491083}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,7 +2663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1545125068383828245}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Road(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2699,7 +2699,7 @@ GameObject:
   - component: {fileID: 6785308719282438377}
   - component: {fileID: 1418752482070626600}
   - component: {fileID: 1887792602003236217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3002,7 +3002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2747196307982483820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3036,7 +3036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5808500722372052200}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3076,7 +3076,7 @@ GameObject:
   - component: {fileID: 2063002449459649278}
   - component: {fileID: 2296038623012799545}
   - component: {fileID: 7311810309505984647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3247,7 +3247,7 @@ GameObject:
   - component: {fileID: 6950540129988482156}
   - component: {fileID: 5639273467503096212}
   - component: {fileID: 7443004767270312215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 2378290188923480276}
   - component: {fileID: 8841182722817015811}
   - component: {fileID: 2985228840837670433}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3413,7 +3413,7 @@ GameObject:
   - component: {fileID: 6392149350881489224}
   - component: {fileID: 8304446645287992328}
   - component: {fileID: 8041903551522093734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3496,7 +3496,7 @@ GameObject:
   - component: {fileID: 6223632852745190924}
   - component: {fileID: 956192362344263533}
   - component: {fileID: 1030943477393431034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3685,7 +3685,7 @@ GameObject:
   - component: {fileID: 5042987906392669862}
   - component: {fileID: 516724905066458050}
   - component: {fileID: 1880477843618726985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3768,7 +3768,7 @@ GameObject:
   - component: {fileID: 3744991456383384079}
   - component: {fileID: 4276899916432626810}
   - component: {fileID: 1611820530321972285}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,7 +3851,7 @@ GameObject:
   - component: {fileID: 4017129968322848613}
   - component: {fileID: 6536969471630450209}
   - component: {fileID: 7664511493946477625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3934,7 +3934,7 @@ GameObject:
   - component: {fileID: 5009353999692724810}
   - component: {fileID: 5927266461114536126}
   - component: {fileID: 6652335639427053166}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4017,7 +4017,7 @@ GameObject:
   - component: {fileID: 3353648414726677462}
   - component: {fileID: 7297646288145285584}
   - component: {fileID: 1676130919223384669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 3221327496127363166}
   - component: {fileID: 234000541402770912}
   - component: {fileID: 2600418664933546603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4183,7 +4183,7 @@ GameObject:
   - component: {fileID: 3258576203563626177}
   - component: {fileID: 2094200328484822357}
   - component: {fileID: 55731483905957058}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4264,7 +4264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4030196895253831467}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4299,7 +4299,7 @@ GameObject:
   - component: {fileID: 5670385946734747478}
   - component: {fileID: 8148331064665732493}
   - component: {fileID: 4167040530766869067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4382,7 +4382,7 @@ GameObject:
   - component: {fileID: 613494710410213184}
   - component: {fileID: 4156035001303900578}
   - component: {fileID: 8235163254310955687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4465,7 +4465,7 @@ GameObject:
   - component: {fileID: 4629918748186825394}
   - component: {fileID: 6263898017162704607}
   - component: {fileID: 6409633627877720893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4548,7 +4548,7 @@ GameObject:
   - component: {fileID: 7713859467866763259}
   - component: {fileID: 8042383874975668302}
   - component: {fileID: 2115748805528131251}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4902,7 +4902,7 @@ GameObject:
   - component: {fileID: 4028323310769687649}
   - component: {fileID: 3070827273542814738}
   - component: {fileID: 3037458828859199703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4985,7 +4985,7 @@ GameObject:
   - component: {fileID: 4895512658617108730}
   - component: {fileID: 5216559502121626994}
   - component: {fileID: 5242779682229900141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5151,7 +5151,7 @@ GameObject:
   - component: {fileID: 2259066216952758440}
   - component: {fileID: 1203015425063361840}
   - component: {fileID: 8050621869861854192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5422,7 +5422,7 @@ GameObject:
   - component: {fileID: 5385053266802084613}
   - component: {fileID: 6769553234145822927}
   - component: {fileID: 6277416805038974742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5505,7 +5505,7 @@ GameObject:
   - component: {fileID: 5142126607581332432}
   - component: {fileID: 7241593445351291537}
   - component: {fileID: 6236649240326781106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5693,7 +5693,7 @@ GameObject:
   - component: {fileID: 4281951490511000596}
   - component: {fileID: 2384312240519668256}
   - component: {fileID: 9086152076142311567}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5774,7 +5774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662426896681879802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5810,7 +5810,7 @@ GameObject:
   - component: {fileID: 6385637755876673885}
   - component: {fileID: 363151587178180055}
   - component: {fileID: 7193973461172215161}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 178426269087837181}
   - component: {fileID: 1273332439949855614}
   - component: {fileID: 6460431648152425297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5976,7 +5976,7 @@ GameObject:
   - component: {fileID: 2444169630277313253}
   - component: {fileID: 5185067175795655939}
   - component: {fileID: 1710741286848734010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6058,7 +6058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8382963510672755568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6093,7 +6093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6972932599421146505}
   - component: {fileID: 1618206756986401460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6247,7 +6247,7 @@ GameObject:
   - component: {fileID: 8731422400488414979}
   - component: {fileID: 7831850747464934918}
   - component: {fileID: 1207490307860210453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6330,7 +6330,7 @@ GameObject:
   - component: {fileID: 6120600022925470434}
   - component: {fileID: 3746183315526228334}
   - component: {fileID: 5234447086885986664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6413,7 +6413,7 @@ GameObject:
   - component: {fileID: 7187751729185540275}
   - component: {fileID: 1921313158660820502}
   - component: {fileID: 526952412728120420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6496,7 +6496,7 @@ GameObject:
   - component: {fileID: 2909439871417231371}
   - component: {fileID: 8517305061236103321}
   - component: {fileID: 3537342966314283638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6695,13 +6695,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8408907356972937651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8408907356972937651
 Transform:
   m_ObjectHideFlags: 0
@@ -6773,7 +6773,7 @@ GameObject:
   - component: {fileID: 4469529792759049763}
   - component: {fileID: 4809332017133706285}
   - component: {fileID: 1263489661020633475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6854,7 +6854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5955877350755028546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6976,7 +6976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7885282079920832588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7012,7 +7012,7 @@ GameObject:
   - component: {fileID: 2556584030494883005}
   - component: {fileID: 4737408306003627815}
   - component: {fileID: 6243690213204129238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7095,7 +7095,7 @@ GameObject:
   - component: {fileID: 7610385551890259656}
   - component: {fileID: 420116277843508748}
   - component: {fileID: 7244656039003142991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7179,7 +7179,7 @@ GameObject:
   - component: {fileID: 1019643810826565403}
   - component: {fileID: 8986409863615246110}
   - component: {fileID: 1496314111241290413}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7484,7 +7484,7 @@ GameObject:
   - component: {fileID: 1140559788593673994}
   - component: {fileID: 4825299038228702807}
   - component: {fileID: 5437035981905827112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7567,7 +7567,7 @@ GameObject:
   - component: {fileID: 3484596397119571795}
   - component: {fileID: 8935291589678386425}
   - component: {fileID: 7010640689788653173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7861,7 +7861,7 @@ GameObject:
   - component: {fileID: 8235793446849849898}
   - component: {fileID: 4976861328464415927}
   - component: {fileID: 5960089852738872994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8061,7 +8061,7 @@ GameObject:
   - component: {fileID: 2754058254303057564}
   - component: {fileID: 410295770977242995}
   - component: {fileID: 1488425832771519702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8144,7 +8144,7 @@ GameObject:
   - component: {fileID: 2574586398272262157}
   - component: {fileID: 812320062361096744}
   - component: {fileID: 981246795006639364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8227,7 +8227,7 @@ GameObject:
   - component: {fileID: 1748524542166392281}
   - component: {fileID: 4914178397562060937}
   - component: {fileID: 7919564023278495348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8309,7 +8309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3485177172673804710}
   - component: {fileID: 7804896064380514084}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8421,7 +8421,7 @@ GameObject:
   - component: {fileID: 5375115522148778070}
   - component: {fileID: 6908301752111066276}
   - component: {fileID: 8368265096349039974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8504,7 +8504,7 @@ GameObject:
   - component: {fileID: 178524836226477085}
   - component: {fileID: 1842477324595874962}
   - component: {fileID: 3777779080343007578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8585,7 +8585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4251615029941875687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8655,7 +8655,7 @@ GameObject:
   - component: {fileID: 4691493926586828742}
   - component: {fileID: 6387721720832517497}
   - component: {fileID: 2523378188800005830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8738,7 +8738,7 @@ GameObject:
   - component: {fileID: 1776981899490684498}
   - component: {fileID: 744258570288437256}
   - component: {fileID: 2823915941553698908}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8985,7 +8985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7056443359416315627}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9021,7 +9021,7 @@ GameObject:
   - component: {fileID: 545988365950264006}
   - component: {fileID: 366203334170869527}
   - component: {fileID: 1924317997708508292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9104,7 +9104,7 @@ GameObject:
   - component: {fileID: 8435272698639149228}
   - component: {fileID: 2579496350908204044}
   - component: {fileID: 6554880085826184655}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9188,7 +9188,7 @@ GameObject:
   - component: {fileID: 3585356052838068263}
   - component: {fileID: 5155474892391151170}
   - component: {fileID: 3847272741019314223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9305,7 +9305,7 @@ GameObject:
   - component: {fileID: 6123335362438385890}
   - component: {fileID: 7960084568837772268}
   - component: {fileID: 3814947409442636104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9388,7 +9388,7 @@ GameObject:
   - component: {fileID: 684770897274483179}
   - component: {fileID: 8374362445442025982}
   - component: {fileID: 5990514466379983821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9471,7 +9471,7 @@ GameObject:
   - component: {fileID: 8734172558625786360}
   - component: {fileID: 4497260609537623782}
   - component: {fileID: 3187056107552127954}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9637,7 +9637,7 @@ GameObject:
   - component: {fileID: 7200522302815067820}
   - component: {fileID: 8793742330268414019}
   - component: {fileID: 7616804041463858639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9718,7 +9718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582091918229033526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9754,7 +9754,7 @@ GameObject:
   - component: {fileID: 7378631370661784659}
   - component: {fileID: 6594232867800542263}
   - component: {fileID: 6058723897643412589}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9837,7 +9837,7 @@ GameObject:
   - component: {fileID: 4378242305276863359}
   - component: {fileID: 3426956432399739597}
   - component: {fileID: 4910894512135996906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9920,7 +9920,7 @@ GameObject:
   - component: {fileID: 8506019945095833765}
   - component: {fileID: 8350259524748754472}
   - component: {fileID: 9187039232819880651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10086,7 +10086,7 @@ GameObject:
   - component: {fileID: 1034430664641608409}
   - component: {fileID: 1507409753610290696}
   - component: {fileID: 8656534486569611439}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10203,7 +10203,7 @@ GameObject:
   - component: {fileID: 933250340529513749}
   - component: {fileID: 6443181623412052665}
   - component: {fileID: 2179420231696956280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10437,7 +10437,7 @@ GameObject:
   - component: {fileID: 3085737490173559849}
   - component: {fileID: 2302838454836588103}
   - component: {fileID: 1451939480778725922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10637,7 +10637,7 @@ GameObject:
   - component: {fileID: 4568919563273115154}
   - component: {fileID: 8049946011755325449}
   - component: {fileID: 3758614925548405325}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: curb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10720,7 +10720,7 @@ GameObject:
   - component: {fileID: 3184876084418103432}
   - component: {fileID: 1104615538552295978}
   - component: {fileID: 8025263681032734503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10803,7 +10803,7 @@ GameObject:
   - component: {fileID: 1845926237179612928}
   - component: {fileID: 4176415968405984924}
   - component: {fileID: 9083038457399324052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10886,7 +10886,7 @@ GameObject:
   - component: {fileID: 5865731666787673128}
   - component: {fileID: 2771355880352228664}
   - component: {fileID: 74144531110567138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10969,7 +10969,7 @@ GameObject:
   - component: {fileID: 5596867436981207004}
   - component: {fileID: 4344414208378343576}
   - component: {fileID: 4757509880720006212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11135,7 +11135,7 @@ GameObject:
   - component: {fileID: 2445588493974767869}
   - component: {fileID: 5550498203580482620}
   - component: {fileID: 8414889460792835812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: newspapers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11384,7 +11384,7 @@ GameObject:
   - component: {fileID: 8100743537202334052}
   - component: {fileID: 1695387674078632439}
   - component: {fileID: 5347394962427299049}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11468,7 +11468,7 @@ GameObject:
   - component: {fileID: 2698435179144361443}
   - component: {fileID: 7335715269516242519}
   - component: {fileID: 8038600471992538806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11690,7 +11690,7 @@ GameObject:
   - component: {fileID: 2576892405147978637}
   - component: {fileID: 5230869620358062122}
   - component: {fileID: 2813134243289499391}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11854,7 +11854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878937308233945680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: electrone_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11887,7 +11887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394666120192137273}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11920,7 +11920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362555357063552889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11955,7 +11955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9210359377871792751}
   - component: {fileID: 7373579889298482310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Environment (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12024,7 +12024,7 @@ GameObject:
   - component: {fileID: 2728412961850766184}
   - component: {fileID: 9096155457454935913}
   - component: {fileID: 2373031917758472306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12107,7 +12107,7 @@ GameObject:
   - component: {fileID: 5440010171104095224}
   - component: {fileID: 6073629596793187793}
   - component: {fileID: 7748617831641308287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12190,7 +12190,7 @@ GameObject:
   - component: {fileID: 5569693411469793950}
   - component: {fileID: 1015080669574803186}
   - component: {fileID: 4121053086469275424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12273,7 +12273,7 @@ GameObject:
   - component: {fileID: 4663420519260205767}
   - component: {fileID: 9159742092612510319}
   - component: {fileID: 6843140337211893106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12356,7 +12356,7 @@ GameObject:
   - component: {fileID: 3607413515254134671}
   - component: {fileID: 6691041367104238873}
   - component: {fileID: 416639446367287911}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12439,7 +12439,7 @@ GameObject:
   - component: {fileID: 8904392385718694780}
   - component: {fileID: 152814150424680784}
   - component: {fileID: 7873866259720054306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12522,7 +12522,7 @@ GameObject:
   - component: {fileID: 6510705843649397056}
   - component: {fileID: 1657754921187661246}
   - component: {fileID: 6718678961708728909}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12605,7 +12605,7 @@ GameObject:
   - component: {fileID: 3234674764489652383}
   - component: {fileID: 5000698973253581772}
   - component: {fileID: 2007786069704835758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12688,7 +12688,7 @@ GameObject:
   - component: {fileID: 2888415185850124525}
   - component: {fileID: 129336595157565021}
   - component: {fileID: 4031084021841451068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12771,7 +12771,7 @@ GameObject:
   - component: {fileID: 5848267871673221052}
   - component: {fileID: 3560146608612635867}
   - component: {fileID: 8817498533139777626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12854,7 +12854,7 @@ GameObject:
   - component: {fileID: 529755690216455233}
   - component: {fileID: 3411984137540187157}
   - component: {fileID: 3952924765051980623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12938,7 +12938,7 @@ GameObject:
   - component: {fileID: 5018232224927171646}
   - component: {fileID: 295006144079411002}
   - component: {fileID: 1123231456529068790}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13021,7 +13021,7 @@ GameObject:
   - component: {fileID: 470455266493515288}
   - component: {fileID: 5614199130907644179}
   - component: {fileID: 9011929852145232328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13102,7 +13102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 639417333118255371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13136,7 +13136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2596322186812127199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13170,7 +13170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549532093169768064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: electrone_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13205,7 +13205,7 @@ GameObject:
   - component: {fileID: 717032420422228786}
   - component: {fileID: 3301218262977065131}
   - component: {fileID: 1184195795433390073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13288,7 +13288,7 @@ GameObject:
   - component: {fileID: 4145297628839635839}
   - component: {fileID: 7533477452394245706}
   - component: {fileID: 3470173650789209957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13488,7 +13488,7 @@ GameObject:
   - component: {fileID: 8997597285232703943}
   - component: {fileID: 6135443104960553760}
   - component: {fileID: 2998688086982045784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13571,7 +13571,7 @@ GameObject:
   - component: {fileID: 7278458504843115605}
   - component: {fileID: 2812643875593471683}
   - component: {fileID: 1955606684800206926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13737,7 +13737,7 @@ GameObject:
   - component: {fileID: 4934829587966631588}
   - component: {fileID: 6235868197448148234}
   - component: {fileID: 261127790307392318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13820,7 +13820,7 @@ GameObject:
   - component: {fileID: 7723953494652720684}
   - component: {fileID: 3426574553403091126}
   - component: {fileID: 2869340282631216104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14092,7 +14092,7 @@ GameObject:
   - component: {fileID: 7366843901234630296}
   - component: {fileID: 6591472895270818076}
   - component: {fileID: 5857016481768667850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14175,7 +14175,7 @@ GameObject:
   - component: {fileID: 8746754971198183220}
   - component: {fileID: 4864543071982994128}
   - component: {fileID: 7248073310014578711}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14258,7 +14258,7 @@ GameObject:
   - component: {fileID: 3245198745912327965}
   - component: {fileID: 6327988806736778517}
   - component: {fileID: 1100948416373735778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14341,7 +14341,7 @@ GameObject:
   - component: {fileID: 7794428038456039665}
   - component: {fileID: 2314773886563900422}
   - component: {fileID: 6708187716965813677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14422,7 +14422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4228825994493317733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14469,7 +14469,7 @@ GameObject:
   - component: {fileID: 8661794958325190756}
   - component: {fileID: 7949002673855720245}
   - component: {fileID: 3036513615276823835}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14552,7 +14552,7 @@ GameObject:
   - component: {fileID: 8124192154949427526}
   - component: {fileID: 2081030642567900454}
   - component: {fileID: 9197068067203571342}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14635,7 +14635,7 @@ GameObject:
   - component: {fileID: 364840512122925234}
   - component: {fileID: 387471373067615025}
   - component: {fileID: 3757054924780821530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14719,7 +14719,7 @@ GameObject:
   - component: {fileID: 612826048652575447}
   - component: {fileID: 6455722666839157977}
   - component: {fileID: 4932232230076182775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14802,7 +14802,7 @@ GameObject:
   - component: {fileID: 7108139835154225015}
   - component: {fileID: 352153549602495821}
   - component: {fileID: 6152427268874380725}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   - component: {fileID: 6562042591572403114}
   - component: {fileID: 6890852268878187771}
   - component: {fileID: 5014870372897241186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14968,7 +14968,7 @@ GameObject:
   - component: {fileID: 7915081073222375774}
   - component: {fileID: 1983525788156111851}
   - component: {fileID: 6379537404927088030}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15052,7 +15052,7 @@ GameObject:
   - component: {fileID: 1547186609806948912}
   - component: {fileID: 647153967759209739}
   - component: {fileID: 855086774005256850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15218,7 +15218,7 @@ GameObject:
   - component: {fileID: 6458661737866235769}
   - component: {fileID: 96020365352948324}
   - component: {fileID: 3446246616262070989}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15301,7 +15301,7 @@ GameObject:
   - component: {fileID: 7602449232340521744}
   - component: {fileID: 88784932519425752}
   - component: {fileID: 2252364001857470539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15385,7 +15385,7 @@ GameObject:
   - component: {fileID: 6666826052288726491}
   - component: {fileID: 524485301348939205}
   - component: {fileID: 4194465566769931573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15466,7 +15466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6777510292654185968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15500,7 +15500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820329704735486034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15652,7 +15652,7 @@ GameObject:
   - component: {fileID: 3057601749398750225}
   - component: {fileID: 7385826795193756570}
   - component: {fileID: 8710988619254857982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15802,7 +15802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6378350155000827890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15836,7 +15836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6863297733841156543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: electrone_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16496,7 +16496,7 @@ GameObject:
   - component: {fileID: 4235027999366260312}
   - component: {fileID: 2591528963247895815}
   - component: {fileID: 2011836443723543125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16579,7 +16579,7 @@ GameObject:
   - component: {fileID: 4210015203115852722}
   - component: {fileID: 7869127614904423716}
   - component: {fileID: 5727783920589204494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16662,7 +16662,7 @@ GameObject:
   - component: {fileID: 1789708739830231432}
   - component: {fileID: 6582055145999769369}
   - component: {fileID: 2247825720013939082}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16862,7 +16862,7 @@ GameObject:
   - component: {fileID: 2650363349872935497}
   - component: {fileID: 6943328581014321928}
   - component: {fileID: 372513689344394140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17049,7 +17049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134685558956218209}
   - component: {fileID: 1870610203675130620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17144,7 +17144,7 @@ GameObject:
   - component: {fileID: 7361980385341206546}
   - component: {fileID: 7930511809065050592}
   - component: {fileID: 4348473614927896911}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: red_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17225,7 +17225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5720001210897280470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17261,7 +17261,7 @@ GameObject:
   - component: {fileID: 4876916063522198577}
   - component: {fileID: 9188270165920284467}
   - component: {fileID: 8838978131066735167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17344,7 +17344,7 @@ GameObject:
   - component: {fileID: 1684681669195606276}
   - component: {fileID: 8407590399744277418}
   - component: {fileID: 5136989557040024877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17532,7 +17532,7 @@ GameObject:
   - component: {fileID: 6683543372005528351}
   - component: {fileID: 3025279899944872500}
   - component: {fileID: 1113626369069226258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17615,7 +17615,7 @@ GameObject:
   - component: {fileID: 5166824250328847768}
   - component: {fileID: 1910326577262672110}
   - component: {fileID: 8363998118195408310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17765,7 +17765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3303492954028977301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17835,7 +17835,7 @@ GameObject:
   - component: {fileID: 8673110142214280088}
   - component: {fileID: 1878483244895027337}
   - component: {fileID: 1201849694137359283}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17918,7 +17918,7 @@ GameObject:
   - component: {fileID: 1433590784845904193}
   - component: {fileID: 4522769044164388003}
   - component: {fileID: 2074795622207429641}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: road2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18000,7 +18000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5083295199310077902}
   - component: {fileID: 8502143017785839322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18095,7 +18095,7 @@ GameObject:
   - component: {fileID: 6894384921468926628}
   - component: {fileID: 5808362805250418846}
   - component: {fileID: 3756801536712915181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18176,7 +18176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6448902817207757277}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18215,7 +18215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8671299574354142027}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18260,7 +18260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7915930049955506178}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18460,7 +18460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223908433274597656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18496,7 +18496,7 @@ GameObject:
   - component: {fileID: 5078627322779268181}
   - component: {fileID: 1393071316554957693}
   - component: {fileID: 6603892581587845421}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18579,7 +18579,7 @@ GameObject:
   - component: {fileID: 6250417969803674690}
   - component: {fileID: 1043060079684562172}
   - component: {fileID: 137883355566565253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18746,7 +18746,7 @@ GameObject:
   - component: {fileID: 4089429092636558539}
   - component: {fileID: 4963128721530023470}
   - component: {fileID: 8771196478322325785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19029,7 +19029,7 @@ GameObject:
   - component: {fileID: 8844495494611376321}
   - component: {fileID: 674119142767819982}
   - component: {fileID: 9075271943308198992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19112,7 +19112,7 @@ GameObject:
   - component: {fileID: 2028104044710810146}
   - component: {fileID: 153173206114402056}
   - component: {fileID: 2103785545165201416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: newspapers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19278,7 +19278,7 @@ GameObject:
   - component: {fileID: 7352843518298082670}
   - component: {fileID: 2757488320593226358}
   - component: {fileID: 4604460769767503235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19361,7 +19361,7 @@ GameObject:
   - component: {fileID: 869457815913555222}
   - component: {fileID: 5850210279383699590}
   - component: {fileID: 6296241871465312048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19445,7 +19445,7 @@ GameObject:
   - component: {fileID: 4112904592171361674}
   - component: {fileID: 6589146749322675738}
   - component: {fileID: 6971021075921009940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19528,7 +19528,7 @@ GameObject:
   - component: {fileID: 5285115392591724797}
   - component: {fileID: 7347212625965359757}
   - component: {fileID: 5636379809340913216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19692,7 +19692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9201920352439342803}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19726,7 +19726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5835070015536313279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19773,7 +19773,7 @@ GameObject:
   - component: {fileID: 9111001322440043849}
   - component: {fileID: 2542876989602529722}
   - component: {fileID: 4680922795079490121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19856,7 +19856,7 @@ GameObject:
   - component: {fileID: 435452234323006678}
   - component: {fileID: 7087257693241856297}
   - component: {fileID: 3155736968636334086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19940,7 +19940,7 @@ GameObject:
   - component: {fileID: 525682315273479267}
   - component: {fileID: 5292982135998167346}
   - component: {fileID: 5292445901480171888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20045,7 +20045,7 @@ GameObject:
   - component: {fileID: 325327147613719496}
   - component: {fileID: 3972906064067178011}
   - component: {fileID: 647311489819114562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20337,7 +20337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2592382667815710491}
   - component: {fileID: 8946303374138204098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Environment (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20406,7 +20406,7 @@ GameObject:
   - component: {fileID: 3932445985330260723}
   - component: {fileID: 2330877119341037353}
   - component: {fileID: 6452618538528269679}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: big_house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20689,7 +20689,7 @@ GameObject:
   - component: {fileID: 8099655049763300802}
   - component: {fileID: 733063223139555145}
   - component: {fileID: 6557709064977903153}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21146,7 +21146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4273613014741611075}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21182,7 +21182,7 @@ GameObject:
   - component: {fileID: 2871546273091310049}
   - component: {fileID: 5516485988701878734}
   - component: {fileID: 2093644406318727015}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21265,7 +21265,7 @@ GameObject:
   - component: {fileID: 1977691518504183388}
   - component: {fileID: 74513669876379182}
   - component: {fileID: 4414608063827876630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21348,7 +21348,7 @@ GameObject:
   - component: {fileID: 5293946756314991363}
   - component: {fileID: 5437305976209331064}
   - component: {fileID: 6455195162093574510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21431,7 +21431,7 @@ GameObject:
   - component: {fileID: 1620373201819363058}
   - component: {fileID: 1670684984775431550}
   - component: {fileID: 3087187353817588180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21515,7 +21515,7 @@ GameObject:
   - component: {fileID: 9117136791117968017}
   - component: {fileID: 5860258629895282504}
   - component: {fileID: 901588823374172921}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21598,7 +21598,7 @@ GameObject:
   - component: {fileID: 4950691437518970463}
   - component: {fileID: 2878230404619207335}
   - component: {fileID: 6215062373102480125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pizza_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21681,7 +21681,7 @@ GameObject:
   - component: {fileID: 449877468908287369}
   - component: {fileID: 7573343960630623661}
   - component: {fileID: 270142651592349196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21765,7 +21765,7 @@ GameObject:
   - component: {fileID: 1378787413288117330}
   - component: {fileID: 3222260138145951353}
   - component: {fileID: 8956466192971127459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21882,7 +21882,7 @@ GameObject:
   - component: {fileID: 5820895951653803023}
   - component: {fileID: 9038787165462831698}
   - component: {fileID: 8808307702082368395}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mailbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21965,7 +21965,7 @@ GameObject:
   - component: {fileID: 397842936973150704}
   - component: {fileID: 812786084733877002}
   - component: {fileID: 7798724285404219221}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22049,7 +22049,7 @@ GameObject:
   - component: {fileID: 6104792026163793722}
   - component: {fileID: 7517754411996633899}
   - component: {fileID: 263396576110973467}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22236,7 +22236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8393617199795678462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22272,7 +22272,7 @@ GameObject:
   - component: {fileID: 4609852299044353589}
   - component: {fileID: 9003861416521265296}
   - component: {fileID: 1077736255562126175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22355,7 +22355,7 @@ GameObject:
   - component: {fileID: 8468462559533837974}
   - component: {fileID: 8337528308946456509}
   - component: {fileID: 7091293904799766009}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22436,7 +22436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9079415587562296647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22472,7 +22472,7 @@ GameObject:
   - component: {fileID: 940028981753775230}
   - component: {fileID: 5524565862213542062}
   - component: {fileID: 5448339628951223167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22555,7 +22555,7 @@ GameObject:
   - component: {fileID: 2086874827473503281}
   - component: {fileID: 6558992342248466478}
   - component: {fileID: 7524551709525942297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: post (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22755,7 +22755,7 @@ GameObject:
   - component: {fileID: 979239428957539359}
   - component: {fileID: 5376427049139237461}
   - component: {fileID: 5961257605590493321}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22943,7 +22943,7 @@ GameObject:
   - component: {fileID: 6545374564860241279}
   - component: {fileID: 5038121829611462340}
   - component: {fileID: 1241739139277267118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mini_house (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23109,7 +23109,7 @@ GameObject:
   - component: {fileID: 5259498453592057616}
   - component: {fileID: 9200027395950942791}
   - component: {fileID: 1744338227305757905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bush_02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23297,7 +23297,7 @@ GameObject:
   - component: {fileID: 383042675134815459}
   - component: {fileID: 8574032966660324480}
   - component: {fileID: 6138278299977550613}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23380,7 +23380,7 @@ GameObject:
   - component: {fileID: 7992022542837818009}
   - component: {fileID: 3369342577676702967}
   - component: {fileID: 2970356370203274037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23547,7 +23547,7 @@ GameObject:
   - component: {fileID: 4042687699799851898}
   - component: {fileID: 8613089431574407114}
   - component: {fileID: 6901547004061799038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23630,7 +23630,7 @@ GameObject:
   - component: {fileID: 6833655584139911624}
   - component: {fileID: 8287253265773908297}
   - component: {fileID: 1167225481056074443}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23794,7 +23794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6547636921008357260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24196,7 +24196,7 @@ GameObject:
   - component: {fileID: 331686756016161198}
   - component: {fileID: 4830550763182004268}
   - component: {fileID: 3684990446605190770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_can (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24277,7 +24277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4124019278158531424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24315,6 +24315,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4
@@ -24355,9 +24359,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24369,6 +24389,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
   m_PrefabInstance: {fileID: 81118564021626161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7014849809684261843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 81118564021626161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &124258984378284364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24377,6 +24402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4
@@ -24417,9 +24446,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24429,6 +24474,11 @@ PrefabInstance:
 --- !u!4 &585653759812458594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 124258984378284364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7043775745092761518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
   m_PrefabInstance: {fileID: 124258984378284364}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &510479164811206278
@@ -24775,6 +24825,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -24815,6 +24869,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5625222479928756830, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: rotationDelay
       value: 0.5
@@ -24822,6 +24884,14 @@ PrefabInstance:
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: 'Coins '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24833,6 +24903,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
   m_PrefabInstance: {fileID: 949464798106794758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7878165117964400100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 949464798106794758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1566303413538618253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24841,6 +24916,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -24881,9 +24960,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24893,6 +24988,11 @@ PrefabInstance:
 --- !u!4 &2028164342897810083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 1566303413538618253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8486278119428453743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
   m_PrefabInstance: {fileID: 1566303413538618253}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1817148717429330919
@@ -24953,6 +25053,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed801f4ad8c8e48f1b4b04b5a1f4db8d, type: 3}
+--- !u!1 &1395874240205199765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 750107829236533874, guid: ed801f4ad8c8e48f1b4b04b5a1f4db8d, type: 3}
+  m_PrefabInstance: {fileID: 1817148717429330919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6337383816644887163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5675984825895555484, guid: ed801f4ad8c8e48f1b4b04b5a1f4db8d, type: 3}
@@ -25077,6 +25182,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726bbdaab3d7f429a89835f0c81fcae3, type: 3}
+--- !u!1 &920391329601262587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4607393087067210781, guid: 726bbdaab3d7f429a89835f0c81fcae3, type: 3}
+  m_PrefabInstance: {fileID: 3689957258948564966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5217470958408468501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8889387283197353971, guid: 726bbdaab3d7f429a89835f0c81fcae3, type: 3}
@@ -25090,6 +25200,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5808500722372052200}
     m_Modifications:
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[0]
+      value: 
+      objectReference: {fileID: 7878165117964400100}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[1]
+      value: 
+      objectReference: {fileID: 3282275002776023810}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[2]
+      value: 
+      objectReference: {fileID: 2594724338589729202}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[3]
+      value: 
+      objectReference: {fileID: 8486278119428453743}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[4]
+      value: 
+      objectReference: {fileID: 1687406728514255358}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[5]
+      value: 
+      objectReference: {fileID: 1135599346136492614}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[6]
+      value: 
+      objectReference: {fileID: 1449185693680367563}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[7]
+      value: 
+      objectReference: {fileID: 3277053202634393919}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[8]
+      value: 
+      objectReference: {fileID: 7043775745092761518}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _coins.Array.data[9]
+      value: 
+      objectReference: {fileID: 7014849809684261843}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _hammer.Array.data[1]
+      value: 
+      objectReference: {fileID: 920391329601262587}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _hammer.Array.data[2]
+      value: 
+      objectReference: {fileID: 9145815746879310063}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _hammer.Array.data[3]
+      value: 
+      objectReference: {fileID: 5767934457391637491}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _hammer.Array.data[4]
+      value: 
+      objectReference: {fileID: 1395874240205199765}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _obstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 4788973007420524875}
+    - target: {fileID: 442238243348023965, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
+      propertyPath: _obstacle.Array.data[1]
+      value: 
+      objectReference: {fileID: 6186260379308497790}
     - target: {fileID: 1282195026602835063, guid: 1dfbd6beb3fa14cf1a0f35c4ea7d220e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -25206,6 +25380,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8889387283197353971, guid: 726bbdaab3d7f429a89835f0c81fcae3, type: 3}
   m_PrefabInstance: {fileID: 4691846382117522674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9145815746879310063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4607393087067210781, guid: 726bbdaab3d7f429a89835f0c81fcae3, type: 3}
+  m_PrefabInstance: {fileID: 4691846382117522674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4934714094796345168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25214,6 +25393,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.3
@@ -25254,15 +25437,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &2594724338589729202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 4934714094796345168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5612184753572277886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
@@ -25338,6 +25542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.8
@@ -25378,15 +25586,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &3277053202634393919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 5549453839466547165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4943336949838391027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
@@ -25400,6 +25629,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -25440,15 +25673,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &3282275002776023810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 5617409178195426784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4930553170110815438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
@@ -25516,6 +25770,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7885031268667069172, guid: 3d72a3da64acc44549a56818f17a4f35, type: 3}
   m_PrefabInstance: {fileID: 6031808990534408981}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4788973007420524875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1279184757417284190, guid: 3d72a3da64acc44549a56818f17a4f35, type: 3}
+  m_PrefabInstance: {fileID: 6031808990534408981}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6513114138056747393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25577,6 +25836,11 @@ PrefabInstance:
 --- !u!4 &1487908529354405917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5675984825895555484, guid: ed801f4ad8c8e48f1b4b04b5a1f4db8d, type: 3}
+  m_PrefabInstance: {fileID: 6513114138056747393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5767934457391637491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 750107829236533874, guid: ed801f4ad8c8e48f1b4b04b5a1f4db8d, type: 3}
   m_PrefabInstance: {fileID: 6513114138056747393}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7628511557126877189
@@ -25888,6 +26152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.4
@@ -25928,15 +26196,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &1135599346136492614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 8051175876959741092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7359543504128427402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
@@ -25999,6 +26288,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc59c30c1360412d82c5d842dabf295, type: 3}
+--- !u!1 &6186260379308497790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2789668853512281686, guid: 7bc59c30c1360412d82c5d842dabf295, type: 3}
+  m_PrefabInstance: {fileID: 8317275513786959144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8576926858877062016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 318554401340673704, guid: 7bc59c30c1360412d82c5d842dabf295, type: 3}
@@ -26012,6 +26306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -26052,15 +26350,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &1449185693680367563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 8387245047940512041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9078314500546828295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
@@ -26074,6 +26393,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2858072201807744581}
     m_Modifications:
+    - target: {fileID: 304846242938625436, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -26114,15 +26437,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752382990418789244, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 912478183517380170, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
       propertyPath: m_Name
       value: Coins  (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627028618744980636, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+--- !u!1 &1687406728514255358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6951851774189801186, guid: 9f3674070de594903b33acead6e77ccc, type: 3}
+  m_PrefabInstance: {fileID: 8580253536526448412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9118367847834736178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 691826041516908846, guid: 9f3674070de594903b33acead6e77ccc, type: 3}

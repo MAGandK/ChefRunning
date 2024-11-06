@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public abstract class WindowBase : MonoBehaviour
 {
     public bool IsActive
@@ -15,12 +14,12 @@ public abstract class WindowBase : MonoBehaviour
         get ;
     } 
 
-    public virtual void Show()
+    public virtual void ShowWindow()
     {
         gameObject.SetActive(true);
     }
 
-    public virtual void Hide()
+    public virtual void CloseWindow()
     {
         gameObject.SetActive(false);
     }

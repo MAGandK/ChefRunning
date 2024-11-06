@@ -10,13 +10,15 @@ public class Coin : MonoBehaviour
     private UIController _uiController;
     private LevelPrefabManager _levelPrefabManager;
     private AudioManager _audioManager;
+    private ObstacleBase _obstacleBase;
     
     [Inject]
-    public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager, AudioManager audioManager)
+    public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager, AudioManager audioManager, ObstacleBase obstacleBase)
     {
         _uiController = uiController;
         _levelPrefabManager = levelPrefabManager;
         _audioManager = audioManager;
+        _obstacleBase = obstacleBase;
     }
     private void Awake()
     {
@@ -47,7 +49,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CollectCoin();
-        _levelPrefabManager._coins.Add(gameObject);
+        _obstacleBase._coins.Add(gameObject);
         gameObject.SetActive(false);
     }
     private void CollectCoin()

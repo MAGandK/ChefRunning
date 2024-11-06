@@ -21,11 +21,11 @@ public class UIController : MonoBehaviour
         {
             if (_windows[i].Type == type)
             {
-                _windows[i].Show();
+                _windows[i].ShowWindow();
             }
             else
             {
-                _windows[i].Hide();
+                _windows[i].CloseWindow();
             }
         }
     }

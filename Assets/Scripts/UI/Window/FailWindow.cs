@@ -19,7 +19,7 @@ public class FailWindow : WindowBase
     }
     public void OnRestartButtonClick()
     {
-        base.Hide();
+        base.CloseWindow();
         _gameManager.RestartGame();
     }
 }

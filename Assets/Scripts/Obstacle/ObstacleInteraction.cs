@@ -5,7 +5,7 @@ public class ObstacleInteraction : MonoBehaviour
 {
     public static event Action Interaction;
 
-    private bool _isInteracted;
+    internal bool _isInteracted;
 
     private Player _player;
 

@@ -1,16 +1,11 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
-
 public class AnimatorController : MonoBehaviour
 {
-    [SerializeField]
-    private Animator _animator;
-    
+    [SerializeField] public Animator _animator;
     public int Run = Animator.StringToHash("IsRun");
     public int Died = Animator.StringToHash("Died");
     public int Dance = Animator.StringToHash("Danced");
     public int Hit = Animator.StringToHash("IsHit");
-    public int Hits = Animator.StringToHash("IsHits");
 
     private void OnEnable()
     {
@@ -28,7 +23,6 @@ public class AnimatorController : MonoBehaviour
             _animator.SetBool(Died, false);
             _animator.SetBool(Dance, false);
         }
-
     }
     
     public void StopRun()
@@ -53,7 +47,6 @@ public class AnimatorController : MonoBehaviour
     public void Hitting()
     {
         _animator.SetTrigger(Hit);
-        _animator.SetInteger(Hits, Random.Range(0, 2));
     }
     
     public void ResetAnimation()

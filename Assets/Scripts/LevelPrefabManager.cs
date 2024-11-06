@@ -1,31 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
-    internal List<GameObject> _coins = new List<GameObject>();
-    internal List<GameObject> _obstacle = new List<GameObject>();
-    internal List<GameObject> _hammer = new List<GameObject>();
     private GameObject _currentScene;
     private Vector3 _startPosition = new Vector3(100.7371f, -279.3909f, 585.5648f);
-
+    private ObstacleBase _obstacleBase;
+    
+    [Inject]
+    private void Construct(ObstacleBase obstacleBase)
+    {
+        _obstacleBase = obstacleBase;
+    }
     private void OnEnable()
     {
         GameManager.IsStartGame += StartFirstScene;
         GameManager.IsRestartGame += ReloadScene;
         GameManager.IsFinishGame += NewScene;
     }
-
+    
     private void Start()
     {
-        // if (_obstacle.Count == 0)
-        // {
-        //     _currentScene = _listScene[1];
-        //     StartScene();
-        // }
-        
         _currentScene = _listScene[1];
         StartScene();
     }
@@ -68,9 +66,9 @@ public class LevelPrefabManager : MonoBehaviour
         _currentScene.SetActive(false);
         _currentScene.SetActive(true);
 
-        if (_coins != null && _coins.Count > 0)
+        if (_obstacleBase._coins.Count > 0)
         {
-            foreach (var coin in _coins)
+            foreach (var coin in _obstacleBase._coins)
             {
                 if (coin != null)
                 {
@@ -78,25 +76,23 @@ public class LevelPrefabManager : MonoBehaviour
                 }
             }
         }
-
-        if (_obstacle != null && _obstacle.Count > 0)
+        
+        if (_obstacleBase._obstacle.Count > 0)
         {
-            foreach (var obstacles in _obstacle)
+            Debug.Log("1234");
+            foreach (var obstacle in _obstacleBase._obstacle)
             {
-                if (obstacles != null)
+                obstacle.SetActive(true); 
+                var obstacleComponent = obstacle.GetComponent<ObstacleBase>();
+                if (obstacleComponent != null)
                 {
-                    obstacles.SetActive(true);
-                    var obstacleComponent = obstacles.GetComponent<ObstacleBarrel>();
-                    if (obstacleComponent != null)
-                    {
-                        obstacleComponent.ResetObstacle();
-                    }
+                    obstacleComponent.ResetObstacle();
                 }
             }
-
-            if (_hammer != null && _hammer.Count > 0)
+        
+            if (_obstacleBase._hammer != null && _obstacleBase._hammer.Count >= 0)
             {
-                foreach (var hammers in _hammer)
+                foreach (var hammers in _obstacleBase._hammer)
                 {
                     if (hammers != null)
                     {
@@ -111,7 +107,8 @@ public class LevelPrefabManager : MonoBehaviour
             }
         }
     }
-private void OnDisable()
+
+    private void OnDisable()
     {
         GameManager.IsStartGame -= StartFirstScene;
         GameManager.IsRestartGame -= ReloadScene;

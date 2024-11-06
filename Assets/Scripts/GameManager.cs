@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static event Action IsStartGame;
 
     private Player _player;
+    private PlayerController _playerController;
     private AudioManager _audioManager;
     
     private bool _isGameStarted = false;
@@ -24,12 +25,15 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
+    private ObstacleBase _obstacleBase;
 
     [Inject]
-    private void Construct( Player player, AudioManager audioManager)
+    private void Construct(Player player, PlayerController playerController, AudioManager audioManager, ObstacleBase obstacleBase)
     {
-        _player = player;
-        _audioManager = audioManager;
+       _player = player;
+       _playerController = playerController;
+       _audioManager = audioManager;
+       _obstacleBase = obstacleBase;
     }
 
     private void Update()
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         _isGameFinished = true;
-        _player.Dance();
+       _playerController.Dance();
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Finish);
         IsFinishGame?.Invoke();
@@ -86,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        _player.Die();
+        _playerController.Die();
         _audioManager.StopMusic(); 
         _audioManager.PlaySound(SoundType.Fail);
        IsPlayerDie?.Invoke();
@@ -96,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerHit()
     {
-        _player.Hit();
+        _playerController.Hit();
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
@@ -105,8 +109,10 @@ public class GameManager : MonoBehaviour
     {
         _isGameFinished = false;
         ResetPlayerPosition();
-        _player.ResetState();  
-        IsRestartGame?.Invoke();  
+        _player.ResetPlayerState();
+        _playerController.ResetState();
+        IsRestartGame?.Invoke(); 
+        //_obstacleBase.ResetObstacle();
         StartGame();
     }
     public void ResetPlayerPosition()

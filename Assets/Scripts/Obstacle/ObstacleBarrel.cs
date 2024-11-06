@@ -2,16 +2,11 @@ using System.Collections;
 using UnityEngine;
 public class ObstacleBarrel : ObstacleBase
 {
-    [SerializeField]
-    private Transform _object;
-    [SerializeField]
-    private float _time;
-    [SerializeField]
-    private Transform _targetPosition;
-    [SerializeField]
-    private Transform _startPosition;
-    [SerializeField]
-    private float _rotationSpeed;
+    [SerializeField] private Transform _object;
+    [SerializeField] private float _time;
+    [SerializeField] private Transform _targetPosition;
+    [SerializeField] private Transform _startPosition;
+    [SerializeField] private float _rotationSpeed;
     
     private void OnEnable()
     {
@@ -59,13 +54,15 @@ public class ObstacleBarrel : ObstacleBase
     }
     public override void ResetObstacle()
     {
+        Debug.Log("ресет бочки");
         base.ResetObstacle();
-        _object.gameObject.SetActive(true);
+       
         _object.position = _startPosition.position;
         _object.rotation = _startPosition.rotation;
- 
+        
         StartMovement();
     }
+    
 #if UNITY_EDITOR 
     private void OnDrawGizmos()
     {

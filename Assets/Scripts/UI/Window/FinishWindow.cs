@@ -21,7 +21,7 @@ public class FinishWindow : WindowBase
     {
         if (_gameManager.IsGameFinished) 
         {
-            base.Hide(); 
+            base.CloseWindow(); 
             _gameManager.RestartGame(); 
         }
     }
