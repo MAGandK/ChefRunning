@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -8,34 +9,38 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     [SerializeField] private CinemachineVirtualCamera _failCamera;
     [SerializeField] private CinemachineVirtualCamera _finishCamera;
+   
     public static event Action IsPlayerDie;
-    public static event Action IsPlayerHit;
     public static event Action IsRestartGame;
     public static event Action IsFinishGame;
     public static event Action IsStartGame;
-
+    
     private Player _player;
-    private PlayerController _playerController;
     private AudioManager _audioManager;
     
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
-    
-    private Vector3 _playerPosition;
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
-    private ObstacleBase _obstacleBase;
-
-    [Inject]
-    private void Construct(Player player, PlayerController playerController, AudioManager audioManager, ObstacleBase obstacleBase)
+    
+    private List<GameObject> _obstacle = new List<GameObject>();
+    
+    [SerializeField] private GameObject[] _explosionEffects;
+    
+    private void OnEnable()
     {
-       _player = player;
-       _playerController = playerController;
-       _audioManager = audioManager;
-       _obstacleBase = obstacleBase;
+        ObstacleBarrel.OnGameObjectTrigerred += ObstacleCollision;
+        ObstacleHammer.HammerFall += ObstacleHammerFall;
     }
 
+    [Inject]
+    private void Construct(Player player, AudioManager audioManager)
+    {
+       _player = player;
+       _audioManager = audioManager;
+    }
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !_isGameStarted && !_isGameFinished)
@@ -51,13 +56,18 @@ public class GameManager : MonoBehaviour
             TestFinishGame();
         }
     }
- 
+ /// <summary>
+ /// Test method function
+ /// </summary>
     public void TestDied()
     {
         PlayerDied();
         Debug.Log("Тест: Игрок умер");
     }
     
+ /// <summary>
+ /// Test method function
+ /// </summary>
     public void TestFinishGame()
     {
         FinishGame();
@@ -68,7 +78,6 @@ public class GameManager : MonoBehaviour
     {
         _isGameStarted = true;
         IsStartGame?.Invoke();
-        _playerPosition = _player.transform.position;
         _audioManager.PlayBackgroundMusic();
         _mainCamera.Priority = 10;  
         _failCamera.Priority = 0;
@@ -78,7 +87,7 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         _isGameFinished = true;
-       _playerController.Dance();
+        _player.Dance();
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Finish);
         IsFinishGame?.Invoke();
@@ -90,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        _playerController.Die();
+        _player.Die();
         _audioManager.StopMusic(); 
         _audioManager.PlaySound(SoundType.Fail);
        IsPlayerDie?.Invoke();
@@ -98,25 +107,58 @@ public class GameManager : MonoBehaviour
        _failCamera.Priority = 10;
     }
 
-    public void PlayerHit()
-    {
-        _playerController.Hit();
-        _audioManager.PlaySound(SoundType.Push);
-        IsPlayerHit?.Invoke();
-    }
-
-    public void RestartGame()
+   public void RestartGame()
     {
         _isGameFinished = false;
-        ResetPlayerPosition();
+        _player.ResetPlayerPosition();
         _player.ResetPlayerState();
-        _playerController.ResetState();
+        _player.ResetState();
         IsRestartGame?.Invoke(); 
-        //_obstacleBase.ResetObstacle();
         StartGame();
     }
-    public void ResetPlayerPosition()
-    {
-        _player.transform.position = _playerPosition; 
-    }
+
+   public void ObstacleCollision(GameObject obstacle)
+   {
+       if (_player._isPlayerHit)
+       {
+           HitObstacle(obstacle);
+       }
+       else
+       {
+           foreach (var item in _obstacle)
+           {
+               item.SetActive(true);
+           }
+           _obstacle.Clear();
+           obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
+           PlayerDied();
+       }
+   }
+
+   private void HitObstacle(GameObject obj)
+   {
+       _obstacle.Add(obj);
+       ActivateHitEffects(obj.transform);
+       obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
+       obj.SetActive(false);
+   }
+
+   private void ObstacleHammerFall()
+   {
+       PlayerDied();
+   }
+
+   public void ActivateHitEffects(Transform obstacleTransform)
+   {
+       foreach (var effect in _explosionEffects)
+       {
+           Instantiate(effect, obstacleTransform.position, Quaternion.identity);
+       }
+   }
+   
+   private void OnDisable()
+   {
+       ObstacleBarrel.OnGameObjectTrigerred -= ObstacleCollision;
+       ObstacleHammer.HammerFall -= ObstacleHammerFall;
+   }
 }

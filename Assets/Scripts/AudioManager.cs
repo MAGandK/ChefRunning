@@ -22,11 +22,7 @@ public class AudioManager : MonoBehaviour
         }
 
         [field: SerializeField]
-        public AudioClip AudioClip
-        {
-            get;
-            private set;
-        }
+        public AudioClip AudioClip { get; private set; }
     }
     
     [SerializeField]
@@ -57,7 +53,7 @@ public class AudioManager : MonoBehaviour
     
     public void PlayBackgroundMusic()
     {
-        if (_audioGameMusic != null && !_audioGameMusic.isPlaying)
+        if (_audioGameMusic && !_audioGameMusic.isPlaying)
         {
             _audioGameMusic.Play(); 
         }
@@ -65,7 +61,7 @@ public class AudioManager : MonoBehaviour
     
     public void StopMusic()
     {
-        if (_audioGameMusic != null && _audioGameMusic.isPlaying)
+        if (_audioGameMusic && _audioGameMusic.isPlaying)
         {
             _audioGameMusic.Stop();
         }
@@ -74,7 +70,7 @@ public class AudioManager : MonoBehaviour
     {
         SoundPreset preset = Array.Find(_soundPresets, p => p.SoundType == soundType);
         
-        if (preset != null && preset.AudioClip != null)
+        if (preset != null && preset.AudioClip)
         {
             AudioSource audioSource = GetAvailableAudioSource();
             audioSource.PlayOneShot(preset.AudioClip);
@@ -87,7 +83,7 @@ public class AudioManager : MonoBehaviour
 
         AudioSource availableSource = _audioSources.Find(source => !source.isPlaying);
 
-        if (availableSource == null)
+        if (!availableSource)
         {
             availableSource = gameObject.AddComponent<AudioSource>();
             _audioSources.Add(availableSource);

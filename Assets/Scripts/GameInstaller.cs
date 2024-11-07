@@ -11,8 +11,7 @@ public class GameInstaller : MonoInstaller
         Container.Bind<DynamicJoystick>().FromComponentInHierarchy().AsSingle();
         Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<PlayerController>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<MovementController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<ObstacleBase>().FromComponentInHierarchy().AsSingle();
     }
 }

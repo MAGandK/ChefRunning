@@ -209,11 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefb447073c074bc78f4bf84370300b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffects:
-  - {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
-  _coins: []
-  _obstacle: []
-  _hammer: []
   _objectHammer: {fileID: 821894141907295525}
   animationSpeed: 2
 --- !u!65 &2634648493592403288
@@ -235,8 +230,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.7044854, y: 2.8746884, z: 3.874719}
-  m_Center: {x: 0.111284256, y: 1.394657, z: -0.7290555}
+  m_Size: {x: 5.340855, y: 2.4251611, z: 2.7957265}
+  m_Center: {x: -0.12511635, y: 1.6194206, z: -0.18955922}
 --- !u!65 &955377935214256328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -256,8 +251,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6307282, y: 2.8746884, z: 4.450123}
-  m_Center: {x: -7.833205e-15, y: 1.394657, z: 3.4487863}
+  m_Size: {x: 1.459328, y: 2.8746884, z: 4.450123}
+  m_Center: {x: -0.038994312, y: 1.394657, z: 3.4487863}
 --- !u!65 &1975210381398874660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,8 +272,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.868877, y: 2.8746884, z: 6.1574845}
-  m_Center: {x: -0.7388382, y: 1.394657, z: 8.745596}
+  m_Size: {x: 5.9114227, y: 2.4049058, z: 4.838765}
+  m_Center: {x: -0.22534204, y: 1.6295483, z: 8.086237}
 --- !u!4 &821894141907295525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8e7af7304d80c482b96edd267edcf4ad, type: 3}

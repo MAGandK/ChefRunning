@@ -7,12 +7,15 @@ public class AnimatorController : MonoBehaviour
     public int Dance = Animator.StringToHash("Danced");
     public int Hit = Animator.StringToHash("IsHit");
 
+    internal bool _hitAnimEnd;
+    
     private void OnEnable()
     {
         GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
-       GameManager.IsRestartGame += ResetAnimation;
+        GameManager.IsRestartGame += ResetAnimation;
+        AnimationTrigger.AnimationEndHandler += IsHitAnimTrigger;
     }
     
     public void Running()
@@ -58,12 +61,18 @@ public class AnimatorController : MonoBehaviour
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);
     }
-    
+
+    private void IsHitAnimTrigger()
+    {
+        _hitAnimEnd = true;
+    }
+
     private void OnDisable()
     {
         GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
         GameManager.IsRestartGame -= ResetAnimation;
+        AnimationTrigger.AnimationEndHandler -= IsHitAnimTrigger;
     }
 }

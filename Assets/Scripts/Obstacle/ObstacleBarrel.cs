@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
-public class ObstacleBarrel : ObstacleBase
+public class ObstacleBarrel : MonoBehaviour
 {
-    [SerializeField] private Transform _object;
+    public delegate void ObstacleEventHandler(GameObject obstacleBarrel);
+    public static event ObstacleEventHandler OnGameObjectTrigerred;
+    
     [SerializeField] private float _time;
     [SerializeField] private Transform _targetPosition;
     [SerializeField] private Transform _startPosition;
@@ -17,11 +19,11 @@ public class ObstacleBarrel : ObstacleBase
     {
         if (gameObject.activeInHierarchy)
         {
-            StartCoroutine(ObstacleMovement(_object, _targetPosition.position, _time));
+            StartCoroutine(ObstacleMovement(_targetPosition.position, _time));
         }
     }
 
-    private IEnumerator ObstacleMovement(Transform obj, Vector3 targetPosition, float executionTime)
+    private IEnumerator ObstacleMovement(Vector3 targetPosition, float executionTime)
     {
         Vector3 startPosition = _startPosition.position;
         float angle = 0;
@@ -35,8 +37,8 @@ public class ObstacleBarrel : ObstacleBase
                 time += Time.deltaTime;
                 progress = time / executionTime;
                 angle += _rotationSpeed;
-                obj.rotation = Quaternion.AngleAxis(angle, obj.up);
-                obj.position = Vector3.Lerp(startPosition, targetPosition, progress);
+                transform.rotation = Quaternion.AngleAxis(angle, transform.up);
+                transform.position = Vector3.Lerp(startPosition, targetPosition, progress);
                 yield return null;
             }
 
@@ -46,23 +48,30 @@ public class ObstacleBarrel : ObstacleBase
                 time += Time.deltaTime;
                 progress = time / executionTime;
                 angle += _rotationSpeed;
-                obj.rotation = Quaternion.AngleAxis(angle, obj.up);
-                obj.position = Vector3.Lerp(targetPosition, startPosition, progress);
+                transform.rotation = Quaternion.AngleAxis(angle, transform.up);
+                transform.position = Vector3.Lerp(targetPosition, startPosition, progress);
                 yield return null;
             }
         }
     }
-    public override void ResetObstacle()
+    
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ресет бочки");
-        base.ResetObstacle();
-       
-        _object.position = _startPosition.position;
-        _object.rotation = _startPosition.rotation;
-        
-        StartMovement();
+        OnGameObjectTrigerred?.Invoke(gameObject);
     }
     
+    private void ResetPosition()
+    {
+        transform.position = _startPosition.position;
+        transform.rotation = _startPosition.rotation;
+    }
+
+    public void ResetObstacle()
+    {
+        ResetPosition();
+        StartMovement();
+    }
+
 #if UNITY_EDITOR 
     private void OnDrawGizmos()
     {

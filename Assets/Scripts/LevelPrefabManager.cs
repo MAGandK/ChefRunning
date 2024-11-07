@@ -6,15 +6,11 @@ using Random = UnityEngine.Random;
 public class LevelPrefabManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _listScene;
+    [SerializeField] internal List<GameObject> _coinsList = new List<GameObject>();
     private GameObject _currentScene;
-    private Vector3 _startPosition = new Vector3(100.7371f, -279.3909f, 585.5648f);
-    private ObstacleBase _obstacleBase;
+    private Vector3 _startPosition = new Vector3(101f, -280f, 586f);
     
-    [Inject]
-    private void Construct(ObstacleBase obstacleBase)
-    {
-        _obstacleBase = obstacleBase;
-    }
+  
     private void OnEnable()
     {
         GameManager.IsStartGame += StartFirstScene;
@@ -66,44 +62,11 @@ public class LevelPrefabManager : MonoBehaviour
         _currentScene.SetActive(false);
         _currentScene.SetActive(true);
 
-        if (_obstacleBase._coins.Count > 0)
+        if (_coinsList.Count > 0)
         {
-            foreach (var coin in _obstacleBase._coins)
+            foreach (var coin in _coinsList)
             {
-                if (coin != null)
-                {
                     coin.SetActive(true);
-                }
-            }
-        }
-        
-        if (_obstacleBase._obstacle.Count > 0)
-        {
-            Debug.Log("1234");
-            foreach (var obstacle in _obstacleBase._obstacle)
-            {
-                obstacle.SetActive(true); 
-                var obstacleComponent = obstacle.GetComponent<ObstacleBase>();
-                if (obstacleComponent != null)
-                {
-                    obstacleComponent.ResetObstacle();
-                }
-            }
-        
-            if (_obstacleBase._hammer != null && _obstacleBase._hammer.Count >= 0)
-            {
-                foreach (var hammers in _obstacleBase._hammer)
-                {
-                    if (hammers != null)
-                    {
-                        hammers.SetActive(true);
-                        var hammerComponent = hammers.GetComponent<ObstacleHammer>();
-                        if (hammerComponent != null)
-                        {
-                            hammerComponent.ResetObstacle();
-                        }
-                    }
-                }
             }
         }
     }

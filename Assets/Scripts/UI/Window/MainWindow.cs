@@ -41,7 +41,7 @@ public class MainWindow : WindowBase
     private void OnEnable()
     {
         ObstacleInteraction.Interaction += ShowText;
-        GameManager.IsPlayerHit += HideText;
+        Player.IsPlayerHit += HideText;
     }
 
     private void Update()
@@ -89,6 +89,6 @@ public class MainWindow : WindowBase
     private void OnDisable()
     {
         ObstacleInteraction.Interaction -= ShowText;
-        GameManager.IsPlayerHit -= HideText;
+        Player.IsPlayerHit -= HideText;
     }
 }

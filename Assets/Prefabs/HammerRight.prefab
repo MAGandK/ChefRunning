@@ -331,28 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefb447073c074bc78f4bf84370300b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffects:
-  - {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
-  _coins:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _obstacle:
-  - {fileID: 0}
-  - {fileID: 0}
-  _hammer:
-  - {fileID: 6153756219733321625}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _objectHammer: {fileID: 6082559807921320142}
   animationSpeed: 1.3
 --- !u!65 &5188289660647163127
@@ -374,8 +352,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.534805, y: 2.8746884, z: 3.5077884}
-  m_Center: {x: -0.08119118, y: 1.394657, z: -0.5455903}
+  m_Size: {x: 6.2989955, y: 2.4294386, z: 2.7260532}
+  m_Center: {x: -0.14653873, y: 1.6172819, z: -0.15472257}
 --- !u!65 &6669607619961085207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,5 +394,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.7628875, y: 2.8746884, z: 6.765301}
-  m_Center: {x: -0.3483057, y: 1.394657, z: 8.448063}
+  m_Size: {x: 7.4768076, y: 2.4403095, z: 5.1648965}
+  m_Center: {x: -0.19530773, y: 1.6118464, z: 7.6478605}
