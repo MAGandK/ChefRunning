@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5102401044663699791}
   - component: {fileID: 2230180715477216109}
   - component: {fileID: 5689446429618931842}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ObstacleCrashTriger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552614321144691506}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PointEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8889387283197353971}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: HammerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +181,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8e7af7304d80c482b96edd267edcf4ad, type: 3}
       propertyPath: m_Name
       value: Hammer_test
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e7af7304d80c482b96edd267edcf4ad, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351053838077304830, guid: 8e7af7304d80c482b96edd267edcf4ad, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

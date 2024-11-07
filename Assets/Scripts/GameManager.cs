@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         ObstacleBarrel.OnGameObjectTrigerred += ObstacleCollision;
-        ObstacleHammer.HammerFall += ObstacleHammerFall;
+        ObstacleHammer.HammerFall += ObstacleCollisionHammer;
     }
 
     [Inject]
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
            _obstacle.Clear();
            obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
            PlayerDied();
-       }
+           }
    }
 
    private void HitObstacle(GameObject obj)
@@ -142,11 +142,35 @@ public class GameManager : MonoBehaviour
        obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
        obj.SetActive(false);
    }
-
-   private void ObstacleHammerFall()
+   
+   public void ObstacleCollisionHammer(GameObject hammer)
    {
-       PlayerDied();
+       if (_player._isPlayerHit)
+       {
+           HitHammer(hammer);
+       }
+       else
+       {
+           foreach (var item in _obstacle)
+           {
+               item.SetActive(true);
+           }
+           _obstacle.Clear();
+           PlayerDied();
+       }
    }
+
+   private void HitHammer(GameObject obj)
+   {
+       _obstacle.Add(obj);
+       ActivateHitEffects(obj.transform);
+       obj.SetActive(false);
+   }
+
+   // private void ObstacleHammerFall()
+   // {
+   //     PlayerDied();
+   // }
 
    public void ActivateHitEffects(Transform obstacleTransform)
    {
@@ -159,6 +183,6 @@ public class GameManager : MonoBehaviour
    private void OnDisable()
    {
        ObstacleBarrel.OnGameObjectTrigerred -= ObstacleCollision;
-       ObstacleHammer.HammerFall -= ObstacleHammerFall;
+       ObstacleHammer.HammerFall -= ObstacleCollision;
    }
 }

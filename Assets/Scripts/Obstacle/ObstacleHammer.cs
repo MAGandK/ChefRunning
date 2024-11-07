@@ -5,8 +5,9 @@ public class ObstacleHammer : MonoBehaviour
     [SerializeField] private Transform _objectHammer;
     [SerializeField] private float animationSpeed = 1.0f;
     private Animator animator;
-    public static event Action HammerFall;
-    
+    public delegate void ObstacleEventHandler(GameObject obstacleHammer);
+    public static event ObstacleEventHandler HammerFall;
+   
     void OnEnable()
     {
         animator = GetComponent<Animator>();
@@ -17,7 +18,7 @@ public class ObstacleHammer : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            HammerFall?.Invoke();
+            HammerFall?.Invoke(gameObject);
         }
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7885031268667069172}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: ObstacleCrushRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193202714900192202}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: startPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 1437490761874909555}
   - component: {fileID: 6745943318625886888}
   - component: {fileID: 7609563871247632503}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: ObstacleCrashTriger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2989462069245416498}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: 'TargetPosition '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2288520de74be4f919cd63679060b8ab, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -259,12 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586f3bdbe4daf4848becf8c7b9e222b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffects:
-  - {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
-  _coins: []
-  _obstacle: []
-  _hammer: []
-  _object: {fileID: 6860696627321065544}
   _time: 1.2
   _targetPosition: {fileID: 2989462069245416498}
   _startPosition: {fileID: 193202714900192202}

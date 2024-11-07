@@ -4,7 +4,10 @@ using Zenject;
 public class ObstacleInteraction : MonoBehaviour
 {
     public static event Action Interaction;
-
+    public static event Action InteractionWithHammer;
+    public static event Action ExitInteractionWithHammer;
+    public static event Action ExitInteraction;
+    
     internal bool _isInteracted;
 
     private Player _player;
@@ -19,9 +22,15 @@ public class ObstacleInteraction : MonoBehaviour
     {
         if (other.gameObject == _player.gameObject && !_isInteracted)
         {
-            //Time.timeScale = 0.7f;
             _isInteracted = true;
-            Interaction?.Invoke(); 
+            if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+            {
+                Interaction?.Invoke();
+            }
+            else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
+            {
+                InteractionWithHammer?.Invoke();
+            }
         }
     }
 
@@ -29,8 +38,14 @@ public class ObstacleInteraction : MonoBehaviour
     {
         if (other.gameObject == _player.gameObject)
         {
-           // Time.timeScale = 1;
-            _isInteracted = false; 
+            if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+            {
+                ExitInteraction?.Invoke();
+            }
+            else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
+            {
+                ExitInteractionWithHammer.Invoke();
+            }
         }
     }  
 }
