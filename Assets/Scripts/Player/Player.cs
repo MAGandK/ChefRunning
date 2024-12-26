@@ -8,19 +8,30 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
+    [SerializeField] private PlayerLifeController _playerLifeController;
 
     private AnimatorController _animController;
     private AudioManager _audioManager;
     private Quaternion _startRotation;
-    private bool _isDead = false;
     internal bool _isPlayerHit;
-    public bool IsDead => _isDead;
+
+    public PlayerLifeController PlayerLifeController => _playerLifeController;
 
     [Inject]
     public void Construct(AnimatorController animatorController, AudioManager audioManager)
     {
         _animController = animatorController;
         _audioManager = audioManager;
+    }
+
+    private void Awake()
+    {
+        _playerLifeController.Died += PlayerLifeControllerOnDied;
+    }
+
+    private void PlayerLifeControllerOnDied()
+    {
+        _animController.Dying();
     }
 
     private void OnEnable()
@@ -40,29 +51,12 @@ public class Player : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         _playerModel.rotation = targetRotation;
     }
-
-    public void ResetPlayerState()
-    {
-        _playerModel.rotation = _startRotation;
-    }
-
-    public void Die()
-    {
-        _isDead = true;
-        _animController.Dying();
-    }
-
+    
     public void Dance()
     {
         _animController.Danced();
     }
-
-    public void ResetState()
-    {
-        _isDead = false;
-        _animController.ResetAnimation();
-    }
-
+    
     public void PlayerMove()
     {
         _animController.Running();
@@ -76,12 +70,7 @@ public class Player : MonoBehaviour
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
-
-    public void ResetPlayerPosition()
-    {
-        transform.position = _playerPosition;
-    }
-
+    
     private void AnimHitEnd()
     {
         _isPlayerHit = false;
@@ -90,5 +79,13 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         AnimationTrigger.AnimationEndHandler -= AnimHitEnd;
+    }
+
+    public void Reset()
+    {
+        transform.position = _playerPosition;
+        _playerModel.rotation = _startRotation;
+        _animController.ResetAnimation();
+        _playerLifeController.Restart();
     }
 }

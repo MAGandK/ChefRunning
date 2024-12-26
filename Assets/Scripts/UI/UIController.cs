@@ -1,12 +1,23 @@
 using UnityEngine;
+using Zenject;
 
 public class UIController : MonoBehaviour
 {
     private WindowBase[] _windows;
 
+    [Inject]
+    private void Construct(Player player)
+    {
+        player.PlayerLifeController.Died += PlayerOnDied;
+    }
+
+    private void PlayerOnDied()
+    {
+        ShowWindow(WindowType.FailWindow);
+    }
+
     private void OnEnable()
     {
-        GameManager.IsPlayerDie += OnPlayerDie;
         GameManager.IsFinishGame += OnFinishGame;
         GameManager.IsStartGame += OnStartGame;
         GameManager.IsRestartGame += OnRestartGame;
@@ -52,7 +63,7 @@ public class UIController : MonoBehaviour
 
     private void OnPlayerDie()
     {
-        ShowWindow(WindowType.FailWindow);
+       
     }
 
     private void OnFinishGame()
@@ -67,7 +78,6 @@ public class UIController : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.IsPlayerDie -= OnPlayerDie;
         GameManager.IsFinishGame -= OnFinishGame;
         GameManager.IsStartGame -= OnStartGame;
         GameManager.IsRestartGame -= OnRestartGame;
