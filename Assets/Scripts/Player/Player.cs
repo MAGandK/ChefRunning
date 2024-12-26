@@ -4,8 +4,6 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    public static event Action IsPlayerHit;
-
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
 
@@ -14,6 +12,9 @@ public class Player : MonoBehaviour
     private Quaternion _startRotation;
     private bool _isDead = false;
     internal bool _isPlayerHit;
+    
+    public static event Action IsPlayerHit;
+    
     public bool IsDead => _isDead;
 
     [Inject]

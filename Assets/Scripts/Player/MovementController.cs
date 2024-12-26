@@ -2,6 +2,9 @@ using UnityEngine;
 using Zenject;
 public class MovementController : MonoBehaviour
 {
+    private const float XMaxClamp = 5f;
+    private const float XMinClamp = -11f;
+    
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _forwardSpeed = 0f; 
     [SerializeField] private Rigidbody _rigidbody;
@@ -13,8 +16,6 @@ public class MovementController : MonoBehaviour
   
     private float _moveX; 
     private float _moveZ;
-    private float _xMaxClamp = 5f;
-    private float _xMinClamp = -11f;
   
     [Inject]
     private void Construct(Player player, GameManager gameManager,DynamicJoystick dynamicJoystick, AnimatorController animatorController)
@@ -28,11 +29,11 @@ public class MovementController : MonoBehaviour
     {    
         if (!_gameManager.IsGameStarted ||_player.IsDead|| _gameManager.IsGameFinished || _player._isPlayerHit)
         {
-            StopPlayerMovement();
+            StopMovement();
             return;
             
         }
-        MovePlayer();
+        Move();
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -40,19 +41,19 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    public void MovePlayer()
+    public void Move()
     {
         var position = transform.position;
         Vector2 joystickInput = _dynamicJoystick.Direction;
         var expectedMoveX = position.x + (joystickInput.x * _swipeSensitivity) * (_speed * Time.deltaTime);
-        _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
+        _moveX = Mathf.Clamp(expectedMoveX, XMinClamp, XMaxClamp);
         _moveZ = position.z + (+_forwardSpeed * Time.deltaTime);
         Vector3 newPosition = new Vector3(_moveX, position.y, _moveZ);
         _rigidbody.MovePosition(newPosition);
         _player.PlayerMove();
     }
     
-    public void StopPlayerMovement()
+    public void StopMovement()
     {
         _rigidbody.linearVelocity = Vector3.zero;
         _rigidbody.angularVelocity = Vector3.zero; 
@@ -61,6 +62,6 @@ public class MovementController : MonoBehaviour
     public void HitButtonPush()
     {
         _player.PlayerHit(true);
-        StopPlayerMovement();
+        StopMovement();
     }
 }

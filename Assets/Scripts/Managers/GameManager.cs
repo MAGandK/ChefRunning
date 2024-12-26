@@ -6,11 +6,6 @@ using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    public static event Action IsPlayerDie;
-    public static event Action IsRestartGame;
-    public static event Action IsFinishGame;
-    public static event Action IsStartGame;
-
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     [SerializeField] private CinemachineVirtualCamera _failCamera;
     [SerializeField] private CinemachineVirtualCamera _finishCamera;
@@ -20,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
+    
+    public static event Action IsPlayerDie;
+    public static event Action IsRestartGame;
+    public static event Action IsFinishGame;
+    public static event Action IsStartGame;
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
