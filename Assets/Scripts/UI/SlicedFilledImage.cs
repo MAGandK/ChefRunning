@@ -37,7 +37,7 @@ public class SlicedFilledImageEditor : Editor
 }
 #endif
 
-// Credit: https://bitbucket.org/Unity-Technologies/ui/src/2018.4/UnityEngine.UI/UI/Core/Image.cs
+
 [RequireComponent(typeof(CanvasRenderer))]
 [AddComponentMenu("UI/Sliced Filled Image", 11)]
 public class SlicedFilledImage : MaskableGraphic, ISerializationCallbackReceiver, ILayoutElement, ICanvasRaycastFilter

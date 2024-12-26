@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 471361724718096494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.73, z: -14.44}
+  m_LocalPosition: {x: 0, y: 0.73, z: -16.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 21.832283, y: 3.964332, z: 10.263592}
-  m_Center: {x: -3.4651566, y: 1.482166, z: -6.163389}
+  m_Size: {x: 21.832283, y: 3.964332, z: 7.7387466}
+  m_Center: {x: -3.4651566, y: 1.482166, z: -5.7061005}
 --- !u!114 &3207817661463506636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ PrefabInstance:
       addedObject: {fileID: 8259485420709436557}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2288520de74be4f919cd63679060b8ab, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5005640382378558588}
+      addedObject: {fileID: 5035116761333035323}
   m_SourcePrefab: {fileID: 100100000, guid: 2288520de74be4f919cd63679060b8ab, type: 3}
 --- !u!4 &511552116299733390 stripped
 Transform:
@@ -268,8 +268,8 @@ MonoBehaviour:
   _targetPosition: {fileID: 3043575864019219985}
   _startPosition: {fileID: 6680574550906527555}
   _rotationSpeed: 4.5
---- !u!65 &5005640382378558588
-BoxCollider:
+--- !u!136 &5035116761333035323
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -286,6 +286,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.30408, y: 2.7568831, z: 4.499592}
-  m_Center: {x: -0.0018763542, y: 1.3635798, z: 0.19905281}
+  serializedVersion: 2
+  m_Radius: 2.3
+  m_Height: 3.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.4, z: 0}

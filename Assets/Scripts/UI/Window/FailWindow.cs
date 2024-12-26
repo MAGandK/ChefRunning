@@ -1,4 +1,3 @@
-using UnityEngine;
 using Zenject;
 
 public class FailWindow : WindowBase
@@ -8,15 +7,14 @@ public class FailWindow : WindowBase
     [Inject]
     private void Construct(GameManager gameManager)
     {
-       _gameManager = gameManager;
+        _gameManager = gameManager;
     }
+
     public override WindowType Type
     {
-        get
-        {
-            return WindowType.FailWindow;
-        }
+        get { return WindowType.FailWindow; }
     }
+
     public void OnRestartButtonClick()
     {
         base.CloseWindow();

@@ -1,8 +1,9 @@
 using UnityEngine;
+
 public class UIController : MonoBehaviour
 {
     private WindowBase[] _windows;
-    
+
     private void OnEnable()
     {
         GameManager.IsPlayerDie += OnPlayerDie;
@@ -15,6 +16,7 @@ public class UIController : MonoBehaviour
     {
         _windows = GetComponentsInChildren<WindowBase>(true);
     }
+
     public void ShowWindow(WindowType type)
     {
         for (int i = 0; i < _windows.Length; i++)
@@ -42,21 +44,22 @@ public class UIController : MonoBehaviour
 
         return null;
     }
-    
+
     private void OnStartGame()
     {
         ShowWindow(WindowType.MainWindow);
     }
+
     private void OnPlayerDie()
     {
         ShowWindow(WindowType.FailWindow);
     }
-    
+
     private void OnFinishGame()
     {
-       ShowWindow(WindowType.FinishWindow);
+        ShowWindow(WindowType.FinishWindow);
     }
-    
+
     private void OnRestartGame()
     {
         ShowWindow(WindowType.MainWindow);

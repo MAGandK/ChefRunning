@@ -15,7 +15,6 @@ public class MovementController : MonoBehaviour
     private float _moveZ;
     private float _xMaxClamp = 5f;
     private float _xMinClamp = -11f;
-    
   
     [Inject]
     private void Construct(Player player, GameManager gameManager,DynamicJoystick dynamicJoystick, AnimatorController animatorController)
@@ -37,8 +36,7 @@ public class MovementController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _player.PlayerHit(true);
-            StopPlayerMovement();
+           HitButtonPush();
         }
     }
 
@@ -56,7 +54,13 @@ public class MovementController : MonoBehaviour
     
     public void StopPlayerMovement()
     {
-        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.linearVelocity = Vector3.zero;
         _rigidbody.angularVelocity = Vector3.zero; 
+    }
+
+    public void HitButtonPush()
+    {
+        _player.PlayerHit(true);
+        StopPlayerMovement();
     }
 }

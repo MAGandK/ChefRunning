@@ -1,8 +1,9 @@
 using Zenject;
+
 public class FinishWindow : WindowBase
 {
     private GameManager _gameManager;
-    
+
     [Inject]
     private void Construct(GameManager gameManager)
     {
@@ -11,18 +12,15 @@ public class FinishWindow : WindowBase
 
     public override WindowType Type
     {
-        get
-        {
-            return WindowType.FinishWindow;
-        }
+        get { return WindowType.FinishWindow; }
     }
 
     public void OnNextButtonClick()
     {
-        if (_gameManager.IsGameFinished) 
+        if (_gameManager.IsGameFinished)
         {
-            base.CloseWindow(); 
-            _gameManager.RestartGame(); 
+            base.CloseWindow();
+            _gameManager.RestartGame();
         }
     }
 }

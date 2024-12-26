@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class AnimatorController : MonoBehaviour
 {
     [SerializeField] public Animator _animator;
@@ -8,7 +9,7 @@ public class AnimatorController : MonoBehaviour
     public int Hit = Animator.StringToHash("IsHit");
 
     internal bool _hitAnimEnd;
-    
+
     private void OnEnable()
     {
         GameManager.IsPlayerDie += Dying;
@@ -17,17 +18,17 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsRestartGame += ResetAnimation;
         AnimationTrigger.AnimationEndHandler += IsHitAnimTrigger;
     }
-    
+
     public void Running()
     {
-        if (!_animator.GetBool(Died)) 
+        if (!_animator.GetBool(Died))
         {
             _animator.SetBool(Run, true);
             _animator.SetBool(Died, false);
             _animator.SetBool(Dance, false);
         }
     }
-    
+
     public void StopRun()
     {
         _animator.SetBool(Run, false);
@@ -44,19 +45,19 @@ public class AnimatorController : MonoBehaviour
     {
         StopRun();
         _animator.SetTrigger(Dance);
-        _animator.SetBool(Dance,true);
+        _animator.SetBool(Dance, true);
     }
 
     public void Hitting()
     {
         _animator.SetTrigger(Hit);
     }
-    
+
     public void ResetAnimation()
     {
         _animator.SetBool(Run, false);
-        _animator.SetBool(Died, false);  
-        _animator.SetBool(Dance, false);  
+        _animator.SetBool(Died, false);
+        _animator.SetBool(Dance, false);
         _animator.ResetTrigger(Died);
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);

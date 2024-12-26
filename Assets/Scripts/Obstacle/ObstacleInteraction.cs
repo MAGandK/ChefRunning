@@ -1,23 +1,23 @@
 using System;
 using UnityEngine;
 using Zenject;
+
 public class ObstacleInteraction : MonoBehaviour
 {
     public static event Action Interaction;
     public static event Action InteractionWithHammer;
     public static event Action ExitInteractionWithHammer;
     public static event Action ExitInteraction;
-    
-    internal bool _isInteracted;
 
+    internal bool _isInteracted;
     private Player _player;
 
-   [Inject]
+    [Inject]
     private void Construct(Player player)
     {
         _player = player;
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == _player.gameObject && !_isInteracted)
@@ -47,5 +47,5 @@ public class ObstacleInteraction : MonoBehaviour
                 ExitInteractionWithHammer.Invoke();
             }
         }
-    }  
+    }
 }

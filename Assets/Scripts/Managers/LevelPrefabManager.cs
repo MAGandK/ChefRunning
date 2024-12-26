@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 using Random = UnityEngine.Random;
 
 public class LevelPrefabManager : MonoBehaviour
@@ -9,15 +8,14 @@ public class LevelPrefabManager : MonoBehaviour
     [SerializeField] internal List<GameObject> _coinsList = new List<GameObject>();
     private GameObject _currentScene;
     private Vector3 _startPosition = new Vector3(101f, -280f, 586f);
-    
-  
+
     private void OnEnable()
     {
         GameManager.IsStartGame += StartFirstScene;
         GameManager.IsRestartGame += ReloadScene;
         GameManager.IsFinishGame += NewScene;
     }
-    
+
     private void Start()
     {
         _currentScene = _listScene[1];
@@ -66,7 +64,7 @@ public class LevelPrefabManager : MonoBehaviour
         {
             foreach (var coin in _coinsList)
             {
-                    coin.SetActive(true);
+                coin.SetActive(true);
             }
         }
     }

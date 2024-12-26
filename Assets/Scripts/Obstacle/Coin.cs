@@ -4,13 +4,12 @@ using Zenject;
 
 public class Coin : MonoBehaviour
 {
-    private float _rotationSpeed = 200f;    
+    private float _rotationSpeed = 200f;
     public float rotationDelay = 0f;
     private UIController _uiController;
     private LevelPrefabManager _levelPrefabManager;
     private AudioManager _audioManager;
-  
-    
+
     [Inject]
     public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager, AudioManager audioManager)
     {
@@ -18,7 +17,7 @@ public class Coin : MonoBehaviour
         _levelPrefabManager = levelPrefabManager;
         _audioManager = audioManager;
     }
-    
+
     private void OnEnable()
     {
         StartCoroutine(StartRotationWithDelay());
@@ -36,16 +35,17 @@ public class Coin : MonoBehaviour
         while (true)
         {
             transform.Rotate(0, _rotationSpeed * Time.deltaTime, 0);
-            yield return null; 
+            yield return null;
         }
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         CollectCoin();
         _levelPrefabManager._coinsList.Add(gameObject);
         gameObject.SetActive(false);
     }
+
     private void CollectCoin()
     {
         var mainWindow = _uiController.GetWindow(WindowType.MainWindow) as MainWindow;
@@ -53,7 +53,7 @@ public class Coin : MonoBehaviour
         {
             mainWindow.OnCoinCollected();
         }
-        
-        _audioManager.PlaySound(SoundType.Coin); 
+
+        _audioManager.PlaySound(SoundType.Coin);
     }
 }

@@ -23,12 +23,10 @@ public class MainWindow : WindowBase
     {
         _player = player;
     }
+
     public override WindowType Type
     {
-        get
-        {
-            return WindowType.MainWindow;
-        }
+        get { return WindowType.MainWindow; }
     }
 
     private void OnEnable()
@@ -40,6 +38,24 @@ public class MainWindow : WindowBase
         ObstacleInteraction.ExitInteraction += HideText;
     }
 
+    private void Start()
+    {
+        _tabText.SetActive(false);
+        _hammerText.SetActive(false);
+        _endPositionOffset = new Vector3(0, 0, _offsetZ);
+
+        if (_player != null)
+        {
+            startDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
+        }
+        else
+        {
+            return;
+        }
+
+        endDistance = 0f;
+    }
+
     private void Update()
     {
         _endPositionOffset = new Vector3(0, 0, _offsetZ);
@@ -47,35 +63,18 @@ public class MainWindow : WindowBase
         float progress = 1f - (endDistance / startDistance);
         progressBar.value = progress;
     }
-    private void Start()
-    {
-        _tabText.SetActive(false);
-        _hammerText.SetActive(false);
-        _endPositionOffset = new Vector3(0, 0, _offsetZ);
-        
-        if (_player != null)
-        {
-            startDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
-        }
-        else
-        {
-           return;
-        }
-
-        endDistance = 0f;
-    }
 
     public void OnCoinCollected()
     {
         _coinCount++;
         _scoreText.text = _coinCount.ToString();
-    } 
-    
+    }
+
     private void ShowText()
     {
         _tabText.SetActive(true);
     }
-    
+
     private void ShowTextHammer()
     {
         _hammerText.SetActive(true);
@@ -86,11 +85,11 @@ public class MainWindow : WindowBase
         _tabText.SetActive(false);
         _hammerText.SetActive(false);
     }
+
     private void OnDisable()
     {
         ObstacleInteraction.Interaction -= ShowText;
         ObstacleInteraction.InteractionWithHammer -= ShowTextHammer;
-        
         Player.IsPlayerHit -= HideText;
         ObstacleInteraction.ExitInteractionWithHammer -= HideText;
         ObstacleInteraction.ExitInteraction -= HideText;

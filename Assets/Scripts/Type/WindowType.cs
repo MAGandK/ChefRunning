@@ -1,4 +1,4 @@
-public enum WindowType 
+public enum WindowType
 {
     MainWindow = 0,
     FailWindow = 1,
