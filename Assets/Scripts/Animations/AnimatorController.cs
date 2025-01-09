@@ -16,7 +16,7 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
         GameManager.IsRestartGame += ResetAnimation;
-        AnimationTrigger.AnimationEndHandler += IsHitAnimTrigger;
+       // PlayerAnimationTriggerHelper.AnimationEndHandler += IsHitAnimTrigger;
     }
 
     public void Running()
@@ -74,6 +74,6 @@ public class AnimatorController : MonoBehaviour
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
         GameManager.IsRestartGame -= ResetAnimation;
-        AnimationTrigger.AnimationEndHandler -= IsHitAnimTrigger;
+       // PlayerAnimationTriggerHelper.AnimationEndHandler -= IsHitAnimTrigger;
     }
 }

@@ -106,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4355862257738911854}
   - component: {fileID: 398498057811246759}
+  - component: {fileID: 5160240252436851419}
   m_Layer: 6
   m_Name: ObstacleDestoyer
   m_TagString: Untagged
@@ -143,12 +144,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 3.463264}
   m_Center: {x: 0, y: 0, z: 1.231632}
+--- !u!114 &5160240252436851419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523593303760074005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d639d8cf802493eb59d481ac823efa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705225736938644042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1805,8 @@ MonoBehaviour:
   _playerModel: {fileID: 2396146768124038134}
   _playerPosition: {x: -3, y: 0, z: -30}
   _playerLifeController: {fileID: 8933231914628255426}
+  _playerAnimationTriggerHelper: {fileID: 6692256259102093194}
+  _obstacleDestroyer: {fileID: 5160240252436851419}
 --- !u!1 &4352357489793990829
 GameObject:
   m_ObjectHideFlags: 0

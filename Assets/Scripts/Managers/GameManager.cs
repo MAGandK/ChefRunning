@@ -101,23 +101,23 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    public void ObstacleCollision(GameObject obstacle)
-    {
-        if (_player._isPlayerHit)
-        {
-            HitObstacle(obstacle);
-        }
-        else
-        {
-            foreach (var item in _obstacle)
-            {
-                item.SetActive(true);
-            }
-
-            _obstacle.Clear();
-            obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
-        }
-    }
+    // public void ObstacleCollision(GameObject obstacle)
+    // {
+    //     if (_player._isPlayerHit)
+    //     {
+    //         HitObstacle(obstacle);
+    //     }
+    //     else
+    //     {
+    //         foreach (var item in _obstacle)
+    //         {
+    //             item.SetActive(true);
+    //         }
+    //
+    //         _obstacle.Clear();
+    //         obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
+    //     }
+    // }
 
     private void PlayerOnDied()
     {

@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +11,7 @@ public class MovementController : MonoBehaviour
 
     private Player _player;
     private GameManager _gameManager;
-    private DynamicJoystick _dynamicJoystick;
+    private Joystick _joystick;
 
     private float _moveX;
     private float _moveZ;
@@ -18,12 +19,13 @@ public class MovementController : MonoBehaviour
     private float _xMinClamp = -11f;
 
     [Inject]
-    private void Construct(Player player, GameManager gameManager, DynamicJoystick dynamicJoystick,
-        AnimatorController animatorController)
+    private void Construct(Player player,
+        GameManager gameManager,
+        AnimatorController animatorController, Joystick joystick)
     {
+        _joystick = joystick;
         _player = player;
         _gameManager = gameManager;
-        _dynamicJoystick = dynamicJoystick;
     }
 
     private void Update()
@@ -35,17 +37,12 @@ public class MovementController : MonoBehaviour
         }
 
         MovePlayer();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            HitButtonPush();
-        }
     }
 
     public void MovePlayer()
     {
         var position = transform.position;
-        Vector2 joystickInput = _dynamicJoystick.Direction;
+        Vector2 joystickInput = _joystick.Direction;
         var expectedMoveX = position.x + (joystickInput.x * _swipeSensitivity) * (_speed * Time.deltaTime);
         _moveX = Mathf.Clamp(expectedMoveX, _xMinClamp, _xMaxClamp);
         _moveZ = position.z + (+_forwardSpeed * Time.deltaTime);
@@ -58,10 +55,5 @@ public class MovementController : MonoBehaviour
     {
         _rigidbody.velocity = Vector3.zero;
         _rigidbody.angularVelocity = Vector3.zero;
-    }
-
-    public void HitButtonPush()
-    {
-        _player.PlayerHit(true);
     }
 }

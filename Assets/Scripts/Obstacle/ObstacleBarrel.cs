@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ObstacleBarrel : MonoBehaviour
 {
-
-
     [SerializeField] private float _time;
     [SerializeField] private Transform _targetPosition;
     [SerializeField] private Transform _startPosition;
@@ -12,7 +10,7 @@ public class ObstacleBarrel : MonoBehaviour
 
     private void OnEnable()
     {
-        StartMovement();
+        //StartMovement();
     }
 
     private void StartMovement()
@@ -73,6 +71,11 @@ public class ObstacleBarrel : MonoBehaviour
     {
         ResetPosition();
         StartMovement();
+    }
+    
+    public void Destroy()
+    {
+        gameObject.SetActive(false);   
     }
 
 #if UNITY_EDITOR
