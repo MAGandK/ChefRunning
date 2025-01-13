@@ -6,7 +6,6 @@ using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    public static event Action IsPlayerDie;
     public static event Action IsRestartGame;
     public static event Action IsFinishGame;
     public static event Action IsStartGame;
@@ -33,12 +32,12 @@ public class GameManager : MonoBehaviour
     {
         _player = player;
         _audioManager = audioManager;
+        _player.PlayerStateController.Died += PlayerOnDied;
     }
 
     private void OnEnable()
     {
-        ObstacleBarrel.OnGameObjectTrigerred += ObstacleCollision;
-        ObstacleHammer.HammerFall += ObstacleHammerFall;
+      //  ObstacleHammer.HammerFall += ObstacleHammerFall;
     }
 
     private void Update()
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            TestDied();
+            _player.PlayerStateController.Die();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -58,14 +57,7 @@ public class GameManager : MonoBehaviour
             TestFinishGame();
         }
     }
-
-    /// <summary>
-    /// Test method function
-    /// </summary>
-    public void TestDied()
-    {
-        PlayerDied();
-    }
+    
 
     /// <summary>
     /// Test method function
@@ -98,43 +90,43 @@ public class GameManager : MonoBehaviour
         _player.RotatePlayer(_finishCamera.transform);
     }
 
-    public void PlayerDied()
+    private void PlayerOnDied()
     {
-        _player.Die();
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Fail);
-        IsPlayerDie?.Invoke();
+        
+        
         _mainCamera.Priority = 0;
         _failCamera.Priority = 10;
     }
+ 
 
     public void RestartGame()
     {
         _isGameFinished = false;
-        _player.ResetPlayerPosition();
-        _player.ResetPlayerState();
-        _player.ResetState();
+        
+        _player.Reset();
         IsRestartGame?.Invoke();
         StartGame();
     }
 
     public void ObstacleCollision(GameObject obstacle)
     {
-        if (_player._isPlayerHit)
-        {
-            HitObstacle(obstacle);
-        }
-        else
-        {
-            foreach (var item in _obstacle)
-            {
-                item.SetActive(true);
-            }
-
-            _obstacle.Clear();
-            obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
-            PlayerDied();
-        }
+        // if (_player._isPlayerHit)
+        // {
+        //     HitObstacle(obstacle);
+        // }
+        // else
+        // {
+        //     foreach (var item in _obstacle)
+        //     {
+        //         item.SetActive(true);
+        //     }
+        //
+        //     _obstacle.Clear();
+        //     obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
+        //
+        // }
     }
 
     private void HitObstacle(GameObject obj)
@@ -144,11 +136,7 @@ public class GameManager : MonoBehaviour
         obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
         obj.SetActive(false);
     }
-
-    private void ObstacleHammerFall()
-    {
-        PlayerDied();
-    }
+    
 
     public void ActivateHitEffects(Transform obstacleTransform)
     {
@@ -160,7 +148,6 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        ObstacleBarrel.OnGameObjectTrigerred -= ObstacleCollision;
-        ObstacleHammer.HammerFall -= ObstacleHammerFall;
+        //ObstacleHammer.HammerFall -= ObstacleHammerFall;
     }
 }

@@ -7,7 +7,7 @@ public class GameInstaller : MonoInstaller
         Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<DynamicJoystick>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
         Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
         Container.Bind<MovementController>().FromComponentInHierarchy().AsSingle();

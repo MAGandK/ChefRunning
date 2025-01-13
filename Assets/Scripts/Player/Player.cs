@@ -5,27 +5,49 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     public static event Action IsPlayerHit;
-
+    
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
+    [SerializeField] private PlayerStateController _playerStateController;
+    [SerializeField] private PlayerAnimationTriggetHelper _playerAnimationTriggetHelper;
+    [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
 
     private AnimatorController _animController;
     private AudioManager _audioManager;
+    private Joystick _joystick;
     private Quaternion _startRotation;
-    private bool _isDead = false;
-    internal bool _isPlayerHit;
-    public bool IsDead => _isDead;
+    
+    public PlayerStateController  PlayerStateController=> _playerStateController;
 
     [Inject]
-    public void Construct(AnimatorController animatorController, AudioManager audioManager)
+    public void Construct(AnimatorController animatorController, AudioManager audioManager, Joystick joystick)
     {
         _animController = animatorController;
         _audioManager = audioManager;
+        _joystick = joystick;
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        AnimationTrigger.AnimationEndHandler += AnimHitEnd;
+        _playerStateController.Died += PlayerStateControllerOnDied;
+        _playerAnimationTriggetHelper.PunchStarted += OnPunchStarted;
+        _playerAnimationTriggetHelper.PunchEnded += OnPunchEnded;
+        _joystick.DoubleClick += OnDoubleClick;
+    }
+
+    private void OnDoubleClick()
+    {
+        PlayerHit();
+    }
+
+    private void OnPunchEnded()
+    {
+        _obstacleDestroyer.SetCanDestroy(false);
+    }
+
+    private void OnPunchStarted()
+    {
+        _obstacleDestroyer.SetCanDestroy(true);
     }
 
     private void Start()
@@ -33,6 +55,11 @@ public class Player : MonoBehaviour
         _startRotation = _playerModel.rotation;
     }
 
+
+    private void PlayerStateControllerOnDied()
+    {
+        _animController.Dying();
+    }
     public void RotatePlayer(Transform targetTransform)
     {
         var direction = (targetTransform.position - _playerModel.position).normalized;
@@ -40,55 +67,41 @@ public class Player : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         _playerModel.rotation = targetRotation;
     }
-
-    public void ResetPlayerState()
-    {
-        _playerModel.rotation = _startRotation;
-    }
-
-    public void Die()
-    {
-        _isDead = true;
-        _animController.Dying();
-    }
-
+    
     public void Dance()
     {
         _animController.Danced();
     }
 
-    public void ResetState()
-    {
-        _isDead = false;
-        _animController.ResetAnimation();
-    }
-
     public void PlayerMove()
     {
         _animController.Running();
-        _isPlayerHit = false;
+
     }
 
-    public void PlayerHit(bool _isPress)
+    public void PlayerHit()
     {
-        _isPlayerHit = _isPress;
         _animController.Hitting();
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
-
-    public void ResetPlayerPosition()
-    {
-        transform.position = _playerPosition;
-    }
-
+    
     private void AnimHitEnd()
     {
-        _isPlayerHit = false;
+    
+    }
+    public void Reset()
+    {
+        transform.position = _playerPosition;
+        _animController.ResetAnimation();
+        _playerModel.rotation = _startRotation;
+        _playerStateController.Restart();
     }
 
-    private void OnDisable()
-    {
-        AnimationTrigger.AnimationEndHandler -= AnimHitEnd;
-    }
+    // private void OnDisable()
+    // {
+    //     _playerStateController.Died -= PlayerStateControllerOnDied;
+    //     _playerAnimationTriggetHelper.PunchStarted -= OnPunchStarted;
+    //     _playerAnimationTriggetHelper.PunchEnded -= OnPunchEnded ;
+    // }
 }

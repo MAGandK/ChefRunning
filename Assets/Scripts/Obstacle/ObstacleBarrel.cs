@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class ObstacleBarrel : MonoBehaviour
 {
-    public delegate void ObstacleEventHandler(GameObject obstacleBarrel);
-
-    public static event ObstacleEventHandler OnGameObjectTrigerred;
-
     [SerializeField] private float _time;
     [SerializeField] private Transform _targetPosition;
     [SerializeField] private Transform _startPosition;
@@ -59,7 +55,15 @@ public class ObstacleBarrel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        OnGameObjectTrigerred?.Invoke(gameObject);
+        if (other.TryGetComponent(out PlayerStateController playerStateController))
+        {
+            playerStateController.Die();
+        }
+    }
+
+    public void Destroy()
+    {
+        gameObject.SetActive(false);
     }
 
     private void ResetPosition()

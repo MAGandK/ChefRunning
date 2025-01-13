@@ -12,11 +12,10 @@ public class AnimatorController : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.IsPlayerDie += Dying;
+     //   GameManager.IsPlayerDie += Dying;
         GameManager.IsFinishGame += Danced;
         GameManager.IsStartGame += Running;
         GameManager.IsRestartGame += ResetAnimation;
-        AnimationTrigger.AnimationEndHandler += IsHitAnimTrigger;
     }
 
     public void Running()
@@ -70,10 +69,10 @@ public class AnimatorController : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.IsPlayerDie -= Dying;
+        //GameManager.IsPlayerDie -= Dying;
         GameManager.IsFinishGame -= Danced;
         GameManager.IsStartGame -= Running;
         GameManager.IsRestartGame -= ResetAnimation;
-        AnimationTrigger.AnimationEndHandler -= IsHitAnimTrigger;
+
     }
 }
