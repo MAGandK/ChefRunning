@@ -32,12 +32,7 @@ public class GameManager : MonoBehaviour
     {
         _player = player;
         _audioManager = audioManager;
-        _player.PlayerStateController.Died += PlayerOnDied;
-    }
-
-    private void OnEnable()
-    {
-      //  ObstacleHammer.HammerFall += ObstacleHammerFall;
+        _player.Died += PlayerOnDied;
     }
 
     private void Update()
@@ -49,22 +44,13 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _player.PlayerStateController.Die();
+            _player.Die();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            TestFinishGame();
+            FinishGame();
         }
-    }
-    
-
-    /// <summary>
-    /// Test method function
-    /// </summary>
-    public void TestFinishGame()
-    {
-        FinishGame();
     }
 
     public void StartGame()
@@ -94,17 +80,16 @@ public class GameManager : MonoBehaviour
     {
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Fail);
-        
-        
+
+
         _mainCamera.Priority = 0;
         _failCamera.Priority = 10;
     }
- 
 
     public void RestartGame()
     {
         _isGameFinished = false;
-        
+
         _player.Reset();
         IsRestartGame?.Invoke();
         StartGame();
@@ -136,7 +121,7 @@ public class GameManager : MonoBehaviour
         obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
         obj.SetActive(false);
     }
-    
+
 
     public void ActivateHitEffects(Transform obstacleTransform)
     {

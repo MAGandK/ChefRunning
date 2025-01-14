@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+
 public class ObstacleDestroyer : MonoBehaviour
 {
     private bool _canDestroy;
@@ -14,11 +14,11 @@ public class ObstacleDestroyer : MonoBehaviour
         {
             return;
         }
-        
         //позже брать базовый класс препятствий
         if (other.TryGetComponent(out ObstacleBarrel obstacleBarrel))
         {
             obstacleBarrel.Destroy();
+            
         }
     }
 }

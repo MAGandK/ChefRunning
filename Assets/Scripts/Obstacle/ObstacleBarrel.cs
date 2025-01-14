@@ -55,9 +55,9 @@ public class ObstacleBarrel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerStateController playerStateController))
+        if (other.TryGetComponent(out Player player))
         {
-            playerStateController.Die();
+            player.Die();
         }
     }
 

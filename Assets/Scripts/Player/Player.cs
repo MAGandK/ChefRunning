@@ -5,10 +5,10 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     public static event Action IsPlayerHit;
-    
+    public event Action Died;
+
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
-    [SerializeField] private PlayerStateController _playerStateController;
     [SerializeField] private PlayerAnimationTriggetHelper _playerAnimationTriggetHelper;
     [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
 
@@ -16,8 +16,9 @@ public class Player : MonoBehaviour
     private AudioManager _audioManager;
     private Joystick _joystick;
     private Quaternion _startRotation;
-    
-    public PlayerStateController  PlayerStateController=> _playerStateController;
+
+    private bool _isDead = false;
+    public bool IsDead => _isDead;
 
     [Inject]
     public void Construct(AnimatorController animatorController, AudioManager audioManager, Joystick joystick)
@@ -29,7 +30,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _playerStateController.Died += PlayerStateControllerOnDied;
         _playerAnimationTriggetHelper.PunchStarted += OnPunchStarted;
         _playerAnimationTriggetHelper.PunchEnded += OnPunchEnded;
         _joystick.DoubleClick += OnDoubleClick;
@@ -55,11 +55,13 @@ public class Player : MonoBehaviour
         _startRotation = _playerModel.rotation;
     }
 
-
-    private void PlayerStateControllerOnDied()
+    public void Die()
     {
         _animController.Dying();
+        _isDead = true;
+        Died?.Invoke();
     }
+
     public void RotatePlayer(Transform targetTransform)
     {
         var direction = (targetTransform.position - _playerModel.position).normalized;
@@ -67,7 +69,7 @@ public class Player : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         _playerModel.rotation = targetRotation;
     }
-    
+
     public void Dance()
     {
         _animController.Danced();
@@ -76,7 +78,6 @@ public class Player : MonoBehaviour
     public void PlayerMove()
     {
         _animController.Running();
-
     }
 
     public void PlayerHit()
@@ -85,17 +86,13 @@ public class Player : MonoBehaviour
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
-    
-    private void AnimHitEnd()
-    {
-    
-    }
+
     public void Reset()
     {
         transform.position = _playerPosition;
         _animController.ResetAnimation();
         _playerModel.rotation = _startRotation;
-        _playerStateController.Restart();
+        _isDead = false;
     }
 
     // private void OnDisable()

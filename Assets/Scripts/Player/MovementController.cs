@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {    
-        if (!_gameManager.IsGameStarted ||_player.PlayerStateController.IsDead|| _gameManager.IsGameFinished)
+        if (!_gameManager.IsGameStarted ||_player.IsDead|| _gameManager.IsGameFinished)
         {
             StopPlayerMovement();
             return;

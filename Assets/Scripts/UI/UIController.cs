@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
 
     private void Construct(Player player)
     {
-        player.PlayerStateController.Died += PlayerOnDied;
+        player.Died += PlayerOnDied;
     }
 
 private void OnEnable()
@@ -23,7 +23,6 @@ private void OnEnable()
     {
         _windows = GetComponentsInChildren<WindowBase>(true);
     }
-
 
     private void PlayerOnDied()
     {
