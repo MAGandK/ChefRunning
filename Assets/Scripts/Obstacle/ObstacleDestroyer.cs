@@ -1,24 +1,32 @@
+using CustomNameSpase;
 using UnityEngine;
 
 public class ObstacleDestroyer : MonoBehaviour
 {
+    [SerializeField] private GameObject _explosionEffects;
     private bool _canDestroy;
 
     public void SetCanDestroy(bool canDestroy)
     {
         _canDestroy = canDestroy;
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (!_canDestroy)
         {
             return;
         }
-        //позже брать базовый класс препятствий
-        if (other.TryGetComponent(out ObstacleBarrel obstacleBarrel))
+
+        if (other.TryGetComponent(out ObstacleBase obstacle))
         {
-            obstacleBarrel.Destroy();
-            
+            obstacle.Destroy();
+            ActivateHitEffects(obstacle.transform);
         }
+    }
+
+    public void ActivateHitEffects(Transform obstacleTransform)
+    {
+        Instantiate(_explosionEffects, obstacleTransform.position, Quaternion.identity);
     }
 }

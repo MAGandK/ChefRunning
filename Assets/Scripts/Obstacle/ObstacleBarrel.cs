@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using CustomNameSpase;
 using UnityEngine;
 
-public class ObstacleBarrel : MonoBehaviour
+public class ObstacleBarrel : ObstacleBase
 {
     [SerializeField] private float _time;
     [SerializeField] private Transform _targetPosition;
     [SerializeField] private Transform _startPosition;
     [SerializeField] private float _rotationSpeed;
+    
+    private List<GameObject> _obstacles = new List<GameObject>();
 
     private void OnEnable()
     {
         StartMovement();
+        GameManager.IsRestartGame += ResetObstacle;
     }
 
     private void StartMovement()
@@ -53,31 +59,34 @@ public class ObstacleBarrel : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Player player))
-        {
-            player.Die();
-        }
-    }
-
-    public void Destroy()
-    {
-        gameObject.SetActive(false);
-    }
-
-    private void ResetPosition()
-    {
-        transform.position = _startPosition.position;
-        transform.rotation = _startPosition.rotation;
-    }
-
     public void ResetObstacle()
     {
-        ResetPosition();
+        Debug.Log("ResetObstacle called");
+        transform.position = _startPosition.position;
+        transform.rotation = _startPosition.rotation;
+
+        foreach (var obstacle in _obstacles)
+        {
+            obstacle.SetActive(true);
+        }
+
+        _obstacles.Clear();
         StartMovement();
     }
+    
+    public override void Destroy()
+    {
+        _obstacles.Add(gameObject);
+        gameObject.SetActive(false);
+        Debug.Log(gameObject.name);
+        StopAllCoroutines();
+    }
 
+    private void OnDisable()
+    {
+        GameManager.IsRestartGame -= ResetObstacle;
+    }
+    
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {

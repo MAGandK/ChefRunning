@@ -1,9 +1,10 @@
 using System;
+using CustomNameSpase;
 using UnityEngine;
 
-public class ObstacleHammer : MonoBehaviour
+public class ObstacleHammer : ObstacleBase
 {
-    public static event Action HammerFall;
+    //public static event Action HammerFall;
 
     [SerializeField] private Transform _objectHammer;
     [SerializeField] private float animationSpeed = 1.0f;
@@ -16,11 +17,11 @@ public class ObstacleHammer : MonoBehaviour
         animator.speed = animationSpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            HammerFall?.Invoke();
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+    //     {
+    //         HammerFall?.Invoke();
+    //     }
+    // }
 }

@@ -23,9 +23,7 @@ public class GameManager : MonoBehaviour
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
 
-    private List<GameObject> _obstacle = new List<GameObject>();
-
-    [SerializeField] private GameObject[] _explosionEffects;
+    //private List<GameObject> _obstacle = new List<GameObject>();
 
     [Inject]
     private void Construct(Player player, AudioManager audioManager)
@@ -114,22 +112,13 @@ public class GameManager : MonoBehaviour
         // }
     }
 
-    private void HitObstacle(GameObject obj)
-    {
-        _obstacle.Add(obj);
-        ActivateHitEffects(obj.transform);
-        obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
-        obj.SetActive(false);
-    }
-
-
-    public void ActivateHitEffects(Transform obstacleTransform)
-    {
-        foreach (var effect in _explosionEffects)
-        {
-            Instantiate(effect, obstacleTransform.position, Quaternion.identity);
-        }
-    }
+    // private void HitObstacle(GameObject obj)
+    // {
+    //     _obstacle.Add(obj);
+    //    ActivateHitEffects(obj.transform);
+    //     obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
+    //     obj.SetActive(false);
+    // }
 
     private void OnDisable()
     {

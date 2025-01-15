@@ -15,33 +15,28 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
         Direction = eventData.delta.normalized;
         _clickCount = 0;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
         Direction = Vector2.zero;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("OnPointerClick");
         _clickCount++;
             
         if (_clickCount > 1)
         {
             if (_oldClickTime + CLICK_DURATION >= Time.time)
             {
-                Debug.Log("DoubleClick");
-
                 DoubleClick?.Invoke();
             }
 
