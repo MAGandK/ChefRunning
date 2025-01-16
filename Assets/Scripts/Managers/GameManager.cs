@@ -25,20 +25,14 @@ public class GameManager : MonoBehaviour
     public bool IsGameFinished => _isGameFinished;
 
     private List<GameObject> _obstacle = new List<GameObject>();
-
-
+    
     [Inject]
     private void Construct(Player player, AudioManager audioManager)
     {
         _player = player;
         _audioManager = audioManager;
 
-        _player.PlayerLifeController.Died += PlayerOnDied;
-    }
-
-    private void OnEnable()
-    {
-        //ObstacleHammer.HammerFall += ObstacleHammerFall;
+        _player.Died += PlayerOnDied;
     }
 
     private void Update()
@@ -50,7 +44,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _player.PlayerLifeController.Die();
+            _player.Die();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -95,9 +89,9 @@ public class GameManager : MonoBehaviour
         _isGameFinished = false;
 
         _player.Reset();
-        
+
         IsRestartGame?.Invoke();
-        
+
         StartGame();
     }
 

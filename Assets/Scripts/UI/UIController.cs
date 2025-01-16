@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
     [Inject]
     private void Construct(Player player)
     {
-        player.PlayerLifeController.Died += PlayerOnDied;
+        player.Died += PlayerOnDied;
     }
 
     private void PlayerOnDied()

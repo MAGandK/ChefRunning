@@ -6,7 +6,7 @@ using Zenject;
 public class MainWindow : WindowBase
 {
     [SerializeField] private Slider progressBar;
-    [SerializeField] private Transform levelEnd;
+    //[SerializeField] private Transform levelEnd;
     [SerializeField] private float _offsetZ;
     [SerializeField] public TextMeshProUGUI _scoreText;
     [SerializeField] public GameObject _tabText;
@@ -40,28 +40,28 @@ public class MainWindow : WindowBase
 
     private void Start()
     {
-        _tabText.SetActive(false);
+       // _tabText.SetActive(false);
         _hammerText.SetActive(false);
         _endPositionOffset = new Vector3(0, 0, _offsetZ);
 
-        if (_player != null)
-        {
-            startDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
-        }
-        else
-        {
-            return;
-        }
+        // if (_player != null)
+        // {
+        //     startDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
+        // }
+        // else
+        // {
+        //     return;
+        // }
 
         endDistance = 0f;
     }
 
     private void Update()
     {
-        _endPositionOffset = new Vector3(0, 0, _offsetZ);
-        endDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
-        float progress = 1f - (endDistance / startDistance);
-        progressBar.value = progress;
+        // _endPositionOffset = new Vector3(0, 0, _offsetZ);
+        // endDistance = Vector3.Distance(_player.transform.position, levelEnd.position - _endPositionOffset);
+        // float progress = 1f - (endDistance / startDistance);
+        // progressBar.value = progress;
     }
 
     public void OnCoinCollected()

@@ -55,7 +55,7 @@ public class ObstacleBarrel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerLifeController player))
+        if (other.TryGetComponent(out Player player))
         {
             player.Die();
         }
@@ -72,10 +72,10 @@ public class ObstacleBarrel : MonoBehaviour
         ResetPosition();
         StartMovement();
     }
-    
+
     public void Destroy()
     {
-        gameObject.SetActive(false);   
+        gameObject.SetActive(false);
     }
 
 #if UNITY_EDITOR

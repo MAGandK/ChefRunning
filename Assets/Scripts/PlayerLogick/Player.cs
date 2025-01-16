@@ -8,21 +8,19 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     public static event Action IsPlayerHit;
+    public event Action Died;
 
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
-    [SerializeField] private PlayerLifeController _playerLifeController;
     [SerializeField] private PlayerAnimationTriggerHelper _playerAnimationTriggerHelper;
     [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
 
     private AnimatorController _animController;
     private AudioManager _audioManager;
     private Quaternion _startRotation;
-
     private Joystick _joystick;
-    //internal bool _isPlayerHit;
-
-    public PlayerLifeController PlayerLifeController => _playerLifeController;
+    
+    public bool IsDead { get; private set; }
 
     [Inject]
     public void Construct(AnimatorController animatorController,
@@ -36,12 +34,11 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _playerLifeController.Died += PlayerLifeControllerOnDied;
         _playerAnimationTriggerHelper.PunchStarted += OnPunchStarted;
         _playerAnimationTriggerHelper.PunchEnded += OnPunchEnded;
         _joystick.DoubleClick += JoystickOnDoubleClick;
     }
-    
+
     private void OnEnable()
     {
         //PlayerAnimationTriggerHelper.AnimationEndHandler += AnimHitEnd;
@@ -76,22 +73,13 @@ public class Player : MonoBehaviour
         _audioManager.PlaySound(SoundType.Push);
         IsPlayerHit?.Invoke();
     }
-
-    private void AnimHitEnd()
-    {
-    }
-
-    private void OnDisable()
-    {
-        //PlayerAnimationTriggerHelper.AnimationEndHandler -= AnimHitEnd;
-    }
-
+    
     public void Reset()
     {
+        IsDead = false;
         transform.position = _playerPosition;
         _playerModel.rotation = _startRotation;
         _animController.ResetAnimation();
-        _playerLifeController.Restart();
     }
 
     private void OnPunchEnded()
@@ -108,9 +96,11 @@ public class Player : MonoBehaviour
     {
         PlayerHit();
     }
-    
-    private void PlayerLifeControllerOnDied()
+
+    public void Die()
     {
+        IsDead = true;
         _animController.Dying();
+        Died?.Invoke();
     }
 }
