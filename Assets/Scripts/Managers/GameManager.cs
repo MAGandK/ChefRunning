@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using Cinemachine;
+using CustomNameSpase;
 using UnityEngine;
 using Zenject;
 
 public class GameManager : MonoBehaviour
 {
-    public static event Action IsRestartGame;
-    public static event Action IsFinishGame;
-    public static event Action IsStartGame;
+    public event Action OnRestartGame;
+    public event Action OnFinishGame;
+    public event Action OnStartGame;
 
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     [SerializeField] private CinemachineVirtualCamera _failCamera;
@@ -16,14 +17,14 @@ public class GameManager : MonoBehaviour
 
     private Player _player;
     private AudioManager _audioManager;
-
+    [SerializeField]
+    private ObstacleController _obstacleController;
+    
     private bool _isGameStarted = false;
     private bool _isGameFinished = false;
 
     public bool IsGameStarted => _isGameStarted;
     public bool IsGameFinished => _isGameFinished;
-
-    //private List<GameObject> _obstacle = new List<GameObject>();
 
     [Inject]
     private void Construct(Player player, AudioManager audioManager)
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         _isGameStarted = true;
-        IsStartGame?.Invoke();
+        OnStartGame?.Invoke();
         _audioManager.PlayBackgroundMusic();
         _mainCamera.Priority = 10;
         _failCamera.Priority = 0;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
         _player.Dance();
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Finish);
-        IsFinishGame?.Invoke();
+        OnFinishGame?.Invoke();
         _mainCamera.Priority = 0;
         _failCamera.Priority = 0;
         _finishCamera.Priority = 10;
@@ -78,8 +79,6 @@ public class GameManager : MonoBehaviour
     {
         _audioManager.StopMusic();
         _audioManager.PlaySound(SoundType.Fail);
-
-
         _mainCamera.Priority = 0;
         _failCamera.Priority = 10;
     }
@@ -87,41 +86,9 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         _isGameFinished = false;
-
         _player.Reset();
-        IsRestartGame?.Invoke();
+        _obstacleController.ResetObstacle();
+        OnRestartGame?.Invoke();
         StartGame();
-    }
-
-    public void ObstacleCollision(GameObject obstacle)
-    {
-        // if (_player._isPlayerHit)
-        // {
-        //     HitObstacle(obstacle);
-        // }
-        // else
-        // {
-        //     foreach (var item in _obstacle)
-        //     {
-        //         item.SetActive(true);
-        //     }
-        //
-        //     _obstacle.Clear();
-        //     obstacle.GetComponent<ObstacleBarrel>().StopAllCoroutines();
-        //
-        // }
-    }
-
-    // private void HitObstacle(GameObject obj)
-    // {
-    //     _obstacle.Add(obj);
-    //    ActivateHitEffects(obj.transform);
-    //     obj.GetComponent<ObstacleBarrel>().StopAllCoroutines();
-    //     obj.SetActive(false);
-    // }
-
-    private void OnDisable()
-    {
-        //ObstacleHammer.HammerFall -= ObstacleHammerFall;
     }
 }

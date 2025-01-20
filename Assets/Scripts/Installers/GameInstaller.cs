@@ -10,7 +10,6 @@ public class GameInstaller : MonoInstaller
         Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
         Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<MovementController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
     }
 }

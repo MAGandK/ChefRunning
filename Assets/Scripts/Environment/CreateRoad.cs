@@ -48,12 +48,17 @@ public class CreateRoad : MonoBehaviour
 
     private void UpdateRoadPositions()
     {
-        var transformPosition = transform.position;
+        var transformChildCount = transform.childCount;
 
-        for (int i = 0; i < RoadPartCount; i++)
+        for (int i = 0; i < transformChildCount; i++)
         {
             var roadPart = transform.GetChild(i);
-            roadPart.position = new Vector3(transformPosition.x, transformPosition.y, i * _offset);
+            roadPart.localPosition = new Vector3(0, 0, i * _offset);
         }
+    }
+    
+    private void OnValidate()
+    {
+        UpdateRoadPositions();
     }
 }

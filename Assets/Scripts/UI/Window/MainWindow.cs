@@ -33,7 +33,7 @@ public class MainWindow : WindowBase
     {
         ObstacleInteraction.Interaction += ShowText;
         ObstacleInteraction.InteractionWithHammer += ShowTextHammer;
-        Player.IsPlayerHit += HideText;
+        Player.OnPlayerHit += HideText;
         ObstacleInteraction.ExitInteractionWithHammer += HideText;
         ObstacleInteraction.ExitInteraction += HideText;
     }
@@ -90,7 +90,7 @@ public class MainWindow : WindowBase
     {
         ObstacleInteraction.Interaction -= ShowText;
         ObstacleInteraction.InteractionWithHammer -= ShowTextHammer;
-        Player.IsPlayerHit -= HideText;
+        Player.OnPlayerHit -= HideText;
         ObstacleInteraction.ExitInteractionWithHammer -= HideText;
         ObstacleInteraction.ExitInteraction -= HideText;
     }

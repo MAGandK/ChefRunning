@@ -7,26 +7,32 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     private const float CLICK_DURATION = 0.5f;
 
     public event Action DoubleClick;
+    public event Action PointerUp;
+    public event Action PointerDown;
 
     private int _clickCount;
     private float _oldClickTime;
 
     public Vector2 Direction { get; private set; }
-
+    public Vector2 Position { get; private set; }
     public void OnDrag(PointerEventData eventData)
     {
+        Position = eventData.position;
         Direction = eventData.delta.normalized;
         _clickCount = 0;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        Position = Vector2.zero;
         Direction = Vector2.zero;
+        PointerUp?.Invoke();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
+        Position = eventData.position;
+        PointerDown?.Invoke();
     }
 
     public void OnPointerClick(PointerEventData eventData)

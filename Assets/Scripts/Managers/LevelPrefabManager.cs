@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 public class LevelPrefabManager : MonoBehaviour
@@ -8,12 +9,25 @@ public class LevelPrefabManager : MonoBehaviour
     [SerializeField] internal List<GameObject> _coinsList = new List<GameObject>();
     private GameObject _currentScene;
     private Vector3 _startPosition = new Vector3(101f, -280f, 586f);
-
+    private GameManager _gameManager;
+    
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void OnEnable()
     {
-        GameManager.IsStartGame += StartFirstScene;
-        GameManager.IsRestartGame += ReloadScene;
-        GameManager.IsFinishGame += NewScene;
+      _gameManager.OnStartGame += StartFirstScene;
+      _gameManager.OnRestartGame += ReloadScene;
+      _gameManager.OnFinishGame += NewScene;
+    }
+    
+    private void OnDisable()
+    { 
+        _gameManager.OnStartGame -= StartFirstScene;
+        _gameManager.OnRestartGame -= ReloadScene;
+        _gameManager.OnFinishGame -= NewScene;
     }
 
     private void Start()
@@ -67,12 +81,5 @@ public class LevelPrefabManager : MonoBehaviour
                 coin.SetActive(true);
             }
         }
-    }
-
-    private void OnDisable()
-    {
-        GameManager.IsStartGame -= StartFirstScene;
-        GameManager.IsRestartGame -= ReloadScene;
-        GameManager.IsFinishGame -= NewScene;
     }
 }

@@ -4,19 +4,32 @@ using Zenject;
 public class UIController : MonoBehaviour
 {
     private WindowBase[] _windows;
-
+    
+    private Player _player;
+    private GameManager _gameManager;
+    
     [Inject]
 
-    private void Construct(Player player)
+    private void Construct(Player player, GameManager gameManager)
     {
-        player.Died += PlayerOnDied;
+        _player = player;
+        _gameManager = gameManager;
     }
 
 private void OnEnable()
     {
-        GameManager.IsFinishGame += OnFinishGame;
-        GameManager.IsStartGame += OnStartGame;
-        GameManager.IsRestartGame += OnRestartGame;
+        _player.Died += PlayerOnDied;
+        _gameManager.OnFinishGame += OnFinishGame;
+        _gameManager.OnStartGame += OnStartGame;
+        _gameManager.OnRestartGame += OnRestartGame;
+    }
+
+    private void OnDisable()
+    {
+        _player.Died -= PlayerOnDied;
+        _gameManager.OnFinishGame -= OnFinishGame;
+        _gameManager.OnStartGame -= OnStartGame;
+        _gameManager.OnRestartGame -= OnRestartGame;
     }
 
     private void Awake()
@@ -61,11 +74,6 @@ private void OnEnable()
         ShowWindow(WindowType.MainWindow);
     }
 
-    private void OnPlayerDie()
-    {
-        
-    }
-
     private void OnFinishGame()
     {
         ShowWindow(WindowType.FinishWindow);
@@ -74,12 +82,5 @@ private void OnEnable()
     private void OnRestartGame()
     {
         ShowWindow(WindowType.MainWindow);
-    }
-
-    private void OnDisable()
-    {
-        GameManager.IsFinishGame -= OnFinishGame;
-        GameManager.IsStartGame -= OnStartGame;
-        GameManager.IsRestartGame -= OnRestartGame;
     }
 }

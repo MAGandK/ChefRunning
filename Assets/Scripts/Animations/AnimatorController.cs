@@ -1,21 +1,33 @@
 using UnityEngine;
+using Zenject;
 
 public class AnimatorController : MonoBehaviour
 {
+    private int Run = Animator.StringToHash("IsRun");
+    private int Died = Animator.StringToHash("Died");
+    private int Dance = Animator.StringToHash("Danced");
+    private int Hit = Animator.StringToHash("IsHit");
+    
     [SerializeField] public Animator _animator;
-    public int Run = Animator.StringToHash("IsRun");
-    public int Died = Animator.StringToHash("Died");
-    public int Dance = Animator.StringToHash("Danced");
-    public int Hit = Animator.StringToHash("IsHit");
+    private GameManager _gameManager;
 
-    internal bool _hitAnimEnd;
-
+    [Inject]
+    private void Construct(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void OnEnable()
     {
-     //   GameManager.IsPlayerDie += Dying;
-        GameManager.IsFinishGame += Danced;
-        GameManager.IsStartGame += Running;
-        GameManager.IsRestartGame += ResetAnimation;
+        _gameManager .OnFinishGame += Danced;
+        _gameManager .OnStartGame += Running;
+        _gameManager .OnRestartGame += ResetAnimation;
+    }
+    
+    private void OnDisable()
+    {
+        _gameManager .OnFinishGame -= Danced;
+        _gameManager .OnStartGame -= Running;
+        _gameManager .OnRestartGame -= ResetAnimation;
     }
 
     public void Running()
@@ -60,19 +72,5 @@ public class AnimatorController : MonoBehaviour
         _animator.ResetTrigger(Died);
         _animator.ResetTrigger(Dance);
         _animator.ResetTrigger(Hit);
-    }
-
-    private void IsHitAnimTrigger()
-    {
-        _hitAnimEnd = true;
-    }
-
-    private void OnDisable()
-    {
-        //GameManager.IsPlayerDie -= Dying;
-        GameManager.IsFinishGame -= Danced;
-        GameManager.IsStartGame -= Running;
-        GameManager.IsRestartGame -= ResetAnimation;
-
     }
 }

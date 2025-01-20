@@ -4,16 +4,18 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    public static event Action IsPlayerHit;
+    public static event Action OnPlayerHit;
     public event Action Died;
 
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Vector3 _playerPosition;
     [SerializeField] private PlayerAnimationTriggetHelper _playerAnimationTriggetHelper;
     [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
+    [SerializeField] private MovementController _movementController;
 
     private AnimatorController _animController;
     private AudioManager _audioManager;
+    private GameManager _gameManager;
     private Joystick _joystick;
     private Quaternion _startRotation;
 
@@ -21,10 +23,11 @@ public class Player : MonoBehaviour
     public bool IsDead => _isDead;
 
     [Inject]
-    public void Construct(AnimatorController animatorController, AudioManager audioManager, Joystick joystick)
+    public void Construct(AnimatorController animatorController, AudioManager audioManager,GameManager gameManager, Joystick joystick)
     {
         _animController = animatorController;
         _audioManager = audioManager;
+        _gameManager = gameManager;
         _joystick = joystick;
     }
 
@@ -33,8 +36,13 @@ public class Player : MonoBehaviour
         _playerAnimationTriggetHelper.PunchStarted += OnPunchStarted;
         _playerAnimationTriggetHelper.PunchEnded += OnPunchEnded;
         _joystick.DoubleClick += OnDoubleClick;
+        _gameManager.OnStartGame += GameManagerOnStartGame;
     }
 
+    private void GameManagerOnStartGame()
+    {
+        _movementController.StartMove();
+    }
     private void OnDoubleClick()
     {
         PlayerHit();
@@ -57,8 +65,9 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        _animController.Dying();
         _isDead = true;
+        _animController.Dying();
+        _movementController.StopPlayerMovement();
         Died?.Invoke();
     }
 
@@ -75,16 +84,11 @@ public class Player : MonoBehaviour
         _animController.Danced();
     }
 
-    public void PlayerMove()
-    {
-        _animController.Running();
-    }
-
     public void PlayerHit()
     {
         _animController.Hitting();
         _audioManager.PlaySound(SoundType.Push);
-        IsPlayerHit?.Invoke();
+        OnPlayerHit?.Invoke();
     }
 
     public void Reset()
@@ -94,11 +98,4 @@ public class Player : MonoBehaviour
         _playerModel.rotation = _startRotation;
         _isDead = false;
     }
-
-    // private void OnDisable()
-    // {
-    //     _playerStateController.Died -= PlayerStateControllerOnDied;
-    //     _playerAnimationTriggetHelper.PunchStarted -= OnPunchStarted;
-    //     _playerAnimationTriggetHelper.PunchEnded -= OnPunchEnded ;
-    // }
 }

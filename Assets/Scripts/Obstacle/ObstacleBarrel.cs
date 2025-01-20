@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomNameSpase;
 using UnityEngine;
+using Zenject;
 
 public class ObstacleBarrel : ObstacleBase
 {
@@ -11,12 +12,22 @@ public class ObstacleBarrel : ObstacleBase
     [SerializeField] private Transform _startPosition;
     [SerializeField] private float _rotationSpeed;
     
-    private List<GameObject> _obstacles = new List<GameObject>();
-
+    private GameManager _gameManager;
+    
+   [Inject]
+    private void Construct(Player player, GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
     private void OnEnable()
     {
         StartMovement();
-        GameManager.IsRestartGame += ResetObstacle;
+        _gameManager.OnRestartGame += ResetObstacle;
+    }
+    
+    private void OnDisable()
+    {
+        _gameManager.OnRestartGame -= ResetObstacle;
     }
 
     private void StartMovement()
@@ -59,32 +70,18 @@ public class ObstacleBarrel : ObstacleBase
         }
     }
 
-    public void ResetObstacle()
+    public override void ResetObstacle()
     {
-        Debug.Log("ResetObstacle called");
+        base.ResetObstacle();
         transform.position = _startPosition.position;
         transform.rotation = _startPosition.rotation;
-
-        foreach (var obstacle in _obstacles)
-        {
-            obstacle.SetActive(true);
-        }
-
-        _obstacles.Clear();
         StartMovement();
     }
     
     public override void Destroy()
     {
-        _obstacles.Add(gameObject);
         gameObject.SetActive(false);
-        Debug.Log(gameObject.name);
         StopAllCoroutines();
-    }
-
-    private void OnDisable()
-    {
-        GameManager.IsRestartGame -= ResetObstacle;
     }
     
 #if UNITY_EDITOR

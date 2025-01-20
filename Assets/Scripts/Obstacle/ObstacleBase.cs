@@ -14,7 +14,15 @@ namespace CustomNameSpase
         
         public virtual void Destroy()
         {
-          
+            gameObject.SetActive(false);
+        }
+
+        public virtual void ResetObstacle()
+        {
+            if (!gameObject.activeSelf)
+            {
+                gameObject.SetActive(true);
+            }
         }
     }
 }
