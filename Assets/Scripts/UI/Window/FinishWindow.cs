@@ -1,26 +1,31 @@
+using Managers;
+using Type;
 using Zenject;
 
-public class FinishWindow : WindowBase
+namespace UI
 {
-    private GameManager _gameManager;
-
-    [Inject]
-    private void Construct(GameManager gameManager)
+    public class FinishWindow : WindowBase
     {
-        _gameManager = gameManager;
-    }
+        private GameManager _gameManager;
 
-    public override WindowType Type
-    {
-        get { return WindowType.FinishWindow; }
-    }
-
-    public void OnNextButtonClick()
-    {
-        if (_gameManager.IsGameFinished)
+        [Inject]
+        private void Construct(GameManager gameManager)
         {
-            base.CloseWindow();
-            _gameManager.RestartGame();
+            _gameManager = gameManager;
+        }
+
+        public override WindowType Type
+        {
+            get { return WindowType.FinishWindow; }
+        }
+
+        public void OnNextButtonClick()
+        {
+            if (_gameManager.IsGameFinished)
+            {
+                base.CloseWindow();
+                _gameManager.RestartGame();
+            }
         }
     }
 }

@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class TriggerHammerEffect : MonoBehaviour
+namespace Obstacle
 {
-    [SerializeField] private GameObject _effectPrefab;
-    [SerializeField] private Transform _effectHammerTransform;
-
-    private void OnTriggerEnter(Collider other)
+    public class TriggerHammerEffect : MonoBehaviour
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Road"))
+        [SerializeField] private GameObject _effectPrefab;
+        [SerializeField] private Transform _effectHammerTransform;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Instantiate(_effectPrefab, _effectHammerTransform.position, Quaternion.identity);
+            if (other.gameObject.layer == LayerMask.NameToLayer("Road"))
+            {
+                Instantiate(_effectPrefab, _effectHammerTransform.position, Quaternion.identity);
+            }
         }
     }
 }

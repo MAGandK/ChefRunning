@@ -1,15 +1,21 @@
+using Animations;
+using Managers;
+using UI;
 using Zenject;
 
-public class GameInstaller : MonoInstaller
+namespace Installers
 {
-    public override void InstallBindings()
+    public class GameInstaller : MonoInstaller
     {
-        Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
+        public override void InstallBindings()
+        {
+            Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<Joystick.Joystick>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<Player.Player>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
+        }
     }
 }

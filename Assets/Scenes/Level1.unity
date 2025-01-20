@@ -2360,12 +2360,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7264912886927067405, guid: 44f78619660c445c3b19bff781b0482e, type: 3}
+      propertyPath: _xMaxClamp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264912886927067405, guid: 44f78619660c445c3b19bff781b0482e, type: 3}
+      propertyPath: _xMinClamp
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264912886927067405, guid: 44f78619660c445c3b19bff781b0482e, type: 3}
       propertyPath: _forwardSpeed
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7264912886927067405, guid: 44f78619660c445c3b19bff781b0482e, type: 3}
       propertyPath: _swipeSensitivity
-      value: 0.267
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8232139310848400048, guid: 44f78619660c445c3b19bff781b0482e, type: 3}
       propertyPath: m_LocalPosition.x

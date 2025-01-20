@@ -1,21 +1,25 @@
+using Type;
 using UnityEngine;
 
-public abstract class WindowBase : MonoBehaviour
+namespace UI
 {
-    public bool IsActive
+    public abstract class WindowBase : MonoBehaviour
     {
-        get { return gameObject.activeSelf; }
-    }
+        public bool IsActive
+        {
+            get { return gameObject.activeSelf; }
+        }
 
-    public abstract WindowType Type { get; }
+        public abstract WindowType Type { get; }
 
-    public virtual void ShowWindow()
-    {
-        gameObject.SetActive(true);
-    }
+        public virtual void ShowWindow()
+        {
+            gameObject.SetActive(true);
+        }
 
-    public virtual void CloseWindow()
-    {
-        gameObject.SetActive(false);
+        public virtual void CloseWindow()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

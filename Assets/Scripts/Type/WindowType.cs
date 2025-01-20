@@ -1,6 +1,9 @@
-public enum WindowType
+namespace Type
 {
-    MainWindow = 0,
-    FailWindow = 1,
-    FinishWindow = 2
+    public enum WindowType
+    {
+        MainWindow = 0,
+        FailWindow = 1,
+        FinishWindow = 2
+    }
 }

@@ -2,49 +2,52 @@ using System;
 using UnityEngine;
 using Zenject;
 
-public class ObstacleInteraction : MonoBehaviour
+namespace Obstacle
 {
-    public static event Action Interaction;
-    public static event Action InteractionWithHammer;
-    public static event Action ExitInteractionWithHammer;
-    public static event Action ExitInteraction;
-
-    internal bool _isInteracted;
-    private Player _player;
-
-    [Inject]
-    private void Construct(Player player)
+    public class ObstacleInteraction : MonoBehaviour
     {
-        _player = player;
-    }
+        public static event Action Interaction;
+        public static event Action InteractionWithHammer;
+        public static event Action ExitInteractionWithHammer;
+        public static event Action ExitInteraction;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == _player.gameObject && !_isInteracted)
+        internal bool _isInteracted;
+        private Player.Player _player;
+
+        [Inject]
+        private void Construct(Player.Player player)
         {
-            _isInteracted = true;
-            if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+            _player = player;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == _player.gameObject && !_isInteracted)
             {
-                Interaction?.Invoke();
-            }
-            else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
-            {
-                InteractionWithHammer?.Invoke();
+                _isInteracted = true;
+                if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+                {
+                    Interaction?.Invoke();
+                }
+                else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
+                {
+                    InteractionWithHammer?.Invoke();
+                }
             }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == _player.gameObject)
+        private void OnTriggerExit(Collider other)
         {
-            if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+            if (other.gameObject == _player.gameObject)
             {
-                ExitInteraction?.Invoke();
-            }
-            else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
-            {
-                ExitInteractionWithHammer.Invoke();
+                if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
+                {
+                    ExitInteraction?.Invoke();
+                }
+                else if (gameObject.layer == LayerMask.NameToLayer("Hammer"))
+                {
+                    ExitInteractionWithHammer.Invoke();
+                }
             }
         }
     }

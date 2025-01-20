@@ -1,86 +1,91 @@
+using Managers;
+using Type;
 using UnityEngine;
 using Zenject;
 
-public class UIController : MonoBehaviour
+namespace UI
 {
-    private WindowBase[] _windows;
-    
-    private Player _player;
-    private GameManager _gameManager;
-    
-    [Inject]
+    public class UIController : MonoBehaviour
+    {
+        private WindowBase[] _windows;
 
-    private void Construct(Player player, GameManager gameManager)
-    {
-        _player = player;
-        _gameManager = gameManager;
-    }
+        private Player.Player _player;
+        private GameManager _gameManager;
 
-private void OnEnable()
-    {
-        _player.Died += PlayerOnDied;
-        _gameManager.OnFinishGame += OnFinishGame;
-        _gameManager.OnStartGame += OnStartGame;
-        _gameManager.OnRestartGame += OnRestartGame;
-    }
-
-    private void OnDisable()
-    {
-        _player.Died -= PlayerOnDied;
-        _gameManager.OnFinishGame -= OnFinishGame;
-        _gameManager.OnStartGame -= OnStartGame;
-        _gameManager.OnRestartGame -= OnRestartGame;
-    }
-
-    private void Awake()
-    {
-        _windows = GetComponentsInChildren<WindowBase>(true);
-    }
-
-    private void PlayerOnDied()
-    {
-        ShowWindow(WindowType.FailWindow);
-    }
-    public void ShowWindow(WindowType type)
-    {
-        for (int i = 0; i < _windows.Length; i++)
+        [Inject]
+        private void Construct(Player.Player player, GameManager gameManager)
         {
-            if (_windows[i].Type == type)
-            {
-                _windows[i].ShowWindow();
-            }
-            else
-            {
-                _windows[i].CloseWindow();
-            }
+            _player = player;
+            _gameManager = gameManager;
         }
-    }
 
-    public WindowBase GetWindow(WindowType type)
-    {
-        for (int i = 0; i < _windows.Length; i++)
+        private void OnEnable()
         {
-            if (_windows[i].Type == type)
+            _player.OnPlayerDied += PlayerOnOnPlayerDied;
+            _gameManager.OnFinishGame += OnFinishGame;
+            _gameManager.OnStartGame += OnStartGame;
+            _gameManager.OnRestartGame += OnRestartGame;
+        }
+
+        private void OnDisable()
+        {
+            _player.OnPlayerDied -= PlayerOnOnPlayerDied;
+            _gameManager.OnFinishGame -= OnFinishGame;
+            _gameManager.OnStartGame -= OnStartGame;
+            _gameManager.OnRestartGame -= OnRestartGame;
+        }
+
+        private void Awake()
+        {
+            _windows = GetComponentsInChildren<WindowBase>(true);
+        }
+
+        private void PlayerOnOnPlayerDied()
+        {
+            ShowWindow(WindowType.FailWindow);
+        }
+
+        public void ShowWindow(WindowType type)
+        {
+            for (int i = 0; i < _windows.Length; i++)
             {
-                return _windows[i];
+                if (_windows[i].Type == type)
+                {
+                    _windows[i].ShowWindow();
+                }
+                else
+                {
+                    _windows[i].CloseWindow();
+                }
             }
         }
 
-        return null;
-    }
+        public WindowBase GetWindow(WindowType type)
+        {
+            for (int i = 0; i < _windows.Length; i++)
+            {
+                if (_windows[i].Type == type)
+                {
+                    return _windows[i];
+                }
+            }
 
-    private void OnStartGame()
-    {
-        ShowWindow(WindowType.MainWindow);
-    }
+            return null;
+        }
 
-    private void OnFinishGame()
-    {
-        ShowWindow(WindowType.FinishWindow);
-    }
+        private void OnStartGame()
+        {
+            ShowWindow(WindowType.MainWindow);
+        }
 
-    private void OnRestartGame()
-    {
-        ShowWindow(WindowType.MainWindow);
+        private void OnFinishGame()
+        {
+            ShowWindow(WindowType.FinishWindow);
+        }
+
+        private void OnRestartGame()
+        {
+            ShowWindow(WindowType.MainWindow);
+        }
     }
 }

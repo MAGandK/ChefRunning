@@ -1,94 +1,96 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using CustomNameSpase;
+using Managers;
 using UnityEngine;
 using Zenject;
 
-public class ObstacleBarrel : ObstacleBase
+namespace Obstacle
 {
-    [SerializeField] private float _time;
-    [SerializeField] private Transform _targetPosition;
-    [SerializeField] private Transform _startPosition;
-    [SerializeField] private float _rotationSpeed;
-    
-    private GameManager _gameManager;
-    
-   [Inject]
-    private void Construct(Player player, GameManager gameManager)
+    public class ObstacleBarrel : ObstacleBase
     {
-        _gameManager = gameManager;
-    }
-    private void OnEnable()
-    {
-        StartMovement();
-        _gameManager.OnRestartGame += ResetObstacle;
-    }
-    
-    private void OnDisable()
-    {
-        _gameManager.OnRestartGame -= ResetObstacle;
-    }
+        [SerializeField] private float _time;
+        [SerializeField] private Transform _targetPosition;
+        [SerializeField] private Transform _startPosition;
+        [SerializeField] private float _rotationSpeed;
 
-    private void StartMovement()
-    {
-        if (gameObject.activeInHierarchy)
+        private GameManager _gameManager;
+
+        [Inject]
+        private void Construct(Player.Player player, GameManager gameManager)
         {
-            StartCoroutine(ObstacleMovement(_targetPosition.position, _time));
+            _gameManager = gameManager;
         }
-    }
 
-    private IEnumerator ObstacleMovement(Vector3 targetPosition, float executionTime)
-    {
-        Vector3 startPosition = _startPosition.position;
-        float angle = 0;
-
-        while (true)
+        private void OnEnable()
         {
-            float time = 0;
-            float progress = 0;
-            while (time <= executionTime)
-            {
-                time += Time.deltaTime;
-                progress = time / executionTime;
-                angle += _rotationSpeed;
-                transform.rotation = Quaternion.AngleAxis(angle, transform.up);
-                transform.position = Vector3.Lerp(startPosition, targetPosition, progress);
-                yield return null;
-            }
+            StartMovement();
+            _gameManager.OnRestartGame += ResetObstacle;
+        }
 
-            time = 0;
-            while (time <= executionTime)
+        private void OnDisable()
+        {
+            _gameManager.OnRestartGame -= ResetObstacle;
+        }
+
+        private void StartMovement()
+        {
+            if (gameObject.activeInHierarchy)
             {
-                time += Time.deltaTime;
-                progress = time / executionTime;
-                angle += _rotationSpeed;
-                transform.rotation = Quaternion.AngleAxis(angle, transform.up);
-                transform.position = Vector3.Lerp(targetPosition, startPosition, progress);
-                yield return null;
+                StartCoroutine(ObstacleMovement(_targetPosition.position, _time));
             }
         }
-    }
 
-    public override void ResetObstacle()
-    {
-        base.ResetObstacle();
-        transform.position = _startPosition.position;
-        transform.rotation = _startPosition.rotation;
-        StartMovement();
-    }
-    
-    public override void Destroy()
-    {
-        gameObject.SetActive(false);
-        StopAllCoroutines();
-    }
-    
+        private IEnumerator ObstacleMovement(Vector3 targetPosition, float executionTime)
+        {
+            Vector3 startPosition = _startPosition.position;
+            float angle = 0;
+
+            while (true)
+            {
+                float time = 0;
+                float progress = 0;
+                while (time <= executionTime)
+                {
+                    time += Time.deltaTime;
+                    progress = time / executionTime;
+                    angle += _rotationSpeed;
+                    transform.rotation = Quaternion.AngleAxis(angle, transform.up);
+                    transform.position = Vector3.Lerp(startPosition, targetPosition, progress);
+                    yield return null;
+                }
+
+                time = 0;
+                while (time <= executionTime)
+                {
+                    time += Time.deltaTime;
+                    progress = time / executionTime;
+                    angle += _rotationSpeed;
+                    transform.rotation = Quaternion.AngleAxis(angle, transform.up);
+                    transform.position = Vector3.Lerp(targetPosition, startPosition, progress);
+                    yield return null;
+                }
+            }
+        }
+
+        public override void ResetObstacle()
+        {
+            base.ResetObstacle();
+            transform.position = _startPosition.position;
+            transform.rotation = _startPosition.rotation;
+            StartMovement();
+        }
+
+        public override void Destroy()
+        {
+            gameObject.SetActive(false);
+            StopAllCoroutines();
+        }
+
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(_targetPosition.position, radius: 1);
-        Gizmos.DrawWireSphere(_startPosition.position, radius: 2);
-    }
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(_targetPosition.position, radius: 1);
+            Gizmos.DrawWireSphere(_startPosition.position, radius: 2);
+        }
 #endif
+    }
 }

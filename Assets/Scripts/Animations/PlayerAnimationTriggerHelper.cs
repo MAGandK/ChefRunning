@@ -1,18 +1,21 @@
 using System;
 using UnityEngine;
 
-public class PlayerAnimationTriggetHelper : MonoBehaviour
+namespace Animations
 {
-    public event Action PunchStarted;
-    public event Action PunchEnded;
-
-    private void StartPunch()
+    public class PlayerAnimationTriggetHelper : MonoBehaviour
     {
-        PunchStarted?.Invoke();
-    }
+        public event Action PunchStarted;
+        public event Action PunchEnded;
 
-    private void EndPunch()
-    {
-        PunchEnded?.Invoke();
+        private void StartPunch()
+        {
+            PunchStarted?.Invoke();
+        }
+
+        private void EndPunch()
+        {
+            PunchEnded?.Invoke();
+        }
     }
 }

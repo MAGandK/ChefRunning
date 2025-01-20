@@ -1,7 +1,10 @@
-public enum SoundType
+namespace Type
 {
-    Coin,
-    Fail,
-    Push,
-    Finish
+    public enum SoundType
+    {
+        Coin,
+        Fail,
+        Push,
+        Finish
+    }
 }

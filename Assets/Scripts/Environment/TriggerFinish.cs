@@ -1,21 +1,25 @@
+using Managers;
 using UnityEngine;
 using Zenject;
 
-public class TriggerFinish : MonoBehaviour
+namespace Environment
 {
-    private GameManager _gameManager;
-
-    [Inject]
-    private void Construct(GameManager gameManager)
+    public class TriggerFinish : MonoBehaviour
     {
-        _gameManager = gameManager;
-    }
+        private GameManager _gameManager;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!_gameManager.IsGameFinished)
+        [Inject]
+        private void Construct(GameManager gameManager)
         {
-            _gameManager.FinishGame();
+            _gameManager = gameManager;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!_gameManager.IsGameFinished)
+            {
+                _gameManager.FinishGame();
+            }
         }
     }
 }

@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CustomNameSpase
+namespace Obstacle
 {
     public class ObstacleController : MonoBehaviour
     {
-        [SerializeField]
-        private List<ObstacleBase> obstacles = new List<ObstacleBase>();
+        [SerializeField] private List<ObstacleBase> obstacles = new List<ObstacleBase>();
 
         public void ResetObstacle()
         {

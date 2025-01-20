@@ -1,64 +1,67 @@
 using UnityEngine;
 
-[ExecuteAlways]
-public class CreateRoad : MonoBehaviour
+namespace Environment
 {
-    [Min(1)] public int RoadPartCount;
-    public float _offset;
-    public GameObject RoadPrefab;
-
-    private void Update()
+    [ExecuteAlways]
+    public class CreateRoad : MonoBehaviour
     {
-        if (RoadPrefab == null)
+        [Min(1)] public int RoadPartCount;
+        public float _offset;
+        public GameObject RoadPrefab;
+
+        private void Update()
         {
-            return;
+            if (RoadPrefab == null)
+            {
+                return;
+            }
+
+            if (transform.childCount < RoadPartCount)
+            {
+                CreateRoadPart();
+            }
+
+            else if (transform.childCount > RoadPartCount)
+            {
+                DeleteRoadParts(transform.childCount - RoadPartCount);
+                UpdateRoadPositions();
+            }
         }
 
-        if (transform.childCount < RoadPartCount)
+        private void CreateRoadPart()
         {
-            CreateRoadPart();
+            var transformPosition = transform.position;
+
+            for (int i = 0; i < RoadPartCount; i++)
+            {
+                transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * _offset));
+
+                var instantiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
+            }
         }
 
-        else if (transform.childCount > RoadPartCount)
+        private void DeleteRoadParts(int count)
         {
-            DeleteRoadParts(transform.childCount - RoadPartCount);
+            for (int i = transform.childCount - 1; i >= RoadPartCount; i--)
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+        }
+
+        private void UpdateRoadPositions()
+        {
+            var transformChildCount = transform.childCount;
+
+            for (int i = 0; i < transformChildCount; i++)
+            {
+                var roadPart = transform.GetChild(i);
+                roadPart.localPosition = new Vector3(0, 0, i * _offset);
+            }
+        }
+
+        private void OnValidate()
+        {
             UpdateRoadPositions();
         }
-    }
-
-    private void CreateRoadPart()
-    {
-        var transformPosition = transform.position;
-
-        for (int i = 0; i < RoadPartCount; i++)
-        {
-            transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * _offset));
-
-            var instantiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
-        }
-    }
-
-    private void DeleteRoadParts(int count)
-    {
-        for (int i = transform.childCount - 1; i >= RoadPartCount; i--)
-        {
-            DestroyImmediate(transform.GetChild(i).gameObject);
-        }
-    }
-
-    private void UpdateRoadPositions()
-    {
-        var transformChildCount = transform.childCount;
-
-        for (int i = 0; i < transformChildCount; i++)
-        {
-            var roadPart = transform.GetChild(i);
-            roadPart.localPosition = new Vector3(0, 0, i * _offset);
-        }
-    }
-    
-    private void OnValidate()
-    {
-        UpdateRoadPositions();
     }
 }

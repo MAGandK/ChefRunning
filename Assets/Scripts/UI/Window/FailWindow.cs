@@ -1,23 +1,28 @@
+using Managers;
+using Type;
 using Zenject;
 
-public class FailWindow : WindowBase
+namespace UI
 {
-    private GameManager _gameManager;
-
-    [Inject]
-    private void Construct(GameManager gameManager)
+    public class FailWindow : WindowBase
     {
-        _gameManager = gameManager;
-    }
+        private GameManager _gameManager;
 
-    public override WindowType Type
-    {
-        get { return WindowType.FailWindow; }
-    }
+        [Inject]
+        private void Construct(GameManager gameManager)
+        {
+            _gameManager = gameManager;
+        }
 
-    public void OnRestartButtonClick()
-    {
-        base.CloseWindow();
-        _gameManager.RestartGame();
+        public override WindowType Type
+        {
+            get { return WindowType.FailWindow; }
+        }
+
+        public void OnRestartButtonClick()
+        {
+            base.CloseWindow();
+            _gameManager.RestartGame();
+        }
     }
 }
