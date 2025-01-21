@@ -6,7 +6,6 @@ namespace Player
     public class MovementController : MonoBehaviour
     {
         [SerializeField, Range(0f, 1f)] private float _swipeSensitivity;
-        [SerializeField] private float _speed = 1f;
         [SerializeField] private float _forwardSpeed = 0f;
         [SerializeField] private float _xMaxClamp = 5f;
         [SerializeField] private float _xMinClamp = -11f;
@@ -44,10 +43,10 @@ namespace Player
             }
         }
 
-        public void MovePlayer()
+        private void MovePlayer()
         {
             var position = transform.position;
-            var moveZ = position.z + (+_forwardSpeed * Time.deltaTime);
+            var moveZ = position.z + _forwardSpeed * Time.deltaTime;
             var deltaX = _joystick.Position.x - _joystickStartPosition.x;
             var expectedX = _startTransformPosition.x + deltaX * _swipeSensitivity;
             var clampedX = Mathf.Clamp(expectedX, _xMinClamp, _xMaxClamp);
