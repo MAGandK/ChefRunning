@@ -21,7 +21,7 @@ namespace UI
 
         public void OnNextButtonClick()
         {
-            if (_gameManager.IsGameFinished)
+         //   if (_gameManager.IsGameFinished)
             {
                 base.CloseWindow();
                 _gameManager.RestartGame();

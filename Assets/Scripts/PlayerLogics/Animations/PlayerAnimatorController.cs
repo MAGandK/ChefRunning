@@ -2,9 +2,9 @@ using Managers;
 using UnityEngine;
 using Zenject;
 
-namespace Animations
+namespace PlayerLogics
 {
-    public class AnimatorController : MonoBehaviour
+    public class PlayerAnimatorController : MonoBehaviour
     {
         [SerializeField] public Animator _animator;
         
@@ -12,28 +12,7 @@ namespace Animations
         private readonly int Died = Animator.StringToHash("Died");
         private readonly int Dance = Animator.StringToHash("Danced");
         private readonly int Hit = Animator.StringToHash("IsHit");
-
-        private GameManager _gameManager;
-
-        [Inject]
-        private void Construct(GameManager gameManager)
-        {
-            _gameManager = gameManager;
-        }
-
-        private void OnEnable()
-        {
-            _gameManager.OnFinishGame += Danced;
-            _gameManager.OnStartGame += Running;
-            _gameManager.OnRestartGame += ResetAnimation;
-        }
-
-        private void OnDisable()
-        {
-            _gameManager.OnFinishGame -= Danced;
-            _gameManager.OnStartGame -= Running;
-            _gameManager.OnRestartGame -= ResetAnimation;
-        }
+        
 
         public void Running()
         {

@@ -1,48 +1,15 @@
-using Managers;
 using Type;
 using UnityEngine;
-using Zenject;
 
 namespace UI
 {
     public class UIController : MonoBehaviour
     {
         private WindowBase[] _windows;
-
-        private Player.Player _player;
-        private GameManager _gameManager;
-
-        [Inject]
-        private void Construct(Player.Player player, GameManager gameManager)
-        {
-            _player = player;
-            _gameManager = gameManager;
-        }
-
-        private void OnEnable()
-        {
-            _player.OnPlayerDied += PlayerOnOnPlayerDied;
-            _gameManager.OnFinishGame += OnFinishGame;
-            _gameManager.OnStartGame += OnStartGame;
-            _gameManager.OnRestartGame += OnRestartGame;
-        }
-
-        private void OnDisable()
-        {
-            _player.OnPlayerDied -= PlayerOnOnPlayerDied;
-            _gameManager.OnFinishGame -= OnFinishGame;
-            _gameManager.OnStartGame -= OnStartGame;
-            _gameManager.OnRestartGame -= OnRestartGame;
-        }
-
+        
         private void Awake()
         {
             _windows = GetComponentsInChildren<WindowBase>(true);
-        }
-
-        private void PlayerOnOnPlayerDied()
-        {
-            ShowWindow(WindowType.FailWindow);
         }
 
         public void ShowWindow(WindowType type)
@@ -73,19 +40,19 @@ namespace UI
             return null;
         }
 
-        private void OnStartGame()
-        {
-            ShowWindow(WindowType.MainWindow);
-        }
-
-        private void OnFinishGame()
-        {
-            ShowWindow(WindowType.FinishWindow);
-        }
-
-        private void OnRestartGame()
-        {
-            ShowWindow(WindowType.MainWindow);
-        }
+        // private void OnStartGame()
+        // {
+        //     ShowWindow(WindowType.MainWindow);
+        // }
+        //
+        // private void OnFinishGame()
+        // {
+        //     ShowWindow(WindowType.FinishWindow);
+        // }
+        //
+        // private void OnRestartGame()
+        // {
+        //     ShowWindow(WindowType.MainWindow);
+        // }
     }
 }

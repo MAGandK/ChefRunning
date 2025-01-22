@@ -1,5 +1,6 @@
 using System.Collections;
 using Managers;
+using PlayerLogics;
 using UnityEngine;
 using Zenject;
 
@@ -15,7 +16,7 @@ namespace Obstacle
         private GameManager _gameManager;
 
         [Inject]
-        private void Construct(Player.Player player, GameManager gameManager)
+        private void Construct(Player player, GameManager gameManager)
         {
             _gameManager = gameManager;
         }
@@ -23,12 +24,12 @@ namespace Obstacle
         private void OnEnable()
         {
             StartMovement();
-            _gameManager.OnRestartGame += ResetObstacle;
+            _gameManager.GameRestarted += ResetObstacle;
         }
 
         private void OnDisable()
         {
-            _gameManager.OnRestartGame -= ResetObstacle;
+            _gameManager.GameRestarted -= ResetObstacle;
         }
 
         private void StartMovement()

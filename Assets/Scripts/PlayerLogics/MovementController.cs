@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Player
+namespace PlayerLogics
 {
     public class MovementController : MonoBehaviour
     {
@@ -43,6 +43,11 @@ namespace Player
             }
         }
 
+        public void StartMove()
+        {
+            _canMove = true;
+        }
+        
         private void MovePlayer()
         {
             var position = transform.position;
@@ -54,28 +59,17 @@ namespace Player
 
             _rigidbody.MovePosition(newPosition);
         }
-
-        public void StartMove()
-        {
-            _canMove = true;
-        }
-
-        public void StopPlayerMovement()
+ 
+        public void StopMovement()
         {
             _canMove = false;
             _rigidbody.linearVelocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
         }
-
-        private void JoystickOnPointerDown()
+        
+        public void Reset()
         {
-            _joystickStartPosition = _joystick.Position;
-            _startTransformPosition = transform.position;
-        }
-
-        private void JoystickOnPointerUp()
-        {
-            _joystickStartPosition = _joystick.Position;
+            _canMove = false;
             _startTransformPosition = transform.position;
         }
 
@@ -94,6 +88,18 @@ namespace Player
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(from, to);
+        }
+        
+        private void JoystickOnPointerDown()
+        {
+            _joystickStartPosition = _joystick.Position;
+            _startTransformPosition = transform.position;
+        }
+
+        private void JoystickOnPointerUp()
+        {
+            _joystickStartPosition = _joystick.Position;
+            _startTransformPosition = transform.position;
         }
     }
 }

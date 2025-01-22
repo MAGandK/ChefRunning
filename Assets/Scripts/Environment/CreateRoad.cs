@@ -5,10 +5,14 @@ namespace Environment
     [ExecuteAlways]
     public class CreateRoad : MonoBehaviour
     {
+        [Header("Environment Settings")]
         [Min(1)] public int RoadPartCount;
-        public float _offset;
+        public float RoadOffset;
         public GameObject RoadPrefab;
-
+        
+        [Header("Finish Settings")]
+        public GameObject FinishPrefab;
+        
         private void Update()
         {
             if (RoadPrefab == null)
@@ -25,6 +29,7 @@ namespace Environment
             {
                 DeleteRoadParts(transform.childCount - RoadPartCount);
                 UpdateRoadPositions();
+                UpdateFinishPosition();
             }
         }
 
@@ -34,7 +39,7 @@ namespace Environment
 
             for (int i = 0; i < RoadPartCount; i++)
             {
-                transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * _offset));
+                transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * RoadOffset));
 
                 var instantiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
             }
@@ -55,13 +60,24 @@ namespace Environment
             for (int i = 0; i < transformChildCount; i++)
             {
                 var roadPart = transform.GetChild(i);
-                roadPart.localPosition = new Vector3(0, 0, i * _offset);
+                roadPart.localPosition = new Vector3(0, 0, i * RoadOffset);
             }
+        }
+        
+        private void UpdateFinishPosition()
+        {
+            if (FinishPrefab == null)
+            {
+                return;
+            }
+            
+           FinishPrefab.transform.localPosition = new Vector3(0, 0, RoadPartCount * RoadOffset);
         }
 
         private void OnValidate()
         {
             UpdateRoadPositions();
+            UpdateFinishPosition();
         }
     }
 }

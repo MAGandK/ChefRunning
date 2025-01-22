@@ -1,5 +1,5 @@
-using Animations;
 using Managers;
+using PlayerLogics;
 using UI;
 using Zenject;
 
@@ -11,11 +11,11 @@ namespace Installers
         {
             Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<AnimatorController>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
             Container.Bind<Joystick.Joystick>().FromComponentInHierarchy().AsSingle();
             Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<Player.Player>().FromComponentInHierarchy().AsSingle();
             Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
         }
     }
 }

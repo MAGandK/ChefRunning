@@ -813,12 +813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b542942977d47f98c50a3595c06098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _forwardSpeed: 30
+  _swipeSensitivity: 0.02
+  _forwardSpeed: 40
+  _xMaxClamp: 7
+  _xMinClamp: -14
   _rigidbody: {fileID: 7860795005033320480}
-  _swipeSensitivity: 1
-  _xMaxClamp: 5
-  _xMinClamp: -11
 --- !u!114 &6416032617718215869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,6 +848,7 @@ MonoBehaviour:
   _playerAnimationTriggetHelper: {fileID: 3606965742837047796}
   _obstacleDestroyer: {fileID: 2540559778134260718}
   _movementController: {fileID: 7264912886927067405}
+  _animatorController: {fileID: 6416032617718215869}
 --- !u!136 &2951449760407320943
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ namespace Managers
         [SerializeField] private List<GameObject> _listScene;
         [SerializeField] internal List<GameObject> _coinsList = new List<GameObject>();
         private GameObject _currentScene;
-        private Vector3 _startPosition = new Vector3(101f, -280f, 586f);
         private GameManager _gameManager;
 
         [Inject]
@@ -21,16 +20,16 @@ namespace Managers
 
         private void OnEnable()
         {
-            _gameManager.OnStartGame += StartFirstScene;
-            _gameManager.OnRestartGame += ReloadScene;
-            _gameManager.OnFinishGame += NewScene;
+            _gameManager.GameStarted += StartFirstScene;
+            _gameManager.GameRestarted += ReloadScene;
+            _gameManager.GameFinished += NewScene;
         }
 
         private void OnDisable()
         {
-            _gameManager.OnStartGame -= StartFirstScene;
-            _gameManager.OnRestartGame -= ReloadScene;
-            _gameManager.OnFinishGame -= NewScene;
+            _gameManager.GameStarted -= StartFirstScene;
+            _gameManager.GameRestarted -= ReloadScene;
+            _gameManager.GameFinished -= NewScene;
         }
 
         private void Start()
@@ -69,7 +68,6 @@ namespace Managers
             int randomIndex = Random.Range(1, _listScene.Count);
             _currentScene = _listScene[randomIndex];
             _currentScene.SetActive(true);
-            _currentScene.transform.position = _startPosition;
         }
 
         public void ReloadScene()

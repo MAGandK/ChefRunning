@@ -1,4 +1,5 @@
 using Obstacle;
+using PlayerLogics;
 using TMPro;
 using Type;
 using UnityEngine;
@@ -20,10 +21,10 @@ namespace UI
         private float startDistance;
         private float endDistance;
         private Vector3 _endPositionOffset;
-        private Player.Player _player;
+        private Player _player;
 
         [Inject]
-        private void Construct(Player.Player player)
+        private void Construct(Player player)
         {
             _player = player;
         }
@@ -37,7 +38,7 @@ namespace UI
         {
             ObstacleInteraction.Interaction += ShowText;
             ObstacleInteraction.InteractionWithHammer += ShowTextHammer;
-            _player.OnPlayerHit += HideText;
+            _player.Hited += HideText;
             ObstacleInteraction.ExitInteractionWithHammer += HideText;
             ObstacleInteraction.ExitInteraction += HideText;
         }
@@ -94,7 +95,7 @@ namespace UI
         {
             ObstacleInteraction.Interaction -= ShowText;
             ObstacleInteraction.InteractionWithHammer -= ShowTextHammer;
-            _player.OnPlayerHit -= HideText;
+            _player.Hited -= HideText;
             ObstacleInteraction.ExitInteractionWithHammer -= HideText;
             ObstacleInteraction.ExitInteraction -= HideText;
         }

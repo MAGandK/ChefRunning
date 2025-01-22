@@ -1,4 +1,5 @@
 using System;
+using PlayerLogics;
 using UnityEngine;
 using Zenject;
 
@@ -12,10 +13,10 @@ namespace Obstacle
         public static event Action ExitInteraction;
 
         internal bool _isInteracted;
-        private Player.Player _player;
+        private Player _player;
 
         [Inject]
-        private void Construct(Player.Player player)
+        private void Construct(Player player)
         {
             _player = player;
         }
