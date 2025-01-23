@@ -73,7 +73,6 @@ namespace Managers
                 RestartGame();
             }
         }
-        
 #endif
        
     }

@@ -1,4 +1,5 @@
 using System;
+using JoystickControls;
 using Managers;
 using Obstacle;
 using Type;
@@ -22,7 +23,7 @@ namespace PlayerLogics
 
         private AudioManager _audioManager;
         private GameManager _gameManager;
-        private Joystick.Joystick _joystick;
+        private Joystick _joystick;
         private CameraController _cameraController;
         private UIController _uiController;
         private Quaternion _startRotation;
@@ -31,7 +32,7 @@ namespace PlayerLogics
         public void Construct
         (AudioManager audioManager, 
             GameManager gameManager,
-            Joystick.Joystick joystick, 
+            Joystick joystick, 
             CameraController cameraController, 
             UIController uiController)
         {
@@ -46,7 +47,7 @@ namespace PlayerLogics
         {
             _playerAnimationTriggetHelper.PunchStarted += OnPunchStarted;
             _playerAnimationTriggetHelper.PunchEnded += OnPunchEnded;
-            _joystick.DoubleClick += OnDoubleClick;
+            _joystick.DoubleClick += DoubleClick;
             _gameManager.GameStarted += GameManagerGameStarted;
             _gameManager.GameFinished += GameManagerOnGameFinished;
             _gameManager.GameRestarted += GameManagerOnGameRestarted;
@@ -56,7 +57,7 @@ namespace PlayerLogics
         {
             _playerAnimationTriggetHelper.PunchStarted -= OnPunchStarted;
             _playerAnimationTriggetHelper.PunchEnded -= OnPunchEnded;
-            _joystick.DoubleClick -= OnDoubleClick;
+            _joystick.DoubleClick -= DoubleClick;
             _gameManager.GameStarted -= GameManagerGameStarted;
             _gameManager.GameFinished -= GameManagerOnGameFinished;
             _gameManager.GameRestarted -= GameManagerOnGameRestarted;
@@ -75,12 +76,12 @@ namespace PlayerLogics
             _playerModel.rotation = targetRotation;
         }
 
-        public void Dance()
+        private void Dance()
         {
             _animatorController.Danced();
         }
 
-        public void Hit()
+        private void Hit()
         {
             _animatorController.Hitting();
             _audioManager.PlaySound(SoundType.Push);
@@ -99,7 +100,7 @@ namespace PlayerLogics
             Died?.Invoke();
         }
 
-        private void OnDoubleClick()
+        private void DoubleClick()
         {
             Hit();
         }

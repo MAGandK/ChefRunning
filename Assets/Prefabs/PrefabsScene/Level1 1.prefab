@@ -77017,10 +77017,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808024afc0e774c8a98fb90a61cde35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoadPartCount: 3
-  RoadOffset: 166
-  RoadPrefab: {fileID: 6521653845598622623, guid: 8143de6a1355445a6876386d3bd2be85, type: 3}
-  FinishPrefab: {fileID: 5625118434955490962, guid: 544d5dee7190b4369b5846ad6f4d5d37, type: 3}
+  _roadPartCount: 3
+  _roadOffset: 166
+  _roadPrefab: {fileID: 6521653845598622623, guid: 8143de6a1355445a6876386d3bd2be85, type: 3}
+  _finishPrefab: {fileID: 5625118434955490962, guid: 544d5dee7190b4369b5846ad6f4d5d37, type: 3}
 --- !u!1 &6420604523030679781
 GameObject:
   m_ObjectHideFlags: 0
@@ -85325,10 +85325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808024afc0e774c8a98fb90a61cde35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoadPartCount: 30
-  RoadOffset: 20
-  RoadPrefab: {fileID: 2058993382480208984, guid: 71529d60af2f64000b18a9ca88a12a61, type: 3}
-  FinishPrefab: {fileID: 0}
+  _roadPartCount: 30
+  _roadOffset: 20
+  _roadPrefab: {fileID: 2058993382480208984, guid: 71529d60af2f64000b18a9ca88a12a61, type: 3}
+  _finishPrefab: {fileID: 0}
 --- !u!1 &7300798620729021293
 GameObject:
   m_ObjectHideFlags: 0

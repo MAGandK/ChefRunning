@@ -16,7 +16,6 @@ namespace Environment
 
         private void OnTriggerEnter(Collider other)
         {
-          //  if (!_gameManager.IsGameFinished)
             {
                 _gameManager.FinishGame();
             }

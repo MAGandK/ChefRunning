@@ -1,33 +1,36 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Environment
 {
     [ExecuteAlways]
-    public class CreateRoad : MonoBehaviour
+    public class CreateEnviroment : MonoBehaviour
     {
+        [FormerlySerializedAs("RoadPartCount")]
         [Header("Environment Settings")]
-        [Min(1)] public int RoadPartCount;
-        public float RoadOffset;
-        public GameObject RoadPrefab;
+        [Min(1)] [SerializeField] private int _roadPartCount; 
+        [SerializeField] private float _roadOffset; 
+        [SerializeField] private GameObject _roadPrefab;
         
+        [FormerlySerializedAs("FinishPrefab")]
         [Header("Finish Settings")]
-        public GameObject FinishPrefab;
+        [SerializeField] private GameObject _finishPrefab;
         
         private void Update()
         {
-            if (RoadPrefab == null)
+            if (!_roadPrefab)
             {
                 return;
             }
 
-            if (transform.childCount < RoadPartCount)
+            if (transform.childCount < _roadPartCount)
             {
                 CreateRoadPart();
             }
 
-            else if (transform.childCount > RoadPartCount)
+            else if (transform.childCount > _roadPartCount)
             {
-                DeleteRoadParts(transform.childCount - RoadPartCount);
+                DeleteRoadParts(transform.childCount - _roadPartCount);
                 UpdateRoadPositions();
                 UpdateFinishPosition();
             }
@@ -37,17 +40,17 @@ namespace Environment
         {
             var transformPosition = transform.position;
 
-            for (int i = 0; i < RoadPartCount; i++)
+            for (int i = 0; i < _roadPartCount; i++)
             {
-                transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * RoadOffset));
+                transformPosition = new Vector3(transformPosition.x, transformPosition.y, +(i * _roadOffset));
 
-                var instantiate = Instantiate(RoadPrefab, transformPosition, Quaternion.identity, transform);
+                var instantiate = Instantiate(_roadPrefab, transformPosition, Quaternion.identity, transform);
             }
         }
 
         private void DeleteRoadParts(int count)
         {
-            for (int i = transform.childCount - 1; i >= RoadPartCount; i--)
+            for (int i = transform.childCount - 1; i >= _roadPartCount; i--)
             {
                 DestroyImmediate(transform.GetChild(i).gameObject);
             }
@@ -60,18 +63,18 @@ namespace Environment
             for (int i = 0; i < transformChildCount; i++)
             {
                 var roadPart = transform.GetChild(i);
-                roadPart.localPosition = new Vector3(0, 0, i * RoadOffset);
+                roadPart.localPosition = new Vector3(0, 0, i * _roadOffset);
             }
         }
         
         private void UpdateFinishPosition()
         {
-            if (FinishPrefab == null)
+            if (!_finishPrefab)
             {
                 return;
             }
             
-           FinishPrefab.transform.localPosition = new Vector3(0, 0, RoadPartCount * RoadOffset);
+            _finishPrefab.transform.localPosition = new Vector3(0, 0, _roadPartCount * _roadOffset);
         }
 
         private void OnValidate()

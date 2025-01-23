@@ -1,3 +1,4 @@
+using JoystickControls;
 using UnityEngine;
 using Zenject;
 
@@ -11,14 +12,14 @@ namespace PlayerLogics
         [SerializeField] private float _xMinClamp = -11f;
         
         [SerializeField] private Rigidbody _rigidbody;
-        private Joystick.Joystick _joystick;
+        private Joystick _joystick;
 
         private bool _canMove;
         private Vector2 _joystickStartPosition;
         private Vector3 _startTransformPosition;
         
         [Inject]
-        private void Construct(Joystick.Joystick joystick)
+        private void Construct(Joystick joystick)
         {
             _joystick = joystick;
         }

@@ -1,3 +1,4 @@
+using JoystickControls;
 using Managers;
 using PlayerLogics;
 using UI;
@@ -12,7 +13,7 @@ namespace Installers
             Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
             Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<Joystick.Joystick>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
             Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
