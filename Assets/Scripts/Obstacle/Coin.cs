@@ -10,7 +10,7 @@ namespace Obstacle
     public class Coin : MonoBehaviour
     {
         private float _rotationSpeed = 200f;
-        public float rotationDelay = 0f;
+        public float _rotationDelay = 0f;
         private UIController _uiController;
         private LevelPrefabManager _levelPrefabManager;
         private AudioManager _audioManager;
@@ -36,7 +36,7 @@ namespace Obstacle
 
         private IEnumerator StartRotationWithDelay()
         {
-            yield return new WaitForSeconds(rotationDelay);
+            yield return new WaitForSeconds(_rotationDelay);
 
             while (true)
             {

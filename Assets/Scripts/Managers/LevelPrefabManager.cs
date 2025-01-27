@@ -38,7 +38,7 @@ namespace Managers
             StartScene();
         }
 
-        public void StartScene()
+        private void StartScene()
         {
             if (_listScene.Count > 0)
             {
@@ -47,7 +47,7 @@ namespace Managers
             }
         }
 
-        public void StartFirstScene()
+        private void StartFirstScene()
         {
             _currentScene.SetActive(false);
             if (_currentScene.name == _listScene[0].name)
@@ -58,7 +58,7 @@ namespace Managers
             _currentScene.SetActive(true);
         }
 
-        public void NewScene()
+        private void NewScene()
         {
             foreach (var scenes in _listScene)
             {
@@ -70,7 +70,7 @@ namespace Managers
             _currentScene.SetActive(true);
         }
 
-        public void ReloadScene()
+        private void ReloadScene()
         {
             _currentScene.SetActive(false);
             _currentScene.SetActive(true);
