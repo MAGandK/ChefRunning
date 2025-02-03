@@ -2,7 +2,7 @@ using Managers;
 using Type;
 using Zenject;
 
-namespace UI
+namespace UI.Window
 {
     public class FinishWindow : WindowBase
     {

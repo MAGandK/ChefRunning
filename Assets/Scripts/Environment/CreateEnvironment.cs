@@ -17,9 +17,9 @@ namespace Environment
         [SerializeField] private GameObject _envPrefab;
         [SerializeField] private Transform _transformEnv;
         
-        [Header("Finish Settings")]
-        [SerializeField] private GameObject _finishPrefab;
-        private GameObject _finishInstance;
+        // [Header("Finish Settings")]
+        // [SerializeField] private GameObject _finishPrefab;
+        // [SerializeField] private float _finishOffset;
         
         private void Update()
         {
@@ -41,7 +41,7 @@ namespace Environment
             }
 
             UpdateRoadPositions();
-            UpdateFinishPosition();
+           // UpdateFinishPosition();
         }
 
         private void CreatePart(Transform container, GameObject prefab, int partCount, float offset)
@@ -66,34 +66,30 @@ namespace Environment
 
         private void UpdateRoadPositions()
         {
-            var transformChildCount = transform.childCount;
+            var transformChildCount = _transformRoad.childCount;
 
             for (int i = 0; i < transformChildCount; i++)
             {
-                var roadPart = transform.GetChild(i);
+                var roadPart = _transformRoad.GetChild(i);
                 roadPart.localPosition = new Vector3(0, 0, i * _roadOffset);
             }
         }
         
-        private void UpdateFinishPosition()
-        {
-            if (!_finishPrefab)
-            {
-                return;
-            }
-            
-            if (_finishInstance == null)
-            {
-                _finishInstance = Instantiate(_finishPrefab);
-            }
-            
-            _finishInstance.transform.localPosition = new Vector3(0, 0, _roadPartCount * _roadOffset);
-        }
+        // private void UpdateFinishPosition()
+        // {
+        //     if (!_finishPrefab)
+        //     {
+        //         return;
+        //     }
+        //     
+        //     _finishPrefab.transform.localPosition = new Vector3(0, 0, _roadPartCount * _roadOffset +  _finishOffset);
+        //     _finishPrefab.transform.SetParent(transform);
+        // }
 
         private void OnValidate()
         {
             UpdateRoadPositions();
-            UpdateFinishPosition();
+           // UpdateFinishPosition();
         }
     }
 }

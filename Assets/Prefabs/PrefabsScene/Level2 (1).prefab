@@ -26152,7 +26152,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7139070798575366626}
-  - component: {fileID: 1643833319859377801}
   m_Layer: 10
   m_Name: Road
   m_TagString: Untagged
@@ -26205,27 +26204,6 @@ Transform:
   - {fileID: 8601523194165488878}
   m_Father: {fileID: 1874638291587171415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1643833319859377801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5343627015543088182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808024afc0e774c8a98fb90a61cde35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roadPartCount: 30
-  _roadOffset: 20
-  _roadPrefab: {fileID: 2058993382480208984, guid: 71529d60af2f64000b18a9ca88a12a61, type: 3}
-  _transformRoad: {fileID: 0}
-  _envPartCount: 0
-  _envOffset: 0
-  _envPrefab: {fileID: 0}
-  _transformEnv: {fileID: 0}
-  _finishPrefab: {fileID: 0}
 --- !u!1 &5348747459347785574
 GameObject:
   m_ObjectHideFlags: 0
@@ -44647,7 +44625,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3641299567820791844}
-  - component: {fileID: 2068763694422054432}
   m_Layer: 0
   m_Name: EnviromentCity
   m_TagString: Untagged
@@ -44674,27 +44651,6 @@ Transform:
   - {fileID: 6828504732760746797}
   m_Father: {fileID: 1874638291587171415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068763694422054432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064615149929631877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808024afc0e774c8a98fb90a61cde35d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roadPartCount: 4
-  _roadOffset: 166
-  _roadPrefab: {fileID: 3946524582866903514, guid: cd643d8d229664ab893dfb59cfab14b4, type: 3}
-  _transformRoad: {fileID: 0}
-  _envPartCount: 0
-  _envOffset: 0
-  _envPrefab: {fileID: 0}
-  _transformEnv: {fileID: 0}
-  _finishPrefab: {fileID: 7566857183105623377, guid: 622d4c13e90944e3dac22683685f86df, type: 3}
 --- !u!1 &9064877676010093682
 GameObject:
   m_ObjectHideFlags: 0

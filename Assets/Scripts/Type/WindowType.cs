@@ -4,6 +4,7 @@ namespace Type
     {
         MainWindow = 0,
         FailWindow = 1,
-        FinishWindow = 2
+        FinishWindow = 2,
+        StartWindow = 3
     }
 }
