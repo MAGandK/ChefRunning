@@ -23,11 +23,11 @@ namespace UI.Window.StartWindow.Elements
             _startLevelText.text = startLevel.ToString();
             _endLevelText.text = endLevel.ToString();
 
-            int levelIndex = (currentLevel % 10) -1;
+            int levelIndex = (currentLevel % 10) - 1;
             
             for (int i = 0; i < _elements.Length; i++)
             {
-               _elements[i].SetColor(GetColorElement(i+1, levelIndex));
+               _elements[i].SetColor(GetColorElement(i , levelIndex));
             }
         }
 
