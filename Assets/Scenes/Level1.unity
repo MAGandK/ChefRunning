@@ -149,11 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listScene:
-  - {fileID: 5661436155565643706}
   - {fileID: 1039075416}
   - {fileID: 764728101}
   - {fileID: 1172795995}
   - {fileID: 1280456423}
+  - {fileID: 1248950474}
   _coinsList: []
 --- !u!4 &21215538
 Transform:
@@ -514,7 +514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &385631237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1227,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 544d5dee7190b4369b5846ad6f4d5d37, type: 3}
+--- !u!1 &1248950474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616927038688567250, guid: e3fd2d68bd87b49949c6405366dfef32, type: 3}
+  m_PrefabInstance: {fileID: 369392110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1280456422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,11 +2447,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &5661436155565643706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3017896537735564865, guid: d3631fdf314764c1a9ae16855ef6f605, type: 3}
-  m_PrefabInstance: {fileID: 1330515031550472164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5733680065469529995
 PrefabInstance:
   m_ObjectHideFlags: 0
