@@ -1,6 +1,7 @@
 using System;
 using Type;
 using UI;
+using UI.Window;
 using UnityEngine;
 using Zenject;
 
@@ -18,7 +19,7 @@ public class Test : MonoBehaviour
    {
        if (Input.GetKeyDown(KeyCode.V))
        {
-           _uiController.ShowWindow(WindowType.StartWindow);
+           _uiController.ShowWindow<MainWindow>();
        }
    }
 }

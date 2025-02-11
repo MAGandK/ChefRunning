@@ -1,5 +1,4 @@
 using Managers;
-using Type;
 using Zenject;
 
 namespace UI.Window
@@ -14,18 +13,10 @@ namespace UI.Window
             _gameManager = gameManager;
         }
 
-        public override WindowType Type
-        {
-            get { return WindowType.FinishWindow; }
-        }
-
         public void OnNextButtonClick()
         {
-         //   if (_gameManager.IsGameFinished)
-            {
-                base.CloseWindow();
-                _gameManager.RestartGame();
-            }
+            base.CloseWindow();
+            _gameManager.RestartGame();
         }
     }
 }

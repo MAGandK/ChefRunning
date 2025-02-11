@@ -9,9 +9,7 @@ namespace UI.Window
         {
             get { return gameObject.activeSelf; }
         }
-
-        public abstract WindowType Type { get; }
-
+        
         public virtual void ShowWindow()
         {
             gameObject.SetActive(true);

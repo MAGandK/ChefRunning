@@ -55,7 +55,7 @@ namespace Obstacle
 
         private void CollectCoin()
         {
-            var mainWindow = _uiController.GetWindow(WindowType.MainWindow) as MainWindow;
+            var mainWindow = _uiController.GetWindow<MainWindow>();
             if (mainWindow != null)
             {
                 mainWindow.OnCoinCollected();

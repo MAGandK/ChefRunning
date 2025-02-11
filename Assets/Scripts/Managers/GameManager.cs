@@ -2,6 +2,8 @@ using System;
 using Obstacle;
 using Type;
 using UI;
+using UI.Window;
+using UI.Window.StartWindow;
 using UnityEngine;
 using Zenject;
 
@@ -13,14 +15,13 @@ namespace Managers
         public event Action GameFinished;
         public event Action GameStarted;
         
+        [SerializeField] private ObstacleController _obstacleController;
+        
         private AudioManager _audioManager;
         private UIController _uiController;
+
+        private StartWindow _startWindow;
         
-        [SerializeField] private ObstacleController _obstacleController;
-
-        private bool _isGameStarted = false;
-        private bool _isGameFinished = false;
-
         [Inject]
         private void Construct( AudioManager audioManager, UIController uiController)
         {
@@ -28,18 +29,22 @@ namespace Managers
             _uiController = uiController;
         }
 
+        private void Awake()
+        {
+           _startWindow = _uiController.GetWindow<StartWindow>();
+           _startWindow.StartButtonPressed += StartWindowOnStartButtonPressed;
+        }
+
         public void StartGame()
         {
-            _isGameStarted = true;
-            _uiController.ShowWindow(WindowType.MainWindow);
+            _uiController.ShowWindow<MainWindow>();
             _audioManager.PlayBackgroundMusic();
             GameStarted?.Invoke();
         }
 
         public void FinishGame()
         {
-            _isGameFinished = true;
-            _uiController.ShowWindow(WindowType.FinishWindow);
+            _uiController.ShowWindow<FinishWindow>();
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Finish);
             GameFinished?.Invoke();
@@ -47,10 +52,14 @@ namespace Managers
 
         public void RestartGame()
         {
-            _isGameFinished = false;
-            _uiController.ShowWindow(WindowType.MainWindow);
+            _uiController.ShowWindow<MainWindow>();
             _obstacleController.ResetObstacle();
             GameRestarted?.Invoke();
+            StartGame();
+        }
+        
+        private void StartWindowOnStartButtonPressed()
+        {
             StartGame();
         }
         
@@ -58,11 +67,6 @@ namespace Managers
         
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0) && !_isGameStarted && !_isGameFinished)
-            {
-                StartGame();
-            }
-
             if (Input.GetKeyDown(KeyCode.F))
             {
                 FinishGame();

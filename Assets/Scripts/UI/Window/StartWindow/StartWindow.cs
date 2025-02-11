@@ -1,24 +1,38 @@
-using Type;
+using System;
 using UI.Window.StartWindow.Elements;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Window.StartWindow
 {
     public class StartWindow : WindowBase
     {
-        [SerializeField] private LevelProgressBar _levelProgressBar;
+        public event Action StartButtonPressed;
 
+        [SerializeField] private LevelProgressBar _levelProgressBar;
+        [SerializeField] private Button _startButton;
         [SerializeField] private int _currentLevelIndex;
-        public override WindowType Type => WindowType.StartWindow;
-        
+
+        private void Awake()
+        {
+            _startButton.onClick.AddListener(OnStartButtonClick);
+        }
 
         public override void ShowWindow()
         {
             base.ShowWindow();
 
-          //  var currentLevel = 0;
-            
             _levelProgressBar.Setup(_currentLevelIndex);
-        } 
+        }
+
+        private void OnValidate()
+        {
+            _levelProgressBar.Setup(_currentLevelIndex);
+        }
+
+        private void OnStartButtonClick()
+        {
+            StartButtonPressed?.Invoke();
+        }
     }
 }

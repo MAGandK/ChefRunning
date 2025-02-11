@@ -1,5 +1,4 @@
 using Managers;
-using Type;
 using Zenject;
 
 namespace UI.Window
@@ -12,11 +11,6 @@ namespace UI.Window
         private void Construct(GameManager gameManager)
         {
             _gameManager = gameManager;
-        }
-
-        public override WindowType Type
-        {
-            get { return WindowType.FailWindow; }
         }
 
         public void OnRestartButtonClick()

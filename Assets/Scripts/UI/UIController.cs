@@ -1,5 +1,5 @@
-using Type;
 using UI.Window;
+using UI.Window.StartWindow;
 using UnityEngine;
 
 namespace UI
@@ -11,13 +11,15 @@ namespace UI
         private void Awake()
         {
             _windows = GetComponentsInChildren<WindowBase>(true);
+            
+           ShowWindow<StartWindow>();
         }
 
-        public void ShowWindow(WindowType type)
+        public void ShowWindow<T>() where T : WindowBase
         {
             for (int i = 0; i < _windows.Length; i++)
             {
-                if (_windows[i].Type == type)
+                if (_windows[i] is T)
                 {
                     _windows[i].ShowWindow();
                 }
@@ -28,32 +30,17 @@ namespace UI
             }
         }
 
-        public WindowBase GetWindow(WindowType type)
+        public T GetWindow<T>() where T : WindowBase
         {
             for (int i = 0; i < _windows.Length; i++)
             {
-                if (_windows[i].Type == type)
+                if (_windows[i] is T result)
                 {
-                    return _windows[i];
+                    return result;
                 }
             }
 
             return null;
         }
-
-        // private void OnStartGame()
-        // {
-        //     ShowWindow(WindowType.MainWindow);
-        // }
-        //
-        // private void OnFinishGame()
-        // {
-        //     ShowWindow(WindowType.FinishWindow);
-        // }
-        //
-        // private void OnRestartGame()
-        // {
-        //     ShowWindow(WindowType.MainWindow);
-        // }
     }
 }

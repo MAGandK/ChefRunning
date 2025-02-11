@@ -29,11 +29,6 @@ namespace UI.Window
             _player = player;
         }
 
-        public override WindowType Type
-        {
-            get { return WindowType.MainWindow; }
-        }
-
         private void OnEnable()
         {
             ObstacleInteraction.Interaction += ShowText;

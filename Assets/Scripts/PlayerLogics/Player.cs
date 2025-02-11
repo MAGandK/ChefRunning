@@ -4,6 +4,7 @@ using Managers;
 using Obstacle;
 using Type;
 using UI;
+using UI.Window;
 using UnityEngine;
 using Zenject;
 
@@ -95,7 +96,7 @@ namespace PlayerLogics
 
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Fail);
-            _uiController.ShowWindow(WindowType.FailWindow);
+            _uiController.ShowWindow<FailWindow>();
 
             Died?.Invoke();
         }

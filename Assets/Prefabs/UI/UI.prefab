@@ -80,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 5638092175856000279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -33, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142457922025586265, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 180.3812
+      value: 180.5
       objectReference: {fileID: 0}
     - target: {fileID: 5142457922025586265, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8504049077394272075, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87.116196
+      value: 87.235
       objectReference: {fileID: 0}
     - target: {fileID: 8504049077394272075, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -382,11 +382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025957914722388307, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.696
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9025957914722388307, guid: 31bb85d25e80e4baa83ed2a0fb65a418, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1130,6 +1130,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -28
       objectReference: {fileID: 0}
+    - target: {fileID: 9095027231482705577, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
+      propertyPath: _startButton
+      value: 
+      objectReference: {fileID: 3255909740303440134}
     - target: {fileID: 9210956767183416730, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
       propertyPath: m_Name
       value: 'StartWindow '
@@ -1148,6 +1152,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2397155312293240511, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
   m_PrefabInstance: {fileID: 3836491088409188737}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3255909740303440134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1734630200124211335, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
+  m_PrefabInstance: {fileID: 3836491088409188737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5879851957105326479
 PrefabInstance:
   m_ObjectHideFlags: 0

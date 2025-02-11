@@ -17,17 +17,22 @@ namespace UI.Window.StartWindow.Elements
         public void Setup(int currentLevel)
         {
             var level = currentLevel /10;
-            var startLevel = level * 10;
+            var startLevel = level  * 10;
             var endLevel = startLevel + 10;
 
-            _startLevelText.text = startLevel.ToString();
+            _startLevelText.text = (startLevel + 1).ToString();
             _endLevelText.text = endLevel.ToString();
 
-            int levelIndex = (currentLevel % 10) - 1;
+            int levelIndex = (currentLevel + 1) % 10 ;
+            
+            if (levelIndex == 0)
+            {
+                levelIndex = _elements.Length;
+            }
             
             for (int i = 0; i < _elements.Length; i++)
             {
-               _elements[i].SetColor(GetColorElement(i , levelIndex));
+               _elements[i].SetColor(GetColorElement(i+ 1, levelIndex));
             }
         }
 
