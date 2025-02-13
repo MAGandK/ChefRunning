@@ -2,15 +2,16 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Window
+namespace UI.Window.FailWindow
 {
-    public class FailWindow : WindowBase
+    public class FailWindow //: WindowBase
     {
         public event Action RetryButtonPressed;
         public event Action NoTryButtonPressed;
         
         [SerializeField] private Button _retryButton;
         [SerializeField] private Button _noTryButton;
+        
         private void Awake()
         {
            _retryButton.onClick.AddListener(OnRetryButtonClick);

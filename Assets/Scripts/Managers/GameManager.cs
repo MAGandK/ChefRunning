@@ -3,6 +3,8 @@ using Obstacle;
 using Type;
 using UI;
 using UI.Window;
+using UI.Window.FailWindow;
+using UI.Window.MainWindow;
 using UI.Window.StartWindow;
 using UnityEngine;
 using Zenject;
@@ -22,9 +24,9 @@ namespace Managers
         private AudioManager _audioManager;
         private UIController _uiController;
 
-        private StartWindow _startWindow;
+        private StartWindowController _startWindow;
         private FailWindow _failWindow;
-        private MainWindow _mainWindow;
+        private MainWindowView _mainWindow;
 
         [Inject]
         private void Construct(AudioManager audioManager, UIController uiController)
@@ -35,24 +37,24 @@ namespace Managers
 
         private void Awake()
         {
-            _startWindow = _uiController.GetWindow<StartWindow>();
-            _startWindow.StartButtonPressed += StartWindowOnStartButtonPressed;
-            _failWindow = _uiController.GetWindow<FailWindow>();
+            _startWindow = _uiController.GetWindow<StartWindowController>();
+            
+           // _failWindow = _uiController.GetWindow<FailWindow>();
             _failWindow.RetryButtonPressed += FailWindowOnRetryButtonPressed;
             _failWindow.NoTryButtonPressed += FailWindowOnNoTryButtonPressed;
-            _mainWindow = _uiController.GetWindow<MainWindow>();
+           // _mainWindow = _uiController.GetWindow<MainWindow>();
         }
         
         public void StartGame()
         {
-            _uiController.ShowWindow<MainWindow>();
+           // _uiController.ShowWindow<MainWindow>();
             _audioManager.PlayBackgroundMusic();
             GameStarted?.Invoke();
         }
 
         public void FinishGame()
         {
-            _uiController.ShowWindow<FinishWindow>();
+            //_uiController.ShowWindow<FinishWindow>();
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Finish);
             GameFinished?.Invoke();
@@ -60,7 +62,7 @@ namespace Managers
 
         public void RestartGame()
         {
-            _uiController.ShowWindow<MainWindow>();
+           // _uiController.ShowWindow<MainWindow>();
             _obstacleController.ResetObstacle();
             GameRestarted?.Invoke();
             StartGame();
@@ -68,7 +70,7 @@ namespace Managers
 
         public void ExitGame()
         {
-            _uiController.ShowWindow<StartWindow>();
+            //_uiController.ShowWindow<StartWindowController>();
             _obstacleController.ResetObstacle();
             GameExited?.Invoke();
         }

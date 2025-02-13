@@ -1,46 +1,34 @@
+using System.Collections.Generic;
+using System.Linq;
 using UI.Window;
 using UI.Window.StartWindow;
-using UnityEngine;
 
 namespace UI
 {
-    public class UIController : MonoBehaviour
+    public class UIController : IUIController
     {
-        private WindowBase[] _windows;
+        private IEnumerable<IWindowController> _controllers;
+
+        public UIController(IEnumerable<IWindowController> controllers)
+        {
+            _controllers = controllers;
+
+            foreach (var windowController in _controllers)
+            {
+                windowController.SetUIController(this);
+            }
+        }
         
-        private void Awake()
+        public void ShowWindow<T>() where T : IWindowController
         {
-            _windows = GetComponentsInChildren<WindowBase>(true);
-            
-           ShowWindow<StartWindow>();
+            var windowController = _controllers.FirstOrDefault(x => x is T);
+
+            windowController.Show();
         }
 
-        public void ShowWindow<T>() where T : WindowBase
+        public T GetWindow<T>() where T : class, IWindowController
         {
-            for (int i = 0; i < _windows.Length; i++)
-            {
-                if (_windows[i] is T)
-                {
-                    _windows[i].ShowWindow();
-                }
-                else
-                {
-                    _windows[i].CloseWindow();
-                }
-            }
-        }
-
-        public T GetWindow<T>() where T : WindowBase
-        {
-            for (int i = 0; i < _windows.Length; i++)
-            {
-                if (_windows[i] is T result)
-                {
-                    return result;
-                }
-            }
-
-            return null;
+            return _controllers.FirstOrDefault(x => x is T) as T;
         }
     }
 }
