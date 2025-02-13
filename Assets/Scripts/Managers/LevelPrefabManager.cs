@@ -34,7 +34,7 @@ namespace Managers
 
         private void Start()
         {
-            _currentScene = _listScene[1];
+            _currentScene = _listScene[0];
             StartScene();
         }
 
@@ -52,7 +52,7 @@ namespace Managers
             _currentScene.SetActive(false);
             if (_currentScene.name == _listScene[0].name)
             {
-                _currentScene = _listScene[1];
+                _currentScene = _listScene[0];
             }
 
             _currentScene.SetActive(true);

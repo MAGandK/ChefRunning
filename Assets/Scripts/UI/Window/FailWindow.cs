@@ -1,22 +1,30 @@
-using Managers;
-using Zenject;
+using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Window
 {
     public class FailWindow : WindowBase
     {
-        private GameManager _gameManager;
-
-        [Inject]
-        private void Construct(GameManager gameManager)
+        public event Action RetryButtonPressed;
+        public event Action NoTryButtonPressed;
+        
+        [SerializeField] private Button _retryButton;
+        [SerializeField] private Button _noTryButton;
+        private void Awake()
         {
-            _gameManager = gameManager;
+           _retryButton.onClick.AddListener(OnRetryButtonClick);
+           _noTryButton.onClick.AddListener(OnNoTryButtonClick);
         }
 
-        public void OnRestartButtonClick()
+        private void OnNoTryButtonClick()
         {
-            base.CloseWindow();
-            _gameManager.RestartGame();
+            NoTryButtonPressed?.Invoke();
+        }
+
+        private void OnRetryButtonClick()
+        {
+            RetryButtonPressed?.Invoke();
         }
     }
 }

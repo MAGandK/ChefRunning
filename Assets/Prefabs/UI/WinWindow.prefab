@@ -1605,6 +1605,7 @@ GameObject:
   - component: {fileID: 3882588937247404978}
   - component: {fileID: 4289474854930762260}
   - component: {fileID: 7775750402049519671}
+  - component: {fileID: 4568322800853283025}
   m_Layer: 5
   m_Name: WinWindow
   m_TagString: Untagged
@@ -1700,6 +1701,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4568322800853283025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690596616037182763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049c3a5612771481e9419c92951f2068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6944463126387376930
 GameObject:
   m_ObjectHideFlags: 0

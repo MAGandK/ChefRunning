@@ -25,13 +25,15 @@ public class CameraController : MonoBehaviour
     {
         _gameManager.GameStarted += GameManagerOnGameStarted;
         _gameManager.GameFinished += GameManagerOnGameFinished;
+        _gameManager.GameExited += GameManagerOnGameExited;
         _player.Died += PlayerOnDied;
     }
-
+    
     private void OnDisable()
     {
         _gameManager.GameStarted -= GameManagerOnGameStarted;
         _gameManager.GameFinished -= GameManagerOnGameFinished;
+        _gameManager.GameExited -= GameManagerOnGameExited;
     }
 
     private void GameManagerOnGameStarted()
@@ -52,5 +54,12 @@ public class CameraController : MonoBehaviour
     {
         _mainCamera.Priority = 0;
         _failCamera.Priority = 10;
+    }
+    
+    private void GameManagerOnGameExited()
+    {
+        _mainCamera.Priority = 10;
+        _failCamera.Priority = 0;
+        _finishCamera.Priority = 0;
     }
 }

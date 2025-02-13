@@ -52,6 +52,7 @@ namespace PlayerLogics
             _gameManager.GameStarted += GameManagerGameStarted;
             _gameManager.GameFinished += GameManagerOnGameFinished;
             _gameManager.GameRestarted += GameManagerOnGameRestarted;
+            _gameManager.GameExited += GameManagerOnGameExited;
         }
 
         private void OnDestroy()
@@ -62,6 +63,7 @@ namespace PlayerLogics
             _gameManager.GameStarted -= GameManagerGameStarted;
             _gameManager.GameFinished -= GameManagerOnGameFinished;
             _gameManager.GameRestarted -= GameManagerOnGameRestarted;
+            _gameManager.GameExited -= GameManagerOnGameExited;
         }
         
         private void Start()
@@ -134,6 +136,12 @@ namespace PlayerLogics
             _movementController.StopMovement();
             RotatePlayer(_cameraController.FinishCameraPosition);
             Dance();
+        }
+        
+        private void GameManagerOnGameExited()
+        {
+           GameManagerOnGameRestarted();
+           _startRotation = _playerModel.rotation;
         }
     }
 }
