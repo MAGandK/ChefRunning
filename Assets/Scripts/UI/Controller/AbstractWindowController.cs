@@ -19,6 +19,7 @@ namespace UI.Window.StartWindow
         
         public void Show()
         {
+            _baseView.Show();
             OnShow();
         }
 

@@ -9,6 +9,8 @@ public class UIContextInstaller : MonoInstaller
     {
         BindWindow<StartWindowController, StartWindowView>();
         BindWindow<GameWindowController, GameWindowView>();
+        BindWindow<FailWindowController, FailWindowView>();
+        BindWindow<WinWindowController, WinWindowView>();
 
         Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
     }
