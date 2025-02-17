@@ -55,13 +55,13 @@ namespace Obstacle
 
         private void CollectCoin()
         {
-            var mainWindow = _uiController.GetWindow<MainWindow>();
-            if (mainWindow != null)
-            {
-                mainWindow.OnCoinCollected();
-            }
+           // // var mainWindow = _uiController.GetWindow<GameWindow>();
+           //  if (mainWindow != null)
+           //  {
+           //      mainWindow.OnCoinCollected();
+           //  }
 
-            _audioManager.PlaySound(SoundType.Coin);
+            //_audioManager.PlaySound(SoundType.Coin);
         }
     }
 }

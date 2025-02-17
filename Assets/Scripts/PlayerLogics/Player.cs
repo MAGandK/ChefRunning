@@ -98,7 +98,7 @@ namespace PlayerLogics
 
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Fail);
-            _uiController.ShowWindow<FailWindow>();
+            //_uiController.ShowWindow<FailWindow>();
 
             Died?.Invoke();
         }

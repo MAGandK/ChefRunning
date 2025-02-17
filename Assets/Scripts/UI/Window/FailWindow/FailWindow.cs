@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace UI.Window
 {
-    public class FailWindow : WindowBase
+    public class FailWindow : MonoBehaviour
     {
         public event Action RetryButtonPressed;
         public event Action NoTryButtonPressed;

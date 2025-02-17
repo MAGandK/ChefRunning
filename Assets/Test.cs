@@ -1,16 +1,14 @@
-using System;
-using Type;
 using UI;
-using UI.Window;
+using UI.Window.StartWindow;
 using UnityEngine;
 using Zenject;
 
 public class Test : MonoBehaviour
 {
-   private UIController _uiController;
+   private IUIController _uiController;
    
    [Inject]
-   private void Counstruct(UIController uiController)
+   private void Construct(IUIController uiController)
    {
        _uiController = uiController;
    }
@@ -19,7 +17,7 @@ public class Test : MonoBehaviour
    {
        if (Input.GetKeyDown(KeyCode.V))
        {
-           _uiController.ShowWindow<MainWindow>();
+           _uiController.ShowWindow<StartWindowController>();
        }
    }
 }
