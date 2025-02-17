@@ -1,5 +1,7 @@
 using UI;
+using UI.Other.Joystick;
 using UI.Window;
+using UI.Window.FailWindow;
 using UI.Window.MainWindow;
 using UI.Window.StartWindow;
 using Zenject;
@@ -10,17 +12,20 @@ namespace Installers
     {
         public override void InstallBindings()
         {
-            BindWindow<StartWindowController, StartWindowView>();
-            BindWindow<MainWindowController, MainWindowView>();
+            Container.Bind<IJoystickController>().FromComponentInHierarchy().AsSingle();
 
-            Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
+            BindWindow<StartWindowController, StartWindowView>();
+            BindWindow<FailWindowController, FailWindowView>();
+            BindWindow<GameWindowController, GameWindowView>();
+
+            Container.Bind<IUIController, IInitializable>().To<UIController>().AsSingle().NonLazy();
         }
 
         private void BindWindow<TController, TWindowView>()
             where TController : IWindowController
             where TWindowView : IWindowView
         {
-            Container.Bind(typeof(IWindowController), typeof(IInitializable)).To<TController>().AsSingle();
+            Container.Bind<IWindowController, IInitializable>().To<TController>().AsSingle();
             Container.Bind<TWindowView>().FromComponentInHierarchy().AsSingle();
         }
     }

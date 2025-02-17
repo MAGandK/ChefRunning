@@ -898,6 +898,7 @@ GameObject:
   - component: {fileID: 457884531681744439}
   - component: {fileID: 593427557276790673}
   - component: {fileID: 6364151785211581874}
+  - component: {fileID: 747170239996846825}
   m_Layer: 5
   m_Name: FailedWindow
   m_TagString: Untagged
@@ -992,6 +993,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &747170239996846825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026197061770987694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7147aabc36c43aba4111ec41719a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _retryButton: {fileID: 1455849956330856540}
+  _noTryButton: {fileID: 3818211696440773754}
 --- !u!1 &8554344632503167475
 GameObject:
   m_ObjectHideFlags: 0

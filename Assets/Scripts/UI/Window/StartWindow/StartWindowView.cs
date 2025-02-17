@@ -1,4 +1,3 @@
-using UI.Window.StartWindow.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,16 +8,15 @@ namespace UI.Window.StartWindow
     {
         [SerializeField] private LevelProgressBar _levelProgressBar;
         [SerializeField] private Button _startButton;
-        [SerializeField] private int _currentLevelIndex;
 
         public void SubscribeButton(UnityAction onStartButtonClick)
         {
             _startButton.onClick.AddListener(onStartButtonClick);
         }
 
-        public void SetupProgressBar()
+        public void SetupProgressBar(int levelIndex)
         {
-            _levelProgressBar.Setup(_currentLevelIndex);
+            _levelProgressBar.Setup(levelIndex);
         }
     }
 }

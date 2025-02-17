@@ -1,4 +1,5 @@
-using JoystickControls;
+using UI;
+using UI.Other.Joystick;
 using UnityEngine;
 using Zenject;
 

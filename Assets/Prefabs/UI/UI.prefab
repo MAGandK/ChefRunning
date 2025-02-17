@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 130393692544963134}
   - component: {fileID: 788874285762884610}
   - component: {fileID: 5539523264976790863}
+  - component: {fileID: 5319420887136575496}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -218,6 +219,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5319420887136575496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536909149949088900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d1f1aa98f0b416097f1b05f4a77219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &157846124259118616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1217,10 +1230,6 @@ PrefabInstance:
     - target: {fileID: 8674663702536334113, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9039965526096625484, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -563.99976
       objectReference: {fileID: 0}
     - target: {fileID: 9095027231482705577, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
       propertyPath: _startButton

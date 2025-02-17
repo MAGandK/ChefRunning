@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Other
 {
 	// Custom Editor to order the variables in the Inspector similar to Image component
 	[CustomEditor(typeof(SlicedFilledImage)), CanEditMultipleObjects]

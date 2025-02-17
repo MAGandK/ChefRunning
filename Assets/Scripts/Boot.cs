@@ -15,8 +15,12 @@ public class Boot : MonoBehaviour
     private IEnumerator LoadSceneCor()
     {
         yield return SceneManager.LoadSceneAsync(_uiSceneName, LoadSceneMode.Additive);
-       // yield return SceneManager.LoadSceneAsync(_gameSceneName, LoadSceneMode.Additive);
-        
-        SceneManager.UnloadSceneAsync(0);
+        yield return SceneManager.LoadSceneAsync(_gameSceneName, LoadSceneMode.Additive);
+
+        yield return SceneManager.UnloadSceneAsync(0);
+
+        var sceneByName = SceneManager.GetSceneByName(_gameSceneName);
+
+        SceneManager.SetActiveScene(sceneByName);
     }
 }

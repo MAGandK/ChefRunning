@@ -2,12 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace JoystickControls
+namespace UI.Other.Joystick
 {
-    public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
+    public class Joystick : MonoBehaviour, IJoystickController
     {
-        private const float CLICK_DURATION = 0.5f;
-
         public event Action DoubleClick;
         public event Action PointerUp;
         public event Action PointerDown;
@@ -44,7 +42,7 @@ namespace JoystickControls
 
             if (_clickCount > 1)
             {
-                if (_oldClickTime + CLICK_DURATION >= Time.time)
+                if (_oldClickTime + IJoystickController.CLICK_DURATION >= Time.time)
                 {
                     DoubleClick?.Invoke();
                 }

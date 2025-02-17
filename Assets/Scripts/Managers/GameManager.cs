@@ -16,7 +16,7 @@ namespace Managers
         public event Action GameRestarted;
         public event Action GameFinished;
         public event Action GameStarted;
-        
+
         public event Action GameExited;
 
         [SerializeField] private ObstacleController _obstacleController;
@@ -25,8 +25,8 @@ namespace Managers
         private UIController _uiController;
 
         private StartWindowController _startWindow;
-        private FailWindow _failWindow;
-        private MainWindowView _mainWindow;
+        private FailWindowView _failWindowView;
+        private GameWindowView _gameWindow;
 
         [Inject]
         private void Construct(AudioManager audioManager, UIController uiController)
@@ -38,13 +38,13 @@ namespace Managers
         private void Awake()
         {
             _startWindow = _uiController.GetWindow<StartWindowController>();
-            
+
            // _failWindow = _uiController.GetWindow<FailWindow>();
-            _failWindow.RetryButtonPressed += FailWindowOnRetryButtonPressed;
-            _failWindow.NoTryButtonPressed += FailWindowOnNoTryButtonPressed;
+            // _failWindowView.RetryButtonPressed += FailWindowViewOnRetryButtonPressed;
+            // _failWindowView.NoTryButtonPressed += FailWindowViewOnNoTryButtonPressed;
            // _mainWindow = _uiController.GetWindow<MainWindow>();
         }
-        
+
         public void StartGame()
         {
            // _uiController.ShowWindow<MainWindow>();
@@ -74,19 +74,19 @@ namespace Managers
             _obstacleController.ResetObstacle();
             GameExited?.Invoke();
         }
-        
+
 
         private void StartWindowOnStartButtonPressed()
         {
             StartGame();
         }
-        
-        private void FailWindowOnNoTryButtonPressed()
+
+        private void FailWindowViewOnNoTryButtonPressed()
         {
             ExitGame();
         }
 
-        private void FailWindowOnRetryButtonPressed()
+        private void FailWindowViewOnRetryButtonPressed()
         {
             RestartGame();
         }

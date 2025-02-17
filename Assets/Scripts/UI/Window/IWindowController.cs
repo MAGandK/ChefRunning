@@ -4,5 +4,6 @@ namespace UI.Window
     {
         void Show();
         void SetUIController(UIController uiController);
+        void Hide();
     }
 }

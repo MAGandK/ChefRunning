@@ -28,6 +28,17 @@ namespace UI.Window
             _uiController = uiController;
         }
 
+        public void Hide()
+        {
+            _baseView.Hide();
+
+            OnHide();
+        }
+
+        protected virtual void OnHide()
+        {
+        }
+
         protected virtual void OnShow()
         {
         }

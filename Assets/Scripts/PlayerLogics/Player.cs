@@ -1,9 +1,9 @@
 using System;
-using JoystickControls;
 using Managers;
 using Obstacle;
 using Type;
 using UI;
+using UI.Other.Joystick;
 using UI.Window;
 using UnityEngine;
 using Zenject;

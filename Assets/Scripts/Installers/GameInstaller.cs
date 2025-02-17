@@ -1,7 +1,7 @@
-using JoystickControls;
 using Managers;
 using PlayerLogics;
 using UI;
+using UI.Other.Joystick;
 using Zenject;
 
 namespace Installers
@@ -10,13 +10,13 @@ namespace Installers
     {
         public override void InstallBindings()
         {
-            Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
+           //  Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
+           // // Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
+           // // Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
+           //  Container.Bind<Joystick>().FromComponentInHierarchy().AsSingle();
+           //  Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
+           //  Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
+           //  Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
         }
     }
 }

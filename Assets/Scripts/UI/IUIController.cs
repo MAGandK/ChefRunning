@@ -1,5 +1,4 @@
 using UI.Window;
-using UI.Window.StartWindow;
 
 namespace UI
 {
