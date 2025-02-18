@@ -1,16 +1,27 @@
-using UI.Window.StartWindow;
 using UnityEngine;
 
-public abstract class AbstractWindowView : MonoBehaviour, IWindowView
+namespace UI
 {
-    public void Show()
+    public abstract class AbstractWindowView : MonoBehaviour, IWindowView
     {
-        gameObject.SetActive(true);
-    }
+        public void Show()
+        {
+            gameObject.SetActive(true);
+            OnShow();
+        }
 
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+            OnHide();
+        }
 
-    protected virtual void OnShow()
-    {
-        
+        protected virtual void OnShow()
+        {
+        }
+
+        protected virtual void OnHide()
+        {
+        }
     }
 }

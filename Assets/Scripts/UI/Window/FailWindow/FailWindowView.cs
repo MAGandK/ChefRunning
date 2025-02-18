@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace UI.Window
+namespace UI.Window.FailWindow
 {
     public class FailWindowView : AbstractWindowView
     {

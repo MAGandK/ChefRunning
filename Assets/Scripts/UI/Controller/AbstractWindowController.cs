@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace UI.Window.StartWindow
+namespace UI
 {
     public abstract class AbstractWindowController<T> : IInitializable, IWindowController where T : IWindowView
     {
@@ -21,6 +21,11 @@ namespace UI.Window.StartWindow
         {
             _baseView.Show();
             OnShow();
+        }
+
+        public void Hide()
+        {
+            _baseView.Hide();
         }
 
         public void SetUIController(UIController uiController)

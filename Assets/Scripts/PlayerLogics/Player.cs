@@ -5,6 +5,7 @@ using Obstacle;
 using Type;
 using UI;
 using UI.Window;
+using UI.Window.FailWindow;
 using UnityEngine;
 using Zenject;
 

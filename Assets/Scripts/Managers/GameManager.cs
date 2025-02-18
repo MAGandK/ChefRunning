@@ -1,9 +1,12 @@
 using System;
 using Obstacle;
+using Services.Storage;
 using Type;
 using UI;
-using UI.Window;
+using UI.Window.FailWindow;
+using UI.Window.GameWindow;
 using UI.Window.StartWindow;
+using UI.Window.WinWindow;
 using UnityEngine;
 using Zenject;
 
@@ -21,16 +24,19 @@ namespace Managers
 
         private AudioManager _audioManager;
         private UIController _uiController;
+        private IStorageService _storageService;
         private StartWindowController _startWindow;
         private FailWindowController _failWindow;
         private GameWindowController _gameWindow;
         private WinWindowController _winWindow;
+        private StorageData _storageData;
 
         [Inject]
-        private void Construct(AudioManager audioManager, UIController uiController)
+        private void Construct(AudioManager audioManager, UIController uiController, IStorageService storageService)
         {
             _audioManager = audioManager;
             _uiController = uiController;
+            _storageService = storageService;
         }
 
         private void Awake()
@@ -39,6 +45,21 @@ namespace Managers
             _failWindow = _uiController.GetWindow<FailWindowController>();
             _gameWindow = _uiController.GetWindow<GameWindowController>();
             _winWindow = _uiController.GetWindow<WinWindowController>();
+
+            LoadPlayerData();
+        }
+
+        private void LoadPlayerData()
+        {
+            _storageData = _storageService.GetData<StorageData>("player.data");
+
+            if (_storageData == null)
+            {
+                Debug.LogError("StorageData not found! Creating new data.");
+                _storageData = new StorageData();
+            }
+
+            Debug.Log($"Loaded Level Index: {_storageData.GetLevelIndex()}");
         }
 
         public void StartGame()
@@ -50,6 +71,7 @@ namespace Managers
 
         public void FinishGame()
         {
+            _storageData.IncrementLevelIndex();
             _uiController.ShowWindow<WinWindowController>();
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Finish);

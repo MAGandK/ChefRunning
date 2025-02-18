@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Window.StartWindow.Elements
+namespace UI.Window.StartWindow
 {
     public class LevelProgressBarElement : MonoBehaviour
     {

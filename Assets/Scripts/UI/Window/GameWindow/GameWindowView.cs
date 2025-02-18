@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI.Window
+namespace UI.Window.GameWindow
 {
     public class GameWindowView : AbstractWindowView
     {

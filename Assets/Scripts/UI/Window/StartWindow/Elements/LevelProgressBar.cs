@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI.Window.StartWindow.Elements
+namespace UI.Window.StartWindow
 {
     public class LevelProgressBar : MonoBehaviour
     {

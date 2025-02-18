@@ -1,6 +1,7 @@
+using UI.Window.GameWindow;
 using UI.Window.StartWindow;
 
-namespace UI.Window
+namespace UI.Window.WinWindow
 {
     public class WinWindowController : AbstractWindowController<WinWindowView>
     {

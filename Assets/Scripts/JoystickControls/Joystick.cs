@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace JoystickControls
 {
-    public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
+    public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler, IJoystickController
     {
         private const float CLICK_DURATION = 0.5f;
 
