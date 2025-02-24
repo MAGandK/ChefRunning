@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf4e9d513f84305b4de1d89e5cfe244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _joystick: {fileID: 3194985304626182244}
+  joystickControllerObject: {fileID: 3194985304626182244}
 --- !u!1 &1884028608
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,30 +956,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 338230599}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 58.333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 29.166668
-      objectReference: {fileID: 0}
-    - target: {fileID: 965381971165858283, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -35
-      objectReference: {fileID: 0}
     - target: {fileID: 1295220781595171635, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1028,62 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 3455315066071473336, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: _balanceView
-      value: 
-      objectReference: {fileID: 3194985304626182245}
     - target: {fileID: 3599597495710596142, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 338230599}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 58.333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 87.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3917465814892188256, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 58.333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 145.83334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007610371466290224, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -35
-      objectReference: {fileID: 0}
     - target: {fileID: 4022121458223103402, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1096,10 +1020,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 338230599}
-    - target: {fileID: 6737981086097473192, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7796169781660085653, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1109,28 +1029,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
---- !u!114 &3194985304626182244 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 90224317202001499, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
+--- !u!1 &3194985304626182244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7536909149949088900, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
   m_PrefabInstance: {fileID: 3194985304626182243}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d1f1aa98f0b416097f1b05f4a77219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3194985304626182245 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5802789761837916272, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-  m_PrefabInstance: {fileID: 3194985304626182243}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf9140957cc5419699302f1b5f736d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

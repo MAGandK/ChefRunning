@@ -4,7 +4,6 @@ using Managers;
 using Obstacle;
 using Type;
 using UI;
-using UI.Window;
 using UI.Window.FailWindow;
 using UnityEngine;
 using Zenject;
@@ -34,7 +33,7 @@ namespace PlayerLogics
         public void Construct
         (AudioManager audioManager, 
             GameManager gameManager,
-            Joystick joystick, 
+           IJoystickController joystick, 
             CameraController cameraController, 
             UIController uiController)
         {

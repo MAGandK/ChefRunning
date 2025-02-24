@@ -6,7 +6,7 @@ namespace Environment
 {
     public class TriggerFinish : MonoBehaviour
     {
-        private GameManager _gameManager;
+        /*private GameManager _gameManager;
 
         [Inject]
         private void Construct(GameManager gameManager)
@@ -19,6 +19,6 @@ namespace Environment
             {
                 _gameManager.FinishGame();
             }
-        }
+        }*/
     }
 }

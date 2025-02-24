@@ -13,6 +13,7 @@ namespace Installers
     {
         public override void InstallBindings()
         {
+
             Container.Bind<IJoystickController>().To<Joystick>().FromComponentInHierarchy().AsSingle();
             
             BindWindow<StartWindowController, StartWindowView>();
@@ -21,6 +22,7 @@ namespace Installers
             BindWindow<WinWindowController, WinWindowView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
+            
         }
 
         private void BindWindow<TController, TWindowView>()
