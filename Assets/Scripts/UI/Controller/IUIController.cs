@@ -1,5 +1,3 @@
-using UI.Window.StartWindow;
-
 namespace UI
 {
     public interface IUIController

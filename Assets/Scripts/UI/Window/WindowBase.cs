@@ -1,4 +1,3 @@
-using Type;
 using UnityEngine;
 
 namespace UI.Window

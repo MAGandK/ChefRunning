@@ -1,4 +1,3 @@
-using System;
 using Constants;
 using Services.Price;
 using Services.Storage;
@@ -10,24 +9,24 @@ using Zenject;
 
 public class Test : MonoBehaviour
 {
-   /*private IUIController _uiController;
+    private IUIController _uiController;
+    public Button _addCoins;
+    public Button _addRuby;
+
+    [Inject]
+    private void Construct(IUIController uiController)
+    {
+        _uiController = uiController;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            _uiController.ShowWindow<StartWindowController>();
+        }
+    }
    
-   [Inject]
-   private void Construct(IUIController uiController)
-   {
-       _uiController = uiController;
-   }
-
-   private void Update()
-   {
-       if (Input.GetKeyDown(KeyCode.V))
-       {
-           _uiController.ShowWindow<StartWindowController>();
-       }
-   }*/
-   public Button _addCoins;
-   public Button _addRuby;
-
    private WalletStopageData _walletStopageData;
 
    [Inject] private IStorageService _service;
@@ -40,7 +39,7 @@ public class Test : MonoBehaviour
    private void Start()
    {
        _addCoins.onClick.AddListener(AddCoins);
-       _addCoins.onClick.AddListener(AddRuby);
+       _addRuby.onClick.AddListener(AddRuby);
        
    }
 

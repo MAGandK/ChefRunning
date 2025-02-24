@@ -9,7 +9,6 @@ namespace UI.Window.StartWindow
     {
         [SerializeField] private LevelProgressBar _levelProgressBar;
         [SerializeField] private Button _startButton;
-        [SerializeField] private int _currentLevelIndex;
         [SerializeField] private BalanceView _balanceView;
 
         public BalanceView BalanceView => _balanceView;
@@ -19,9 +18,9 @@ namespace UI.Window.StartWindow
             _startButton.onClick.AddListener(onStartButtonClick);
         }
 
-        public void SetupProgressBar()
+        public void SetupProgressBar(int levelIndex)
         {
-            _levelProgressBar.Setup(_currentLevelIndex);
+            _levelProgressBar.Setup(levelIndex);
         }
     }
 }

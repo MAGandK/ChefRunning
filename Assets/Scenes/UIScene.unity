@@ -607,7 +607,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1767530212
 GameObject:
@@ -686,7 +686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf4e9d513f84305b4de1d89e5cfe244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickControllerObject: {fileID: 3194985304626182244}
 --- !u!1 &1884028608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,11 +1028,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
---- !u!1 &3194985304626182244 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7536909149949088900, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
-  m_PrefabInstance: {fileID: 3194985304626182243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

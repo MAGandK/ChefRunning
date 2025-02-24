@@ -11,7 +11,9 @@ namespace UI.Window.StartWindow
         private LevelProgressStorageData _levelProgressStorageData;
         private WalletStopageData _walletStopageData;
 
-        public StartWindowController(StartWindowView view, IStorageService storageService) : base(view)
+        public StartWindowController(
+            StartWindowView view, 
+            IStorageService storageService) : base(view)
         {
             _view = view;
             _levelProgressStorageData =
@@ -24,15 +26,15 @@ namespace UI.Window.StartWindow
             base.Initialize();
 
             _view.SubscribeButton(OnStartButtonClick);
-            _view.BalanceView.Setup(CurrencyType.coin);
+            _view.BalanceView.Setup(CurrencyType.coin, CurrencyType.rybi);
         }
 
         protected override void OnShow()
         {
             base.OnShow();
-            _view.SetupProgressBar();
+            _view.SetupProgressBar(_levelProgressStorageData.LevelIndex);
 
-            _levelProgressStorageData.IncrementLevelIndex();
+          //  _levelProgressStorageData.IncrementLevelIndex();
             _walletStopageData.Changed += WalletStopageDataOnChanged;
         }
 
@@ -40,7 +42,6 @@ namespace UI.Window.StartWindow
         {
             base.OnHide();
             _walletStopageData.Changed -= WalletStopageDataOnChanged;
-
         }
         private void OnStartButtonClick()
         {
