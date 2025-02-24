@@ -26,6 +26,7 @@ namespace UI
         public void Hide()
         {
             _baseView.Hide();
+            OnHide();
         }
 
         public void SetUIController(UIController uiController)
@@ -34,6 +35,11 @@ namespace UI
         }
 
         protected virtual void OnShow()
+        {
+            
+        }
+
+        protected virtual void OnHide()
         {
             
         }

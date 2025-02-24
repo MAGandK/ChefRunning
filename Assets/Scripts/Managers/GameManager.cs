@@ -29,7 +29,7 @@ namespace Managers
         private FailWindowController _failWindow;
         private GameWindowController _gameWindow;
         private WinWindowController _winWindow;
-        private StorageData _storageData;
+        private LevelProgressStorageData _levelProgressStorageData;
 
         [Inject]
         private void Construct(AudioManager audioManager, UIController uiController, IStorageService storageService)
@@ -51,15 +51,7 @@ namespace Managers
 
         private void LoadPlayerData()
         {
-            _storageData = _storageService.GetData<StorageData>("player.data");
-
-            if (_storageData == null)
-            {
-                Debug.LogError("StorageData not found! Creating new data.");
-                _storageData = new StorageData();
-            }
-
-            Debug.Log($"Loaded Level Index: {_storageData.GetLevelIndex()}");
+           
         }
 
         public void StartGame()
@@ -71,7 +63,7 @@ namespace Managers
 
         public void FinishGame()
         {
-            _storageData.IncrementLevelIndex();
+            _levelProgressStorageData.IncrementLevelIndex();
             _uiController.ShowWindow<WinWindowController>();
             _audioManager.StopMusic();
             _audioManager.PlaySound(SoundType.Finish);

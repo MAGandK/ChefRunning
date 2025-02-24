@@ -25,7 +25,7 @@ namespace PlayerLogics
 
         private AudioManager _audioManager;
         private GameManager _gameManager;
-        private Joystick _joystick;
+        private IJoystickController _joystick;
         private CameraController _cameraController;
         private UIController _uiController;
         private Quaternion _startRotation;

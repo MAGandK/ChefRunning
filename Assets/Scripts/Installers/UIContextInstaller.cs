@@ -11,10 +11,9 @@ namespace Installers
 {
     public class UIContextInstaller : MonoInstaller
     {
-        [SerializeField] private Joystick _joystick;
         public override void InstallBindings()
         {
-            Container.Bind<Joystick>().FromInstance(_joystick).AsSingle();
+            Container.Bind<IJoystickController>().To<Joystick>().FromComponentInHierarchy().AsSingle();
             
             BindWindow<StartWindowController, StartWindowView>();
             BindWindow<GameWindowController, GameWindowView>();

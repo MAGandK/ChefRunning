@@ -1,3 +1,4 @@
+using UI.Other;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +10,9 @@ namespace UI.Window.StartWindow
         [SerializeField] private LevelProgressBar _levelProgressBar;
         [SerializeField] private Button _startButton;
         [SerializeField] private int _currentLevelIndex;
+        [SerializeField] private BalanceView _balanceView;
+
+        public BalanceView BalanceView => _balanceView;
 
         public void SubscribeButton(UnityAction onStartButtonClick)
         {
