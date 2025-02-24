@@ -26,16 +26,16 @@ namespace PlayerLogics
         private GameManager _gameManager;
         private IJoystickController _joystick;
         private CameraController _cameraController;
-        private UIController _uiController;
+        private IUIController _uiController;
         private Quaternion _startRotation;
 
         [Inject]
-        public void Construct
-        (AudioManager audioManager, 
+        public void Construct(
+            AudioManager audioManager,
             GameManager gameManager,
-           IJoystickController joystick, 
-            CameraController cameraController, 
-            UIController uiController)
+            IJoystickController joystick,
+            CameraController cameraController,
+            IUIController uiController)
         {
             _audioManager = audioManager;
             _gameManager = gameManager;
@@ -65,12 +65,12 @@ namespace PlayerLogics
             _gameManager.GameRestarted -= GameManagerOnGameRestarted;
             _gameManager.GameExited -= GameManagerOnGameExited;
         }
-        
+
         private void Start()
         {
             _startRotation = _playerModel.rotation;
         }
-        
+
         private void RotatePlayer(Vector3 targetPosition)
         {
             var direction = (targetPosition - _playerModel.position).normalized;
@@ -90,7 +90,7 @@ namespace PlayerLogics
             _audioManager.PlaySound(SoundType.Push);
             Hited?.Invoke();
         }
-        
+
         public void Die()
         {
             _animatorController.Dying();
@@ -117,6 +117,7 @@ namespace PlayerLogics
         {
             _obstacleDestroyer.SetCanDestroy(true);
         }
+
         private void GameManagerGameStarted()
         {
             _movementController.StartMove();
@@ -137,11 +138,11 @@ namespace PlayerLogics
             RotatePlayer(_cameraController.FinishCameraPosition);
             Dance();
         }
-        
+
         private void GameManagerOnGameExited()
         {
-           GameManagerOnGameRestarted();
-           _startRotation = _playerModel.rotation;
+            GameManagerOnGameRestarted();
+            _startRotation = _playerModel.rotation;
         }
     }
 }

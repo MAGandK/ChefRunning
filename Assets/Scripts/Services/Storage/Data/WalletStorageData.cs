@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Services.Price;
@@ -5,18 +6,17 @@ using Services.Price;
 namespace Services.Storage
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class WalletStopageData : AbstractStorageData<WalletStopageData>
+    public class WalletStorageData : AbstractStorageData<WalletStorageData>
     {
         [JsonProperty] private List<WalletItem> _balance = new List<WalletItem>();
 
         public List<WalletItem> Balance => _balance;
-        
-        public WalletStopageData(string key) : base(key)
+
+        public WalletStorageData(string key) : base(key)
         {
-            
         }
 
-        public override void Load(WalletStopageData data)
+        public override void Load(WalletStorageData data)
         {
             _balance = data._balance;
         }
@@ -34,21 +34,26 @@ namespace Services.Storage
             }
 
             _balance.Add(new WalletItem(type, value));
+
             OnChanged();
         }
 
-
         public bool CanPurchase(CurrencyType type, int value)
+        {
+            return GetBalance(type) >= value;
+        }
+
+        public int GetBalance(CurrencyType type)
         {
             foreach (var walletItem in _balance)
             {
                 if (walletItem.Type == type)
                 {
-                    return walletItem.Value >= value;
+                    return walletItem.Value;
                 }
             }
 
-            return false;
+            return 0;
         }
     }
 }

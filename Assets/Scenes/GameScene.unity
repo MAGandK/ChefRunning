@@ -2014,7 +2014,8 @@ MonoBehaviour:
       m_Calls: []
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
-  _parentContractNames: []
+  _parentContractNames:
+  - UIContextInstaller
 --- !u!4 &1274239812842851456
 Transform:
   m_ObjectHideFlags: 0
