@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 1767530213}
   - component: {fileID: 1767530215}
   m_Layer: 0
-  m_Name: SceneContext
+  m_Name: UIContextInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +657,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _parentNewObjectsUnderSceneContext: 0
-  _contractNames: []
+  _contractNames:
+  - UIContextInstaller
   _parentContractNames: []
 --- !u!4 &1767530214
 Transform:

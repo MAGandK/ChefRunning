@@ -2014,7 +2014,8 @@ MonoBehaviour:
       m_Calls: []
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
-  _parentContractNames: []
+  _parentContractNames:
+  - UIContextInstaller
 --- !u!4 &1274239812842851456
 Transform:
   m_ObjectHideFlags: 0
@@ -2432,7 +2433,7 @@ GameObject:
   - component: {fileID: 111681755360179982}
   - component: {fileID: 7274505653863630355}
   m_Layer: 0
-  m_Name: SceneContext
+  m_Name: GameInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
