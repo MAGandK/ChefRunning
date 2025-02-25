@@ -4,7 +4,6 @@ using UI.Window.FailWindow;
 using UI.Window.GameWindow;
 using UI.Window.StartWindow;
 using UI.Window.WinWindow;
-using UnityEngine;
 using Zenject;
 
 namespace Installers
@@ -13,7 +12,6 @@ namespace Installers
     {
         public override void InstallBindings()
         {
-
             Container.Bind<IJoystickController>().To<Joystick>().FromComponentInHierarchy().AsSingle();
             
             BindWindow<StartWindowController, StartWindowView>();
@@ -22,7 +20,6 @@ namespace Installers
             BindWindow<WinWindowController, WinWindowView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
-            
         }
 
         private void BindWindow<TController, TWindowView>()

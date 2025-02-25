@@ -3,6 +3,7 @@ using Managers;
 using Type;
 using UI;
 using UI.Window;
+using UI.Window.GameWindow;
 using UnityEngine;
 using Zenject;
 
@@ -12,12 +13,12 @@ namespace Obstacle
     {
         private float _rotationSpeed = 200f;
         public float _rotationDelay = 0f;
-        private UIController _uiController;
+        private IUIController _uiController;
         private LevelPrefabManager _levelPrefabManager;
         private AudioManager _audioManager;
 
         [Inject]
-        public void Construct(UIController uiController, LevelPrefabManager levelPrefabManager,
+        public void Construct(IUIController uiController, LevelPrefabManager levelPrefabManager,
             AudioManager audioManager)
         {
             _uiController = uiController;
@@ -55,13 +56,13 @@ namespace Obstacle
 
         private void CollectCoin()
         {
-           // // var mainWindow = _uiController.GetWindow<GameWindow>();
-           //  if (mainWindow != null)
-           //  {
-           //      mainWindow.OnCoinCollected();
-           //  }
-
-            //_audioManager.PlaySound(SoundType.Coin);
+            //  var mainWindow = _uiController.GetWindow<>();
+            //  if (mainWindow != null)
+            //  {
+            //      mainWindow.OnCoinCollected();
+            //  }
+            //
+            // _audioManager.PlaySound(SoundType.Coin);
         }
     }
 }

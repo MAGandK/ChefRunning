@@ -27,13 +27,13 @@ public class Test : MonoBehaviour
         }
     }
    
-   private WalletStopageData _walletStopageData;
+   private WalletStorageData _walletStorageData;
 
    [Inject] private IStorageService _service;
 
    private void Awake()
    {
-       _walletStopageData = _service.GetData<WalletStopageData>(StorageDataNames.WALLET_STORAGE_DATA_KEY);
+       _walletStorageData = _service.GetData<WalletStorageData>(StorageDataNames.WALLET_STORAGE_DATA_KEY);
    }
 
    private void Start()
@@ -45,11 +45,11 @@ public class Test : MonoBehaviour
 
    private void AddRuby()
    {
-       _walletStopageData.AddCurrency(CurrencyType.rybi, 1);
+       _walletStorageData.AddCurrency(CurrencyType.rybi, 1);
    }
 
    private void AddCoins()
    {
-       _walletStopageData.AddCurrency(CurrencyType.coin, 1);
+       _walletStorageData.AddCurrency(CurrencyType.coin, 1);
    }
 }

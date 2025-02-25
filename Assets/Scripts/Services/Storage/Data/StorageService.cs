@@ -2,11 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
-using Zenject;
 
 namespace Services.Storage
 {
-    public class StorageService : IStorageService, IInitializable
+    public class StorageService : IStorageService
     {
         private readonly Dictionary<string, IStorageData> _dataMap;
 
@@ -17,23 +16,20 @@ namespace Services.Storage
 
         public void Initialize()
         {
-            foreach (var storageData in _dataMap)
+            foreach (var (_, data) in _dataMap)
             {
-                foreach (var (_, data) in _dataMap)
+                data.Changed += StorageDataOnChanged;
+
+                if (!PlayerPrefs.HasKey(data.Key))
                 {
-                    data.Changed += StorageDataOnChanged;
-
-                    if (!PlayerPrefs.HasKey(storageData.Key))
-                    {
-                        continue;
-                    }
-
-                    var json = PlayerPrefs.GetString(storageData.Key);
-                    var deserializeStorageData =
-                        (IStorageData)JsonConvert.DeserializeObject(json, storageData.GetType());
-
-                    data.Load(deserializeStorageData);
+                    continue;
                 }
+
+                var json = PlayerPrefs.GetString(data.Key);
+                var deserializeStorageData =
+                    (IStorageData)JsonConvert.DeserializeObject(json, data.GetType());
+
+                data.Load(deserializeStorageData);
             }
         }
 
@@ -42,6 +38,7 @@ namespace Services.Storage
             _dataMap.TryGetValue(key, out var data);
             return data as T;
         }
+
         private void StorageDataOnChanged(string dataKey)
         {
             if (!_dataMap.TryGetValue(dataKey, out var data))

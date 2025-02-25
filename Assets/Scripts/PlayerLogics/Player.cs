@@ -26,7 +26,7 @@ namespace PlayerLogics
         private GameManager _gameManager;
         private IJoystickController _joystick;
         private CameraController _cameraController;
-        private UIController _uiController;
+        private IUIController _uiController;
         private Quaternion _startRotation;
 
         [Inject]
@@ -35,7 +35,7 @@ namespace PlayerLogics
             GameManager gameManager,
            IJoystickController joystick, 
             CameraController cameraController, 
-            UIController uiController)
+            IUIController uiController)
         {
             _audioManager = audioManager;
             _gameManager = gameManager;

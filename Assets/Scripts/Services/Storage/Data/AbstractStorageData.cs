@@ -1,11 +1,12 @@
 using System;
+using Newtonsoft.Json;
 
 namespace Services.Storage
 {
     public abstract class AbstractStorageData<T> : IStorageData<T>
     {
         public event Action<string> Changed;
-        public string Key { get; }
+       [JsonProperty] public string Key { get; }
 
         protected AbstractStorageData(string key)
         {

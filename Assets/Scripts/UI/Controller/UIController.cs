@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UI.Window.StartWindow;
 using UnityEngine;
 
 namespace UI
@@ -16,6 +17,8 @@ namespace UI
             {
                windowController.SetUIController(this);
             }
+            
+            ShowWindow<StartWindowController>();
         }
 
         public void ShowWindow<T>() where T : IWindowController

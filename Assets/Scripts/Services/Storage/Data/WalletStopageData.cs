@@ -5,18 +5,17 @@ using Services.Price;
 namespace Services.Storage
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class WalletStopageData : AbstractStorageData<WalletStopageData>
+    public class WalletStorageData : AbstractStorageData<WalletStorageData>
     {
         [JsonProperty] private List<WalletItem> _balance = new List<WalletItem>();
 
         public List<WalletItem> Balance => _balance;
         
-        public WalletStopageData(string key) : base(key)
+        public WalletStorageData(string key) : base(key)
         {
-            
         }
 
-        public override void Load(WalletStopageData data)
+        public override void Load(WalletStorageData data)
         {
             _balance = data._balance;
         }

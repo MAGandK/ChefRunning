@@ -23,7 +23,7 @@ namespace Managers
         [SerializeField] private ObstacleController _obstacleController;
 
         private AudioManager _audioManager;
-        private UIController _uiController;
+        private IUIController _uiController;
         private IStorageService _storageService;
         private StartWindowController _startWindow;
         private FailWindowController _failWindow;
@@ -32,7 +32,7 @@ namespace Managers
         private LevelProgressStorageData _levelProgressStorageData;
 
         [Inject]
-        private void Construct(AudioManager audioManager, UIController uiController, IStorageService storageService)
+        private void Construct(AudioManager audioManager, IUIController uiController, IStorageService storageService)
         {
             _audioManager = audioManager;
             _uiController = uiController;
