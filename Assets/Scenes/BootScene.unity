@@ -405,7 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2114c4e27ba0f47c8981643336bf8507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LevelSettings>k__BackingField: {fileID: 0}
 --- !u!1 &1682974598
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1c32c2c026d4ef4939d3b451a92a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiSceneName: Assets/Scenes/UIScene.unity
-  _gameSceneName: Assets/Scenes/GameScene.unity
+  _uiSceneName: UIScene
+  _gameSceneName: GameALL
 --- !u!1 &475561210234389982
 GameObject:
   m_ObjectHideFlags: 0

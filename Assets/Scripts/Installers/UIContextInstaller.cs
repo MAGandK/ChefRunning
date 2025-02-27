@@ -13,7 +13,7 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.Bind<IJoystickController>().To<Joystick>().FromComponentInHierarchy().AsSingle();
-            
+
             BindWindow<StartWindowController, StartWindowView>();
             BindWindow<GameWindowController, GameWindowView>();
             BindWindow<FailWindowController, FailWindowView>();

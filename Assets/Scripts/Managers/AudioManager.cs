@@ -16,9 +16,7 @@ namespace Managers
         }
 
         [SerializeField] private AudioSource _audioGameMusic;
-
         [SerializeField] private AudioSource _audioSourceEffect;
-
         [SerializeField] private SoundPreset[] _soundPresets;
 
         private List<AudioSource> _audioSources;
@@ -53,7 +51,7 @@ namespace Managers
                 _audioGameMusic.Stop();
             }
         }
-
+        
         public void PlaySound(SoundType soundType)
         {
             SoundPreset preset = Array.Find(_soundPresets, p => p.SoundType == soundType);

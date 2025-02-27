@@ -1,7 +1,7 @@
 using System;
+using Level;
 using Obstacle;
 using Services.Storage;
-using Type;
 using UI;
 using UI.Window.FailWindow;
 using UI.Window.GameWindow;
@@ -22,52 +22,52 @@ namespace Managers
 
         [SerializeField] private ObstacleController _obstacleController;
 
-        private AudioManager _audioManager;
+        //private AudioManager _audioManager;
         private IUIController _uiController;
         private IStorageService _storageService;
         private StartWindowController _startWindow;
         private FailWindowController _failWindow;
         private GameWindowController _gameWindow;
         private WinWindowController _winWindow;
-        private LevelProgressStorageData _levelProgressStorageData;
+        private ILevelLoader _levelLoader;
 
         [Inject]
-        private void Construct(AudioManager audioManager, IUIController uiController, IStorageService storageService)
+        private void Construct(
+            IUIController uiController,
+            IStorageService storageService,
+            ILevelLoader levelLoader)
         {
-            _audioManager = audioManager;
+            _levelLoader = levelLoader;
             _uiController = uiController;
             _storageService = storageService;
-        }
 
-        private void Awake()
-        {
             _startWindow = _uiController.GetWindow<StartWindowController>();
-            _failWindow = _uiController.GetWindow<FailWindowController>();
-            _gameWindow = _uiController.GetWindow<GameWindowController>();
-            _winWindow = _uiController.GetWindow<WinWindowController>();
-
-            LoadPlayerData();
         }
 
-        private void LoadPlayerData()
+        private void OnEnable()
         {
-           
+            _startWindow.StartClicked += StartWindowOnStartClicked;
+        }
+
+        private void OnDisable()
+        {
+            _startWindow.StartClicked -= StartWindowOnStartClicked;
         }
 
         public void StartGame()
         {
             _uiController.ShowWindow<GameWindowController>();
-            _audioManager.PlayBackgroundMusic();
+            // _audioManager.PlayBackgroundMusic();
             GameStarted?.Invoke();
         }
 
         public void FinishGame()
         {
-            _levelProgressStorageData.IncrementLevelIndex();
             _uiController.ShowWindow<WinWindowController>();
-            _audioManager.StopMusic();
-            _audioManager.PlaySound(SoundType.Finish);
+            // _audioManager.StopMusic();
+            // _audioManager.PlaySound(SoundType.Finish);
             GameFinished?.Invoke();
+            StartCoroutine(_levelLoader.LoadNextLevel());
         }
 
         public void RestartGame()
@@ -76,6 +76,7 @@ namespace Managers
             _obstacleController.ResetObstacle();
             GameRestarted?.Invoke();
             StartGame();
+            StartCoroutine(_levelLoader.LoadCurrentLevel());
         }
 
         public void ExitGame()
@@ -84,7 +85,6 @@ namespace Managers
             _obstacleController.ResetObstacle();
             GameExited?.Invoke();
         }
-
 
         private void StartWindowOnStartButtonPressed()
         {
@@ -101,6 +101,10 @@ namespace Managers
             RestartGame();
         }
 
+        private void StartWindowOnStartClicked()
+        {
+            StartGame();
+        }
 
 #if UNITY_EDITOR
 
@@ -114,6 +118,11 @@ namespace Managers
             if (Input.GetKeyDown(KeyCode.X))
             {
                 RestartGame();
+            }
+
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                FinishGame();
             }
         }
 #endif

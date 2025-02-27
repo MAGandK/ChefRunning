@@ -4,19 +4,20 @@ using UnityEngine.EventSystems;
 
 namespace JoystickControls
 {
-    public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler, IJoystickController
+    public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler,
+        IJoystickController
     {
         private const float CLICK_DURATION = 0.5f;
         public event Action PointerUp;
         public event Action PointerDown;
         public event Action DoubleClick;
-        
+
         private int _clickCount;
         private float _oldClickTime;
 
-        public Vector2 Direction { get; private set; }
-     
-        public Vector2 Position { get; private set; }
+        [field: SerializeField] public Vector2 Direction { get; private set; }
+
+        [field: SerializeField] public Vector2 Position { get; private set; }
 
         public void OnDrag(PointerEventData eventData)
         {
