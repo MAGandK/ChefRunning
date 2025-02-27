@@ -1,39 +1,57 @@
+using System;
 using System.Collections.Generic;
+using Constants;
 using Services.Price;
+using Services.Storage;
 using UnityEngine;
+using Zenject;
 
 namespace UI.Other
 {
     public class BalanceView : MonoBehaviour
     {
         [SerializeField] private List<CurrencyView> _views;
+        private WalletStorageData _walletStorageData;
+
+        [Inject]
+        private void Construct(IStorageService storageService)
+        {
+            _walletStorageData = storageService.GetData<WalletStorageData>(StorageDataNames.WALLET_STORAGE_DATA_KEY);
+            _walletStorageData.Changed += WalletStorageDataOnChanged;
+        }
 
         public void Setup(params CurrencyType[] types)
         {
             foreach (var currencyView in _views)
             {
-                currencyView.gameObject.SetActive(false);
+                currencyView.SetActive(false);
 
                 foreach (var currencyType in types)
                 {
-                    if (currencyView.Type == currencyType)
+                    if (currencyView.Type != currencyType)
                     {
-                        currencyView.gameObject.SetActive(true);
+                        continue;
                     }
+
+                    currencyView.SetActive(true);
+                    currencyView.Refresh(_walletStorageData.GetBalance(currencyView.Type));
                 }
             }
         }
 
-        public void Refresh(CurrencyType type, int value)
+        private void Refresh()
         {
             foreach (var currencyView in _views)
             {
-                if (currencyView.Type == type)
+                if (currencyView.IsActive)
                 {
-                    currencyView.Refresh(value);
-                    return;
+                    currencyView.Refresh(_walletStorageData.GetBalance(currencyView.Type));
                 }
             }
+        }
+        private void WalletStorageDataOnChanged(string key)
+        {
+            Refresh();
         }
     }
 }

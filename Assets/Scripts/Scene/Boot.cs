@@ -24,7 +24,7 @@ namespace Scene
 
             var sceneByName = SceneManager.GetSceneByName("GameScene");
             SceneManager.SetActiveScene(sceneByName);
-        
+         
             yield return SceneManager.UnloadSceneAsync(0);
         }
     }

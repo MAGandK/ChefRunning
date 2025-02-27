@@ -1,4 +1,5 @@
 using Constants;
+using Level;
 using Services.Storage;
 using Zenject;
 
@@ -10,6 +11,7 @@ namespace Installers
         {
             Container.Bind<IStorageData>().To<LevelProgressStorageData>().AsSingle().WithArguments(StorageDataNames.LEVEL_PROGRESS_STORAGE_DATA_KEY);
             Container.Bind<IStorageData>().To<WalletStorageData>().AsSingle().WithArguments(StorageDataNames.WALLET_STORAGE_DATA_KEY);
+            Container.Bind<ILevelController>().To<LevelController>().AsSingle();
   
             Container.Bind(typeof(IStorageService), typeof(IInitializable)).To<StorageService>()
                 .AsSingle()

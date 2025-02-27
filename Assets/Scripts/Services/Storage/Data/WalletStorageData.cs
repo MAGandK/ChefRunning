@@ -36,18 +36,22 @@ namespace Services.Storage
             OnChanged();
         }
 
-
         public bool CanPurchase(CurrencyType type, int value)
+        {
+            return  GetBalance(type)>= value;
+        }
+
+        public int GetBalance(CurrencyType currencyType)
         {
             foreach (var walletItem in _balance)
             {
-                if (walletItem.Type == type)
+                if (walletItem.Type == currencyType)
                 {
-                    return walletItem.Value >= value;
+                    return walletItem.Value;
                 }
             }
 
-            return false;
+            return 0;
         }
     }
 }
