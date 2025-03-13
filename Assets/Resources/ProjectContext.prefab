@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelSettings: {fileID: 11400000, guid: caf6ef25597424e00b2d041f36f7968f, type: 2}
+  _inventoryConfig: {fileID: 11400000, guid: 467424d4b509a1d45ae990499534d6e9, type: 2}

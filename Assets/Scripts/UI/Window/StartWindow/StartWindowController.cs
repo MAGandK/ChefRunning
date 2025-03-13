@@ -3,18 +3,19 @@ using Constants;
 using Services.Price;
 using Services.Storage;
 using UI.Window.GameWindow;
+using UI.Window.InventoryWindow;
 
 namespace UI.Window.StartWindow
 {
     public class StartWindowController : AbstractWindowController<StartWindowView>
     {
         public event Action StartClicked;
-        
+
         private readonly StartWindowView _view;
         private LevelProgressStorageData _levelProgressStorageData;
 
         public StartWindowController(
-            StartWindowView view, 
+            StartWindowView view,
             IStorageService storageService) : base(view)
         {
             _view = view;
@@ -26,8 +27,13 @@ namespace UI.Window.StartWindow
         {
             base.Initialize();
 
-            _view.SubscribeButton(OnStartButtonClick);
+            _view.SubscribeButtons(OnStartButtonClick, OnInventoryButtonClick);
             _view.BalanceView.Setup(CurrencyType.coin, CurrencyType.rybi);
+        }
+
+        private void OnInventoryButtonClick()
+        {
+            _uiController.ShowWindow<InventoryWindowController>();
         }
 
         protected override void OnShow()

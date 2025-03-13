@@ -2,6 +2,7 @@ using JoystickControls;
 using UI;
 using UI.Window.FailWindow;
 using UI.Window.GameWindow;
+using UI.Window.InventoryWindow;
 using UI.Window.StartWindow;
 using UI.Window.WinWindow;
 using Zenject;
@@ -18,6 +19,7 @@ namespace Installers
             BindWindow<GameWindowController, GameWindowView>();
             BindWindow<FailWindowController, FailWindowView>();
             BindWindow<WinWindowController, WinWindowView>();
+            BindWindow<InventoryWindowController, InventoryWindowView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
         }
