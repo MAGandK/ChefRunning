@@ -1,3 +1,4 @@
+using System;
 using UI.Window.GameWindow;
 using UI.Window.StartWindow;
 
@@ -5,6 +6,8 @@ namespace UI.Window.FailWindow
 {
     public class FailWindowController : AbstractWindowController<FailWindowView>
     {
+        public event Action RetryClicked;
+        
         private FailWindowView _failWindowView;
         
         public FailWindowController(FailWindowView view) : base(view)
@@ -27,6 +30,7 @@ namespace UI.Window.FailWindow
         private void OnRetryButtonClick()
         {
             _uiController.ShowWindow<GameWindowController>();
+            RetryClicked?.Invoke();
         }
     }
 }

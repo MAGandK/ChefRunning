@@ -12,8 +12,6 @@ namespace Installers
         {
             Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<LevelPrefabManager>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle();
             Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
         }
     }

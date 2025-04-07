@@ -1,3 +1,4 @@
+using System;
 using Constants;
 using Services.Price;
 using Services.Storage;
@@ -7,11 +8,13 @@ namespace UI.Window.StartWindow
 {
     public class StartWindowController : AbstractWindowController<StartWindowView>
     {
+        public event Action StartClicked;
+
         private readonly StartWindowView _view;
         private LevelProgressStorageData _levelProgressStorageData;
 
         public StartWindowController(
-            StartWindowView view, 
+            StartWindowView view,
             IStorageService storageService) : base(view)
         {
             _view = view;
@@ -36,6 +39,7 @@ namespace UI.Window.StartWindow
         private void OnStartButtonClick()
         {
             _uiController.ShowWindow<GameWindowController>();
+            StartClicked?.Invoke();
         }
     }
 }

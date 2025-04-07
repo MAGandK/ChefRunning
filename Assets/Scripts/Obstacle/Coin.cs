@@ -14,16 +14,15 @@ namespace Obstacle
         private float _rotationSpeed = 200f;
         public float _rotationDelay = 0f;
         private IUIController _uiController;
-        private LevelPrefabManager _levelPrefabManager;
-        private AudioManager _audioManager;
+       // private LevelPrefabManager _levelPrefabManager;
+       // private AudioManager _audioManager;
 
         [Inject]
-        public void Construct(IUIController uiController, LevelPrefabManager levelPrefabManager,
-            AudioManager audioManager)
+        public void Construct(IUIController uiController)
         {
             _uiController = uiController;
-            _levelPrefabManager = levelPrefabManager;
-            _audioManager = audioManager;
+           // _levelPrefabManager = levelPrefabManager;
+            //_audioManager = audioManager;
         }
 
         private void OnEnable()
@@ -50,7 +49,7 @@ namespace Obstacle
         private void OnTriggerEnter(Collider other)
         {
             CollectCoin();
-            _levelPrefabManager._coinsList.Add(gameObject);
+           // _levelPrefabManager._coinsList.Add(gameObject);
             gameObject.SetActive(false);
         }
 

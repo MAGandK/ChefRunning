@@ -1,8 +1,8 @@
-using Cinemachine;
 using Managers;
 using UnityEngine;
 using Zenject;
 using PlayerLogics;
+using Unity.Cinemachine;
 
 public class CameraController : MonoBehaviour
 {

@@ -2,7 +2,6 @@ using System;
 using JoystickControls;
 using Managers;
 using Obstacle;
-using Type;
 using UI;
 using UI.Window.FailWindow;
 using UnityEngine;
@@ -22,7 +21,7 @@ namespace PlayerLogics
         [SerializeField] private MovementController _movementController;
         [SerializeField] private PlayerAnimatorController _animatorController;
 
-        private AudioManager _audioManager;
+        // private AudioManager _audioManager;
         private GameManager _gameManager;
         private IJoystickController _joystick;
         private CameraController _cameraController;
@@ -31,13 +30,13 @@ namespace PlayerLogics
 
         [Inject]
         public void Construct
-        (AudioManager audioManager, 
+        (
             GameManager gameManager,
-           IJoystickController joystick, 
-            CameraController cameraController, 
+            IJoystickController joystick,
+            CameraController cameraController,
             IUIController uiController)
         {
-            _audioManager = audioManager;
+            // _audioManager = audioManager;
             _gameManager = gameManager;
             _joystick = joystick;
             _cameraController = cameraController;
@@ -65,12 +64,12 @@ namespace PlayerLogics
             _gameManager.GameRestarted -= GameManagerOnGameRestarted;
             _gameManager.GameExited -= GameManagerOnGameExited;
         }
-        
+
         private void Start()
         {
             _startRotation = _playerModel.rotation;
         }
-        
+
         private void RotatePlayer(Vector3 targetPosition)
         {
             var direction = (targetPosition - _playerModel.position).normalized;
@@ -87,17 +86,17 @@ namespace PlayerLogics
         private void Hit()
         {
             _animatorController.Hitting();
-            _audioManager.PlaySound(SoundType.Push);
+            //_audioManager.PlaySound(SoundType.Push);
             Hited?.Invoke();
         }
-        
+
         public void Die()
         {
             _animatorController.Dying();
             _movementController.StopMovement();
 
-            _audioManager.StopMusic();
-            _audioManager.PlaySound(SoundType.Fail);
+            // _audioManager.StopMusic();
+            // _audioManager.PlaySound(SoundType.Fail);
             _uiController.ShowWindow<FailWindowController>();
 
             Died?.Invoke();
@@ -117,6 +116,7 @@ namespace PlayerLogics
         {
             _obstacleDestroyer.SetCanDestroy(true);
         }
+
         private void GameManagerGameStarted()
         {
             _movementController.StartMove();
@@ -137,11 +137,11 @@ namespace PlayerLogics
             RotatePlayer(_cameraController.FinishCameraPosition);
             Dance();
         }
-        
+
         private void GameManagerOnGameExited()
         {
-           GameManagerOnGameRestarted();
-           _startRotation = _playerModel.rotation;
+            GameManagerOnGameRestarted();
+            _startRotation = _playerModel.rotation;
         }
     }
 }

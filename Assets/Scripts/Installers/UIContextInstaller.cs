@@ -20,6 +20,7 @@ namespace Installers
             BindWindow<WinWindowController, WinWindowView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
+     
         }
 
         private void BindWindow<TController, TWindowView>()
