@@ -20,6 +20,7 @@ namespace PlayerLogics
         [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
         [SerializeField] private MovementController _movementController;
         [SerializeField] private PlayerAnimatorController _animatorController;
+        [SerializeField] private Collider[] _hitColliders;
 
         // private AudioManager _audioManager;
         private GameManager _gameManager;
@@ -97,8 +98,12 @@ namespace PlayerLogics
 
             // _audioManager.StopMusic();
             // _audioManager.PlaySound(SoundType.Fail);
+            foreach (var hitCollider in _hitColliders)
+            {
+                hitCollider.enabled = false;
+            }
+            
             _uiController.ShowWindow<FailWindowController>();
-
             Died?.Invoke();
         }
 

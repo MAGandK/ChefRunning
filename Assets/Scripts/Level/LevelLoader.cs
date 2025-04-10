@@ -9,11 +9,13 @@ namespace Level
     {
         private readonly LevelProgressStorageData _levelProgressStorageData;
         private readonly ILevelSettings _levelSettings;
+        private readonly IStorageService _storageService;
 
         private string _oldSceneName;
 
         public LevelLoader(IStorageService storageService, ILevelSettings levelSettings)
         {
+            _storageService = storageService;
             _levelSettings = levelSettings;
             _levelProgressStorageData = storageService.GetData<LevelProgressStorageData>(StorageDataNames.LEVEL_PROGRESS_STORAGE_DATA_KEY);
         }

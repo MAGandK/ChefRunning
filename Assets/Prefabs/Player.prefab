@@ -849,6 +849,10 @@ MonoBehaviour:
   _obstacleDestroyer: {fileID: 2540559778134260718}
   _movementController: {fileID: 7264912886927067405}
   _animatorController: {fileID: 6416032617718215869}
+  _hitColliders:
+  - {fileID: 2951449760407320943}
+  - {fileID: 7837834160532205868}
+  - {fileID: 8628486108684887039}
 --- !u!136 &2951449760407320943
 CapsuleCollider:
   m_ObjectHideFlags: 0

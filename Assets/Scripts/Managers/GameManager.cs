@@ -41,6 +41,8 @@ namespace Managers
             _storageService = storageService;
 
             _startWindow = _uiController.GetWindow<StartWindowController>();
+            _failWindow = _uiController.GetWindow<FailWindowController>();
+            _winWindow = _uiController.GetWindow<WinWindowController>();
         }
 
         private void OnEnable()

@@ -1,5 +1,6 @@
 using Constants;
 using Level;
+using Pool;
 using Services.Storage;
 using UnityEngine;
 using Zenject;
@@ -13,8 +14,9 @@ namespace Installers
         {
             BindStorage();
             BindLevelloader();
+            BindPools();
         }
-
+        
         private void BindLevelloader()
         {
             Container.Bind<ILevelSettings>().FromInstance(_levelSettings).AsSingle();
@@ -29,6 +31,11 @@ namespace Installers
             Container.Bind(typeof(IStorageService), typeof(IInitializable)).To<StorageService>()
                 .AsSingle()
                 .NonLazy();
+        }
+        
+        private void BindPools()
+        {
+            Container.Bind<IPool>().To<Pool.Pool>().AsSingle().NonLazy();
         }
     }
 }

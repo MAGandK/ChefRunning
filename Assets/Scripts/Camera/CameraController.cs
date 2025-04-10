@@ -6,9 +6,9 @@ using Unity.Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera _mainCamera;
-    [SerializeField] private CinemachineVirtualCamera _failCamera;
-    [SerializeField] private CinemachineVirtualCamera _finishCamera;
+    [SerializeField] private CinemachineCamera _mainCamera;
+    [SerializeField] private CinemachineCamera _failCamera;
+    [SerializeField] private CinemachineCamera _finishCamera;
     
     private GameManager _gameManager;
     private Player _player;

@@ -1,55 +1,35 @@
-using Constants;
-using Services.Price;
-using Services.Storage;
-using UI;
-using UI.Window.StartWindow;
+using Pool;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 public class Test : MonoBehaviour
 {
-    private IUIController _uiController;
-    public Button _addCoins;
-    public Button _addRuby;
-
-    [Inject]
-    private void Construct(IUIController uiController)
-    {
-        _uiController = uiController;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            _uiController.ShowWindow<StartWindowController>();
-        }
-    }
+   [SerializeField] private TestPool _gameObject;
+   [SerializeField] private TestPool2 _gameObject1;
+   private IPool _pool;
    
-   private WalletStorageData _walletStorageData;
-
-   [Inject] private IStorageService _service;
-
-   private void Awake()
+   [Inject]
+   private void Construct(IPool pool)
    {
-       _walletStorageData = _service.GetData<WalletStorageData>(StorageDataNames.WALLET_STORAGE_DATA_KEY);
+      _pool = pool;
    }
 
-   private void Start()
+   private void Update()
    {
-       _addCoins.onClick.AddListener(AddCoins);
-       _addRuby.onClick.AddListener(AddRuby);
-       
-   }
-
-   private void AddRuby()
-   {
-       _walletStorageData.AddCurrency(CurrencyType.rybi, 1);
-   }
-
-   private void AddCoins()
-   {
-       _walletStorageData.AddCurrency(CurrencyType.coin, 1);
+      if (Input.GetKeyDown(KeyCode.Alpha1))
+      {
+         var testPool = _pool.Get<TestPool>(_gameObject);
+         
+         testPool.gameObject.SetActive(true);
+         testPool.transform.position = transform.position;
+      }
+      
+      if (Input.GetKeyDown(KeyCode.Alpha2))
+      {
+         var testPool = _pool.Get<TestPool2>(_gameObject1);
+         
+         testPool.gameObject.SetActive(true);
+         testPool.transform.position = transform.position;
+      }
    }
 }
