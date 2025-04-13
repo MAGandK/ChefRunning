@@ -1,35 +1,40 @@
-using Pool;
+using Audio;
+using Audio.Types;
 using UnityEngine;
 using Zenject;
+using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-   [SerializeField] private TestPool _gameObject;
-   [SerializeField] private TestPool2 _gameObject1;
-   private IPool _pool;
-   
-   [Inject]
-   private void Construct(IPool pool)
-   {
-      _pool = pool;
-   }
+    private IAudioManager _audioManager;
 
-   private void Update()
-   {
-      if (Input.GetKeyDown(KeyCode.Alpha1))
-      {
-         var testPool = _pool.Get<TestPool>(_gameObject);
-         
-         testPool.gameObject.SetActive(true);
-         testPool.transform.position = transform.position;
-      }
-      
-      if (Input.GetKeyDown(KeyCode.Alpha2))
-      {
-         var testPool = _pool.Get<TestPool2>(_gameObject1);
-         
-         testPool.gameObject.SetActive(true);
-         testPool.transform.position = transform.position;
-      }
-   }
+    [Inject]
+    private void Construct(IAudioManager audioManager)
+    {
+        _audioManager = audioManager;
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _audioManager.Play(MusicType.Background1);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _audioManager.Play(MusicType.Background2);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _audioManager.Play(SoundType.CoinCollected);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            _audioManager.Play(SoundType.Damaged);
+        }
+    }
 }

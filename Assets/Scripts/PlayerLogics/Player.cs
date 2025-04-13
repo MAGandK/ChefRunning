@@ -1,4 +1,5 @@
 using System;
+using Camera;
 using JoystickControls;
 using Managers;
 using Obstacle;
