@@ -49,7 +49,7 @@ namespace Audio
 
             _soundMap = _audioSettings.AudioPresets.OfType<SoundPreset>().ToArray()
                 .ToDictionary(x => x.SoundType, x => x.AudioClip);
-            
+
             _musicMap = _audioSettings.AudioPresets.OfType<MusicPreset>().ToArray()
                 .ToDictionary(x => x.MusicType, x => x.AudioClip);
 
@@ -123,18 +123,18 @@ namespace Audio
             _stopSoundCoroutines.Clear();
         }
 
-        public void SetMuteSound(bool isActiveState)
+        public void SetMuteSound(bool isMuted)
         {
-            _audioStorageData.SetIsSoundMute(isActiveState);
+            _audioStorageData.SetIsSoundMute(isMuted);
 
-            _audioSettings.AudioMixer.SetFloat("SoundVolume", Mathf.Log10(isActiveState ? 1 : 0.000001f) * 20);
+            _audioSettings.AudioMixer.SetFloat("SoundVolume", Mathf.Log10(isMuted ? 0.000001f : 1) * 20);
         }
 
-        public void SetMuteMusic(bool isActiveState)
+        public void SetMuteMusic(bool isMuted)
         {
-            _audioStorageData.SetIsMusicMute(isActiveState);
+            _audioStorageData.SetIsMusicMute(isMuted);
 
-            _audioSettings.AudioMixer.SetFloat("MusicVolume", Mathf.Log10(isActiveState ? 1 : 0.000001f) * 20);
+            _audioSettings.AudioMixer.SetFloat("MusicVolume", Mathf.Log10(isMuted ? 0.000001f : 1) * 20);
         }
 
         private PooledAudio Play(AudioClip audioClip,

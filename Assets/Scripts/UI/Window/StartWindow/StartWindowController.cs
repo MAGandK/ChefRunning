@@ -12,7 +12,7 @@ namespace UI.Window.StartWindow
         public event Action StartClicked;
 
         private readonly StartWindowView _view;
-        private LevelProgressStorageData _levelProgressStorageData;
+        private readonly LevelProgressStorageData _levelProgressStorageData;
 
         public StartWindowController(
             StartWindowView view,

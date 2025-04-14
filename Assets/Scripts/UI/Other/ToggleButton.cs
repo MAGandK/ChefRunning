@@ -18,8 +18,7 @@ namespace UI.Other
         public void SetActiveState(bool isActive)
         {
             _isActiveState = isActive;
-
-            UpdateView();
+            _image.sprite = _isActiveState ? _activeSprite : _disableSprite;
         }
 
         public override void OnPointerClick(PointerEventData eventData)
@@ -27,11 +26,6 @@ namespace UI.Other
             SetActiveState(!_isActiveState);
 
             base.OnPointerClick(eventData);
-        }
-
-        public void UpdateView()
-        {
-            _image.sprite = _isActiveState ? _activeSprite : _disableSprite;
         }
     }
 }

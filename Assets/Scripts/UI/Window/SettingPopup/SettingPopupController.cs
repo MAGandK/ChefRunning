@@ -33,12 +33,12 @@ namespace UI.Window.SettingPopup
 
         private void OnMuteMusicButtonClick()
         {
-            _audioManager.SetMuteMusic(_view.MuteMusicButton.IsActiveState);
+            _audioManager.SetMuteMusic(!_view.MuteMusicButton.IsActiveState);
         }
 
         private void OnMuteSoundButtonClick()
         {
-            _audioManager.SetMuteSound(_view.MuteSoundButton.IsActiveState);
+            _audioManager.SetMuteSound(!_view.MuteSoundButton.IsActiveState);
         }
     }
 }
