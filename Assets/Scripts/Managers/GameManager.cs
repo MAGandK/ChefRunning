@@ -20,7 +20,7 @@ namespace Managers
         public event Action GameExited;
 
         [SerializeField] private ObstacleController _obstacleController;
-        
+
         private IUIController _uiController;
         private IStorageService _storageService;
         private StartWindowController _startWindow;
@@ -73,7 +73,7 @@ namespace Managers
             // _audioManager.StopMusic();
             //  _audioManager.PlaySound(SoundType.Finish);
             GameFinished?.Invoke();
-            StartCoroutine(_levelLoader.LoadNextLevel());
+            _levelLoader.LoadNextLevel();
         }
 
         public void RestartGame()
@@ -82,7 +82,7 @@ namespace Managers
             _obstacleController.ResetObstacle();
             GameRestarted?.Invoke();
             StartGame();
-            StartCoroutine(_levelLoader.LoadCurrentLevel());
+            _levelLoader.LoadCurrentLevel();
         }
 
         public void ExitGame()
@@ -91,7 +91,7 @@ namespace Managers
             _obstacleController.ResetObstacle();
             GameExited?.Invoke();
         }
-        
+
         private void StartWindowOnStartClicked()
         {
             StartGame();
@@ -101,10 +101,10 @@ namespace Managers
         {
             RestartGame();
         }
-        
+
         private void WinWindowOnWon()
         {
-           FinishGame();
+            FinishGame();
         }
 
 #if UNITY_EDITOR
@@ -120,7 +120,7 @@ namespace Managers
             {
                 RestartGame();
             }
-            
+
             if (Input.GetKeyDown(KeyCode.V))
             {
                 StartGame();

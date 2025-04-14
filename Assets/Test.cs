@@ -16,20 +16,20 @@ public class Test : MonoBehaviour
 
    private void Update()
    {
-      if (Input.GetKeyDown(KeyCode.Alpha1))
-      {
-         var testPool = _pool.Get<TestPool>(_gameObject);
-         
-         testPool.gameObject.SetActive(true);
-         testPool.transform.position = transform.position;
-      }
-      
-      if (Input.GetKeyDown(KeyCode.Alpha2))
-      {
-         var testPool = _pool.Get<TestPool2>(_gameObject1);
-         
-         testPool.gameObject.SetActive(true);
-         testPool.transform.position = transform.position;
-      }
+      // if (Input.GetKeyDown(KeyCode.Alpha1))
+      // {
+      //    var testPool = _pool.Get<TestPool>(_gameObject);
+      //    
+      //    testPool.gameObject.SetActive(true);
+      //    testPool.transform.position = transform.position;
+      // }
+      //
+      // if (Input.GetKeyDown(KeyCode.Alpha2))
+      // {
+      //    var testPool = _pool.Get<TestPool2>(_gameObject1);
+      //    
+      //    testPool.gameObject.SetActive(true);
+      //    testPool.transform.position = transform.position;
+      // }
    }
 }

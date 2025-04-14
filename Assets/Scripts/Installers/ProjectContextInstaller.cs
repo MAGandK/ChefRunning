@@ -20,7 +20,7 @@ namespace Installers
         private void BindLevelloader()
         {
             Container.Bind<ILevelSettings>().FromInstance(_levelSettings).AsSingle();
-            Container.Bind<ILevelLoader>().To<LevelLoader>().AsSingle();
+            Container.Bind<ILevelLoader>().To<LevelLoader>().AsSingle().WithArguments(this);
         }
 
         private void BindStorage()

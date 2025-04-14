@@ -1,6 +1,5 @@
 using System.Collections;
 using Managers;
-using Type;
 using UI;
 using UI.Window;
 using UI.Window.GameWindow;

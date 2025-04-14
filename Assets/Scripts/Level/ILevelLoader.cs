@@ -1,10 +1,10 @@
-using System.Collections;
+using System;
 
 namespace Level
 {
     public interface ILevelLoader
     {
-        IEnumerator LoadCurrentLevel();
-        IEnumerator LoadNextLevel();
+        void LoadCurrentLevel(Action onFinished = null);
+        void LoadNextLevel(Action onFinished = null);
     }
 }
