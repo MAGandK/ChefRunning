@@ -18,8 +18,8 @@ namespace Audio
         private readonly IPool _pool;
         private readonly MonoBehaviour _monoBehaviour;
 
-        private Dictionary<SoundType, AudioClip> _soundMap;
-        private Dictionary<MusicType, AudioClip> _musicMap;
+        private Dictionary<SoundType, SoundPreset> _soundMap;
+        private Dictionary<MusicType, MusicPreset> _musicMap;
 
         private readonly AudioStorageData _audioStorageData;
         private readonly IAudioSettings _audioSettings;
@@ -48,37 +48,44 @@ namespace Audio
             _musicGroup = _audioSettings.AudioMixer.FindMatchingGroups("Master/Music")[0];
 
             _soundMap = _audioSettings.AudioPresets.OfType<SoundPreset>().ToArray()
-                .ToDictionary(x => x.SoundType, x => x.AudioClip);
+                .ToDictionary(x => x.SoundType, x => x);
 
             _musicMap = _audioSettings.AudioPresets.OfType<MusicPreset>().ToArray()
-                .ToDictionary(x => x.MusicType, x => x.AudioClip);
+                .ToDictionary(x => x.MusicType, x => x);
 
             SetMuteMusic(_audioStorageData.IsMusicMuted);
             SetMuteSound(_audioStorageData.IsSoundMuted);
         }
 
-        public void Play(SoundType soundType, float volume = 1, float pitch = 1)
+        public void Play(SoundType soundType, float volume = 1, float pitch = 1, bool loop = false)
         {
-            if (_audioStorageData.IsSoundMuted || !_soundMap.TryGetValue(soundType, out var audioClip))
+            if (_audioStorageData.IsSoundMuted || !_soundMap.TryGetValue(soundType, out var soundPreset))
             {
                 return;
             }
 
-            var pooledAudio = Play(audioClip, _soundGroup, volume, pitch);
+            var audioClip = soundPreset.AudioClip;
+
+            var pooledAudio = Play(audioClip, _soundGroup, soundPreset.Volume == 0 ? volume: soundPreset.Volume, pitch);
+            pooledAudio.SetIsLoop(loop);
 
             if (!_pooledSoundMap.TryAdd(soundType, new List<PooledAudio>() { pooledAudio }))
             {
                 _pooledSoundMap[soundType].Add(pooledAudio);
             }
 
-            var coroutine =
-                _monoBehaviour.StartCoroutine(routine: ReturnToPoolCor(soundType, pooledAudio, audioClip.length));
-            _stopSoundCoroutines.Add(coroutine);
+            if (loop)
+            {
+                var coroutine =
+                    _monoBehaviour.StartCoroutine(ReturnToPoolCor(soundType, pooledAudio, audioClip.length));
+
+                _stopSoundCoroutines.Add(coroutine);
+            }
         }
 
         public void Play(MusicType musicType, float volume = 1, float pitch = 1)
         {
-            if (!_musicMap.TryGetValue(musicType, out var audioClip))
+            if (!_musicMap.TryGetValue(musicType, out var musicPreset))
             {
                 return;
             }
@@ -96,7 +103,7 @@ namespace Audio
                 _currentMusic.Value.gameObject.SetActive(false);
             }
 
-            var pooledAudio = Play(audioClip, _musicGroup, volume, pitch);
+            var pooledAudio = Play(musicPreset.AudioClip, _musicGroup, musicPreset.Volume == 0 ? volume: musicPreset.Volume, pitch);
             pooledAudio.SetIsLoop(true);
 
             _currentMusic = new KeyValuePair<MusicType, PooledAudio>(musicType, pooledAudio);
@@ -108,7 +115,7 @@ namespace Audio
             {
                 foreach (var pooledAudio in pooledAudios)
                 {
-                    pooledAudio.SetIsLoop(true);
+                    pooledAudio.SetIsFree(true);
                     pooledAudio.gameObject.SetActive(false);
                 }
             }

@@ -7,7 +7,7 @@ namespace Audio
         bool IsSoundMuted { get; }
         bool IsMusicMuted { get; }
 
-        void Play(SoundType soundType, float volume = 1, float pitch = 1);
+        void Play(SoundType soundType, float volume = 1, float pitch = 1, bool loop = false);
         void Play(MusicType musicType, float volume = 1, float pitch = 1);
         void StopAllSound();
 

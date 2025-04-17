@@ -12,7 +12,6 @@ namespace Audio.Settings
         
         public AudioPreset[] AudioPresets => _audioPresets;
         public PooledAudio PooledAudioPrefab => _pooledAudioPrefab;
-
         public AudioMixer AudioMixer => _audioMixer;
     }
 }
