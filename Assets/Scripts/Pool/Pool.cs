@@ -19,25 +19,23 @@ namespace Pool
 
         public T PreparePool<T>(PoolData key, int count) where T : class, IPoolObject
         {
-            if (_poolObjects.TryGetValue(key, out var poolObjects))
+            var poolObjects = new List<IPoolObject>();
+            
+            SetParents(key);
+            
+            for (int i = 0; i < count; i++)
             {
-                int countToCreate = count - poolObjects.Count;
-                if (countToCreate > 0)
-                {
-                    for (int i = 0; i < countToCreate; i++)
-                    {
-                        CreateNewObject<T>(key, poolObjects);
-                    }
-                }
-
-                var freeObject = GetFreeObjectFromPool<T>(poolObjects);
-
-                return freeObject;
+                CreateNewObject<T>(key, poolObjects);
             }
 
-            return null;
-        }
+            if (!_poolObjects.TryAdd(key, poolObjects))
+            {
+                _poolObjects[key].AddRange(poolObjects);
+            }
 
+            return GetFreeObjectFromPool<T>(poolObjects);
+        }
+        
         public List<IPoolObject> GetPool()
         {
             var allObject = new List<IPoolObject>();
@@ -46,7 +44,7 @@ namespace Pool
             {
                 allObject.AddRange(pool);
             }
-            
+
             return allObject;
         }
 
@@ -55,6 +53,7 @@ namespace Pool
             if (_poolObjects.TryGetValue(key, out var poolObjects))
             {
                 var freeObject = GetFreeObjectFromPool<T>(poolObjects);
+                
                 if (freeObject != null)
                 {
                     return freeObject;
@@ -63,12 +62,12 @@ namespace Pool
                 return CreateNewObject<T>(key, poolObjects);
             }
 
-            var poolObjectParent = _diContainer.CreateEmptyGameObject(key.key).transform;
-            poolObjectParent.transform.SetParent(_poolParent);
-            _poolObjectsParents.Add(key, poolObjectParent.transform);
-
-            var firstObject = _diContainer.InstantiatePrefabForComponent<T>(key.obj, poolObjectParent.transform);
+            SetParents(key);
+            
+            var parent = _poolObjectsParents[key];
+            var firstObject = _diContainer.InstantiatePrefabForComponent<T>(key.obj, parent.transform);
             var objects = new List<IPoolObject>();
+            
             objects.Add(firstObject);
 
             _poolObjects.Add(key, objects);
@@ -79,13 +78,19 @@ namespace Pool
         }
 
 
-        public void ClearPool()
+        public void FreeAllPool()
         {
-            _poolObjects.Clear();
-            _poolObjectsParents.Clear();
+            // удалить объекты
+            foreach (var ( key, poolObjects) in _poolObjects)
+            {
+                foreach (var poolObject in poolObjects)    
+                {
+                    poolObject.SetIsFree(true);
+                }
+            }
         }
-
-        public void ClearPool(PoolData data)
+        
+        public void FreePool(PoolData data)
         {
             if (_poolObjects.ContainsKey(data))
             {
@@ -114,6 +119,16 @@ namespace Pool
             }
 
             return null;
+        }
+        
+        private void SetParents(PoolData key)
+        {
+            if (!_poolObjectsParents.ContainsKey(key))
+            {
+                var poolObjectParent = _diContainer.CreateEmptyGameObject(key.key).transform;
+                poolObjectParent.transform.SetParent(_poolParent);
+                _poolObjectsParents.Add(key, poolObjectParent.transform);
+            }
         }
     }
 }
