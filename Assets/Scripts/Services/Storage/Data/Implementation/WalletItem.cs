@@ -3,27 +3,30 @@ using Newtonsoft.Json;
 using Services.Price;
 using UnityEngine;
 
-[Serializable]
-[JsonObject(MemberSerialization.OptIn)]
-public class WalletItem
+namespace Services.Storage
 {
-    [SerializeField] [JsonProperty("type")]
-    private CurrencyType _type;
-
-    [SerializeField] [JsonProperty("value")]
-    private int _value;
-
-    public CurrencyType Type => _type;
-    public int Value => _value;
-
-    public WalletItem(CurrencyType type, int value)
+    [Serializable]
+    [JsonObject(MemberSerialization.OptIn)]
+    public class WalletItem
     {
-        _type = type;
-        _value = value;
-    }
+        [SerializeField] [JsonProperty("type")]
+        private CurrencyType _type;
 
-    public void SetValue(int value)
-    {
-        _value = value;
+        [SerializeField] [JsonProperty("value")]
+        private int _value;
+
+        public CurrencyType Type => _type;
+        public int Value => _value;
+
+        public WalletItem(CurrencyType type, int value)
+        {
+            _type = type;
+            _value = value;
+        }
+
+        public void SetValue(int value)
+        {
+            _value = value;
+        }
     }
 }

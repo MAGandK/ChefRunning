@@ -1,17 +1,17 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
-namespace Audio
+namespace Audio.Settings
 {
-    [CreateAssetMenu(menuName = "Create AudioSettings", fileName = "AudioSettings", order = 0)]
-    public class AudioSettings : ScriptableObject
+    [CreateAssetMenu(menuName = "Sound/Create AudioSettings", fileName = "AudioSettings", order = 0)]
+    public class AudioSettings : ScriptableObject, IAudioSettings
     {
-        [SerializeField] private Audio _audioPrefab;
-        [SerializeField] private MusicAudioPreset[] _musicAudioPresets;
-        [SerializeField] private SoundAudioPreset[] _soundAudioPresets;
-
-        public MusicAudioPreset[] MusicAudioPreset => _musicAudioPresets;
-        public SoundAudioPreset[] SoundAudioPreset => _soundAudioPresets;
-        public Audio AudioPrefab => _audioPrefab;
+        [SerializeField] private AudioPreset[] _audioPresets;
+        [SerializeField] private PooledAudio _pooledAudioPrefab;
+        [SerializeField] private AudioMixer _audioMixer;
         
+        public AudioPreset[] AudioPresets => _audioPresets;
+        public PooledAudio PooledAudioPrefab => _pooledAudioPrefab;
+        public AudioMixer AudioMixer => _audioMixer;
     }
 }

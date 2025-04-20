@@ -9,9 +9,12 @@ namespace UI.Window.StartWindow
     {
         [SerializeField] private LevelProgressBar _levelProgressBar;
         [SerializeField] private Button _startButton;
+        [SerializeField] private Button _settingWindowButton;
         [SerializeField] private BalanceView _balanceView;
 
         public BalanceView BalanceView => _balanceView;
+
+        public Button SettingWindowButton => _settingWindowButton;
 
         public void SubscribeButton(UnityAction onStartButtonClick)
         {

@@ -1509,6 +1509,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -28
       objectReference: {fileID: 0}
+    - target: {fileID: 8435930391492073564, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
+      propertyPath: _settingWindowButton
+      value: 
+      objectReference: {fileID: 234153089853518954}
     - target: {fileID: 8520792901810360886, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1546,6 +1550,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
+--- !u!114 &234153089853518954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3891695773667274219, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}
+  m_PrefabInstance: {fileID: 3836491088409188737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1475382285585418046 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2397155312293240511, guid: c07cb41cce4fc4db3838cd9679fe5ec2, type: 3}

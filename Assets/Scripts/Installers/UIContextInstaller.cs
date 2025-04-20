@@ -2,6 +2,7 @@ using JoystickControls;
 using UI;
 using UI.Window.FailWindow;
 using UI.Window.GameWindow;
+using UI.Window.SettingPopup;
 using UI.Window.StartWindow;
 using UI.Window.WinWindow;
 using Zenject;
@@ -18,9 +19,9 @@ namespace Installers
             BindWindow<GameWindowController, GameWindowView>();
             BindWindow<FailWindowController, FailWindowView>();
             BindWindow<WinWindowController, WinWindowView>();
+            BindWindow<SettingPopupController, SettingPopupView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
-     
         }
 
         private void BindWindow<TController, TWindowView>()

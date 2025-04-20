@@ -1,4 +1,7 @@
 using System;
+using Audio;
+using Audio.Types;
+using Camera;
 using JoystickControls;
 using Managers;
 using Obstacle;
@@ -22,22 +25,22 @@ namespace PlayerLogics
         [SerializeField] private PlayerAnimatorController _animatorController;
         [SerializeField] private Collider[] _hitColliders;
 
-        // private AudioManager _audioManager;
         private GameManager _gameManager;
         private IJoystickController _joystick;
         private CameraController _cameraController;
         private IUIController _uiController;
         private Quaternion _startRotation;
+        private IAudioManager _audioManager;
 
         [Inject]
-        public void Construct
-        (
+        public void Construct(
             GameManager gameManager,
             IJoystickController joystick,
             CameraController cameraController,
-            IUIController uiController)
+            IUIController uiController,
+            IAudioManager audioManager)
         {
-            // _audioManager = audioManager;
+            _audioManager = audioManager;
             _gameManager = gameManager;
             _joystick = joystick;
             _cameraController = cameraController;
@@ -87,22 +90,21 @@ namespace PlayerLogics
         private void Hit()
         {
             _animatorController.Hitting();
-            //_audioManager.PlaySound(SoundType.Push);
+
             Hited?.Invoke();
         }
 
         public void Die()
         {
+            _audioManager.Play(SoundType.Damaged);
             _animatorController.Dying();
             _movementController.StopMovement();
 
-            // _audioManager.StopMusic();
-            // _audioManager.PlaySound(SoundType.Fail);
             foreach (var hitCollider in _hitColliders)
             {
                 hitCollider.enabled = false;
             }
-            
+
             _uiController.ShowWindow<FailWindowController>();
             Died?.Invoke();
         }

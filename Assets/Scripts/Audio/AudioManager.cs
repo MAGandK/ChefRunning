@@ -1,83 +1,168 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Audio.Settings;
+using Audio.Stoarge;
+using Audio.Types;
+using Constants;
 using Pool;
+using Services.Storage;
 using UnityEngine;
+using UnityEngine.Audio;
+using Zenject;
 
 namespace Audio
 {
-    public class AudioManager : IAudioManager
+    public class AudioManager : IAudioManager, IInitializable
     {
-        private readonly AudioSettings _audioSettings;
         private readonly IPool _pool;
-        private readonly PoolData _monoBehaviour;
+        private readonly MonoBehaviour _monoBehaviour;
 
-        private readonly Dictionary<SoundType, List<Coroutine>> _returnSoundCoroutines = new();
-        private readonly Dictionary<MusicType,List<Coroutine>> _returnMusicCoroutines = new();
+        private Dictionary<SoundType, SoundPreset> _soundMap;
+        private Dictionary<MusicType, MusicPreset> _musicMap;
 
-        public AudioManager(AudioSettings audioSettings, IPool pool, PoolData monoBehaviour)
+        private readonly AudioStorageData _audioStorageData;
+        private readonly IAudioSettings _audioSettings;
+        private AudioMixerGroup _soundGroup;
+        private AudioMixerGroup _musicGroup;
+
+        private readonly Dictionary<SoundType, List<PooledAudio>> _pooledSoundMap = new();
+        private readonly List<Coroutine> _stopSoundCoroutines = new();
+        private KeyValuePair<MusicType, PooledAudio> _currentMusic;
+
+        public bool IsSoundMuted => _audioStorageData.IsSoundMuted;
+        public bool IsMusicMuted => _audioStorageData.IsMusicMuted;
+
+        public AudioManager(IPool pool, IAudioSettings audioSettings, IStorageService storageService,
+            MonoBehaviour monoBehaviour)
         {
             _audioSettings = audioSettings;
-            _pool = pool;
             _monoBehaviour = monoBehaviour;
+            _pool = pool;
+            _audioStorageData = storageService.GetData<AudioStorageData>(StorageDataNames.AUDIO_DATA_KEY);
         }
 
-        public void Play(SoundType soundType, float volume = 1, float pitch = 1)
+        public void Initialize()
         {
-            var presets = _audioSettings.SoundAudioPreset;
+            _soundGroup = _audioSettings.AudioMixer.FindMatchingGroups("Master/Sound")[0];
+            _musicGroup = _audioSettings.AudioMixer.FindMatchingGroups("Master/Music")[0];
 
-            foreach (var preset in presets)
+            _soundMap = _audioSettings.AudioPresets.OfType<SoundPreset>().ToArray()
+                .ToDictionary(x => x.SoundType, x => x);
+
+            _musicMap = _audioSettings.AudioPresets.OfType<MusicPreset>().ToArray()
+                .ToDictionary(x => x.MusicType, x => x);
+
+            SetMuteMusic(_audioStorageData.IsMusicMuted);
+            SetMuteSound(_audioStorageData.IsSoundMuted);
+        }
+
+        public void Play(SoundType soundType, float volume = 1, float pitch = 1, bool loop = false)
+        {
+            if (_audioStorageData.IsSoundMuted || !_soundMap.TryGetValue(soundType, out var soundPreset))
             {
-                if (preset.SoundType == soundType)
-                {
-                   // var audio = _pool.Get<Audio>(_audioSettings.AudioPrefab);
-                   // audio.Setup(preset.AudioClip, volume,pitch);
-                   // var startCoroutine =
-                       // _monoBehaviour.StartCoroutine(ReturnAudioInPool(audio, preset.AudioClip.length));
-                }
+                return;
+            }
+
+            var audioClip = soundPreset.AudioClip;
+
+            var pooledAudio = Play(audioClip, _soundGroup, soundPreset.Volume == 0 ? volume: soundPreset.Volume, pitch);
+            pooledAudio.SetIsLoop(loop);
+
+            if (!_pooledSoundMap.TryAdd(soundType, new List<PooledAudio>() { pooledAudio }))
+            {
+                _pooledSoundMap[soundType].Add(pooledAudio);
+            }
+
+            if (loop)
+            {
+                var coroutine =
+                    _monoBehaviour.StartCoroutine(ReturnToPoolCor(soundType, pooledAudio, audioClip.length));
+
+                _stopSoundCoroutines.Add(coroutine);
             }
         }
 
         public void Play(MusicType musicType, float volume = 1, float pitch = 1)
         {
-            var presets = _audioSettings.MusicAudioPreset;
-
-            foreach (var preset in presets)
+            if (!_musicMap.TryGetValue(musicType, out var musicPreset))
             {
-                if (preset.MusicType == musicType)
+                return;
+            }
+
+            var hasMusic = _currentMusic.Value != null;
+
+            if (_currentMusic.Key == musicType && hasMusic)
+            {
+                return;
+            }
+
+            if (hasMusic)
+            {
+                _currentMusic.Value.SetIsFree(true);
+                _currentMusic.Value.gameObject.SetActive(false);
+            }
+
+            var pooledAudio = Play(musicPreset.AudioClip, _musicGroup, musicPreset.Volume == 0 ? volume: musicPreset.Volume, pitch);
+            pooledAudio.SetIsLoop(true);
+
+            _currentMusic = new KeyValuePair<MusicType, PooledAudio>(musicType, pooledAudio);
+        }
+
+        public void StopAllSound()
+        {
+            foreach (var (key, pooledAudios) in _pooledSoundMap)
+            {
+                foreach (var pooledAudio in pooledAudios)
                 {
-                   // var audio = _pool.Get<Audio>(_audioSettings.AudioPrefab);
-                  //  audio.Setup(preset.AudioClip, volume,pitch);
-                  //  var startCoroutine =
-                     //   _monoBehaviour.StartCoroutine(ReturnAudioInPool(audio, preset.AudioClip.length));
+                    pooledAudio.SetIsFree(true);
+                    pooledAudio.gameObject.SetActive(false);
                 }
             }
-        }
 
-        public void Stop(SoundType soundType)
-        {
-            var returnSoundCoroutines = _returnSoundCoroutines[soundType];
-            foreach (var soundCoroutine  in returnSoundCoroutines)
+            _pooledSoundMap.Clear();
+
+            foreach (var coroutine in _stopSoundCoroutines)
             {
-              //  _monoBehaviour.StopCoroutine(soundCoroutine);
+                _monoBehaviour.StopCoroutine(coroutine);
             }
+
+            _stopSoundCoroutines.Clear();
         }
 
-        public void Stop(MusicType musicType)
+        public void SetMuteSound(bool isMuted)
         {
+            _audioStorageData.SetIsSoundMute(isMuted);
+
+            _audioSettings.AudioMixer.SetFloat("SoundVolume", Mathf.Log10(isMuted ? 0.000001f : 1) * 20);
         }
 
-        public void SetMuteSound()
+        public void SetMuteMusic(bool isMuted)
         {
+            _audioStorageData.SetIsMusicMute(isMuted);
+
+            _audioSettings.AudioMixer.SetFloat("MusicVolume", Mathf.Log10(isMuted ? 0.000001f : 1) * 20);
         }
 
-        public void SetMuteAllMusic()
+        private PooledAudio Play(AudioClip audioClip,
+            AudioMixerGroup soundGroup,
+            float volume = 1,
+            float pitch = 1)
         {
+            var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
+            pooledAudio.gameObject.SetActive(true);
+            pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
+
+            return pooledAudio;
         }
-        
-        private IEnumerator ReturnAudioInPool(Audio audio, float returnDuration)
+
+        private IEnumerator ReturnToPoolCor(SoundType key, PooledAudio pooledAudio, float audioClipLength)
         {
-            yield return new WaitForSeconds(returnDuration);
-            audio.SetIsFree(true);
+            yield return new WaitForSeconds(audioClipLength);
+
+            pooledAudio.SetIsFree(true);
+            pooledAudio.gameObject.SetActive(false);
+            _pooledSoundMap[key].Remove(pooledAudio);
         }
     }
 }

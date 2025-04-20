@@ -1,4 +1,5 @@
 using System;
+using Level;
 using UI.Window.GameWindow;
 using UI.Window.StartWindow;
 
@@ -9,9 +10,11 @@ namespace UI.Window.FailWindow
         public event Action RetryClicked;
         
         private FailWindowView _failWindowView;
-        
-        public FailWindowController(FailWindowView view) : base(view)
+        private ILevelLoader _levelLoader;
+
+        public FailWindowController(FailWindowView view, ILevelLoader levelLoader) : base(view)
         {
+            _levelLoader = levelLoader;
             _failWindowView = view;
         }
 
@@ -24,13 +27,14 @@ namespace UI.Window.FailWindow
 
         private void OnNoTryButtonClick()
         {
+            _levelLoader.LoadCurrentLevel();
             _uiController.ShowWindow<StartWindowController>();
         }
 
         private void OnRetryButtonClick()
         {
-            _uiController.ShowWindow<GameWindowController>();
-            RetryClicked?.Invoke();
+            _levelLoader.LoadCurrentLevel();
+            _uiController.ShowWindow<StartWindowController>();
         }
     }
 }
