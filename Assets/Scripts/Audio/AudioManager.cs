@@ -149,11 +149,11 @@ namespace Audio
             float volume = 1,
             float pitch = 1)
         {
-            var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
-            pooledAudio.gameObject.SetActive(true);
-            pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
-
-            return pooledAudio;
+           // var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
+            // pooledAudio.gameObject.SetActive(true);
+            // pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
+            //
+            return null; //pooledAudio;
         }
 
         private IEnumerator ReturnToPoolCor(SoundType key, PooledAudio pooledAudio, float audioClipLength)

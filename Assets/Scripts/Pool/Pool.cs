@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using Zenject;
 
@@ -80,7 +81,6 @@ namespace Pool
 
         public void FreeAllPool()
         {
-            // удалить объекты
             foreach (var ( key, poolObjects) in _poolObjects)
             {
                 foreach (var poolObject in poolObjects)    
