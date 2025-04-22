@@ -16,7 +16,7 @@ namespace Audio
     public class AudioManager : IAudioManager, IInitializable
     {
         private readonly IPool _pool;
-        private readonly MonoBehaviour _monoBehaviour;
+        private readonly PoolData _monoBehaviour;
 
         private Dictionary<SoundType, SoundPreset> _soundMap;
         private Dictionary<MusicType, MusicPreset> _musicMap;
@@ -34,7 +34,7 @@ namespace Audio
         public bool IsMusicMuted => _audioStorageData.IsMusicMuted;
 
         public AudioManager(IPool pool, IAudioSettings audioSettings, IStorageService storageService,
-            MonoBehaviour monoBehaviour)
+            PoolData monoBehaviour)
         {
             _audioSettings = audioSettings;
             _monoBehaviour = monoBehaviour;
@@ -149,11 +149,11 @@ namespace Audio
             float volume = 1,
             float pitch = 1)
         {
-           // var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
-            // pooledAudio.gameObject.SetActive(true);
-            // pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
+            // var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
+            //  pooledAudio.gameObject.SetActive(true);
+            //  pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
             //
-            return null; //pooledAudio;
+            return null;// pooledAudio;
         }
 
         private IEnumerator ReturnToPoolCor(SoundType key, PooledAudio pooledAudio, float audioClipLength)

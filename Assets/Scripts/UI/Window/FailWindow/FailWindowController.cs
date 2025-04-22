@@ -1,6 +1,5 @@
 using System;
 using Level;
-using UI.Window.GameWindow;
 using UI.Window.StartWindow;
 
 namespace UI.Window.FailWindow
@@ -35,6 +34,11 @@ namespace UI.Window.FailWindow
         {
             _levelLoader.LoadCurrentLevel();
             _uiController.ShowWindow<StartWindowController>();
+        }
+
+        protected virtual void OnRetryClicked()
+        {
+            RetryClicked?.Invoke();
         }
     }
 }

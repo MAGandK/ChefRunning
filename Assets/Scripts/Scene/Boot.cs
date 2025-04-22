@@ -32,11 +32,9 @@ namespace Scene
         {
             yield return SceneManager.LoadSceneAsync(_uiSceneName, LoadSceneMode.Additive);
 
-           // yield return _levelLoader.LoadCurrentLevel();
-
             _audioManager.Play(MusicType.Background1);
-
-            yield return SceneManager.UnloadSceneAsync(0);
+            
+            _levelLoader.LoadCurrentLevel((() => SceneManager.UnloadSceneAsync(0)));
         }
     }
 }
