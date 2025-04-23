@@ -16,15 +16,16 @@ namespace Audio
     public class AudioManager : IAudioManager, IInitializable
     {
         private readonly IPool _pool;
-        private readonly PoolData _monoBehaviour;
+        private readonly AudioStorageData _audioStorageData;
+        private readonly IAudioSettings _audioSettings;
+        private readonly MonoBehaviour _monoBehaviour;
+
+        private AudioMixerGroup _soundGroup;
+        private AudioMixerGroup _musicGroup;
 
         private Dictionary<SoundType, SoundPreset> _soundMap;
         private Dictionary<MusicType, MusicPreset> _musicMap;
 
-        private readonly AudioStorageData _audioStorageData;
-        private readonly IAudioSettings _audioSettings;
-        private AudioMixerGroup _soundGroup;
-        private AudioMixerGroup _musicGroup;
 
         private readonly Dictionary<SoundType, List<PooledAudio>> _pooledSoundMap = new();
         private readonly List<Coroutine> _stopSoundCoroutines = new();
@@ -33,12 +34,11 @@ namespace Audio
         public bool IsSoundMuted => _audioStorageData.IsSoundMuted;
         public bool IsMusicMuted => _audioStorageData.IsMusicMuted;
 
-        public AudioManager(IPool pool, IAudioSettings audioSettings, IStorageService storageService,
-            PoolData monoBehaviour)
+        public AudioManager(IPool pool, IAudioSettings audioSettings, IStorageService storageService, MonoBehaviour monoBehaviour)
         {
             _audioSettings = audioSettings;
-            _monoBehaviour = monoBehaviour;
             _pool = pool;
+            _monoBehaviour = monoBehaviour;
             _audioStorageData = storageService.GetData<AudioStorageData>(StorageDataNames.AUDIO_DATA_KEY);
         }
 
@@ -149,11 +149,12 @@ namespace Audio
             float volume = 1,
             float pitch = 1)
         {
-            // var pooledAudio = _pool.Get<PooledAudio>(_audioSettings.PooledAudioPrefab);
-            //  pooledAudio.gameObject.SetActive(true);
-            //  pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
-            //
-            return null;// pooledAudio;
+            var poolData = new PoolData(_audioSettings.PooledAudioPrefab, "PooledAudio"); 
+            var pooledAudio = _pool.Get<PooledAudio>(poolData);
+             pooledAudio.gameObject.SetActive(true);
+             pooledAudio.SetupAndPlay(audioClip, volume, pitch, soundGroup);
+            
+            return pooledAudio;
         }
 
         private IEnumerator ReturnToPoolCor(SoundType key, PooledAudio pooledAudio, float audioClipLength)
