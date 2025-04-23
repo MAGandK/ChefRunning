@@ -7,9 +7,8 @@ using Zenject;
 namespace Test
 {
     public class TestAudio : MonoBehaviour
-    {
-        [SerializeField] private PooledAudio _pooledAudio;
-
+    { 
+        private PooledAudio _pooledAudio;
         private IPool _pool;
         private PoolData _audio;
         private IAudioManager _audioManager;
