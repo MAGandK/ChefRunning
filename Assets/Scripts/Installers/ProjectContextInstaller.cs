@@ -2,6 +2,7 @@ using Audio;
 using Audio.Stoarge;
 using Constants;
 using Level;
+using Particles;
 using Pool;
 using Services.Storage;
 using UnityEngine;
@@ -21,14 +22,20 @@ namespace Installers
             BindLevelloader();
             BindPools();
             BindSound();
+            BindParticle();
         }
 
+        private void BindParticle()
+        {
+            Container.Bind(typeof(IParticleManager), typeof(IInitializable)).To<ParticleManager>().AsSingle().WithArguments(this);
+        }
+        
         private void BindSound()
         {
             Container.Bind<IAudioSettings>().FromInstance(_audioSettings);
             Container.Bind(typeof(IAudioManager), typeof(IInitializable)).To<AudioManager>().AsSingle().WithArguments(this);
         }
-
+        
         private void BindLevelloader()
         {
             Container.Bind<ILevelSettings>().FromInstance(_levelSettings).AsSingle();
