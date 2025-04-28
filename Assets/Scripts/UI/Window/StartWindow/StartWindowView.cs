@@ -10,17 +10,14 @@ namespace UI.Window.StartWindow
         [SerializeField] private LevelProgressBar _levelProgressBar;
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _settingWindowButton;
+        [SerializeField] private Button _giftWindowButton;
         [SerializeField] private BalanceView _balanceView;
 
         public BalanceView BalanceView => _balanceView;
-
+        public Button StartButton => _giftWindowButton;
+        public Button GiftButton => _giftWindowButton;
         public Button SettingWindowButton => _settingWindowButton;
-
-        public void SubscribeButton(UnityAction onStartButtonClick)
-        {
-            _startButton.onClick.AddListener(onStartButtonClick);
-        }
-
+        
         public void SetupProgressBar(int levelIndex)
         {
             _levelProgressBar.Setup(levelIndex);

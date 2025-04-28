@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SoundPreset 1
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 327020bbc1fbb4e4eb9c581a5a248640, type: 3}
+  _volume: 0.18
   _soundType: 1

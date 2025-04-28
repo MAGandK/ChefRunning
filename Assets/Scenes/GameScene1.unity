@@ -1410,14 +1410,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1899834882}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!81 &95395568835681865
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243813317700413905}
-  m_Enabled: 1
 --- !u!114 &111681755360179982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1627,7 +1619,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4049996142758970796}
   - component: {fileID: 8168267936674295131}
-  - component: {fileID: 95395568835681865}
   - component: {fileID: 4417856415181189294}
   m_Layer: 0
   m_Name: Main Camera

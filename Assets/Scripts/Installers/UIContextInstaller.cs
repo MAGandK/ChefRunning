@@ -1,5 +1,6 @@
 using JoystickControls;
 using UI;
+using UI.OfflineGiftPopup;
 using UI.Window.FailWindow;
 using UI.Window.GameWindow;
 using UI.Window.SettingPopup;
@@ -20,6 +21,7 @@ namespace Installers
             BindWindow<FailWindowController, FailWindowView>();
             BindWindow<WinWindowController, WinWindowView>();
             BindWindow<SettingPopupController, SettingPopupView>();
+            BindWindow<OfflineGiftPopupController, OfflineGiftPopupView>();
 
             Container.Bind<IUIController>().To<UIController>().AsSingle().NonLazy();
         }

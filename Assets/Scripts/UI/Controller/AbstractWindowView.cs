@@ -16,6 +16,11 @@ namespace UI
             OnHide();
         }
 
+        public void SetOrderInLayer(int order)
+        {
+            
+        }
+
         protected virtual void OnShow()
         {
         }

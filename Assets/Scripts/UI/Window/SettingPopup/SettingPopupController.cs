@@ -3,7 +3,7 @@ using UI.Window.StartWindow;
 
 namespace UI.Window.SettingPopup
 {
-    public class SettingPopupController : AbstractWindowController<SettingPopupView>
+    public class SettingPopupController : AbstractPopupController<SettingPopupView>
     {
         private readonly SettingPopupView _view;
         private readonly IAudioManager _audioManager;
@@ -28,7 +28,7 @@ namespace UI.Window.SettingPopup
 
         private void OnBackButtonClick()
         {
-            _uiController.ShowWindow<StartWindowController>();
+            _uiController.CloseLastOpenPopup();
         }
 
         private void OnMuteMusicButtonClick()

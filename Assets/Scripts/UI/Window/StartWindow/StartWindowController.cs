@@ -2,6 +2,7 @@ using System;
 using Constants;
 using Services.Price;
 using Services.Storage;
+using UI.OfflineGiftPopup;
 using UI.Window.GameWindow;
 using UI.Window.SettingPopup;
 
@@ -26,14 +27,20 @@ namespace UI.Window.StartWindow
         public override void Initialize()
         {
             base.Initialize();
-
-            _view.SubscribeButton(OnStartButtonClick);
+            _view.StartButton.onClick.AddListener(OnStartButtonClick);
             _view.SettingWindowButton.onClick.AddListener(OnSettingButtonClick);
+            _view.GiftButton.onClick.AddListener(OnGiftButtonClick);
             _view.BalanceView.Setup(CurrencyType.coin, CurrencyType.rybi);
+        }
+
+        private void OnGiftButtonClick()
+        {
+            _uiController.ShowWindow<OfflineGiftPopupController>();
         }
 
         private void OnSettingButtonClick()
         {
+            _uiController.ShowWindow<OfflineGiftPopupController>();
             _uiController.ShowWindow<SettingPopupController>();
         }
 
