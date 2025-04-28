@@ -4,7 +4,6 @@ namespace Obstacle
 {
     public class ObstacleDestroyer : MonoBehaviour
     {
-        [SerializeField] private GameObject _explosionEffects;
         private bool _canDestroy;
 
         public void SetCanDestroy(bool canDestroy)
@@ -22,13 +21,7 @@ namespace Obstacle
             if (other.TryGetComponent(out ObstacleBase obstacle))
             {
                 obstacle.Destroy();
-                ActivateHitEffects(obstacle.transform);
             }
-        }
-
-        public void ActivateHitEffects(Transform obstacleTransform)
-        {
-            Instantiate(_explosionEffects, obstacleTransform.position, Quaternion.identity);
         }
     }
 }

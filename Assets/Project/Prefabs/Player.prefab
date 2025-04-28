@@ -847,7 +847,7 @@ MonoBehaviour:
   _playerPosition: {x: -3, y: 0, z: -30}
   _playerAnimationTriggetHelper: {fileID: 3606965742837047796}
   _obstacleDestroyer: {fileID: 2540559778134260718}
-  _movementController: {fileID: 7264912886927067405}
+  _playerMovementController: {fileID: 7264912886927067405}
   _animatorController: {fileID: 6416032617718215869}
   _hitColliders:
   - {fileID: 2951449760407320943}
@@ -2854,7 +2854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edcbd7e7e0dc48ac84709a549c69f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionEffects: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
 --- !u!1 &8282028220085106737
 GameObject:
   m_ObjectHideFlags: 0

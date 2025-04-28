@@ -33,7 +33,8 @@ namespace PlayerLogics
             IJoystickController joystick,
             CameraController cameraController,
             IUIController uiController,
-            IAudioManager audioManager, ILevelModel levelModel)
+            IAudioManager audioManager,
+            ILevelModel levelModel)
         {
             _levelModel = levelModel;
             _audioManager = audioManager;
@@ -89,6 +90,7 @@ namespace PlayerLogics
                 hitCollider.enabled = false;
             }
 
+            _levelModel.SetState(LevelState.Fail);
             _uiController.ShowWindow<FailWindowController>();
         }
 

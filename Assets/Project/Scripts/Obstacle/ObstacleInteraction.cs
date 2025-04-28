@@ -26,6 +26,7 @@ namespace Obstacle
             if (other.gameObject == _player.gameObject && !_isInteracted)
             {
                 _isInteracted = true;
+                
                 if (gameObject.layer == LayerMask.NameToLayer("Barrel"))
                 {
                     Interaction?.Invoke();

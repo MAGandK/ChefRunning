@@ -21,7 +21,7 @@ namespace Environment
             {
                 return;
             }
-
+            
             _levelModel.SetState(LevelState.Win);
         }
     }
