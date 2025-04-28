@@ -8,10 +8,10 @@ namespace UI.Other
     {
         [SerializeField] private CurrencyType _type;
         [SerializeField] private TMP_Text _value;
-        
+
         public bool IsActive { get; private set; }
         public CurrencyType Type => _type;
-        
+
         public void Refresh(int value)
         {
             _value.SetText(value.ToString());

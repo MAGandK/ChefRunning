@@ -1,7 +1,7 @@
 using System.Collections;
 using Audio;
 using Audio.Types;
-using Level;
+using LevelLogic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;

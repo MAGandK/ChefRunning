@@ -1391,6 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d570fc48254d4d658c98729c38315f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 6948272378062488993}
   _muteSoundButton: {fileID: 2613637967433388955}
   _muteMusicButton: {fileID: 2360162218205384943}
   _backButton: {fileID: 5304012914007168838}

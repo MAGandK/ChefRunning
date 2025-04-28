@@ -1,8 +1,5 @@
 using System.Collections;
-using Managers;
-using PlayerLogics;
 using UnityEngine;
-using Zenject;
 
 namespace Obstacle
 {
@@ -13,23 +10,9 @@ namespace Obstacle
         [SerializeField] private Transform _startPosition;
         [SerializeField] private float _rotationSpeed;
 
-        private GameManager _gameManager;
-
-        [Inject]
-        private void Construct(Player player, GameManager gameManager)
-        {
-            _gameManager = gameManager;
-        }
-
         private void OnEnable()
         {
             StartMovement();
-            _gameManager.GameRestarted += ResetObstacle;
-        }
-
-        private void OnDisable()
-        {
-            _gameManager.GameRestarted -= ResetObstacle;
         }
 
         private void StartMovement()

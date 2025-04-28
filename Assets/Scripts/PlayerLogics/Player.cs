@@ -1,12 +1,12 @@
-using System;
 using Audio;
 using Audio.Types;
 using Camera;
 using JoystickControls;
-using Managers;
+using LevelLogic;
 using Obstacle;
 using UI;
-using UI.Window.FailWindow;
+using UI.UIController;
+using UI.WinodwsLogic.Window.FailWindow;
 using UnityEngine;
 using Zenject;
 
@@ -14,34 +14,29 @@ namespace PlayerLogics
 {
     public class Player : MonoBehaviour
     {
-        public event Action Hited;
-        public event Action Died;
-
         [SerializeField] private Transform _playerModel;
         [SerializeField] private Vector3 _playerPosition;
         [SerializeField] private PlayerAnimationTriggetHelper _playerAnimationTriggetHelper;
         [SerializeField] private ObstacleDestroyer _obstacleDestroyer;
-        [SerializeField] private MovementController _movementController;
+        [SerializeField] private PlayerMovementController _playerMovementController;
         [SerializeField] private PlayerAnimatorController _animatorController;
         [SerializeField] private Collider[] _hitColliders;
 
-        private GameManager _gameManager;
         private IJoystickController _joystick;
         private CameraController _cameraController;
         private IUIController _uiController;
-        private Quaternion _startRotation;
         private IAudioManager _audioManager;
+        private ILevelModel _levelModel;
 
         [Inject]
         public void Construct(
-            GameManager gameManager,
             IJoystickController joystick,
             CameraController cameraController,
             IUIController uiController,
-            IAudioManager audioManager)
+            IAudioManager audioManager, ILevelModel levelModel)
         {
+            _levelModel = levelModel;
             _audioManager = audioManager;
-            _gameManager = gameManager;
             _joystick = joystick;
             _cameraController = cameraController;
             _uiController = uiController;
@@ -52,10 +47,8 @@ namespace PlayerLogics
             _playerAnimationTriggetHelper.PunchStarted += OnPunchStarted;
             _playerAnimationTriggetHelper.PunchEnded += OnPunchEnded;
             _joystick.DoubleClick += DoubleClick;
-            _gameManager.GameStarted += GameManagerGameStarted;
-            _gameManager.GameFinished += GameManagerOnGameFinished;
-            _gameManager.GameRestarted += GameManagerOnGameRestarted;
-            _gameManager.GameExited += GameManagerOnGameExited;
+
+            _levelModel.StateChanged += LevelModelOnStateChanged;
         }
 
         private void OnDestroy()
@@ -63,15 +56,8 @@ namespace PlayerLogics
             _playerAnimationTriggetHelper.PunchStarted -= OnPunchStarted;
             _playerAnimationTriggetHelper.PunchEnded -= OnPunchEnded;
             _joystick.DoubleClick -= DoubleClick;
-            _gameManager.GameStarted -= GameManagerGameStarted;
-            _gameManager.GameFinished -= GameManagerOnGameFinished;
-            _gameManager.GameRestarted -= GameManagerOnGameRestarted;
-            _gameManager.GameExited -= GameManagerOnGameExited;
-        }
 
-        private void Start()
-        {
-            _startRotation = _playerModel.rotation;
+            _levelModel.StateChanged -= LevelModelOnStateChanged;
         }
 
         private void RotatePlayer(Vector3 targetPosition)
@@ -90,15 +76,13 @@ namespace PlayerLogics
         private void Hit()
         {
             _animatorController.Hitting();
-
-            Hited?.Invoke();
         }
 
         public void Die()
         {
             _audioManager.Play(SoundType.Damaged);
             _animatorController.Dying();
-            _movementController.StopMovement();
+            _playerMovementController.StopMovement();
 
             foreach (var hitCollider in _hitColliders)
             {
@@ -106,7 +90,6 @@ namespace PlayerLogics
             }
 
             _uiController.ShowWindow<FailWindowController>();
-            Died?.Invoke();
         }
 
         private void DoubleClick()
@@ -124,31 +107,30 @@ namespace PlayerLogics
             _obstacleDestroyer.SetCanDestroy(true);
         }
 
-        private void GameManagerGameStarted()
+        private void OnLevelStarted()
         {
-            _movementController.StartMove();
+            _playerMovementController.StartMove();
             _animatorController.Running();
         }
 
-        private void GameManagerOnGameRestarted()
+        private void OnLevelFinished()
         {
-            transform.position = Vector3.zero;
-            _playerModel.rotation = _startRotation;
-            _movementController.Reset();
-            _animatorController.ResetAnimation();
-        }
-
-        private void GameManagerOnGameFinished()
-        {
-            _movementController.StopMovement();
-            RotatePlayer(_cameraController.FinishCameraPosition);
+            _playerMovementController.StopMovement();
+            RotatePlayer(_cameraController.FailViewTransform);
             Dance();
         }
 
-        private void GameManagerOnGameExited()
+        private void LevelModelOnStateChanged(LevelState levelState)
         {
-            GameManagerOnGameRestarted();
-            _startRotation = _playerModel.rotation;
+            switch (levelState)
+            {
+                case LevelState.Start:
+                    OnLevelStarted();
+                    break;
+                case LevelState.Win:
+                    OnLevelFinished();
+                    break;
+            }
         }
     }
 }

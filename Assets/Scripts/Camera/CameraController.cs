@@ -1,6 +1,5 @@
-using Managers;
+using LevelLogic;
 using PlayerLogics;
-using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
 
@@ -8,61 +7,56 @@ namespace Camera
 {
     public class CameraController : MonoBehaviour
     {
-        [SerializeField] private CinemachineCamera _mainCamera;
-        [SerializeField] private CinemachineCamera _failCamera;
-        [SerializeField] private CinemachineCamera _finishCamera;
-    
-        private GameManager _gameManager;
+        private readonly int Failed = Animator.StringToHash("Failed");
+        private readonly int Finished = Animator.StringToHash("Finished");
+        private readonly int Loaded = Animator.StringToHash("Loaded");
+
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _failViewTransform;
+
         private Player _player;
+        private ILevelModel _levelModel;
 
-        public Vector3 FinishCameraPosition => _finishCamera.transform.position;
-    
+        public Vector3 FailViewTransform => _failViewTransform.position;
+
         [Inject]
-        private void Construct(GameManager gameManager, Player player)
+        private void Construct(ILevelModel levelModel)
         {
-            _gameManager = gameManager;
-            _player = player;
-        }
-        private void OnEnable()
-        {
-            _gameManager.GameStarted += GameManagerOnGameStarted;
-            _gameManager.GameFinished += GameManagerOnGameFinished;
-            _gameManager.GameExited += GameManagerOnGameExited;
-            _player.Died += PlayerOnDied;
-        }
-    
-        private void OnDisable()
-        {
-            _gameManager.GameStarted -= GameManagerOnGameStarted;
-            _gameManager.GameFinished -= GameManagerOnGameFinished;
-            _gameManager.GameExited -= GameManagerOnGameExited;
+            _levelModel = levelModel;
         }
 
-        private void GameManagerOnGameStarted()
+        private void Awake()
         {
-            _mainCamera.Priority = 10;
-            _failCamera.Priority = 0;
-            _finishCamera.Priority = 0;
+            _levelModel.StateChanged += LevelModelOnStateChanged;
         }
 
-        private void GameManagerOnGameFinished()
+        private void OnDestroy()
         {
-            _mainCamera.Priority = 0;
-            _failCamera.Priority = 0;
-            _finishCamera.Priority = 10;
+            _levelModel.StateChanged -= LevelModelOnStateChanged;
         }
-    
-        private void PlayerOnDied()
+
+        private void LevelModelOnStateChanged(LevelState levelState)
         {
-            _mainCamera.Priority = 0;
-            _failCamera.Priority = 10;
-        }
-    
-        private void GameManagerOnGameExited()
-        {
-            _mainCamera.Priority = 10;
-            _failCamera.Priority = 0;
-            _finishCamera.Priority = 0;
+            switch (levelState)
+            {
+                case LevelState.Loaded:
+                    _animator.SetTrigger(Loaded);
+                    break;
+                
+                case LevelState.Start:
+                    break;
+                
+                case LevelState.Win:
+                    _animator.SetTrigger(Finished);
+                    break;
+                
+                case LevelState.Fail:
+                    _animator.SetTrigger(Failed);
+                    break;
+                
+                case LevelState.Pause:
+                    break;
+            }
         }
     }
 }

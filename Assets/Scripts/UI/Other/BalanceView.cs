@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Constants;
 using Services.Price;
@@ -49,6 +48,7 @@ namespace UI.Other
                 }
             }
         }
+
         private void WalletStorageDataOnChanged(string key)
         {
             Refresh();

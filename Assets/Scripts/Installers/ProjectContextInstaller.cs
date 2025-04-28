@@ -1,7 +1,8 @@
 using Audio;
 using Audio.Stoarge;
 using Constants;
-using Level;
+using DebugConsole;
+using LevelLogic;
 using Pool;
 using Services.Storage;
 using UnityEngine;
@@ -21,6 +22,13 @@ namespace Installers
             BindLevelloader();
             BindPools();
             BindSound();
+
+            BindDebug();
+        }
+
+        private void BindDebug()
+        {
+            Container.Bind(typeof(IDevConsole), typeof(ITickable)).To<DevConsole>().AsSingle();
         }
 
         private void BindSound()
@@ -31,6 +39,7 @@ namespace Installers
 
         private void BindLevelloader()
         {
+            Container.Bind<ILevelModel>().To<LevelModel>().AsSingle();
             Container.Bind<ILevelSettings>().FromInstance(_levelSettings).AsSingle();
             Container.Bind<ILevelLoader>().To<LevelLoader>().AsSingle().WithArguments(this);
         }

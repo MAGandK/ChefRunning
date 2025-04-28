@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581c329fe2ce45258d8a4e19ca87ac6e, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
+  <TestLevel>k__BackingField: TestLevel
   <SceneNames>k__BackingField:
-  - GameScene1
-  - GameScene2
+  - Level_1
+  - Level_2

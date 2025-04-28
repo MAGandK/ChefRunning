@@ -1,18 +1,15 @@
-using Managers;
 using UnityEngine;
-using Zenject;
 
 namespace PlayerLogics
 {
     public class PlayerAnimatorController : MonoBehaviour
     {
         [SerializeField] public Animator _animator;
-        
+
         private readonly int Run = Animator.StringToHash("IsRun");
         private readonly int Died = Animator.StringToHash("Died");
         private readonly int Dance = Animator.StringToHash("Danced");
         private readonly int Hit = Animator.StringToHash("IsHit");
-        
 
         public void Running()
         {

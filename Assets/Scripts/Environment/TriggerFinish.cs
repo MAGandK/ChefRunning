@@ -1,4 +1,5 @@
-using Managers;
+using LevelLogic;
+using PlayerLogics;
 using UnityEngine;
 using Zenject;
 
@@ -6,19 +7,22 @@ namespace Environment
 {
     public class TriggerFinish : MonoBehaviour
     {
-        /*private GameManager _gameManager;
+        private ILevelModel _levelModel;
 
         [Inject]
-        private void Construct(GameManager gameManager)
+        private void Construct(ILevelModel levelModel)
         {
-            _gameManager = gameManager;
+            _levelModel = levelModel;
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!other.TryGetComponent(out Player player))
             {
-                _gameManager.FinishGame();
+                return;
             }
-        }*/
+
+            _levelModel.SetState(LevelState.Win);
+        }
     }
 }
