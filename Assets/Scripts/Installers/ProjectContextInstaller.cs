@@ -3,6 +3,7 @@ using Audio.Stoarge;
 using Constants;
 using Level;
 using Particles;
+using Particles.ParticleSetting;
 using Pool;
 using Services.Storage;
 using UnityEngine;
@@ -14,7 +15,8 @@ namespace Installers
     public class ProjectContextInstaller : MonoInstaller
     {
         [SerializeField] private LevelSettings _levelSettings;
-        [SerializeField] private AudioSettings _audioSettings;
+        [SerializeField] private AudioSettings _audioSettings; 
+        [SerializeField] private ParticleSettings _particleSettings;
 
         public override void InstallBindings()
         {
@@ -27,6 +29,7 @@ namespace Installers
 
         private void BindParticle()
         {
+            Container.Bind<IParticleSettings>().FromInstance(_particleSettings);
             Container.Bind(typeof(IParticleManager), typeof(IInitializable)).To<ParticleManager>().AsSingle().WithArguments(this);
         }
         

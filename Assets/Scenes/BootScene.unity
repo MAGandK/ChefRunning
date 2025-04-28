@@ -727,6 +727,67 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &2204225209229487353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28402472
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.601068
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.62551
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267270704210349985, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621928476022102948, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205712729606654189, guid: 4504c5704ba684facb12b117046486b8, type: 3}
+      propertyPath: m_Name
+      value: PooledParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4504c5704ba684facb12b117046486b8, type: 3}
 --- !u!1001 &3494942599035485116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -832,3 +893,4 @@ SceneRoots:
   - {fileID: 1695567400}
   - {fileID: 223832015}
   - {fileID: 3494942599035485116}
+  - {fileID: 2204225209229487353}
