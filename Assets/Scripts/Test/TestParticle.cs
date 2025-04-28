@@ -6,11 +6,9 @@ using Zenject;
 namespace Test
 {
     public class TestParticle : MonoBehaviour
-
     {
         private PooledParticle _pooledParticle;
         private IPool _pool;
-        private PoolData _test;
         private IParticleManager _particleManager;
 
         [Inject]
@@ -19,21 +17,22 @@ namespace Test
             _particleManager = particleManager;
         }
 
-        private void Awake()
-        {
-            _test = new PoolData(_pooledParticle, "PooledParticle");
-        }
-
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-               _particleManager.Play(new Vector3(0,0,0));
+                _particleManager.Play(ParticleType.CoinCollected, Vector3.zero);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                _particleManager.Stop();
+                _particleManager.Play(ParticleType.ObstacleDestroy, Vector3.zero);
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _particleManager.ReturnAllParticle();
             }
         }
     }

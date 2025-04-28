@@ -5,26 +5,31 @@ namespace Particles
 {
     public class PooledParticle : MonoBehaviour, IPoolObject
     {
-        [SerializeField] private ParticleSystem _prefab;
-        
-        private bool _isFree;
+        [SerializeField] private ParticleSystem _particleSystem;
+
+        [SerializeField] private bool _isFree;
+
         public bool IsFree => _isFree;
+        public ParticleSystem ParticleSystem => _particleSystem;
+
         public void SetIsFree(bool isFree)
         {
             _isFree = isFree;
         }
 
-        public void Play(Vector3 position)
+        public void SetupAndPlay(Vector3 position, Vector3 scale)
         {
             transform.position = position;
-            _prefab.Play();
+            transform.localScale = scale;
+            gameObject.SetActive(true);
+            _particleSystem.Play();
             SetIsFree(false);
         }
 
         public void Stop()
         {
-            _prefab.Stop();
-            SetIsFree(false);
+            _particleSystem.Stop();
+            SetIsFree(true);
         }
     }
 }

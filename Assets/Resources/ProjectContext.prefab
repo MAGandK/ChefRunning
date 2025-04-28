@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelSettings: {fileID: 11400000, guid: caf6ef25597424e00b2d041f36f7968f, type: 2}
   _audioSettings: {fileID: 11400000, guid: 99db549d895354bc9ae9ee1ee08c6f12, type: 2}
+  _particleSettings: {fileID: 11400000, guid: b1167ba2d41ab4d92a3d1ec34ece39b0, type: 2}

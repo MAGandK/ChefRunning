@@ -1,5 +1,6 @@
 using Audio;
 using Audio.Types;
+using Particles;
 using PlayerLogics;
 using UnityEngine;
 using Zenject;
@@ -11,10 +12,12 @@ namespace Obstacle
         private readonly float _rotationSpeed = 200f;
 
         private IAudioManager _audioManager;
+        private IParticleManager _particleManager;
 
         [Inject]
-        public void Construct(IAudioManager audioManager)
+        public void Construct(IAudioManager audioManager, IParticleManager particleManager)
         {
+            _particleManager = particleManager;
             _audioManager = audioManager;
         }
 
@@ -29,8 +32,10 @@ namespace Obstacle
             {
                 return;
             }
-            
+
+            _particleManager.Play(ParticleType.CoinCollected, transform.position);
             _audioManager.Play(SoundType.CoinCollected);
+
             gameObject.SetActive(false);
         }
     }

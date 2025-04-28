@@ -1,5 +1,6 @@
 using System.Collections;
 using Managers;
+using Particles;
 using PlayerLogics;
 using UnityEngine;
 using Zenject;
@@ -14,6 +15,7 @@ namespace Obstacle
         [SerializeField] private float _rotationSpeed;
 
         private GameManager _gameManager;
+        private IParticleManager _particleManager;
 
         [Inject]
         private void Construct(Player player, GameManager gameManager)

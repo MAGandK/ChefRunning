@@ -4,7 +4,7 @@ namespace Particles
 {
     public interface IParticleManager
     {
-        void Play(Vector3 position);
-        void Stop();
+        void Play(ParticleType particleType, Vector3 position);
+        void ReturnAllParticle();
     }
 }
