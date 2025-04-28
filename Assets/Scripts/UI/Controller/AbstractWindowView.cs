@@ -4,6 +4,7 @@ namespace UI
 {
     public abstract class AbstractWindowView : MonoBehaviour, IWindowView
     {
+        [SerializeField] private Renderer _renderer;
         public void Show()
         {
             gameObject.SetActive(true);
@@ -18,7 +19,7 @@ namespace UI
 
         public void SetOrderInLayer(int order)
         {
-            
+            _renderer.sortingOrder = order;
         }
 
         protected virtual void OnShow()

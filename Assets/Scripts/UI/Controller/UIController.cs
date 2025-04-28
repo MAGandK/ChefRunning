@@ -9,7 +9,9 @@ namespace UI
     public class UIController : IUIController
     {
         private readonly IEnumerable<IWindowController> _controllers;
-        private List<IWindowController> _openedWindows = new();
+        private readonly List<IWindowController> _openedWindows = new();
+
+        private int _orderIndex;
 
         public UIController(IEnumerable<IWindowController> controllers)
         {
@@ -40,6 +42,12 @@ namespace UI
                 {
                     openedWindow.Hide();
                 }
+
+                _orderIndex = 0;
+            }
+            else
+            {
+                popupController.SetOrderInLayer(++_orderIndex);
             }
 
             _openedWindows.Add(window);
@@ -61,6 +69,7 @@ namespace UI
 
             windowController.Hide();
             _openedWindows.Remove(windowController);
+            _orderIndex--;
         }
     }
 }
