@@ -1,6 +1,5 @@
 using UI.Other;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Window.StartWindow
@@ -14,7 +13,7 @@ namespace UI.Window.StartWindow
         [SerializeField] private BalanceView _balanceView;
 
         public BalanceView BalanceView => _balanceView;
-        public Button StartButton => _giftWindowButton;
+        public Button StartButton => _startButton;
         public Button GiftButton => _giftWindowButton;
         public Button SettingWindowButton => _settingWindowButton;
         

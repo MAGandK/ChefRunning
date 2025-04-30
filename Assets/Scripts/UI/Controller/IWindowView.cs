@@ -4,7 +4,6 @@ namespace UI
     {
         void Show();
         void Hide();
-
         void SetOrderInLayer(int order);
     }
 }
