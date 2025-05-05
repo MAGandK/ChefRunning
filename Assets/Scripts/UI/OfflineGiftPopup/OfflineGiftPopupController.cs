@@ -1,10 +1,8 @@
-using UI.Window.StartWindow;
-
 namespace UI.OfflineGiftPopup
 {
     public class OfflineGiftPopupController: AbstractPopupController<OfflineGiftPopupView>
     {
-        private OfflineGiftPopupView _view;
+        private readonly OfflineGiftPopupView _view;
         
         public OfflineGiftPopupController(OfflineGiftPopupView view) : base(view)
         {

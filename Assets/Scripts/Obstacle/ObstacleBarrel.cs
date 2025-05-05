@@ -1,6 +1,5 @@
 using System.Collections;
 using Managers;
-using PlayerLogics;
 using UnityEngine;
 using Zenject;
 
@@ -16,7 +15,7 @@ namespace Obstacle
         private GameManager _gameManager;
 
         [Inject]
-        private void Construct(Player player, GameManager gameManager)
+        private void Construct(GameManager gameManager)
         {
             _gameManager = gameManager;
         }

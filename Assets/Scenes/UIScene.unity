@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 921873861941621519, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1181464868734809034, guid: d5a02c888e8394fb6b45dd4959339eaf, type: 3}
       propertyPath: _closeButton
       value: 

@@ -1,5 +1,4 @@
 using Audio;
-using UI.Window.StartWindow;
 
 namespace UI.Window.SettingPopup
 {

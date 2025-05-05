@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bd8bc9e403442ab861d8a390397a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 0}
+  _canvas: {fileID: 6416639140559795220}
   _levelProgressBar: {fileID: 9737817755497996}
   _startButton: {fileID: 1734630200124211335}
   _settingWindowButton: {fileID: 3891695773667274219}
