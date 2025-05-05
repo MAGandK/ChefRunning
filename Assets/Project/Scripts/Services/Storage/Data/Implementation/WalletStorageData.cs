@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Services.Price;
 
-namespace Services.Storage
+namespace Services.Storage.Data.Implementation
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class WalletStorageData : AbstractStorageData<WalletStorageData>

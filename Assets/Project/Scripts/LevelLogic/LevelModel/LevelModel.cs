@@ -1,6 +1,6 @@
 using System;
 
-namespace LevelLogic
+namespace LevelLogic.LevelModel
 {
     public class LevelModel : ILevelModel
     {

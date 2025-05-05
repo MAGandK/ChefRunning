@@ -1,4 +1,4 @@
-namespace LevelLogic
+namespace LevelLogic.LevelModel
 {
     public enum LevelState
     {

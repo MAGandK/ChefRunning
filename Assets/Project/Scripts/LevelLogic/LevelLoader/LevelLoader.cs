@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using Constants;
+using LevelLogic.LevelModel;
+using LevelLogic.Settings;
 using Services.Storage;
+using Services.Storage.Data.Implementation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace LevelLogic
+namespace LevelLogic.LevelLoader
 {
     public class LevelLoader : ILevelLoader
     {

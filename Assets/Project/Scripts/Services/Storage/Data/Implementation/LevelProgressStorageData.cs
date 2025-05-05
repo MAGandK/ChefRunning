@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Services.Storage
+namespace Services.Storage.Data.Implementation
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class LevelProgressStorageData : AbstractStorageData<LevelProgressStorageData>

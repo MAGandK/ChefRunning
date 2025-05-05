@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Services.Price;
 using UnityEngine;
 
-namespace Services.Storage
+namespace Services.Storage.Data.Implementation
 {
     [Serializable]
     [JsonObject(MemberSerialization.OptIn)]

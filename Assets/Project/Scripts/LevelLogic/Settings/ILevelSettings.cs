@@ -1,4 +1,4 @@
-namespace LevelLogic
+namespace LevelLogic.Settings
 {
     public interface ILevelSettings
     {

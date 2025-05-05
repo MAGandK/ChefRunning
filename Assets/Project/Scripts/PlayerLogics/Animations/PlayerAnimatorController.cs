@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlayerLogics
+namespace PlayerLogics.Animations
 {
     public class PlayerAnimatorController : MonoBehaviour
     {

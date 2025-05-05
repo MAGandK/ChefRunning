@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PlayerLogics
+namespace PlayerLogics.Animations
 {
     public class PlayerAnimationTriggetHelper : MonoBehaviour
     {

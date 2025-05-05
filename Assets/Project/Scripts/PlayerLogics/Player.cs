@@ -3,10 +3,12 @@ using Audio.Types;
 using Camera;
 using JoystickControls;
 using LevelLogic;
+using LevelLogic.LevelModel;
 using Obstacle;
+using PlayerLogics.Animations;
 using UI;
 using UI.UIController;
-using UI.WinodwsLogic.Window.FailWindow;
+using UI.WindowsLogic.Window.FailWindow;
 using UnityEngine;
 using Zenject;
 

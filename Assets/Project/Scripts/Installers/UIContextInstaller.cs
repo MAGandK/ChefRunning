@@ -1,13 +1,13 @@
 using JoystickControls;
 using UI;
 using UI.UIController;
-using UI.WinodwsLogic;
-using UI.WinodwsLogic.Window.FailWindow;
-using UI.WinodwsLogic.Window.GameWindow;
-using UI.WinodwsLogic.Window.OfflineGift;
-using UI.WinodwsLogic.Window.SettingPopup;
-using UI.WinodwsLogic.Window.StartWindow;
-using UI.WinodwsLogic.Window.WinWindow;
+using UI.WindowsLogic;
+using UI.WindowsLogic.Window.FailWindow;
+using UI.WindowsLogic.Window.GameWindow;
+using UI.WindowsLogic.Window.OfflineGift;
+using UI.WindowsLogic.Window.SettingPopup;
+using UI.WindowsLogic.Window.StartWindow;
+using UI.WindowsLogic.Window.WinWindow;
 using Zenject;
 
 namespace Installers

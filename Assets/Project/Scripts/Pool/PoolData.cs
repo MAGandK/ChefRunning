@@ -1,29 +1,32 @@
 using UnityEngine;
 
-public struct PoolData
+namespace Pool
 {
-    public MonoBehaviour obj;
-    public string key;
-
-    public PoolData(MonoBehaviour obj, string key)
+    public struct PoolData
     {
-        this.obj = obj;
-        this.key = key;
-    }
+        public MonoBehaviour obj;
+        public string key;
 
-
-    public override bool Equals(object objT)
-    {
-        if (objT is PoolData otherData)
+        public PoolData(MonoBehaviour obj, string key)
         {
-            return obj == otherData.obj && key == otherData.key;
+            this.obj = obj;
+            this.key = key;
         }
 
-        return false;
-    }
 
-    public override int GetHashCode()
-    {
-        return (obj, key).GetHashCode();
+        public override bool Equals(object objT)
+        {
+            if (objT is PoolData otherData)
+            {
+                return obj == otherData.obj && key == otherData.key;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (obj, key).GetHashCode();
+        }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using Audio;
 using Audio.Types;
 using LevelLogic;
+using LevelLogic.LevelLoader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;

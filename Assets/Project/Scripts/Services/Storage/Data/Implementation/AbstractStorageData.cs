@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Services.Storage
+namespace Services.Storage.Data.Implementation
 {
     public abstract class AbstractStorageData<T> : IStorageData<T>
     {

@@ -244,6 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5066261179191680743}
   - component: {fileID: 3891695773667274219}
+  - component: {fileID: 2793395818749052983}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -316,6 +317,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2793395818749052983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778211341129597887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110060e177a44fa191d02f1031d82ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleValue: 0.9
+  _duration: 0.1
 --- !u!1 &2187636977414456134
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6212557131168692227}
   - component: {fileID: 479231955167605718}
+  - component: {fileID: 1057605766409412379}
   m_Layer: 5
   m_Name: GiftButton
   m_TagString: Untagged
@@ -623,6 +639,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1057605766409412379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506652768928035452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110060e177a44fa191d02f1031d82ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleValue: 0.9
+  _duration: 0.1
 --- !u!1 &5936117402035280542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bd8bc9e403442ab861d8a390397a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 0}
   _levelProgressBar: {fileID: 9737817755497996}
   _startButton: {fileID: 1734630200124211335}
   _settingWindowButton: {fileID: 3891695773667274219}

@@ -1,6 +1,6 @@
 using System;
 
-namespace Services.Storage
+namespace Services.Storage.Data
 {
     public interface IStorageData
     {

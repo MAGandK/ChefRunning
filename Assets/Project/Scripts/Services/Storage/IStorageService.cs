@@ -1,3 +1,4 @@
+using Services.Storage.Data;
 using Zenject;
 
 namespace Services.Storage

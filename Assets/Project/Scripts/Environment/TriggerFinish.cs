@@ -1,4 +1,5 @@
 using LevelLogic;
+using LevelLogic.LevelModel;
 using PlayerLogics;
 using UnityEngine;
 using Zenject;

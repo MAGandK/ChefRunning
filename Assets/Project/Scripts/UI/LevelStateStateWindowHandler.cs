@@ -1,9 +1,10 @@
 using LevelLogic;
+using LevelLogic.LevelModel;
 using UI.UIController;
-using UI.WinodwsLogic.Window.FailWindow;
-using UI.WinodwsLogic.Window.GameWindow;
-using UI.WinodwsLogic.Window.StartWindow;
-using UI.WinodwsLogic.Window.WinWindow;
+using UI.WindowsLogic.Window.FailWindow;
+using UI.WindowsLogic.Window.GameWindow;
+using UI.WindowsLogic.Window.StartWindow;
+using UI.WindowsLogic.Window.WinWindow;
 using Zenject;
 
 namespace UI
