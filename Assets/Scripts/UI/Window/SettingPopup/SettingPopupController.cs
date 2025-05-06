@@ -25,6 +25,12 @@ namespace UI.Window.SettingPopup
             _view.MuteMusicButton.SetActiveState(!_audioManager.IsMusicMuted);
         }
 
+        protected override void OnShow()
+        {
+            base.OnShow();
+            _view.PopupAnimation.Play();
+        }
+
         private void OnBackButtonClick()
         {
             _uiController.CloseLastOpenPopup();

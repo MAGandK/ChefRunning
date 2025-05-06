@@ -40,7 +40,6 @@ namespace UI.Window.StartWindow
 
         private void OnSettingButtonClick()
         {
-            _uiController.ShowWindow<OfflineGiftPopupController>();
             _uiController.ShowWindow<SettingPopupController>();
         }
 

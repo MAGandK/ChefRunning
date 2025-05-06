@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UI.Popups;
 using UnityEngine;
 
@@ -5,7 +6,9 @@ namespace UI
 {
     public abstract class AbstractPopupController<T> : AbstractWindowController<T>, IPopupController where T : IWindowView
     {
-        private T _baseView;
+        [Space] private T _baseView;
+        private Tweener _showTween;
+        
         protected AbstractPopupController(T view) : base(view)
         {
             _baseView = view;

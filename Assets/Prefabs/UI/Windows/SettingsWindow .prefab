@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 971059205195133746}
   - component: {fileID: 7828993526964260763}
   - component: {fileID: 5304012914007168838}
+  - component: {fileID: 4085626704036323344}
   m_Layer: 5
   m_Name: ButtonClose
   m_TagString: Untagged
@@ -243,6 +244,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4085626704036323344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500087072474188191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781175e257f52452db448ca418021a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleValue: 0.9
+  _duration: 0.1
 --- !u!1 &2666116009835230043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1302,7 @@ GameObject:
   - component: {fileID: 9091924121481291116}
   - component: {fileID: 9070455601656115245}
   - component: {fileID: 4496884303806787040}
+  - component: {fileID: 1766352980228617791}
   m_Layer: 5
   m_Name: 'SettingsWindow '
   m_TagString: Untagged
@@ -1395,6 +1411,23 @@ MonoBehaviour:
   _muteSoundButton: {fileID: 2613637967433388955}
   _muteMusicButton: {fileID: 2360162218205384943}
   _backButton: {fileID: 5304012914007168838}
+  _popupAnimation: {fileID: 1766352980228617791}
+--- !u!114 &1766352980228617791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860397689037223442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248352f9b7ae6431ebcb6ec1a81a300c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contentBack: {fileID: 5362451739186571949}
+  _scaleDownValue: 0.9
+  _scaleDuration: 0.2
+  _back: {fileID: 3648503772413121463}
 --- !u!1 &9024985526601070617
 GameObject:
   m_ObjectHideFlags: 0

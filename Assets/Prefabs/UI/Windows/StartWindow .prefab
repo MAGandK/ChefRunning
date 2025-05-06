@@ -169,6 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5066261179191680743}
   - component: {fileID: 3891695773667274219}
+  - component: {fileID: 5011619209174091759}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -241,6 +242,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5011619209174091759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778211341129597887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781175e257f52452db448ca418021a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleValue: 0.9
+  _duration: 0.1
 --- !u!1 &2167803013824417187
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7655862893799948330}
   - component: {fileID: 3321285005322088601}
+  - component: {fileID: 9219090664697792607}
   m_Layer: 5
   m_Name: 'GiftButton '
   m_TagString: Untagged
@@ -698,6 +714,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9219090664697792607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640289188296793752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781175e257f52452db448ca418021a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleValue: 0.9
+  _duration: 0.1
 --- !u!1 &6794046078948908240
 GameObject:
   m_ObjectHideFlags: 0
