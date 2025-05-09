@@ -9,12 +9,14 @@ namespace DebugConsole.Controllers
     public class DevConsoleCurrencyController : AbstractDevConsoleController
     {
         private readonly WalletStorageData _walletStorageData;
+
         private readonly Dictionary<CurrencyType, int> _debugCurrencyValue = new()
         {
             { CurrencyType.rybi, 0 }
         };
 
         protected override string GroupName => "Currency";
+        public override int GroupPriority => 0;
 
         public DevConsoleCurrencyController(IStorageService storageService)
         {

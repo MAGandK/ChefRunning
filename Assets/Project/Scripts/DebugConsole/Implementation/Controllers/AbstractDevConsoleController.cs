@@ -6,8 +6,10 @@ namespace DebugConsole.Controllers
     public abstract class AbstractDevConsoleController : IDevConsoleController
     {
         private readonly DynamicOptionContainer _container = new();
-        protected abstract string GroupName { get; }
 
+        protected abstract string GroupName { get; }
+        public abstract int GroupPriority { get; }
+        
         public void Build()
         {
             if (_container.Options.Count > 0)

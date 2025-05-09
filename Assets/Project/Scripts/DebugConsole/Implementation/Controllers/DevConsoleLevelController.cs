@@ -1,8 +1,5 @@
-using Constants;
 using LevelLogic.LevelLoader;
 using Services.Storage;
-using Services.Storage.Data.Implementation;
-using SRDebugger;
 using UnityEngine;
 using Zenject;
 
@@ -11,16 +8,13 @@ namespace DebugConsole.Controllers
     public class DevConsoleLevelController : AbstractDevConsoleController, ITickable
     {
         private readonly ILevelLoader _levelLoader;
-        private LevelProgressStorageData _levelProgressStorageData;
-        
+
         protected override string GroupName => "Levels";
-        
+        public override int GroupPriority => 1;
+
         public DevConsoleLevelController(ILevelLoader levelLoader, IStorageService storageService)
         {
             _levelLoader = levelLoader;
-
-            _levelProgressStorageData =
-                storageService.GetData<LevelProgressStorageData>(StorageDataNames.LEVEL_PROGRESS_STORAGE_DATA_KEY);
         }
 
         public void Tick()
@@ -41,10 +35,9 @@ namespace DebugConsole.Controllers
             }
         }
 
-        
         public override void Init()
         {
-            
+            AddButton("Load next", () => _levelLoader.LoadNextLevel());
         }
     }
 }

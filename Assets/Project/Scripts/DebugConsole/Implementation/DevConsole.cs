@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using Zenject;
 
-namespace DebugConsole.Implementation
+namespace DebugConsole
 {
     public class DevConsole : IDevConsole, IInitializable
     {
-        private IEnumerable<IDevConsoleController> _devConsoleControllers;
+        private readonly IEnumerable<IDevConsoleController> _devConsoleControllers;
 
         public DevConsole(IEnumerable<IDevConsoleController> devConsoleControllers)
         {
@@ -14,7 +15,9 @@ namespace DebugConsole.Implementation
 
         public void Initialize()
         {
-            foreach (var controller in _devConsoleControllers)
+            var sorted = _devConsoleControllers.OrderBy(x => x.GroupPriority);
+
+            foreach (var controller in sorted)
             {
                 controller.Init();
                 controller.Build();
