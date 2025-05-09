@@ -2,7 +2,7 @@ using Audio;
 using Audio.Storage;
 using Constants;
 using DebugConsole;
-using LevelLogic;
+using DebugConsole.Controllers;
 using LevelLogic.LevelLoader;
 using LevelLogic.LevelModel;
 using LevelLogic.Settings;
@@ -33,13 +33,18 @@ namespace Installers
 
         private void BindDebug()
         {
-            Container.Bind(typeof(IDevConsole), typeof(ITickable)).To<DevConsole>().AsSingle();
+            Container.Bind(typeof(IDevConsoleController), typeof(ITickable)).To<LevelDevConsoleController>().AsSingle()
+                .NonLazy();
+            Container.Bind<IDevConsoleController>().To<WalletDevConsoleController>().AsSingle().NonLazy();
+            
+            Container.Bind(typeof(IDevConsole), typeof(IInitializable)).To<DevConsole>().AsSingle().NonLazy();
         }
 
         private void BindSound()
         {
             Container.Bind<IAudioSettings>().FromInstance(_audioSettings);
-            Container.Bind(typeof(IAudioManager), typeof(IInitializable)).To<AudioManager>().AsSingle().WithArguments(this);
+            Container.Bind(typeof(IAudioManager), typeof(IInitializable)).To<AudioManager>().AsSingle()
+                .WithArguments(this);
         }
 
         private void BindLevelloader()
@@ -53,10 +58,10 @@ namespace Installers
         {
             Container.Bind<IStorageData>().To<LevelProgressStorageData>().AsSingle()
                 .WithArguments(StorageDataNames.LEVEL_PROGRESS_STORAGE_DATA_KEY);
-           
+
             Container.Bind<IStorageData>().To<WalletStorageData>().AsSingle()
                 .WithArguments(StorageDataNames.WALLET_STORAGE_DATA_KEY);
-            
+
             Container.Bind<IStorageData>().To<AudioStorageData>().AsSingle()
                 .WithArguments(StorageDataNames.AUDIO_DATA_KEY);
 

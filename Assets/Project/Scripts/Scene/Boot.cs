@@ -34,7 +34,7 @@ namespace Scene
             yield return SceneManager.LoadSceneAsync(_uiSceneName, LoadSceneMode.Additive);
 
             _audioManager.Play(MusicType.Background1);
-            
+
             _levelLoader.LoadCurrentLevel((() => SceneManager.UnloadSceneAsync(0)));
         }
     }
