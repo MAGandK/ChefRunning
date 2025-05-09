@@ -2,6 +2,8 @@ using Audio;
 using Audio.Storage;
 using Constants;
 using DebugConsole;
+using DebugConsole.Controllers;
+using DebugConsole.Implementation;
 using LevelLogic;
 using LevelLogic.LevelLoader;
 using LevelLogic.LevelModel;
@@ -33,7 +35,9 @@ namespace Installers
 
         private void BindDebug()
         {
-            Container.Bind(typeof(IDevConsole), typeof(ITickable)).To<DevConsole>().AsSingle();
+            Container.Bind(typeof(IDevConsoleController), typeof(ITickable)).To<DevConsoleLevelController>().AsSingle().NonLazy();
+            Container.Bind<IDevConsoleController>().To<DevConsoleCurrencyController>().AsSingle().NonLazy();
+            Container.Bind(typeof(IDevConsole), typeof(IInitializable)).To<DevConsole>().AsSingle().NonLazy();
         }
 
         private void BindSound()
