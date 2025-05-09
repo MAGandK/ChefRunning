@@ -1427,7 +1427,15 @@ MonoBehaviour:
   _contentBack: {fileID: 5362451739186571949}
   _scaleDownValue: 0.9
   _scaleDuration: 0.2
-  _back: {fileID: 3648503772413121463}
+  _back: {fileID: 3785060359698415833}
+  _rotateIcon: {fileID: 7481867671819845047}
+  _rotateIconVibration: {fileID: 7213989891943919633}
+  _rotateValue: {x: 0, y: 0, z: 5}
+  _rotateDuration: 0.2
+  _shakeIcon: {fileID: 0}
+  _shakeDuration: 0.2
+  _shakeValue: 0.9
+  _shakeStrength: {x: 0, y: 0}
 --- !u!1 &9024985526601070617
 GameObject:
   m_ObjectHideFlags: 0

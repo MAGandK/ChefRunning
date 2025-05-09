@@ -963,6 +963,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2877380654631705760}
+    - target: {fileID: 2609418743932002583, guid: 3026d9290ae17415cbaf8b1bbee6649c, type: 3}
+      propertyPath: _showPopupAnimation
+      value: 
+      objectReference: {fileID: 4325589639986243978}
     - target: {fileID: 3286211997460227671, guid: 3026d9290ae17415cbaf8b1bbee6649c, type: 3}
       propertyPath: m_Name
       value: 3OfflineGift Canvas
@@ -1056,6 +1060,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3026d9290ae17415cbaf8b1bbee6649c, type: 3}
+--- !u!114 &4325589639986243978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3217179515261935488, guid: 3026d9290ae17415cbaf8b1bbee6649c, type: 3}
+  m_PrefabInstance: {fileID: 1198559368717841930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248352f9b7ae6431ebcb6ec1a81a300c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6164655251567554428 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4985311268249966966, guid: 3026d9290ae17415cbaf8b1bbee6649c, type: 3}

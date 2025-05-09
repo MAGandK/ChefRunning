@@ -9,6 +9,12 @@ namespace UI.OfflineGiftPopup
             _view = view;
         }
 
+        protected override void OnShow()
+        {
+            base.OnShow();
+            _view.ShowPopupAnimation.Play();
+        }
+
         public override void Initialize()
         {
             base.Initialize();
